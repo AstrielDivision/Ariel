@@ -12,7 +12,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@aero/ksoft@npm:^4.0.0-rc1":
+"@aero/ksoft@npm:4.0.0-rc1":
   version: 4.0.0-rc1
   resolution: "@aero/ksoft@npm:4.0.0-rc1"
   dependencies:
@@ -22,7 +22,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@aero/sanitizer@npm:^1.2.0":
+"@aero/sanitizer@npm:1.2.0":
   version: 1.2.0
   resolution: "@aero/sanitizer@npm:1.2.0"
   dependencies:
@@ -325,7 +325,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hidden-umbrella/eslint-config@npm:^1.0.2":
+"@hidden-umbrella/eslint-config@npm:1.0.2":
   version: 1.0.2
   resolution: "@hidden-umbrella/eslint-config@npm:1.0.2"
   dependencies:
@@ -424,7 +424,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/discord-utilities@npm:^2.1.5":
+"@sapphire/discord-utilities@npm:2.1.5, @sapphire/discord-utilities@npm:^2.1.5":
   version: 2.1.5
   resolution: "@sapphire/discord-utilities@npm:2.1.5"
   dependencies:
@@ -524,7 +524,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/ts-config@npm:^3.0.0":
+"@sapphire/ts-config@npm:3.0.0":
   version: 3.0.0
   resolution: "@sapphire/ts-config@npm:3.0.0"
   dependencies:
@@ -534,7 +534,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/type@npm:^2.1.0":
+"@sapphire/type@npm:2.1.0":
   version: 2.1.0
   resolution: "@sapphire/type@npm:2.1.0"
   dependencies:
@@ -545,7 +545,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/utilities@npm:^2.0.1":
+"@sapphire/utilities@npm:2.0.1, @sapphire/utilities@npm:^2.0.1":
   version: 2.0.1
   resolution: "@sapphire/utilities@npm:2.0.1"
   checksum: 2458193fa79ccdb7ca25b463fd4c184ac8d3151b08f816e2e5c9a44675a29cc2b81e17ae57113144e6c58df6fdc4bf40b89e6d4471e203ac420dc7d84375e1c7
@@ -660,14 +660,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tmware/prettier-config@npm:^1.0.3":
+"@tmware/prettier-config@npm:1.0.3":
   version: 1.0.3
   resolution: "@tmware/prettier-config@npm:1.0.3"
   checksum: 62010822227e9cadbab32156c869e80caa78418f0b23e247a985e80eb23278bd5e9d784cb2bf0b4ed0ac0ae432bb8d7acf4a7de678d46c34d247f2078bfb273c
   languageName: node
   linkType: hard
 
-"@tmware/status-rotate@npm:^1.2.8":
+"@tmware/status-rotate@npm:1.2.8":
   version: 1.2.8
   resolution: "@tmware/status-rotate@npm:1.2.8"
   dependencies:
@@ -697,14 +697,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/app-root-path@npm:^1.2.4":
+"@types/app-root-path@npm:1.2.4":
   version: 1.2.4
   resolution: "@types/app-root-path@npm:1.2.4"
   checksum: 3807abaf9006bb3fb72e8feb4cca5b252de035ee5992118158a0c519f0756fd22242bd9f3d46349558ae079899746f7501f7558206ba2e90f077b4a8fa64072f
   languageName: node
   linkType: hard
 
-"@types/convict@npm:^6.1.1":
+"@types/convict@npm:6.1.1":
   version: 6.1.1
   resolution: "@types/convict@npm:6.1.1"
   dependencies:
@@ -713,7 +713,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/crypto-js@npm:^4.0.2":
+"@types/crypto-js@npm:4.0.2":
   version: 4.0.2
   resolution: "@types/crypto-js@npm:4.0.2"
   checksum: b9d03b6cc1152f0c817b3555e0638d87b62dcc4edfd886d409b50aa68dbe3017727f8fed634b8b4b10b0796e0cdd35379c50abfb28d3226666fdc908844e5934
@@ -741,7 +741,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^16.7.5":
+"@types/node@npm:*, @types/node@npm:16.7.6":
   version: 16.7.6
   resolution: "@types/node@npm:16.7.6"
   checksum: a8533386a1d4ca0ed67885413001af8789c63948df288f3d36e31bd8fccffacf5dffb95e190c8cd57bb40385f010fb9a30f596bad6bb26b2bb88737d54d8ed95
@@ -762,7 +762,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/prettier@npm:^2.3.2":
+"@types/prettier@npm:2.3.2":
   version: 2.3.2
   resolution: "@types/prettier@npm:2.3.2"
   checksum: c4313e16650811f47b07a0fa7ac0742e966f61283a7292eb667fd4626d760bf3b7d896be3eaabb3354ad45fdbe3a340299b018dd3bcce1ff753d030a8cd2479c
@@ -985,7 +985,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"all-contributors-cli@npm:^6.20.0":
+"all-contributors-cli@npm:6.20.0":
   version: 6.20.0
   resolution: "all-contributors-cli@npm:6.20.0"
   dependencies:
@@ -1074,7 +1074,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"app-root-path@npm:^3.0.0":
+"app-root-path@npm:3.0.0":
   version: 3.0.0
   resolution: "app-root-path@npm:3.0.0"
   checksum: ff91a24db2b55070f6b3e22e72ce8fe8ea847e19eb8a3cbb267f9e9ac2a8372db65114dd6798a4ed7897a6f475b90a49330b3e53bf199d47e6abb5c5279aa1d7
@@ -1163,47 +1163,47 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "astraea@workspace:."
   dependencies:
-    "@aero/ksoft": ^4.0.0-rc1
-    "@aero/sanitizer": ^1.2.0
+    "@aero/ksoft": 4.0.0-rc1
+    "@aero/sanitizer": 1.2.0
     "@commitlint/cli": ^13.1.0
     "@commitlint/config-conventional": ^13.1.0
-    "@hidden-umbrella/eslint-config": ^1.0.2
+    "@hidden-umbrella/eslint-config": 1.0.2
     "@sapphire/decorators": next
-    "@sapphire/discord-utilities": ^2.1.5
+    "@sapphire/discord-utilities": 2.1.5
     "@sapphire/discord.js-utilities": next
     "@sapphire/fetch": next
     "@sapphire/framework": next
     "@sapphire/plugin-subcommands": next
-    "@sapphire/ts-config": ^3.0.0
-    "@sapphire/type": ^2.1.0
-    "@sapphire/utilities": ^2.0.1
+    "@sapphire/ts-config": 3.0.0
+    "@sapphire/type": 2.1.0
+    "@sapphire/utilities": 2.0.1
     "@sentry/node": ^6.11.0
-    "@tmware/prettier-config": ^1.0.3
-    "@tmware/status-rotate": ^1.2.8
-    "@types/app-root-path": ^1.2.4
-    "@types/convict": ^6.1.1
-    "@types/crypto-js": ^4.0.2
-    "@types/node": ^16.7.5
-    "@types/prettier": ^2.3.2
-    all-contributors-cli: ^6.20.0
-    app-root-path: ^3.0.0
-    bufferutil: ^4.0.3
-    colorette: ^1.3.0
-    convict: ^6.2.0
-    crypto-js: ^4.1.1
-    cz-conventional-changelog: ^3.3.0
-    dayjs: ^1.10.6
-    discord.js: ^13.1.0
-    eslint: ^7.32.0
-    husky: ^7.0.2
-    lint-staged: ^11.1.2
-    mongoose: ^6.0.2
-    owofire: ^1.0.4
-    prettier: ^2.3.2
-    rimraf: ^3.0.2
-    tslib: ^2.3.1
-    typescript: ^4.4.2
-    utf-8-validate: ^5.0.5
+    "@tmware/prettier-config": 1.0.3
+    "@tmware/status-rotate": 1.2.8
+    "@types/app-root-path": 1.2.4
+    "@types/convict": 6.1.1
+    "@types/crypto-js": 4.0.2
+    "@types/node": 16.7.6
+    "@types/prettier": 2.3.2
+    all-contributors-cli: 6.20.0
+    app-root-path: 3.0.0
+    bufferutil: 4.0.3
+    colorette: 1.3.0
+    convict: 6.2.0
+    crypto-js: 4.1.1
+    cz-conventional-changelog: 3.3.0
+    dayjs: 1.10.6
+    discord.js: 13.1.0
+    eslint: 7.32.0
+    husky: 7.0.2
+    lint-staged: 11.1.2
+    mongoose: 6.0.2
+    owofire: 1.0.4
+    prettier: 2.3.2
+    rimraf: 3.0.2
+    tslib: 2.3.1
+    typescript: 4.4.2
+    utf-8-validate: 5.0.5
   languageName: unknown
   linkType: soft
 
@@ -1289,7 +1289,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bufferutil@npm:^4.0.3":
+"bufferutil@npm:4.0.3":
   version: 4.0.3
   resolution: "bufferutil@npm:4.0.3"
   dependencies:
@@ -1521,7 +1521,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"colorette@npm:^1.2.2, colorette@npm:^1.3.0":
+"colorette@npm:1.3.0, colorette@npm:^1.2.2":
   version: 1.3.0
   resolution: "colorette@npm:1.3.0"
   checksum: bda403dfba4d032bee4169f2a6436a83ae3da488a53bcb3be92dc44ace056518245cc614b12429d7529493d6b090a119b2523b0d55e8cd6b81ad939a3003c008
@@ -1639,7 +1639,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"convict@npm:^6.2.0":
+"convict@npm:6.2.0":
   version: 6.2.0
   resolution: "convict@npm:6.2.0"
   dependencies:
@@ -1696,7 +1696,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"crypto-js@npm:^4.1.1":
+"crypto-js@npm:4.1.1":
   version: 4.1.1
   resolution: "crypto-js@npm:4.1.1"
   checksum: b3747c12ee3a7632fab3b3e171ea50f78b182545f0714f6d3e7e2858385f0f4101a15f2517e033802ce9d12ba50a391575ff4638c9de3dd9b2c4bc47768d5425
@@ -1721,7 +1721,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cz-conventional-changelog@npm:^3.3.0":
+"cz-conventional-changelog@npm:3.3.0":
   version: 3.3.0
   resolution: "cz-conventional-changelog@npm:3.3.0"
   dependencies:
@@ -1746,7 +1746,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dayjs@npm:^1.10.6":
+"dayjs@npm:1.10.6":
   version: 1.10.6
   resolution: "dayjs@npm:1.10.6"
   checksum: a79af6d19cf1e3aefc231e480037b37df50701e8d0cdbe1736fc6665b7045a159777215c5c8dd42ede7dd3c4c4f4a174d4ddd5bffca51df2a4ba0e0e25a6163c
@@ -1897,7 +1897,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"discord.js@npm:^13.1.0":
+"discord.js@npm:13.1.0":
   version: 13.1.0
   resolution: "discord.js@npm:13.1.0"
   dependencies:
@@ -2209,7 +2209,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^7.32.0":
+"eslint@npm:7.32.0":
   version: 7.32.0
   resolution: "eslint@npm:7.32.0"
   dependencies:
@@ -2888,7 +2888,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"husky@npm:^7.0.2":
+"husky@npm:7.0.2":
   version: 7.0.2
   resolution: "husky@npm:7.0.2"
   bin:
@@ -3431,7 +3431,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:^11.1.2":
+"lint-staged@npm:11.1.2":
   version: 11.1.2
   resolution: "lint-staged@npm:11.1.2"
   dependencies:
@@ -3870,7 +3870,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mongoose@npm:^6.0.2":
+"mongoose@npm:6.0.2":
   version: 6.0.2
   resolution: "mongoose@npm:6.0.2"
   dependencies:
@@ -4182,7 +4182,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"owofire@npm:^1.0.4":
+"owofire@npm:1.0.4":
   version: 1.0.4
   resolution: "owofire@npm:1.0.4"
   bin:
@@ -4421,7 +4421,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.3.2":
+"prettier@npm:2.3.2":
   version: 2.3.2
   resolution: "prettier@npm:2.3.2"
   bin:
@@ -4705,7 +4705,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rimraf@npm:^3.0.2":
+"rimraf@npm:3.0.2, rimraf@npm:^3.0.2":
   version: 3.0.2
   resolution: "rimraf@npm:3.0.2"
   dependencies:
@@ -5291,7 +5291,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:2.x, tslib@npm:^2.3.0, tslib@npm:^2.3.1":
+"tslib@npm:2.3.1, tslib@npm:2.x, tslib@npm:^2.3.0, tslib@npm:^2.3.1":
   version: 2.3.1
   resolution: "tslib@npm:2.3.1"
   checksum: de17a98d4614481f7fcb5cd53ffc1aaf8654313be0291e1bfaee4b4bb31a20494b7d218ff2e15017883e8ea9626599b3b0e0229c18383ba9dce89da2adf15cb9
@@ -5374,7 +5374,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@^4.3.5, typescript@^4.4.2":
+"typescript@4.4.2, typescript@^4.3.5":
   version: 4.4.2
   resolution: "typescript@npm:4.4.2"
   bin:
@@ -5384,7 +5384,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.3.5#~builtin<compat/typescript>, typescript@patch:typescript@^4.4.2#~builtin<compat/typescript>":
+"typescript@patch:typescript@4.4.2#~builtin<compat/typescript>, typescript@patch:typescript@^4.3.5#~builtin<compat/typescript>":
   version: 4.4.2
   resolution: "typescript@patch:typescript@npm%3A4.4.2#~builtin<compat/typescript>::version=4.4.2&hash=d8b4e7"
   bin:
@@ -5461,7 +5461,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"utf-8-validate@npm:^5.0.5":
+"utf-8-validate@npm:5.0.5":
   version: 5.0.5
   resolution: "utf-8-validate@npm:5.0.5"
   dependencies:
