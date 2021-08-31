@@ -1,9 +1,9 @@
-import { ArielCommand, AstraeaCommandOptions } from '#lib/Structures/BaseCommand'
+import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
 import { MessageEmbed, Message } from 'discord.js'
 import { ApplyOptions } from '@sapphire/decorators'
 import { FetchResultTypes } from '@sapphire/fetch'
 
-@ApplyOptions<AstraeaCommandOptions>({
+@ApplyOptions<ArielCommandOptions>({
   name: 'animebondage',
   description: 'Returns bondage images',
   nsfw: true

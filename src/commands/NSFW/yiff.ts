@@ -1,8 +1,8 @@
-import { ArielCommand, AstraeaCommandOptions } from '#lib/Structures/BaseCommand'
+import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
 import { ApplyOptions } from '@sapphire/decorators'
 import { MessageEmbed, Message } from 'discord.js'
 
-@ApplyOptions<AstraeaCommandOptions>({
+@ApplyOptions<ArielCommandOptions>({
   name: 'yiff',
   aliases: ['yiff', 'floofydev'],
   description: 'Returns an Image from api.floofy.dev',

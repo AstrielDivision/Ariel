@@ -1,9 +1,9 @@
-import { ArielCommand, AstraeaCommandOptions } from '#lib/Structures/BaseCommand'
+import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
 import type { Message } from 'discord.js'
 import { ApplyOptions } from '@sapphire/decorators'
 import type { Args } from '@sapphire/framework'
 
-@ApplyOptions<AstraeaCommandOptions>({
+@ApplyOptions<ArielCommandOptions>({
   name: 'stores',
   description: 'Enable or disable certain stores',
   flags: ['c', 'command', 'listener', 'l'],

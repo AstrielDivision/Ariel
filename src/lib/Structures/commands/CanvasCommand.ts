@@ -1,14 +1,14 @@
 import type { Args, PieceContext } from '@sapphire/framework'
 import { Message, MessageAttachment } from 'discord.js'
 import canvas from '../../Canvas-SRA/requests'
-import { ArielCommand, AstraeaCommandOptions } from '../Command'
+import { ArielCommand, ArielCommandOptions } from '../Command'
 
-export abstract class AstraeaOverlayCommand extends ArielCommand {
+export abstract class ArielOverlayCommand extends ArielCommand {
   overlay: 'gay' | 'glass' | 'wasted' | 'passed' | 'jail' | 'comrade' | 'triggered'
   constructor(
     { overlay }: { overlay: 'gay' | 'glass' | 'wasted' | 'passed' | 'jail' | 'comrade' | 'triggered' },
     Context: PieceContext,
-    options: AstraeaCommandOptions
+    options: ArielCommandOptions
   ) {
     super(Context, options)
     this.overlay = overlay

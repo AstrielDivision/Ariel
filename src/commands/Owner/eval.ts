@@ -1,13 +1,13 @@
 import { ApplyOptions } from '@sapphire/decorators'
 import type { Args } from '@sapphire/framework'
-import { ArielCommand, AstraeaCommandOptions } from '#lib/Structures/BaseCommand'
+import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
 import { Type } from '@sapphire/type'
 import { codeBlock, isThenable } from '@sapphire/utilities'
 import type { Message } from 'discord.js'
 import { inspect } from 'util'
 import { FetchResultTypes, FetchMethods, fetch } from '@sapphire/fetch'
 
-@ApplyOptions<AstraeaCommandOptions>({
+@ApplyOptions<ArielCommandOptions>({
   name: 'eval',
   aliases: ['ev'],
   description: 'Evals any JavaScript code',

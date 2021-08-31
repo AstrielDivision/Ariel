@@ -1,9 +1,9 @@
-import { ArielCommand, AstraeaCommandOptions } from '#lib/Structures/BaseCommand'
+import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
 import type { Message } from 'discord.js'
 import { ApplyOptions, RequiresUserPermissions } from '@sapphire/decorators'
 import type { Args } from '@sapphire/framework'
 
-@ApplyOptions<AstraeaCommandOptions>({
+@ApplyOptions<ArielCommandOptions>({
   name: 'ban',
   description: 'Ban a user with or without reason',
   detailedDescription: 'Using the flags -s or --soft will ban then unban the user',

@@ -1,15 +1,15 @@
 import { ApplyOptions } from '@sapphire/decorators'
 import type { PieceContext } from '@sapphire/framework'
-import type { AstraeaCommandOptions } from '#lib/Structures/BaseCommand'
-import { AstraeaRedditCommand } from '#lib/Structures/commands/RedditCommand'
+import type { ArielCommandOptions } from '#lib/Structures/BaseCommand'
+import { ArielRedditCommand } from '#lib/Structures/commands/RedditCommand'
 
-@ApplyOptions<AstraeaCommandOptions>({
+@ApplyOptions<ArielCommandOptions>({
   name: 'oldschool',
   aliases: ['oldschoolocool'],
   description: 'Returns an image from r/oldschoolcool'
 })
-export default class OldSchool extends AstraeaRedditCommand {
-  constructor(Context: PieceContext, options: AstraeaCommandOptions) {
+export default class OldSchool extends ArielRedditCommand {
+  constructor(Context: PieceContext, options: ArielCommandOptions) {
     super({ subreddit: 'oldschoolcool', nsfw: false, colour: 'GREY' }, Context, options)
   }
 }

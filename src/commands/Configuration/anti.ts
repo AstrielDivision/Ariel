@@ -1,4 +1,4 @@
-import { ArielCommand, AstraeaCommandOptions } from '#lib/Structures/BaseCommand'
+import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
 import { MessageEmbed, Message } from 'discord.js'
 import { ApplyOptions, RequiresUserPermissions } from '@sapphire/decorators'
 import type { Args } from '@sapphire/framework'
@@ -6,7 +6,7 @@ import db from '#database'
 import cfg from '../../config'
 import type { GuildSettings } from '#types'
 
-@ApplyOptions<AstraeaCommandOptions>({
+@ApplyOptions<ArielCommandOptions>({
   description: 'Settings per guild',
   usage: '<enable | disable | list: default> [new value]',
   subCommands: ['enable', 'disable', { input: 'list', default: true }]

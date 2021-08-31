@@ -1,9 +1,9 @@
 import { ApplyOptions } from '@sapphire/decorators'
 import type { PieceContext } from '@sapphire/framework'
-import type { AstraeaCommandOptions } from '#lib/Structures/BaseCommand'
-import { AstraeaRedditCommand } from '#lib/Structures/commands/RedditCommand'
+import type { ArielCommandOptions } from '#lib/Structures/BaseCommand'
+import { ArielRedditCommand } from '#lib/Structures/commands/RedditCommand'
 
-@ApplyOptions<AstraeaCommandOptions>({
+@ApplyOptions<ArielCommandOptions>({
   name: 'bigtiddy',
   aliases: ['booba'],
   description: 'Returns a Image from r/bigtiddygothgf',
@@ -11,8 +11,8 @@ import { AstraeaRedditCommand } from '#lib/Structures/commands/RedditCommand'
   cooldownDelay: 2000,
   nsfw: true
 })
-export default class Femboy extends AstraeaRedditCommand {
-  constructor(Context: PieceContext, options: AstraeaCommandOptions) {
+export default class Femboy extends ArielRedditCommand {
+  constructor(Context: PieceContext, options: ArielCommandOptions) {
     super({ subreddit: 'bigtiddygothgf', nsfw: true, colour: 'DARK_VIVID_PINK' }, Context, options)
   }
 }

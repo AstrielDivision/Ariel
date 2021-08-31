@@ -1,9 +1,9 @@
 import { ApplyOptions } from '@sapphire/decorators'
 import type { PieceContext } from '@sapphire/framework'
-import type { AstraeaCommandOptions } from '#lib/Structures/BaseCommand'
-import { AstraeaRedditCommand } from '#lib/Structures/commands/RedditCommand'
+import type { ArielCommandOptions } from '#lib/Structures/BaseCommand'
+import { ArielRedditCommand } from '#lib/Structures/commands/RedditCommand'
 
-@ApplyOptions<AstraeaCommandOptions>({
+@ApplyOptions<ArielCommandOptions>({
   name: 'helplesshentai',
   aliases: ['hh'],
   description: 'Returns a Image from r/helplesshentai',
@@ -11,8 +11,8 @@ import { AstraeaRedditCommand } from '#lib/Structures/commands/RedditCommand'
   cooldownDelay: 2000,
   nsfw: true
 })
-export default class HelplessHentai extends AstraeaRedditCommand {
-  constructor(Context: PieceContext, options: AstraeaCommandOptions) {
+export default class HelplessHentai extends ArielRedditCommand {
+  constructor(Context: PieceContext, options: ArielCommandOptions) {
     super({ subreddit: 'helplesshentai', nsfw: true, colour: 'DARK_BUT_NOT_BLACK' }, Context, options)
   }
 }

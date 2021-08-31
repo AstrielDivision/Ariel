@@ -1,4 +1,4 @@
-import { ArielCommand, AstraeaCommandOptions } from '#lib/Structures/BaseCommand'
+import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
 import type { GuildSettings } from '#types'
 import { Message } from 'discord.js'
 import { ApplyOptions, RequiresUserPermissions } from '@sapphire/decorators'
@@ -6,7 +6,7 @@ import type { Args } from '@sapphire/framework'
 import db from '#database'
 import cfg from '../../config'
 
-@ApplyOptions<AstraeaCommandOptions>({
+@ApplyOptions<ArielCommandOptions>({
   description: 'Set the discord bot\'s prefix',
   usage: '[set | reset | show: default] [new prefix]',
   subCommands: ['reset', 'set', { input: 'show', default: true }]

@@ -1,9 +1,9 @@
-import { ArielCommand, AstraeaCommandOptions } from '#lib/Structures/BaseCommand'
+import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
 import { ApplyOptions } from '@sapphire/decorators'
 import { MessageEmbed, Message } from 'discord.js'
 import type { WikiHowImage } from '@aero/ksoft'
 
-@ApplyOptions<AstraeaCommandOptions>({
+@ApplyOptions<ArielCommandOptions>({
   name: 'wikihow',
   aliases: ['how'],
   description: 'Returns a random wikihow article',

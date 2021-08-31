@@ -6,6 +6,7 @@ import cfg, { pkg } from '../../config'
 import { ClientOptions, version as djs } from 'discord.js'
 import Yiff from '#lib/yiff.ts/index'
 import * as Sentry from '@sentry/node'
+import mongoose from 'mongoose'
 
 export default class Client extends SapphireClient {
   ksoft: KSoftClient
@@ -56,6 +57,15 @@ export default class Client extends SapphireClient {
       framework: version,
       version: pkg.version
     })
+
+    await mongoose
+      .connect(cfg.mongo.uri)
+      .then(() => {
+        this.logger.info('Connected to MongoDB database')
+      })
+      .catch((err: Error) => {
+        this.logger.fatal('Error while connecting to MongoDB database', err)
+      })
 
     // Automate status change
     setInterval(() => {

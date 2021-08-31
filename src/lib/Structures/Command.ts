@@ -4,7 +4,7 @@ import { sep } from 'path'
 
 export abstract class ArielCommand extends SubCommandPluginCommand<Args, ArielCommand> {
   public usage?: string
-  constructor(Context: PieceContext, options: AstraeaCommandOptions) {
+  constructor(Context: PieceContext, options: ArielCommandOptions) {
     super(Context, options)
 
     this.usage = `${this.name} ${options.usage ?? ''}`
@@ -20,6 +20,6 @@ export abstract class ArielCommand extends SubCommandPluginCommand<Args, ArielCo
   }
 }
 
-export interface AstraeaCommandOptions extends SubCommandPluginCommand.Options {
+export interface ArielCommandOptions extends SubCommandPluginCommand.Options {
   usage?: string
 }

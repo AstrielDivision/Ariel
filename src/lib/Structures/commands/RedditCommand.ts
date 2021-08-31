@@ -1,16 +1,16 @@
 import type { RedditImage } from '@aero/ksoft'
 import type { PieceContext } from '@sapphire/framework'
 import { ColorResolvable, Message, MessageEmbed } from 'discord.js'
-import { ArielCommand, AstraeaCommandOptions } from '../Command'
+import { ArielCommand, ArielCommandOptions } from '../Command'
 
-export abstract class AstraeaRedditCommand extends ArielCommand {
+export abstract class ArielRedditCommand extends ArielCommand {
   subreddit: string
   colour: ColorResolvable
   nsfw: boolean
   constructor(
     { subreddit, nsfw, colour }: { subreddit: string, nsfw: boolean, colour: ColorResolvable },
     Context: PieceContext,
-    options: AstraeaCommandOptions
+    options: ArielCommandOptions
   ) {
     super(Context, options)
     this.subreddit = subreddit

@@ -1,9 +1,9 @@
 import { ApplyOptions } from '@sapphire/decorators'
 import type { PieceContext } from '@sapphire/framework'
-import type { AstraeaCommandOptions } from '#lib/Structures/BaseCommand'
-import { AstraeaRedditCommand } from '#lib/Structures/commands/RedditCommand'
+import type { ArielCommandOptions } from '#lib/Structures/BaseCommand'
+import { ArielRedditCommand } from '#lib/Structures/commands/RedditCommand'
 
-@ApplyOptions<AstraeaCommandOptions>({
+@ApplyOptions<ArielCommandOptions>({
   name: 'thigh',
   aliases: ['thighs', 'thighdeology'],
   description: 'Returns a Image from r/thighdeology',
@@ -11,8 +11,8 @@ import { AstraeaRedditCommand } from '#lib/Structures/commands/RedditCommand'
   nsfw: true,
   cooldownDelay: 2000
 })
-export default class Thighdeology extends AstraeaRedditCommand {
-  constructor(Context: PieceContext, options: AstraeaCommandOptions) {
+export default class Thighdeology extends ArielRedditCommand {
+  constructor(Context: PieceContext, options: ArielCommandOptions) {
     super({ subreddit: 'thighdeology', nsfw: true, colour: 'DARK_VIVID_PINK' }, Context, options)
   }
 }

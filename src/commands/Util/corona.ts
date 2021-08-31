@@ -1,10 +1,10 @@
-import { ArielCommand, AstraeaCommandOptions } from '#lib/Structures/BaseCommand'
+import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
 import { MessageEmbed, Message } from 'discord.js'
 import { ApplyOptions } from '@sapphire/decorators'
 import type { Args } from '@sapphire/framework'
 import CoronaFetch from '../../lib/corona-fetch/corona'
 
-@ApplyOptions<AstraeaCommandOptions>({
+@ApplyOptions<ArielCommandOptions>({
   name: 'corona',
   description: 'Get COVID-19 statistics worldwide or by country',
   usage: '[country]'

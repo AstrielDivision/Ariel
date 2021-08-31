@@ -3,10 +3,10 @@ import type { Args } from '@sapphire/framework'
 import type { Message } from 'discord.js'
 import * as crypto from 'crypto'
 
-import { ArielCommand, AstraeaCommandOptions } from '#lib/Structures/BaseCommand'
+import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
 import cryptoJS from 'crypto-js'
 
-@ApplyOptions<AstraeaCommandOptions>({
+@ApplyOptions<ArielCommandOptions>({
   name: 'hash',
   description: 'Hash your text',
   detailedDescription: 'Hash your text in either sha1, sha256, sha512, md5 or ripemd',

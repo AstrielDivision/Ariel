@@ -1,9 +1,9 @@
-import { ArielCommand, AstraeaCommandOptions } from '#lib/Structures/BaseCommand'
+import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
 import { MessageEmbed, Message } from 'discord.js'
 import { ApplyOptions } from '@sapphire/decorators'
 import { pkg } from '../../config'
 
-@ApplyOptions<AstraeaCommandOptions>({
+@ApplyOptions<ArielCommandOptions>({
   name: 'about',
   description: 'Discord bot about'
 })

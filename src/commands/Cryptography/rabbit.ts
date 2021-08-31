@@ -2,9 +2,9 @@ import { ApplyOptions } from '@sapphire/decorators'
 import type { Args } from '@sapphire/framework'
 import crypto from 'crypto-js'
 import { Permissions, Message } from 'discord.js'
-import { ArielCommand, AstraeaCommandOptions } from '#lib/Structures/BaseCommand'
+import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
 
-@ApplyOptions<AstraeaCommandOptions>({
+@ApplyOptions<ArielCommandOptions>({
   name: 'rabbit',
   description: 'Encrypt text with the Rabbit Cipher or decrypt Rabbit encrypted text',
   usage: '<text> <-s=<randomLetters> or --secret=<randomLetters>>',
