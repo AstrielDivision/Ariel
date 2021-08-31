@@ -1,0 +1,21 @@
+{
+  "extends": ["@hidden-umbrella/eslint-config"],
+  "parserOptions": {
+    "project": "./src/tsconfig.json"
+  },
+  "rules": {
+    "no-void": "off",
+    "@typescript-eslint/strict-boolean-expressions": "off",
+    "@typescript-eslint/space-before-function-paren": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/prefer-ts-expect-error": "off",
+    "@typescript-eslint/indent": [2, 2],
+    "@typescript-eslint/naming-convention": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "no-fallthrough": "off",
+    "indent": "off",
+    "no-new": "off",
+    "no-console": "off"
+  }
+}

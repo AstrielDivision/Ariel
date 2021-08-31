@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "tmuniversal.tms-recommended",
+    "aaron-bond.better-comments",
+    "coenraads.bracket-pair-colorizer-2",
+    "streetsidesoftware.code-spell-checker",
+    "ms-azuretools.vscode-docker",
+    "mikestead.dotenv",
+    "dbaeumer.vscode-eslint",
+    "tabnine.tabnine-vscode"
+  ]
+}

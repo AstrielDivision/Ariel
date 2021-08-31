@@ -1,0 +1,18 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "../build",
+    "rootDir": ".",
+    "baseUrl": ".",
+    "paths": {
+      "#lib/Structures/BaseCommand": ["lib/Structures/Command.ts"],
+      "#lib/Structures/commands/CanvasCommand": ["lib/Structures/commands/CanvasCommand.ts"],
+      "#lib/Structures/commands/RedditCommand": ["lib/Structures/commands/RedditCommand.ts"],
+      "#database": ["lib/database.ts"],
+      "#types": ["lib/Types"],
+      "#lib/*": ["lib/*"]
+    }
+  },
+  "include": ["."],
+  "exclude": ["tsconfig.json"]
+}
