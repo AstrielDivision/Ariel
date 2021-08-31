@@ -9,6 +9,16 @@
   "imageSize": 100,
   "commit": true,
   "commitConvention": "angular",
-  "contributors": [],
+  "contributors": [
+    {
+      "login": "TMUniversal",
+      "name": "Universal Studio",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10200399?v=4",
+      "profile": "https://tmuniversal.eu/",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
   "contributorsPerLine": 7
 }

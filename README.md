@@ -1,17 +1,13 @@
 <div align="center">
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-0-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
-
 # Ariel
 
-[![Continuous Delivery](https://github.com/AstraeaStudios/Astraea/actions/workflows/okteto-push.yml/badge.svg)](https://github.com/AstraeaStudios/Astraea/actions/workflows/okteto-push.yml)
+[![Continuous Delivery](https://github.com/AstraeaStudios/Ariel/actions/workflows/okteto-push.yml/badge.svg)](https://github.com/AstraeaStudios/Ariel/actions/workflows/okteto-push.yml)
 
-![GitHub issues](https://img.shields.io/github/issues-raw/AstraeaStudios/Astraea)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/AstraeaStudios/Astraea)
+![GitHub issues](https://img.shields.io/github/issues-raw/AstraeaStudios/Ariel)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/AstraeaStudios/Ariel)
 [![Discord Bots](https://top.gg/api/widget/status/609269728455688193.svg)](https://top.gg/bot/609269728455688193)
 
-> Images, Moderation and Utility bot.
+> Image, Moderation and Utility bot.
 
 </div>
 <br>
@@ -36,8 +32,15 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://tmuniversal.eu/"><img src="https://avatars.githubusercontent.com/u/10200399?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Universal Studio</b></sub></a><br /><a href="https://github.com/AstraeaStudios/Ariel/commits?author=TMUniversal" title="Code">💻</a></td>
+  </tr>
+</table>
+
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
