@@ -34,20 +34,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astriel-division/eslint-config@npm:1.0.9":
-  version: 1.0.9
-  resolution: "@astriel-division/eslint-config@npm:1.0.9"
+"@astriel-division/eslint-config@npm:1.1.4":
+  version: 1.1.4
+  resolution: "@astriel-division/eslint-config@npm:1.1.4"
   dependencies:
     "@typescript-eslint/eslint-plugin": ^4.28.3
     "@typescript-eslint/parser": ^4.28.3
-    eslint-config-standard-with-typescript: ^20.0.0
+    eslint-config-standard-with-typescript: ^21.0.0
     eslint-plugin-import: ^2.23.4
     eslint-plugin-node: ^11.1.0
     eslint-plugin-promise: ^5.1.0
   peerDependencies:
     eslint: ^7.32.0
     typescript: ^4.3.5
-  checksum: 02634272574f0989249c29bba37c6878b796c59b40b49c7dbd25d130ee63a617c16a40208c40e7ddffb7396dbf71da89fb93e90220390b649a71488c12d43804
+  checksum: edf8c219c6173d3c0ea92ab4ff85228a227b137d806b2625aceecc87d7bb09e6852fa83bf8a04e37f465fd6efc23816b146198ede74db96d773ee56903bbbfa2
   languageName: node
   linkType: hard
 
@@ -1171,7 +1171,7 @@ __metadata:
   dependencies:
     "@aero/ksoft": 4.0.0-rc1
     "@aero/sanitizer": 1.2.0
-    "@astriel-division/eslint-config": 1.0.9
+    "@astriel-division/eslint-config": 1.1.4
     "@astriel-division/ts-config": 1.0.5
     "@commitlint/cli": ^13.1.0
     "@commitlint/config-conventional": ^13.1.0
@@ -2060,20 +2060,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-standard-with-typescript@npm:^20.0.0":
-  version: 20.0.0
-  resolution: "eslint-config-standard-with-typescript@npm:20.0.0"
+"eslint-config-standard-with-typescript@npm:^21.0.0":
+  version: 21.0.1
+  resolution: "eslint-config-standard-with-typescript@npm:21.0.1"
   dependencies:
     "@typescript-eslint/parser": ^4.0.0
     eslint-config-standard: ^16.0.0
   peerDependencies:
-    "@typescript-eslint/eslint-plugin": ">=4.0.1"
-    eslint: ">=7.12.1"
-    eslint-plugin-import: ">=2.22.1"
-    eslint-plugin-node: ">=11.1.0"
-    eslint-plugin-promise: ">=4.2.1"
-    typescript: ">=3.9"
-  checksum: ff7395ad2b815efac92b5adff9d2902503aefb6288118c602cda998382c57d79790b7c33f9880227405610bcf97b8cefc887e425af231d9061b69b8187fe906d
+    "@typescript-eslint/eslint-plugin": ^4.0.1
+    eslint: ^7.12.1
+    eslint-plugin-import: ^2.22.1
+    eslint-plugin-node: ^11.1.0
+    eslint-plugin-promise: ^4.2.1 || ^5.0.0
+    typescript: ^3.9 || ^4.0.0
+  checksum: c3912558f26c4e4a38df4932d0f89fb95f7a9d5041386417995ce2bed35d64515c66a9a023265eb6c840a4e859bc7f434275ef773493a312e5941e1ceb0da508
   languageName: node
   linkType: hard
 
