@@ -1,7 +1,7 @@
 <div align="center">
 # Ariel
 
-[![Continuous Delivery](https://github.com/AstraeaStudios/Ariel/actions/workflows/okteto-push.yml/badge.svg)](https://github.com/AstraeaStudios/Ariel/actions/workflows/okteto-push.yml)
+[![Continuous Delivery](https://github.com/AstrielDivision/Ariel/actions/workflows/okteto-push.yml/badge.svg)](https://github.com/AstrielDivision/Ariel/actions/workflows/okteto-push.yml)
 
 ![GitHub issues](https://img.shields.io/github/issues-raw/AstrielDivision/Ariel)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/AstrielDivision/Ariel)
