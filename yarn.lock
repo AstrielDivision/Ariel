@@ -593,7 +593,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sentry/node@npm:^6.12.0":
+"@sentry/node@npm:6.12.0":
   version: 6.12.0
   resolution: "@sentry/node@npm:6.12.0"
   dependencies:
@@ -1183,7 +1183,7 @@ __metadata:
     "@sapphire/plugin-subcommands": next
     "@sapphire/type": 2.1.0
     "@sapphire/utilities": 2.0.1
-    "@sentry/node": ^6.12.0
+    "@sentry/node": 6.12.0
     "@tmware/prettier-config": 1.0.3
     "@tmware/status-rotate": 1.2.8
     "@types/app-root-path": 1.2.4
