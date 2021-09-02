@@ -6,7 +6,7 @@ import { captureException } from '@sentry/minimal'
   event: Events.Error
 })
 export default class ErrorListener extends Listener {
-  public async run(error: Error): Promise<unknown> {
+  public run(error: Error): undefined {
     this.container.logger.error(error.stack ?? error.message)
 
     captureException(error.stack ?? error.message)

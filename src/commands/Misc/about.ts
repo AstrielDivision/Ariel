@@ -1,5 +1,5 @@
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
-import { MessageEmbed, Message } from 'discord.js'
+import { Message, MessageEmbed } from 'discord.js'
 import { ApplyOptions } from '@sapphire/decorators'
 import { pkg } from '../../config'
 

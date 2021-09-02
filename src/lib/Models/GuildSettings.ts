@@ -1,4 +1,4 @@
-import { model, Schema } from 'mongoose'
+import { Schema, model } from 'mongoose'
 import type { GuildSettings as Settings } from '#types'
 import cfg from '../../config'
 

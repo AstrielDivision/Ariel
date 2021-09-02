@@ -1,7 +1,7 @@
 import { ApplyOptions } from '@sapphire/decorators'
 import type { Args } from '@sapphire/framework'
 import crypto from 'crypto-js'
-import { Permissions, Message } from 'discord.js'
+import { Message, Permissions } from 'discord.js'
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
 
 @ApplyOptions<ArielCommandOptions>({

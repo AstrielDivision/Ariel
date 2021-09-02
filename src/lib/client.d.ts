@@ -1,7 +1,8 @@
-import { KSoftClient } from '@aero/ksoft'
-import StatusUpdater from '@tmware/status-rotate'
+/* eslint-disable no-unused-vars */
 import ClientUtils from './ClientUtils'
+import { KSoftClient } from '@aero/ksoft'
 import { SapphireClientOptions } from '@sapphire/framework'
+import StatusUpdater from '@tmware/status-rotate'
 import Yiff from './yiff.ts/index'
 
 declare module '@sapphire/framework' {

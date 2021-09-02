@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { Listener, ListenerOptions, Events, Store } from '@sapphire/framework'
+import { Events, Listener, ListenerOptions, Store } from '@sapphire/framework'
 import { ApplyOptions } from '@sapphire/decorators'
 
 @ApplyOptions<ListenerOptions>({
@@ -9,7 +8,6 @@ export default class Ready extends Listener<typeof Events.ClientReady> {
   private printStoreDebugInformation(): void {
     const { client } = this.container
     const stores = [...client.stores.values()]
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const last = stores.pop()!
 
     for (const store of stores) {

@@ -38,6 +38,7 @@ export default class Hash extends ArielCommand {
     if (!text) return await message.channel.send('No text provided!')
 
     if (allFlag) {
+      // eslint-disable-next-line no-multi-assign
       sha1Flag = sha256Flag = sha512Flag = md5Flag = ripeMDFlag = true
     }
 
@@ -57,6 +58,7 @@ export default class Hash extends ArielCommand {
       SHA512 : 397118fdac8d83ad98813c50759c85b8c47565d8268bf10da483153b747a74743a58a90e85aa9f705ce6984ffc128db567489817e4092d050d8a1cc596ddc119
     */
 
+    // eslint-disable-next-line no-useless-concat
     let response = '```md\n' + `Hash value(s) of: ${text}\n` + '---'
 
     if (md5Flag) response += `\nMD5    : ${Hash.hash(text, 'md5')}`

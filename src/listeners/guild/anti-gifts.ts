@@ -1,7 +1,7 @@
 import { Events, Listener, ListenerOptions } from '@sapphire/framework'
 import { ApplyOptions } from '@sapphire/decorators'
-import type { Message } from 'discord.js'
 import GuildSettings from '#lib/Models/GuildSettings'
+import type { Message } from 'discord.js'
 
 @ApplyOptions<ListenerOptions>({
   event: Events.MessageCreate

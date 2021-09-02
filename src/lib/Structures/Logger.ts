@@ -1,5 +1,5 @@
 import type { ILogger, LogLevel } from '@sapphire/framework'
-import { MessageAttachment, WebhookClient, WebhookMessageOptions, MessageEmbed } from 'discord.js'
+import { MessageAttachment, MessageEmbed, WebhookClient, WebhookMessageOptions } from 'discord.js'
 import { EOL } from 'os'
 import cfg from '../../config'
 import colorette from 'colorette'
@@ -102,6 +102,9 @@ export default class AstraeaLogger implements ILogger {
       }
       case 'WRITE': {
         return colorette.dim(text)
+      }
+      default: {
+        return colorette.gray(text)
       }
     }
   }

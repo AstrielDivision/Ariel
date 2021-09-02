@@ -1,9 +1,9 @@
 import { Events, Listener, ListenerOptions } from '@sapphire/framework'
 import { ApplyOptions } from '@sapphire/decorators'
 import type { GuildMember } from 'discord.js'
+import GuildSettings from '#lib/Models/GuildSettings'
 // @ts-ignore
 import clean from '@aero/sanitizer'
-import GuildSettings from '#lib/Models/GuildSettings'
 
 @ApplyOptions<ListenerOptions>({
   event: Events.GuildMemberAdd

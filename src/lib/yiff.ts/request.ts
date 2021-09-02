@@ -1,7 +1,7 @@
-import { fetch, FetchMethods, FetchResultTypes } from '@sapphire/fetch'
+import { FetchMethods, FetchResultTypes, fetch } from '@sapphire/fetch'
 import type Client from 'lib/Structures/client'
-import c from './constants'
 import type { Config } from './types'
+import c from './constants'
 import cfg from '../../config'
 
 export default async function request(client: Client, options: Config): Promise<unknown> {
@@ -36,6 +36,10 @@ export default async function request(client: Client, options: Config): Promise<
         FetchResultTypes.JSON
       )
       return res
+    }
+
+    default: {
+      throw Error('Available sites: e621 and floofy')
     }
   }
 }

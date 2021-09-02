@@ -1,5 +1,5 @@
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
-import { Message, GuildMember, MessageEmbed } from 'discord.js'
+import { GuildMember, Message, MessageEmbed } from 'discord.js'
 import { ApplyOptions } from '@sapphire/decorators'
 import type { Args } from '@sapphire/framework'
 import dayjs from 'dayjs'

@@ -1,4 +1,4 @@
-import { fetch, FetchMethods, FetchResultTypes } from '@sapphire/fetch'
+import { FetchMethods, FetchResultTypes, fetch } from '@sapphire/fetch'
 import c from './corona-fetch/constants'
 
 export default async function Define(search: string): Promise<List> {

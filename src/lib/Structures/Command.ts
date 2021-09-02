@@ -1,4 +1,4 @@
-import type { PieceContext, Args } from '@sapphire/framework'
+import type { Args, PieceContext } from '@sapphire/framework'
 import { SubCommandPluginCommand } from '@sapphire/plugin-subcommands'
 import { sep } from 'path'
 

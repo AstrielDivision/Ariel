@@ -1,4 +1,4 @@
-import { Events, Listener, ListenerOptions, ListenerErrorPayload } from '@sapphire/framework'
+import { Events, Listener, ListenerErrorPayload, ListenerOptions } from '@sapphire/framework'
 import { ApplyOptions } from '@sapphire/decorators'
 import { captureException } from '@sentry/minimal'
 
@@ -7,7 +7,7 @@ import { captureException } from '@sentry/minimal'
   event: Events.ListenerError
 })
 export default class CoreEvent extends Listener {
-  public async run(error: Error, { piece }: ListenerErrorPayload): Promise<unknown> {
+  public run(error: Error, { piece }: ListenerErrorPayload): undefined {
     this.container.logger.fatal(`[LISTENER] ${piece.path}\n${error.stack ?? error.message}`)
 
     captureException(error.stack ?? error.message, { tags: { name: piece.name } })
