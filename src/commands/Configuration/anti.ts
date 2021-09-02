@@ -2,9 +2,8 @@ import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
 import { MessageEmbed, Message } from 'discord.js'
 import { ApplyOptions, RequiresUserPermissions } from '@sapphire/decorators'
 import type { Args } from '@sapphire/framework'
-import db from '#database'
 import cfg from '../../config'
-import type { GuildSettings } from '#types'
+import GuildSettings from '#lib/Models/GuildSettings'
 
 @ApplyOptions<ArielCommandOptions>({
   description: 'Settings per guild',
@@ -13,18 +12,14 @@ import type { GuildSettings } from '#types'
 })
 export default class Settings extends ArielCommand {
   public async list(message: Message) {
-    const { data: guild_data } = await db
-      .from<GuildSettings>('guilds')
-      .select()
-      .eq('guild_id', message.guild.id)
-      .single()
+    const { anti } = await GuildSettings.findOne({ guild_id: message.guild.id })
 
     const embed = new MessageEmbed()
       .setTitle(`Guild Settings | ${message.guild.name}`)
       .setDescription(
-        `**Anti-Unmentionable:** ${guild_data['anti-unmentionable'] ? 'Enabled' : 'Disabled'}\n` +
-          `**Anti-Invites:** ${guild_data['anti-invites'] ? 'Enabled' : 'Disabled'}` +
-          `**Anti-Gifts:** ${guild_data['anti-gifts'] ? 'Enabled' : 'Disabled'}`
+        `**Anti-Unmentionable:** ${anti.unmentionable ? 'Enabled' : 'Disabled'}\n` +
+          `**Anti-Invites:** ${anti.invites ? 'Enabled' : 'Disabled'}` +
+          `**Anti-Gifts:** ${anti.gifts ? 'Enabled' : 'Disabled'}`
       )
       .setFooter(`To disable these options use ${cfg.prefix}anti `)
 
@@ -101,20 +96,20 @@ export default class Settings extends ArielCommand {
   private async EnableAnti(message: Message, anti: string) {
     switch (anti) {
       case 'unmentionable': {
-        await db.from<GuildSettings>('guilds').update({ 'anti-unmentionable': true }).eq('guild_id', message.guild.id)
+        await GuildSettings.findOneAndUpdate({ guild_id: message.guild.id }, { $set: { 'anti.unmentionable': true } })
 
         return await message.channel.send('Now filtering unmentionable names')
       }
       case 'invite':
       case 'invites': {
-        await db.from<GuildSettings>('guilds').update({ 'anti-invites': true }).eq('guild_id', message.guild.id)
+        await GuildSettings.findOneAndUpdate({ guild_id: message.guild.id }, { $set: { 'anti.invites': true } })
 
         return await message.channel.send('Now filtering discord invites')
       }
 
       case 'gift':
       case 'gifts': {
-        await db.from<GuildSettings>('guilds').update({ 'anti-gifts': true }).eq('guild_id', message.guild.id)
+        await GuildSettings.findOneAndUpdate({ guild_id: message.guild.id }, { $set: { 'anti.gifts': true } })
 
         return await message.channel.send('Now filtering discord gifts')
       }
@@ -125,20 +120,20 @@ export default class Settings extends ArielCommand {
   private async DisableAnti(message: Message, anti: string) {
     switch (anti) {
       case 'unmentionable': {
-        await db.from<GuildSettings>('guilds').update({ 'anti-unmentionable': false }).eq('guild_id', message.guild.id)
+        await GuildSettings.findOneAndUpdate({ guild_id: message.guild.id }, { $set: { 'anti.unmentionable': false } })
 
         return await message.channel.send('No longer filtering unmentionable names')
       }
       case 'invite':
       case 'invites': {
-        await db.from<GuildSettings>('guilds').update({ 'anti-invites': false }).eq('guild_id', message.guild.id)
+        await GuildSettings.findOneAndUpdate({ guild_id: message.guild.id }, { $set: { 'anti.invites': false } })
 
         return await message.channel.send('No longer filtering discord invites')
       }
 
       case 'gift':
       case 'gifts': {
-        await db.from<GuildSettings>('guilds').update({ 'anti-invites': false }).eq('guild_id', message.guild.id)
+        await GuildSettings.findOneAndUpdate({ guild_id: message.guild.id }, { $set: { 'anti.gifts': true } })
 
         return await message.channel.send('Now filtering discord gifts')
       }

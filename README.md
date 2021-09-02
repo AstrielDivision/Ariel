@@ -3,8 +3,8 @@
 
 [![Continuous Delivery](https://github.com/AstraeaStudios/Ariel/actions/workflows/okteto-push.yml/badge.svg)](https://github.com/AstraeaStudios/Ariel/actions/workflows/okteto-push.yml)
 
-![GitHub issues](https://img.shields.io/github/issues-raw/AstraeaStudios/Ariel)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/AstraeaStudios/Ariel)
+![GitHub issues](https://img.shields.io/github/issues-raw/AstrielDivision/Ariel)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/AstrielDivision/Ariel)
 [![Discord Bots](https://top.gg/api/widget/status/609269728455688193.svg)](https://top.gg/bot/609269728455688193)
 
 > Image, Moderation and Utility bot.

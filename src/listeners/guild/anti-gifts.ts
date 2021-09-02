@@ -1,8 +1,7 @@
 import { Events, Listener, ListenerOptions } from '@sapphire/framework'
 import { ApplyOptions } from '@sapphire/decorators'
-import db from '#database'
 import type { Message } from 'discord.js'
-import type { GuildSettings } from '#types'
+import GuildSettings from '#lib/Models/GuildSettings'
 
 @ApplyOptions<ListenerOptions>({
   event: Events.MessageCreate
@@ -13,9 +12,9 @@ export default class AntiInvites extends Listener {
   public async run(message: Message) {
     if (!this.regex.test(message.content)) return null
 
-    const { data: guild } = await db.from<GuildSettings>('guilds').select().eq('guild_id', message.guild.id).single()
+    const { anti } = await GuildSettings.findOne({ guild_id: message.guild.id })
 
-    if (!guild['anti-gifts']) return null
+    if (!anti.gifts) return null
 
     return await message.delete()
   }

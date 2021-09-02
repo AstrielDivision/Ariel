@@ -45,6 +45,8 @@ export default class E621 extends ArielCommand {
         embeds: [embed]
       })
     }
+
+    return undefined
   }
 
   private trimDescription(description: string, max = 4048): string {

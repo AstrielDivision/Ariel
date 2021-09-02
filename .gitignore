@@ -114,3 +114,7 @@ dist
 # Configuration
 !config/main.example.json
 config/*.json
+
+# Build directory
+
+build

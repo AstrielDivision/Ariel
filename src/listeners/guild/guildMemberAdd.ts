@@ -3,17 +3,17 @@ import { ApplyOptions } from '@sapphire/decorators'
 import type { GuildMember } from 'discord.js'
 // @ts-ignore
 import clean from '@aero/sanitizer'
-import db from '#database'
-import type { GuildSettings } from '#types'
+import GuildSettings from '#lib/Models/GuildSettings'
 
 @ApplyOptions<ListenerOptions>({
   event: Events.GuildMemberAdd
 })
 export default class guildMemberAdd extends Listener {
   public async run(member: GuildMember): Promise<GuildMember> {
-    const { data: guild } = await db.from<GuildSettings>('guilds').select().eq('guild_id', member.guild.id).single()
+    const { anti } = await GuildSettings.findOne({ guild_id: member.guild.id })
 
-    if (guild['anti-unmentionable']) await this.cleanName(member)
+    if (anti.unmentionable) await this.cleanName(member)
+
     return member
   }
 

@@ -13,7 +13,7 @@ export default async function request(client: Client, options: Config): Promise<
         {
           method: FetchMethods.Get,
           headers: {
-            'User-Agent': `${c.defaults.useragent} [ID: ${client.id}]`,
+            'User-Agent': `${c.defaults.useragent} [ID: ${client?.id}]`,
             authorization:
               cfg.e621?.username && cfg.e621?.api_key
                 ? `Basic ${Buffer.from(`${cfg.e621?.username}:${cfg.e621?.api_key}`, 'binary').toString('base64')}`

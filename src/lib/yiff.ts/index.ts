@@ -11,7 +11,7 @@ export default class {
   public async e621(tags: string, limit?: number): Promise<any> {
     const res = await request(this.client, {
       site: 'e621',
-      limit: limit || 1,
+      limit: limit ?? 1,
       tags: tags
     }).catch((err: Error) => console.error(err))
 

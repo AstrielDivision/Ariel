@@ -1,5 +1,5 @@
 {
-  "extends": "../tsconfig.base.json",
+  "extends": "@astriel-division/ts-config/src/tsconfig.json",
   "compilerOptions": {
     "outDir": "../build",
     "rootDir": ".",
@@ -8,10 +8,10 @@
       "#lib/Structures/BaseCommand": ["lib/Structures/Command.ts"],
       "#lib/Structures/commands/CanvasCommand": ["lib/Structures/commands/CanvasCommand.ts"],
       "#lib/Structures/commands/RedditCommand": ["lib/Structures/commands/RedditCommand.ts"],
-      "#database": ["lib/database.ts"],
       "#types": ["lib/Types"],
       "#lib/*": ["lib/*"]
-    }
+    },
+    "strictNullChecks": false
   },
   "include": ["."],
   "exclude": ["tsconfig.json"]
