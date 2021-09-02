@@ -69,7 +69,7 @@
     "@astriel-division/eslint-config": "^1.0.9",
     "@astriel-division/ts-config": "^1.0.5",
     "@sapphire/decorators": "next",
-    "@sapphire/discord-utilities": "^2.1.5",
+    "@sapphire/discord-utilities": "2.1.5",
     "@sapphire/discord.js-utilities": "next",
     "@sapphire/fetch": "next",
     "@sapphire/framework": "next",

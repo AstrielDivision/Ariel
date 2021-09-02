@@ -433,7 +433,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/discord-utilities@npm:^2.1.5":
+"@sapphire/discord-utilities@npm:2.1.5, @sapphire/discord-utilities@npm:^2.1.5":
   version: 2.1.5
   resolution: "@sapphire/discord-utilities@npm:2.1.5"
   dependencies:
@@ -1176,7 +1176,7 @@ __metadata:
     "@commitlint/cli": ^13.1.0
     "@commitlint/config-conventional": ^13.1.0
     "@sapphire/decorators": next
-    "@sapphire/discord-utilities": ^2.1.5
+    "@sapphire/discord-utilities": 2.1.5
     "@sapphire/discord.js-utilities": next
     "@sapphire/fetch": next
     "@sapphire/framework": next
