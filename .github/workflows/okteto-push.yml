@@ -1,0 +1,51 @@
+name: Continuous Delivery
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "* */23 * * *"
+
+jobs:
+  sentry-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Get version
+        id: pkg-version
+        run: |
+          PKG_VERSION=$(cat package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[",]//g' | tr -d '[[:space:]]')
+
+          echo "::set-output name=pkgVersion::$PKG_VERSION"
+      - name: Sentry Release
+        uses: getsentry/action-release@v1
+        env:
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+          SENTRY_ORG: ${{ secrets.SENTRY_ORG }}
+          SENTRY_PROJECT: ${{ secrets.SENTRY_PROJECT }}
+        with:
+          environment: 'production'
+          version: ${{ steps.pkg-version.outputs.pkgVersion }}
+
+  push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Login
+        uses: okteto/login@master
+        with:
+          token: ${{ secrets.OKTETO_TOKEN }}
+      - name: Namespace
+        uses: okteto/namespace@master
+        with:
+          namespace: artiefuzzz
+      - name: Configuration
+        run: echo -n "${{ secrets.CONFIG }}" | base64 -d > config/main.json
+      - name: Deploy Stack
+        uses: okteto/deploy-stack@master
+        with:
+          build: true
