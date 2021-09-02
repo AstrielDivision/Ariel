@@ -26,6 +26,8 @@
     "prettiest": "prettier --write src && yarn lint:fix"
   },
   "devDependencies": {
+    "@astriel-division/eslint-config": "^1.0.9",
+    "@astriel-division/ts-config": "^1.0.5",
     "@commitlint/cli": "^13.1.0",
     "@commitlint/config-conventional": "^13.1.0",
     "@tmware/prettier-config": "^1.0.3",
@@ -66,8 +68,6 @@
   "dependencies": {
     "@aero/ksoft": "^4.0.0-rc1",
     "@aero/sanitizer": "^1.2.0",
-    "@astriel-division/eslint-config": "^1.0.9",
-    "@astriel-division/ts-config": "^1.0.5",
     "@sapphire/decorators": "next",
     "@sapphire/discord-utilities": "2.1.5",
     "@sapphire/discord.js-utilities": "next",
