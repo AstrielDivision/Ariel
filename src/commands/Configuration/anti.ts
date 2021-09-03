@@ -18,7 +18,7 @@ export default class Settings extends ArielCommand {
       .setTitle(`Guild Settings | ${message.guild.name}`)
       .setDescription(
         `**Anti-Unmentionable:** ${anti.unmentionable ? 'Enabled' : 'Disabled'}\n` +
-          `**Anti-Invites:** ${anti.invites ? 'Enabled' : 'Disabled'}` +
+          `**Anti-Invites:** ${anti.invites ? 'Enabled' : 'Disabled'}\n` +
           `**Anti-Gifts:** ${anti.gifts ? 'Enabled' : 'Disabled'}`
       )
       .setFooter(`To disable these options use ${cfg.prefix}anti `)
