@@ -7,30 +7,19 @@ import GuildSettings from '#lib/Models/GuildSettings'
 
 @ApplyOptions<ArielCommandOptions>({
   description: 'Settings per guild',
-  usage: '<enable | disable | list: default> [new value]',
+  usage: '<enable | disable | list: default> [unmentionable | invites, invite | gifts, gift]',
   subCommands: ['enable', 'disable', { input: 'list', default: true }]
 })
 export default class Settings extends ArielCommand {
   public async list(message: Message) {
-    const { anti } = await GuildSettings.findOne({ guild_id: message.guild.id })
-
-    const embed = new MessageEmbed()
-      .setTitle(`Guild Settings | ${message.guild.name}`)
-      .setDescription(
-        `**Anti-Unmentionable:** ${anti.unmentionable ? 'Enabled' : 'Disabled'}\n` +
-          `**Anti-Invites:** ${anti.invites ? 'Enabled' : 'Disabled'}\n` +
-          `**Anti-Gifts:** ${anti.gifts ? 'Enabled' : 'Disabled'}`
-      )
-      .setFooter(`To disable these options use ${cfg.prefix}anti `)
-
-    return await message.channel.send({ embeds: [embed] })
+    return await this.defaultEmbed(message)
   }
 
   @RequiresUserPermissions('MANAGE_GUILD')
   public async enable(message: Message, args: Args) {
-    const setting = await args.pick('string')
+    const setting = (await args.pickResult('string')).value
 
-    const embed = new MessageEmbed()
+    if (!setting) return await this.defaultEmbed(message)
 
     switch (setting.toLowerCase()) {
       case 'unmentionable': {
@@ -60,16 +49,16 @@ export default class Settings extends ArielCommand {
       }
 
       default: {
-        return embed.setDescription('You can enable: anti `unmentionable` names and anti discord `invites`')
+        return await this.defaultEmbed(message)
       }
     }
   }
 
   @RequiresUserPermissions('MANAGE_GUILD')
   public async disable(message: Message, args: Args) {
-    const setting = await args.pick('string')
+    const setting = (await args.pickResult('string')).value
 
-    const embed = new MessageEmbed()
+    if (!setting) return await this.defaultEmbed(message)
 
     switch (setting.toLowerCase()) {
       case 'unmentionable': {
@@ -87,7 +76,7 @@ export default class Settings extends ArielCommand {
       }
 
       default: {
-        return embed.setDescription('You can disable: anti `unmentionable` names and anti discord `invites`')
+        return await this.defaultEmbed(message)
       }
     }
   }
@@ -138,5 +127,20 @@ export default class Settings extends ArielCommand {
         return await message.channel.send('Now filtering discord gifts')
       }
     }
+  }
+
+  private async defaultEmbed(message: Message) {
+    const { anti } = await GuildSettings.findOne({ guild_id: message.guild.id })
+
+    const embed = new MessageEmbed()
+      .setTitle(`Guild Settings | ${message.guild.name}`)
+      .setDescription(
+        `Filtering **unmentionable** names?: ${anti.unmentionable ? 'Yes' : 'No'}\n` +
+          `Filtering **invites**?: ${anti.invites ? 'Yes' : 'No'}\n` +
+          `Filtering **gifts**?: ${anti.gifts ? 'Yes' : 'No'}`
+      )
+      .setFooter(`To disable these use ${cfg.prefix}anti disable [name]`)
+
+    return await message.channel.send({ embeds: [embed] })
   }
 }
