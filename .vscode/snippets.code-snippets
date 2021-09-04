@@ -36,7 +36,7 @@
     "description": "Astraea Command"
 	  },
 	  "AstraeaListener": {
-      "prefix": "AstraeaListener",
+      "prefix": "ArielListener",
       "body": [
         "import { Events, Listener, ListenerOptions } from '@sapphire/framework'",
         "import { ApplyOptions } from '@sapphire/decorators'",
@@ -46,7 +46,7 @@
         "  event: Events.MessageCreate",
         "})",
         "export default class Example extends Listener {",
-        "  public run(message: Message): void {",
+        "  public run(message: Message) {",
         "    return null",
         "  }",
         "}",
