@@ -16,7 +16,7 @@ export default class Prefix extends ArielCommand {
     const prefix = await args.pick('string')
 
     if (!prefix) return await message.channel.send('No new prefix provided')
-    if (prefix.length >= 3) return await message.channel.send('The prefix must be less than 3 characters long')
+    if (prefix.length > 3) return await message.channel.send('The prefix must be less than 3 characters long')
 
     await GuildSettings.findOneAndUpdate({ guild_id: message.guild.id }, { $set: { prefix: prefix } })
 
