@@ -3,11 +3,13 @@
 ## Application Detail
 
 * Ariel / Astraea  is an Open Source Discord Bot written in TypeScript and built upon the [`@sapphire/framework`](https://github.com/sapphiredev/framework) and [`Discord.js`](http://discord.js.org/).
-* Ariel / Astraea is a Image, Moderation and Utility bot. Most of our Images are provided by [`KSoft.si`](https://api.ksoft.si)
+* Ariel / Astraea is a Image, Moderation and Utility bot. 
+* Most of our Images are provided by [`KSoft.si`](https://api.ksoft.si) (We do not send any data to KSoft.si)
 
 ## Data Collection
 
-When inviting this bot to your Guild, the bot sends an embed to our webhook with the following information: Guild Name and Guild ID.
+When inviting this bot to your Guild, the bot sends an embed to our webhook with the following information: Guild Name and ID.
+When our bot leaves your Guild, the bot also sends an embed to our webhook with the following information: Guild Name and ID
 
 We store the following data in our database:
 
