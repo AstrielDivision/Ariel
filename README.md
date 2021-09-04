@@ -10,7 +10,6 @@
 > Image, Moderation and Utility bot.
 
 </div>
-<br>
 
 ## Self Host
 
