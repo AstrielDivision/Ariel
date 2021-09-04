@@ -50,4 +50,8 @@ export default class Utils {
   public isOwner(id: string | Snowflake): boolean {
     return cfg.owners.includes(id)
   }
+
+  public isAuthor(author: User, user: User): boolean {
+    return author.id === user.id
+  }
 }
