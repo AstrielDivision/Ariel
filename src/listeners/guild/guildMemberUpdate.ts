@@ -6,7 +6,7 @@ import GuildSettings from '#lib/Models/GuildSettings'
 import clean from '@aero/sanitizer'
 
 @ApplyOptions<ListenerOptions>({
-  event: Events.MessageCreate
+  event: Events.GuildMemberUpdate
 })
 export default class guildMemberUpdate extends Listener {
   public async run(oldMember: GuildMember, newMember: GuildMember) {
