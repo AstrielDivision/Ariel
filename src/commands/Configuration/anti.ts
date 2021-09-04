@@ -81,7 +81,6 @@ export default class Settings extends ArielCommand {
     }
   }
 
-  // @ts-ignore
   private async EnableAnti(message: Message, anti: string) {
     switch (anti) {
       case 'unmentionable': {
@@ -103,9 +102,10 @@ export default class Settings extends ArielCommand {
         return await message.channel.send('Now filtering discord gifts')
       }
     }
+
+    return undefined
   }
 
-  // @ts-ignore
   private async DisableAnti(message: Message, anti: string) {
     switch (anti) {
       case 'unmentionable': {
@@ -127,6 +127,8 @@ export default class Settings extends ArielCommand {
         return await message.channel.send('Now filtering discord gifts')
       }
     }
+
+    return undefined
   }
 
   private async defaultEmbed(message: Message) {
