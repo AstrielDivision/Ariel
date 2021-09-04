@@ -7,6 +7,7 @@ import { ClientOptions, version as djs } from 'discord.js'
 import Yiff from '#lib/yiff.ts/index'
 import * as Sentry from '@sentry/node'
 import mongoose from 'mongoose'
+import '#setup'
 
 export default class Client extends SapphireClient {
   ksoft: KSoftClient
@@ -36,7 +37,7 @@ export default class Client extends SapphireClient {
   }
 
   /**
-   * Start the Client / Bot
+   * Starts the Client / Bot
    * @returns {Promise<Client>}
    */
   public async start(): Promise<Client> {
@@ -49,7 +50,7 @@ export default class Client extends SapphireClient {
   private async init(): Promise<void> {
     Sentry.init({
       dsn: cfg.sentry,
-      release: `Astraea@${pkg.version}`,
+      release: `Ariel@${pkg.version}`,
       tracesSampleRate: 1.0
     })
     Sentry.setTags({
