@@ -5,6 +5,9 @@ import type { Message } from 'discord.js'
 @ApplyOptions<ListenerOptions>({
   event: Events.MessageUpdate
 })
+/**
+ * Replay Message events for handling upon update
+ */
 export default class messageUpdate extends Listener {
   public run(oldMsg: Message, newMsg: Message) {
     if (oldMsg.content === newMsg.content) return null

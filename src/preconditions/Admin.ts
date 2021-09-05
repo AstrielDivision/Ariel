@@ -6,6 +6,6 @@ export default class Admin extends Precondition {
     if (!message.guild) return this.error({ message: 'You cannot run this command in DMs.' })
     return message.member.permissions.has('ADMINISTRATOR')
       ? this.ok()
-      : this.error({ message: 'You are not a Administrator.' })
+      : this.error({ message: 'You are not an Administrator.' })
   }
 }
