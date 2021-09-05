@@ -18,7 +18,9 @@ export default class Reason extends ArielCommand {
     if (!warnID) return await message.channel.send('You must provide a warn ID. (Must be a valid one)')
     if (!newVal) return await message.channel.send('Please specify a new value for this field.')
 
-    if (user.id === message.author.id) return await message.channel.send('You cannot set warning reasons for yourself.')
+    if (!message.member.permissions.has('ADMINISTRATOR') && user.id === message.author.id) {
+      return await message.channel.send('You cannot set warning reasons for yourself.')
+    }
     if (user.id === this.container.client.id) return await message.channel.send('I won\'t have any warns.')
 
     await Warnings.findOneAndUpdate(
