@@ -145,4 +145,19 @@ export default class Settings extends ArielCommand {
 
     return await message.channel.send({ embeds: [embed] })
   }
+
+  private async defaultEmbed(message: Message) {
+    const { anti } = await GuildSettings.findOne({ guild_id: message.guild.id })
+
+    const embed = new MessageEmbed()
+      .setTitle(`Guild Settings | ${message.guild.name}`)
+      .setDescription(
+        `Filtering **unmentionable** names?: ${anti.unmentionable ? 'Yes' : 'No'}\n` +
+          `Filtering **invites**?: ${anti.invites ? 'Yes' : 'No'}\n` +
+          `Filtering **gifts**?: ${anti.gifts ? 'Yes' : 'No'}`
+      )
+      .setFooter(`To disable these use ${cfg.prefix}anti disable [name]`)
+
+    return await message.channel.send({ embeds: [embed] })
+  }
 }
