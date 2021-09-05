@@ -13,10 +13,10 @@ import GuildSettings from '#lib/Models/GuildSettings'
 export default class Prefix extends ArielCommand {
   @RequiresUserPermissions('MANAGE_GUILD')
   public async set(message: Message, args: Args) {
-    const prefix = await args.pick('string')
+    const prefix = (await args.pickResult('string')).value
 
     if (!prefix) return await message.channel.send('No new prefix provided')
-    if (prefix.length > 3) return await message.channel.send('The prefix must be less than 3 characters long')
+    if (prefix.length > 3) return await message.channel.send('The prefix cannot contain more than 3 characters')
 
     await GuildSettings.findOneAndUpdate({ guild_id: message.guild.id }, { $set: { prefix: prefix } })
 
