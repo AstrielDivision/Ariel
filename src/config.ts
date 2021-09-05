@@ -25,6 +25,12 @@ interface Configuration {
   sentry: string
 }
 
+interface Contributor {
+  name: string
+  email: string
+  url: string
+}
+
 export interface PackageJson {
   name: string
   version: string
@@ -34,7 +40,7 @@ export interface PackageJson {
     [name: string]: string
   }
   authors: string[]
-  contributors: string[]
+  contributors: Contributor[]
   license: string
   devDependencies?: {
     [packageName: string]: string

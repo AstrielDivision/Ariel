@@ -4,7 +4,16 @@
   "main": "build/index",
   "author": "AstrielDivision",
   "contributors": [
-    "TMUniversal <me@tmuniversal.eu> (https://tmuniversal.eu/)"
+    {
+      "name" : "TMUniversal",
+      "email": "me@tmuniversal.eu",
+      "url": "https://tmuniversal.eu/"
+    },
+    {
+      "name": "Test",
+      "email": "test@example.com",
+      "url": "https://example.com"
+    }
   ],
   "license": "Apache-2.0",
   "private": true,
