@@ -18,6 +18,9 @@ declare module '@sapphire/framework' {
   }
   interface Preconditions {
     OwnerOnly: never
+    Mod: never
+    Admin: never
+    Manager: never
   }
 }
 declare module 'discord.js' {

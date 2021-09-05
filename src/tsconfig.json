@@ -9,7 +9,8 @@
       "#lib/Structures/commands/CanvasCommand": ["lib/Structures/commands/CanvasCommand.ts"],
       "#lib/Structures/commands/RedditCommand": ["lib/Structures/commands/RedditCommand.ts"],
       "#types": ["lib/Types"],
-      "#lib/*": ["lib/*"]
+      "#lib/*": ["lib/*"],
+      "#setup": ["lib/setup.ts"]
     },
     "strictNullChecks": false
   },

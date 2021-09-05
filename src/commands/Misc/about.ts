@@ -23,19 +23,21 @@ export default class About extends ArielCommand {
       .addFields(
         {
           name: 'Developed by',
-          value: 'ArtieFuzzz#8298 @ [Astraea Studios](https://github.com/AstraeaStudios/Astraea)'
+          value: 'ArtieFuzzz#8298 @ [AstrielDivision](https://github.com/AstrielDivision/Ariel)'
         },
-        { name: 'Contributors', value: pkg.contributors.join('\n') },
+        {
+          name: 'Contributors',
+          value: pkg.contributors.map(c => `${c.name} <${c.email}> [Website](${c.url})`).join('\n')
+        },
         {
           name: 'Built With',
           value:
-            '[Discord.js](https://github.com/discordjs/discord.js)\n [Sapphire/Framework](https://github.com/sapphiredev/framework)'
+            '[Discord.js](https://github.com/discordjs/discord.js)\n [Sapphire](https://github.com/sapphiredev/framework)'
         }
       )
 
       .setFooter(`v${pkg.version} - Written in TypeScript, powered by Node.js`)
       .setTimestamp()
-      //
       .setThumbnail(this.container.client.user.avatarURL())
 
     return await message.channel.send({ embeds: [embed] })

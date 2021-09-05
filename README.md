@@ -1,4 +1,5 @@
 <div align="center">
+
 # Ariel
 
 [![Continuous Delivery](https://github.com/AstrielDivision/Ariel/actions/workflows/okteto-push.yml/badge.svg)](https://github.com/AstrielDivision/Ariel/actions/workflows/okteto-push.yml)
@@ -33,7 +34,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://tmuniversal.eu/"><img src="https://avatars.githubusercontent.com/u/10200399?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Universal Studio</b></sub></a><br /><a href="https://github.com/AstraeaStudios/Ariel/commits?author=TMUniversal" title="Code">💻</a> <a href="https://github.com/AstraeaStudios/Ariel/pulls?q=is%3Apr+reviewed-by%3ATMUniversal" title="Reviewed Pull Requests">👀</a> <a href="#maintenance-TMUniversal" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="https://tmuniversal.eu/"><img src="https://avatars.githubusercontent.com/u/10200399?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Universal Studio</b></sub></a><br /><a href="https://github.com/AstrielDivision/Ariel/commits?author=TMUniversal" title="Code">💻</a> <a href="https://github.com/AstrielDivision/Ariel/pulls?q=is%3Apr+reviewed-by%3ATMUniversal" title="Reviewed Pull Requests">👀</a> <a href="#maintenance-TMUniversal" title="Maintenance">🚧</a></td>
   </tr>
 </table>
 

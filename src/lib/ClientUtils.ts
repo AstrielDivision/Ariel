@@ -4,7 +4,7 @@ import type { URL } from 'url'
 import cfg, { pkg } from '../config'
 import type Client from './Structures/client'
 
-const userAgent = `Astraea/v${pkg.version} (github.com/AstraeaStudios/Astraea)`
+const userAgent = `Ariel/v${pkg.version} (https://github.com/AstrielDivision/Ariel)`
 
 export default class Utils {
   client!: Client

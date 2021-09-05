@@ -25,7 +25,7 @@ export abstract class ArielRedditCommand extends ArielCommand {
     })
     const embed = new MessageEmbed()
       .setTitle(post.title)
-      .setFooter(`Powered by api.ksoft.si ${post.author} | Upvotes: ${post.upvotes} | Downvotes ${post.downvotes}`)
+      .setFooter(`Powered by KSoft.si ${post.author} | Upvotes: ${post.upvotes} | Downvotes ${post.downvotes}`)
       .setURL(post.link)
       .setTimestamp()
       .setImage(url)

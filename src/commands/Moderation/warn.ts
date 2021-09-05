@@ -8,7 +8,7 @@ import type { Args } from '@sapphire/framework'
   description: 'Warn a user',
   detailedDescription: 'Warn a user, remove a warn, set a field (reason only) or pardon a user\'s warn.',
   usage: '[remove | set | pardon] <@user / User ID> [reason]',
-  subCommands: ['remove', 'set', 'pardon', { input: 'warn', default: true }]
+  subCommands: ['remove', 'pardon', { input: 'warn', default: true }]
 })
 export default class Warn extends ArielCommand {
   @RequiresUserPermissions('KICK_MEMBERS')
@@ -39,23 +39,6 @@ export default class Warn extends ArielCommand {
   }
 
   @RequiresUserPermissions('KICK_MEMBERS')
-  public async set(message: Message, args: Args) {
-    const user = (await args.pickResult('member')).value.user
-    const warnID = (await args.pickResult('string')).value
-    const field = (await args.pickResult('string')).value
-    const newVal = (await args.restResult('string')).value
-
-    if (!warnID) return await message.channel.send('You must provide a warn ID. (Must be a valid one)')
-    if (!field) return await message.channel.send('Please specify a field. (hint: You can only set the `reason`)')
-    if (!newVal) return await message.channel.send('Please specify a new value for this field.')
-
-    if (user.id === message.author.id) return await message.channel.send('You cannot set warn fields for yourself.')
-    if (user.id === this.container.client.id) return await message.channel.send('I won\'t have any warns.')
-
-    return await this.SetWarn(message, user ?? message.author, warnID, field, newVal)
-  }
-
-  @RequiresUserPermissions('KICK_MEMBERS')
   public async pardon(message: Message, args: Args) {
     const { user } = (await args.pickResult('member')).value
     const warnID = (await args.pickResult('string')).value
@@ -79,22 +62,6 @@ export default class Warn extends ArielCommand {
     return await message.channel.send(
       isPardoned ? `${user.toString()}'s case is no longer pardoned.` : `${user.toString()}'s case has been pardoned.`
     )
-  }
-
-  private async SetWarn(message: Message, user: User, ID: string, field?: string, newVal?: string) {
-    switch (field) {
-      case 'reason': {
-        await Warnings.findOneAndUpdate({ user: user.id, id: ID, guild: message.guild.id }, { reason: newVal })
-
-        return await message.channel.send(`Successfully updated the reason to \`${newVal}\``)
-      }
-
-      default: {
-        return await message.channel.send(
-          'You can only set the **reason**. Also your command should look like: `warn @user warnID reason new value here`'
-        )
-      }
-    }
   }
 
   private async RemoveWarn(user: User, ID: string, message: Message) {
