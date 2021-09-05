@@ -1,6 +1,6 @@
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
 import type { Message } from 'discord.js'
-import { ApplyOptions } from '@sapphire/decorators'
+import { ApplyOptions, RequiresUserPermissions } from '@sapphire/decorators'
 import type { Args } from '@sapphire/framework'
 import Warnings from '#lib/Models/Warnings'
 
@@ -9,6 +9,7 @@ import Warnings from '#lib/Models/Warnings'
   usage: '<@user / ID> <WarningID> <reason>'
 })
 export default class Reason extends ArielCommand {
+  @RequiresUserPermissions('KICK_MEMBERS')
   public async run(message: Message, args: Args) {
     const user = (await args.pickResult('member')).value.user
     const warnID = (await args.pickResult('string')).value
