@@ -1,4 +1,5 @@
 <div align="center">
+
 # Ariel
 
 [![Continuous Delivery](https://github.com/AstrielDivision/Ariel/actions/workflows/okteto-push.yml/badge.svg)](https://github.com/AstrielDivision/Ariel/actions/workflows/okteto-push.yml)
