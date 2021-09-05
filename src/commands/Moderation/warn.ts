@@ -30,7 +30,6 @@ export default class Warn extends ArielCommand {
     const warnID = (await args.pickResult('string')).value
     const member = args.finished ? null : await args.pick('member')
 
-    if (!member) return await message.channel.send('You must provide a user.')
     if (!warnID) return await message.channel.send('You must provide a warnID. (Must be a valid one)')
 
     if (member?.user.id === message.author.id) {
