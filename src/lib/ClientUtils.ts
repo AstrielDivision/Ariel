@@ -12,10 +12,6 @@ export default class Utils {
     this.client = client
   }
 
-  public randomString(length: number): string {
-    return Math.random().toString(21).substr(2, length)
-  }
-
   public async findUser(id: string | Snowflake): Promise<User | undefined> {
     return await this.client.users.resolve(id)?.fetch()
   }

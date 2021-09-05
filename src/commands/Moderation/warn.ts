@@ -3,11 +3,12 @@ import { Message, User, MessageEmbed } from 'discord.js'
 import { ApplyOptions, RequiresUserPermissions } from '@sapphire/decorators'
 import Warnings from '#lib/Models/Warnings'
 import type { Args } from '@sapphire/framework'
+import { nanoid } from 'nanoid'
 
 @ApplyOptions<ArielCommandOptions>({
   description: 'Warn a user',
   detailedDescription: 'Warn a user, remove a warn, set a field (reason only) or pardon a user\'s warn.',
-  usage: '[remove | set | pardon] <@user / User ID> [reason]',
+  usage: '[remove | pardon] <@user / User ID> [reason]',
   subCommands: ['remove', 'pardon', { input: 'warn', default: true }]
 })
 export default class Warn extends ArielCommand {
@@ -74,7 +75,7 @@ export default class Warn extends ArielCommand {
 
   private async CreateWarn(user: User, message: Message, reason?: string) {
     const warning = await new Warnings({
-      id: this.container.client.util.randomString(5).toUpperCase(),
+      id: nanoid(5).toUpperCase(),
       user: user.id,
       mod: message.author.id,
       reason: reason,
