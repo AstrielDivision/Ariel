@@ -23,7 +23,6 @@ export default class DES extends ArielCommand {
       return await message.channel.send('No secret provided. (Hint: use --secret=<randomText> or -s=<randomText>)')
     }
 
-    //
     if (message.guild.me.permissions.has(Permissions.FLAGS.MANAGE_MESSAGES)) void message.delete()
 
     const result = decryptFlag ? this.decrypt(text, secret, tripleFlag) : this.encrypt(text, secret, tripleFlag)

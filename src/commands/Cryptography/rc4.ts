@@ -26,7 +26,6 @@ export default class RC4Drop extends ArielCommand {
       )
     }
 
-    //
     if (message.guild.me.permissions.has(Permissions.FLAGS.MANAGE_MESSAGES)) void message.delete()
 
     const result = decryptFlag ? this.decrypt(text, secret) : this.encrypt(text, secret)
