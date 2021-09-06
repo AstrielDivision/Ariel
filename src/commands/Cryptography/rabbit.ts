@@ -3,11 +3,11 @@ import type { Args } from '@sapphire/framework'
 import crypto from 'crypto-js'
 import { Message, Permissions } from 'discord.js'
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
+import i18 from 'i18next'
 
 @ApplyOptions<ArielCommandOptions>({
-  name: 'rabbit',
-  description: 'Encrypt text with the Rabbit Cipher or decrypt Rabbit encrypted text',
-  usage: '<text> <-s=<randomLetters> or --secret=<randomLetters>>',
+  description: 'commands/cryptography:rabbitDescription',
+  usage: '<text> <-s=<randomLetters> / --secret=<randomLetters>>',
   options: ['secret', 's'],
   flags: ['d', 'decrypt']
 })
@@ -17,11 +17,9 @@ export default class Rabbit extends ArielCommand {
     const text = (await args.restResult('string')).value
     const secret = args.getOption('s', 'secret')
 
-    if (!text) return await message.channel.send('No text provided')
+    if (!text) return await message.channel.send(i18.t('commands/cryptography:noText'))
     if (!secret) {
-      return await message.channel.send(
-        'No secret provided. (Hint: Use -s=<randomLetters> or --secret=<randomLetters>)'
-      )
+      return await message.channel.send(i18.t('commands/cryptography:noSecret'))
     }
 
     if (message.guild.me.permissions.has(Permissions.FLAGS.MANAGE_MESSAGES)) void message.delete()
