@@ -1,5 +1,4 @@
 {
   "pong": "Pong!",
-  "success": "Ping: {{ws}}ms\nHeartbeat: {{heartbeat}}ms",
-  "description": "Returns bot ping"
+  "success": "Ping: {{ws}}ms\nHeartbeat: {{heartbeat}}ms"
 }
