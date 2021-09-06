@@ -1,0 +1,12 @@
+{
+  "description": "Set the discord bot prefix (Current Guild only)",
+  "error": {
+    "noPrefix": "No new prefix provided",
+    "prefixTooLong": "The prefix cannot contain more than 3 characters"
+  },
+  "success": {
+    "setPrefix": "Successfully set the prefix to {{prefix}}",
+    "resetPrefix": "Successfully reset the prefix"
+  },
+  "showPrefix": "The current prefix for this Guild is: **{{prefix}}**"
+}
