@@ -3,6 +3,7 @@ import Logger from './lib/Structures/Logger'
 import cfg from './config'
 import type { Message } from 'discord.js'
 import GuildSettings from '#lib/Models/GuildSettings'
+import type { InternationalizationContext } from '@sapphire/plugin-i18next'
 
 const client = new Client({
   defaultPrefix: cfg.prefix,
@@ -14,6 +15,13 @@ const client = new Client({
     const { prefix } = await GuildSettings.findOne({ guild_id: message.guild.id })
 
     return prefix ?? cfg.prefix
+  },
+  i18n: {
+    fetchLanguage: async (message: InternationalizationContext) => {
+      const { language } = await GuildSettings.findOne({ guild_id: message.guild.id })
+
+      return language
+    }
   }
 })
 

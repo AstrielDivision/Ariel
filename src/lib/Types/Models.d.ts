@@ -4,6 +4,7 @@ import type { Snowflake } from 'discord.js'
 export interface GuildSettings extends Document {
   guild_id?: Snowflake
   prefix?: string | null
+  language?: string
   anti?: {
     unmentionable?: boolean
     invites?: boolean

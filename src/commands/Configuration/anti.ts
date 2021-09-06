@@ -2,11 +2,11 @@ import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
 import { Message, MessageEmbed } from 'discord.js'
 import { ApplyOptions, RequiresUserPermissions } from '@sapphire/decorators'
 import type { Args } from '@sapphire/framework'
-import cfg from '../../config'
 import GuildSettings from '#lib/Models/GuildSettings'
+import i18 from 'i18next'
 
 @ApplyOptions<ArielCommandOptions>({
-  description: 'Settings per guild',
+  description: 'commands/anti:description',
   usage: '<enable | disable | list: default> [unmentionable | invites, invite | gifts, gift]',
   subCommands: ['enable', 'disable', { input: 'list', default: true }]
 })
@@ -24,7 +24,7 @@ export default class Settings extends ArielCommand {
     switch (setting.toLowerCase()) {
       case 'unmentionable': {
         if (!message.guild.me.permissions.has('MANAGE_NICKNAMES')) {
-          return await message.channel.send('I don\'t have the `MANAGE_NICKNAMES` permission!')
+          return await message.channel.send(i18.t('commands/anti:permissionErr', { keys: { perm: 'MANGE_NICKNAMES' } }))
         }
 
         return await this.EnableAnti(message, 'unmentionable')
@@ -33,7 +33,7 @@ export default class Settings extends ArielCommand {
       case 'invite':
       case 'invites': {
         if (!message.guild.me.permissions.has('MANAGE_MESSAGES')) {
-          return await message.channel.send('I don\'t have the `MANAGE_MESSAGES` permission!')
+          return await message.channel.send(i18.t('commands/anti:permissionErr', { keys: { perm: 'MANGE_MESSAGES' } }))
         }
 
         return await this.EnableAnti(message, 'invites')
@@ -42,7 +42,7 @@ export default class Settings extends ArielCommand {
       case 'gift':
       case 'gifts': {
         if (!message.guild.me.permissions.has('MANAGE_MESSAGES')) {
-          return await message.channel.send('I don\'t have the `MANAGE_MESSAGES` permission!')
+          return await message.channel.send(i18.t('commands/anti:permissionErr', { keys: { perm: 'MANGE_MESSAGES' } }))
         }
 
         return await this.EnableAnti(message, 'gifts')
@@ -86,20 +86,20 @@ export default class Settings extends ArielCommand {
       case 'unmentionable': {
         await GuildSettings.findOneAndUpdate({ guild_id: message.guild.id }, { $set: { 'anti.unmentionable': true } })
 
-        return await message.channel.send('Now filtering unmentionable names')
+        return await message.channel.send(i18.t('commands/anti:enabled', { keys: { name: 'unmentionable names' } }))
       }
       case 'invite':
       case 'invites': {
         await GuildSettings.findOneAndUpdate({ guild_id: message.guild.id }, { $set: { 'anti.invites': true } })
 
-        return await message.channel.send('Now filtering discord invites')
+        return await message.channel.send(i18.t('commands/anti:enabled', { keys: { name: 'discord invites' } }))
       }
 
       case 'gift':
       case 'gifts': {
         await GuildSettings.findOneAndUpdate({ guild_id: message.guild.id }, { $set: { 'anti.gifts': true } })
 
-        return await message.channel.send('Now filtering discord gifts')
+        return await message.channel.send(i18.t('commands/anti:enabled', { keys: { name: 'discord gifts' } }))
       }
     }
 
@@ -111,20 +111,20 @@ export default class Settings extends ArielCommand {
       case 'unmentionable': {
         await GuildSettings.findOneAndUpdate({ guild_id: message.guild.id }, { $set: { 'anti.unmentionable': false } })
 
-        return await message.channel.send('No longer filtering unmentionable names')
+        return await message.channel.send(i18.t('commands/anti:disabled', { disabled: 'unmentionable names' }))
       }
       case 'invite':
       case 'invites': {
         await GuildSettings.findOneAndUpdate({ guild_id: message.guild.id }, { $set: { 'anti.invites': false } })
 
-        return await message.channel.send('No longer filtering discord invites')
+        return await message.channel.send(i18.t('commands/anti:disabled', { disabled: 'discord invites' }))
       }
 
       case 'gift':
       case 'gifts': {
         await GuildSettings.findOneAndUpdate({ guild_id: message.guild.id }, { $set: { 'anti.gifts': true } })
 
-        return await message.channel.send('Now filtering discord gifts')
+        return await message.channel.send(i18.t('commands/anti:disabled', { disabled: 'discord gifts' }))
       }
     }
 
@@ -132,16 +132,16 @@ export default class Settings extends ArielCommand {
   }
 
   private async defaultEmbed(message: Message) {
-    const { anti } = await GuildSettings.findOne({ guild_id: message.guild.id })
+    const { anti, prefix } = await GuildSettings.findOne({ guild_id: message.guild.id })
 
     const embed = new MessageEmbed()
-      .setTitle(`Guild Settings | ${message.guild.name}`)
+      .setTitle(`${i18.t('commands/anti:title')} | ${message.guild.name}`)
       .setDescription(
-        `Filtering **unmentionable** names?: ${anti.unmentionable ? 'Yes' : 'No'}\n` +
-          `Filtering **invites**?: ${anti.invites ? 'Yes' : 'No'}\n` +
-          `Filtering **gifts**?: ${anti.gifts ? 'Yes' : 'No'}`
+        `${i18.t('commands/anti:unmentionable', { yesNo: anti.unmentionable ? 'Yes' : 'No' })}\n` +
+          `${i18.t('commands/anti:message', { name: 'invites', yesNo: anti.invites ? 'Yes' : 'No' })}\n` +
+          `${i18.t('commands/anti:message', { name: 'gifts', yesNo: anti.gifts ? 'Yes' : 'No' })}`
       )
-      .setFooter(`To disable these use ${cfg.prefix}anti disable [name]`)
+      .setFooter(i18.t('commands/anti:disableFooter', { prefix }))
 
     return await message.channel.send({ embeds: [embed] })
   }

@@ -6,6 +6,7 @@ const schema = new Schema({
   registeredAt: { type: String, required: false, default: Date.now().toString() },
   guild_id: { required: true, type: String },
   prefix: { required: false, type: String, default: cfg.prefix },
+  language: { required: false, type: String, default: 'en-US' },
   anti: {
     required: false,
     type: Object,

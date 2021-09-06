@@ -4,6 +4,7 @@ import { KSoftClient } from '@aero/ksoft'
 import { SapphireClientOptions } from '@sapphire/framework'
 import StatusUpdater from '@tmware/status-rotate'
 import Yiff from './yiff.ts/index'
+import { InternationalizationClientOptions } from '@sapphire/plugin-i18next'
 
 declare module '@sapphire/framework' {
   interface SapphireClient {
@@ -24,5 +25,5 @@ declare module '@sapphire/framework' {
   }
 }
 declare module 'discord.js' {
-  interface ClientOptions extends SapphireClientOptions {}
+  interface ClientOptions extends SapphireClientOptions, InternationalizationClientOptions {}
 }
