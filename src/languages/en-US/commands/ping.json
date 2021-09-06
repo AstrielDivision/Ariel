@@ -1,0 +1,4 @@
+{
+  "pong": "Pong!",
+  "success": "Ping: {{ws}}ms\nHeartbeat: {{heartbeat}}ms"
+}

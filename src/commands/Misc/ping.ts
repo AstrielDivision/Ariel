@@ -1,6 +1,7 @@
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
 import type { Message } from 'discord.js'
 import { ApplyOptions } from '@sapphire/decorators'
+import { editLocalized, sendLocalized } from '@sapphire/plugin-i18next'
 
 @ApplyOptions<ArielCommandOptions>({
   name: 'ping',
@@ -8,10 +9,11 @@ import { ApplyOptions } from '@sapphire/decorators'
 })
 export default class Ping extends ArielCommand {
   public async run(message: Message) {
-    const ping = await message.channel.send('Pong!')
+    const ping = await sendLocalized(message, 'commands/ping:pong')
 
-    return await ping.edit(
-      `Ping: ${this.container.client.ws.ping} ms\nHeartbeat: ${ping.createdTimestamp - message.createdTimestamp} ms`
-    )
+    const ws = this.container.client.ws.ping
+    const heartbeat = ping.createdTimestamp - message.createdTimestamp
+
+    return await editLocalized(ping, { keys: 'commands/ping:success', formatOptions: { ws, heartbeat } })
   }
 }

@@ -97,6 +97,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.12.0":
+  version: 7.15.4
+  resolution: "@babel/runtime@npm:7.15.4"
+  dependencies:
+    regenerator-runtime: ^0.13.4
+  checksum: c40825430400e47c19b97e4142d5315d2910305b9714d44a711472587ee2fd4521fdba5f02ddd9df3902f5e988d9854fa83f4da1e0c091f70f6983fa52480606
+  languageName: node
+  linkType: hard
+
 "@babel/runtime@npm:^7.14.6, @babel/runtime@npm:^7.7.6":
   version: 7.15.3
   resolution: "@babel/runtime@npm:7.15.3"
@@ -517,6 +526,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sapphire/plugin-i18next@npm:2.0.0-next.e24c125.0":
+  version: 2.0.0-next.e24c125.0
+  resolution: "@sapphire/plugin-i18next@npm:2.0.0-next.e24c125.0"
+  dependencies:
+    "@sapphire/utilities": ^2.0.1
+    "@types/i18next-fs-backend": ^1.0.1
+    i18next: ^19.9.2
+    i18next-fs-backend: ^1.1.1
+    tslib: ^2.3.1
+  checksum: 0ca721768c6f721256f6fbc359c3e33d2a4d716f7ef2c5188a110aaecd9d83a150d81601785dd267d0172e68baadb3a2b9bc4d666cffd56c3c7405d748f68744
+  languageName: node
+  linkType: hard
+
 "@sapphire/plugin-subcommands@npm:2.0.0-next.3bd3e99.0":
   version: 2.0.0-next.3bd3e99.0
   resolution: "@sapphire/plugin-subcommands@npm:2.0.0-next.3bd3e99.0"
@@ -752,6 +774,15 @@ __metadata:
   version: 4.0.2
   resolution: "@types/crypto-js@npm:4.0.2"
   checksum: b9d03b6cc1152f0c817b3555e0638d87b62dcc4edfd886d409b50aa68dbe3017727f8fed634b8b4b10b0796e0cdd35379c50abfb28d3226666fdc908844e5934
+  languageName: node
+  linkType: hard
+
+"@types/i18next-fs-backend@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "@types/i18next-fs-backend@npm:1.0.1"
+  dependencies:
+    i18next: ^19.7.0
+  checksum: 090076ac4465784050fed199ea82ff4ef497f8b8a4c5f7e18532bb3ce40e4afe122c99e356190e4b3968875e64206609211a5d2f8358c610bb280f4cc9912002
   languageName: node
   linkType: hard
 
@@ -1171,6 +1202,7 @@ __metadata:
     "@sapphire/discord.js-utilities": 3.0.0-next.c4f992f5.0
     "@sapphire/fetch": 2.0.0-next.c4f992f5.0
     "@sapphire/framework": 2.0.0-next.9f81b7bb.0
+    "@sapphire/plugin-i18next": 2.0.0-next.e24c125.0
     "@sapphire/plugin-subcommands": 2.0.0-next.3bd3e99.0
     "@sapphire/type": 2.1.0
     "@sapphire/utilities": 2.0.1
@@ -2938,6 +2970,22 @@ __metadata:
   bin:
     husky: lib/bin.js
   checksum: 2ccfe6ddc51dc05ae8ea1e2fbb893344e93a813e00c595d6b5f5e704b7b998d6b0e2adda7c57f99b5e46a60dc07c7d860269a2ea91661c6bacef0eca8e0b8e96
+  languageName: node
+  linkType: hard
+
+"i18next-fs-backend@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "i18next-fs-backend@npm:1.1.1"
+  checksum: a7516b7c2cc176453897dea1cb0f78aee0a8bf6d77ee5ecde08698b7bde42cb02b8d48667f0c6fc663680400af94d20dbff2fbb5b07d7ca66a0980a7e75c1458
+  languageName: node
+  linkType: hard
+
+"i18next@npm:^19.7.0, i18next@npm:^19.9.2":
+  version: 19.9.2
+  resolution: "i18next@npm:19.9.2"
+  dependencies:
+    "@babel/runtime": ^7.12.0
+  checksum: a24207707eacb28488975f8921d843bc35b86f2a48504cb82eaf620e1aacddbda8d53a4dc600543a708ba49bc45e61072a753f250e89fad2c1932259190ef81a
   languageName: node
   linkType: hard
 
