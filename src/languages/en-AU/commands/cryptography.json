@@ -1,0 +1,11 @@
+{
+  "aesDescription": "Encrypt or Decrypt AES encrypted messages",
+  "noSecret": "No secret provided. (Hint: Use -s=<randomLetters> or --secret=<randomLetters>)",
+  "noText": "No text provided to encrypt / decrypt",
+  "unsuccessful": "Decryption Unsuccessful",
+  "base64Description": "Encode text to base64 or Decode base64 to text",
+  "base64DetailedDescription": "Use -d or --decode to decoded encoded text",
+  "desDescription": "Encrypt a message with DES or decrypt a DES message",
+  "rabbitDescription": "Encrypt text with the Rabbit Cipher or decrypt Rabbit encrypted text",
+  "RC4Description": "Encrypt messages by using the RC4Drop cipher or decrypt RC4Drop encrypted messages"
+}
