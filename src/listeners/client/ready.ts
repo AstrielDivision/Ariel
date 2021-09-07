@@ -20,14 +20,22 @@ export default class Ready extends Listener<typeof Events.ClientReady> {
     return this.container.logger.console(`${last ? '└─' : '├─'} Loaded ${store.size} ${store.name}.`)
   }
 
-  public run(): void {
+  private async init(): Promise<void> {
+    await this.container.stores.get('tasks').loadAll()
+
+    return null
+  }
+
+  public async run() {
     this.container.client.guilds.cache.map(async guild => {
       if (guild.available) return await guild.members.fetch()
       return null
     })
 
+    await this.init()
+
     this.printStoreDebugInformation()
-    void this.container.client.statusUpdater.updateStatus()
+    await this.container.client.statusUpdater.updateStatus()
     return this.container.logger.info(
       `Ready! Logged in as ${this.container.client.user.tag} serving ${this.container.client.guilds.cache.size} Guilds`
     )
