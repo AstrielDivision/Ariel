@@ -85,7 +85,7 @@
     "@tmware/status-rotate": "1.2.8",
     "app-root-path": "3.0.0",
     "bufferutil": "4.0.3",
-    "colorette": "1.3.0",
+    "colorette": "1.4.0",
     "convict": "6.2.0",
     "crypto-js": "4.1.1",
     "dayjs": "1.10.6",
