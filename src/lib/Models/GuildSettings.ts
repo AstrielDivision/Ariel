@@ -13,7 +13,8 @@ const schema = new Schema({
     default: {
       unmentionable: false,
       invites: false,
-      gifts: false
+      gifts: false,
+      hoisting: false
     }
   }
 })

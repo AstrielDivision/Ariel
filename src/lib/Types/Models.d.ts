@@ -9,6 +9,7 @@ export interface GuildSettings extends Document {
     unmentionable?: boolean
     invites?: boolean
     gifts?: boolean
+    hoisting?: boolean
   }
 }
 
