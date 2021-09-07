@@ -7,6 +7,8 @@ import { ClientOptions, version as djs } from 'discord.js'
 import Yiff from '#lib/yiff.ts/index'
 import * as Sentry from '@sentry/node'
 import mongoose from 'mongoose'
+import { TaskStore } from './TaskStore'
+import { join } from 'path'
 import '#setup'
 
 export default class Client extends SapphireClient {
@@ -58,6 +60,8 @@ export default class Client extends SapphireClient {
       framework: version,
       version: pkg.version
     })
+
+    this.stores.register(new TaskStore().registerPath(join(__dirname, '..', '..', 'tasks')))
 
     await mongoose
       .connect(cfg.mongo.uri)

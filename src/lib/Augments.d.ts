@@ -1,10 +1,11 @@
 /* eslint-disable no-unused-vars */
-import ClientUtils from './ClientUtils'
-import { KSoftClient } from '@aero/ksoft'
-import { SapphireClientOptions } from '@sapphire/framework'
-import StatusUpdater from '@tmware/status-rotate'
-import Yiff from './yiff.ts/index'
-import { InternationalizationClientOptions } from '@sapphire/plugin-i18next'
+import type ClientUtils from './ClientUtils'
+import type { KSoftClient } from '@aero/ksoft'
+import type { SapphireClientOptions, Store } from '@sapphire/framework'
+import type StatusUpdater from '@tmware/status-rotate'
+import type Yiff from './yiff.ts/index'
+import type { InternationalizationClientOptions } from '@sapphire/plugin-i18next'
+import type { Task } from './Structures/Task'
 
 declare module '@sapphire/framework' {
   interface SapphireClient {
@@ -22,6 +23,10 @@ declare module '@sapphire/framework' {
     Mod: never
     Admin: never
     Manager: never
+  }
+
+  interface StoreRegistryEntries {
+    tasks: Store<Task>
   }
 }
 declare module 'discord.js' {
