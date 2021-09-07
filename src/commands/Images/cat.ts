@@ -2,11 +2,11 @@ import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
 import { ApplyOptions } from '@sapphire/decorators'
 import { Message, MessageEmbed } from 'discord.js'
 import type { Image } from '@aero/ksoft'
+import i18 from 'i18next'
 
 @ApplyOptions<ArielCommandOptions>({
-  name: 'cat',
   aliases: ['cat'],
-  description: 'Returns an image of a cat',
+  description: 'commands/images:cat.description',
   cooldownLimit: 3,
   cooldownDelay: 2000
 })
@@ -16,8 +16,8 @@ export default class Cat extends ArielCommand {
       nsfw: false
     })
     const embed = new MessageEmbed()
-      .setTitle('Catt')
-      .setFooter('Powered by api.ksoft.si')
+      .setTitle(i18.t('commands/images:cat.embed.title'))
+      .setFooter(i18.t('commands/attributions:poweredByKSoft'))
       .setURL(url)
       .setColor('WHITE')
       .setTimestamp()

@@ -2,11 +2,11 @@ import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
 import { ApplyOptions } from '@sapphire/decorators'
 import { Message, MessageEmbed } from 'discord.js'
 import type { Image } from '@aero/ksoft'
+import i18 from 'i18next'
 
 @ApplyOptions<ArielCommandOptions>({
-  name: 'fox',
   aliases: ['foxx'],
-  description: 'Returns an image of a fox',
+  description: 'commands/images:fox.description',
   cooldownLimit: 3,
   cooldownDelay: 2000
 })
@@ -16,8 +16,8 @@ export default class Fox extends ArielCommand {
       nsfw: false
     })
     const embed = new MessageEmbed()
-      .setTitle('Foxx')
-      .setFooter('Powered by api.ksoft.si')
+      .setTitle(i18.t('commands/images:fox.embed.title'))
+      .setFooter(i18.t('commands/attributions:poweredByKSoft'))
       .setURL(url)
       .setColor('ORANGE')
       .setTimestamp()
