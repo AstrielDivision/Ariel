@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/method-signature-style */
 /* eslint-disable no-unused-vars */
 import type ClientUtils from './ClientUtils'
 import type { KSoftClient } from '@aero/ksoft'
@@ -15,7 +16,6 @@ declare module '@sapphire/framework' {
     Yiff: Yiff
   }
   interface ILogger {
-    // eslint-disable-next-line @typescript-eslint/method-signature-style
     console(...message: unknown[]): void
   }
   interface Preconditions {
