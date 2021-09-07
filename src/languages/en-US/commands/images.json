@@ -1,0 +1,48 @@
+{
+  "aww": {
+    "description": "Returns a Image from r/astrophotography",
+    "title": "Here, are some Cute images"
+  },
+  "birb": {
+    "description": "Returns an image of a bird"
+  },
+  "cat": {
+    "description": "Returns an image of a cat",
+    "embed": {
+      "title": "Cats!"
+    }
+  },
+  "dog": {
+    "description": "Returns an image of a dog",
+    "embed": {
+      "title": "Have some dogs!"
+    }
+  },
+  "doge": {
+    "description": "Returns an image of doge. Wow",
+    "embed": {
+      "title": "Wow"
+    }
+  },
+  "fox": {
+    "description": "Returns an image of a fox",
+    "embed": {
+      "title": "Here, have a fox!"
+    }
+  },
+  "kappa": {
+    "description": "Returns an image of Kappa",
+    "embed": {
+      "title": "Kappa."
+    }
+  },
+  "pepe": {
+    "description": "Returns an image of Pepe the frog",
+    "embed": {
+      "title": "Pepe."
+    }
+  },
+  "wikihow": {
+    "description": "Returns a random wikihow article"
+  }
+}
