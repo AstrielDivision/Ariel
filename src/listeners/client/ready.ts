@@ -27,11 +27,6 @@ export default class Ready extends Listener<typeof Events.ClientReady> {
   }
 
   public async run() {
-    this.container.client.guilds.cache.map(async guild => {
-      if (guild.available) return await guild.members.fetch()
-      return null
-    })
-
     await this.init()
 
     this.printStoreDebugInformation()

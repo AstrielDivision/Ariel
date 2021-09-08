@@ -9,10 +9,10 @@ export abstract class Task extends Piece {
     this.time = options.time
   }
 
-  public abstract run(...args: readonly unknown[]): Awaited<void>
+  public abstract run(...args: readonly unknown[]): Awaited<any>
 
   public onLoad() {
-    if (!this._interval) this._interval = this.create()
+    this.create()
     return super.onLoad()
   }
 
@@ -23,8 +23,15 @@ export abstract class Task extends Piece {
     }
   }
 
-  private create(): NodeJS.Timer {
-    if (!this.time) throw Error('The time wasn\'t specified')
+  public delete() {
+    return clearInterval(this._interval)
+  }
+
+  private create(): NodeJS.Timer | unknown {
+    if (!this.time) {
+      void this.run()
+      return this.delete()
+    }
     void this.run()
     return setInterval(() => {
       void this.run()
