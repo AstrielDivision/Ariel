@@ -3,10 +3,12 @@ import { Awaited, Piece, PieceContext, PieceOptions } from '@sapphire/framework'
 export abstract class Task extends Piece {
   private _interval: NodeJS.Timer | null
   public time: number
+  public runOnStart: boolean
   constructor(context: PieceContext, options: TaskOptions) {
     super(context, options)
 
     this.time = options.time
+    this.runOnStart = options.runOnStart ?? false
   }
 
   public abstract run(...args: readonly unknown[]): Awaited<any>
@@ -32,7 +34,7 @@ export abstract class Task extends Piece {
       void this.run()
       return this.delete()
     }
-    void this.run()
+    if (this.runOnStart) void this.run()
     return setInterval(() => {
       void this.run()
     }, 1000 * this.time)
@@ -41,4 +43,5 @@ export abstract class Task extends Piece {
 
 export interface TaskOptions extends PieceOptions {
   time?: number
+  runOnStart?: boolean
 }
