@@ -5,7 +5,7 @@ import { editLocalized, sendLocalized } from '@sapphire/plugin-i18next'
 
 @ApplyOptions<ArielCommandOptions>({
   name: 'ping',
-  description: 'commands/Misc/ping:description'
+  description: 'commands/ping:description'
 })
 export default class Ping extends ArielCommand {
   public async run(message: Message) {
