@@ -19,14 +19,13 @@ export abstract class Task extends Piece {
   }
 
   public onUnload() {
-    if (this._interval) {
-      clearInterval(this._interval)
-      this._interval = null
-    }
+    clearInterval(this._interval)
+    this._interval = null
   }
 
-  public delete() {
-    return clearInterval(this._interval)
+  public delete(): Task {
+    clearInterval(this._interval)
+    return (this._interval = null)
   }
 
   private create(): NodeJS.Timer | unknown {
@@ -35,9 +34,9 @@ export abstract class Task extends Piece {
       return this.delete()
     }
     if (this.runOnStart) void this.run()
-    return setInterval(() => {
+    return (this._interval = setInterval(() => {
       void this.run()
-    }, 1000 * this.time)
+    }, 1000 * this.time))
   }
 }
 
