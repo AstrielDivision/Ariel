@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/method-signature-style */
 /* eslint-disable no-unused-vars */
-import type ClientUtils from './ClientUtils'
 import type { KSoftClient } from '@aero/ksoft'
-import type { SapphireClientOptions, Store, Piece } from '@sapphire/framework'
-import type StatusUpdater from '@tmware/status-rotate'
-import type Yiff from './yiff.ts/index'
+import type { Piece, SapphireClientOptions, Store } from '@sapphire/framework'
 import type { InternationalizationClientOptions } from '@sapphire/plugin-i18next'
+import type StatusUpdater from '@tmware/status-rotate'
+import type ClientUtils from './ClientUtils'
 import type { Task } from './Structures/Task'
+import type Yiff from './yiff.ts/index'
 
 declare module '@sapphire/framework' {
   interface SapphireClient {

@@ -1,8 +1,8 @@
+import Warnings from '#lib/Models/Warnings'
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
-import type { Message } from 'discord.js'
 import { ApplyOptions, RequiresUserPermissions } from '@sapphire/decorators'
 import type { Args } from '@sapphire/framework'
-import Warnings from '#lib/Models/Warnings'
+import type { Message } from 'discord.js'
 
 @ApplyOptions<ArielCommandOptions>({
   description: 'Set a warning reason',

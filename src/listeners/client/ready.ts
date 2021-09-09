@@ -1,5 +1,5 @@
-import { Events, Listener, ListenerOptions, Store } from '@sapphire/framework'
 import { ApplyOptions } from '@sapphire/decorators'
+import { Events, Listener, ListenerOptions, Store } from '@sapphire/framework'
 
 @ApplyOptions<ListenerOptions>({
   once: true

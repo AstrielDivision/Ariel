@@ -1,4 +1,4 @@
-import { FetchMethods, FetchResultTypes, fetch } from '@sapphire/fetch'
+import { fetch, FetchMethods, FetchResultTypes } from '@sapphire/fetch'
 import type { Guild, Snowflake, User } from 'discord.js'
 import type { URL } from 'url'
 import cfg, { pkg } from '../config'

@@ -1,8 +1,8 @@
+import Warnings from '#lib/Models/Warnings'
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
-import { Message, User, MessageEmbed } from 'discord.js'
 import { ApplyOptions } from '@sapphire/decorators'
 import type { Args } from '@sapphire/framework'
-import Warnings from '#lib/Models/Warnings'
+import { Message, MessageEmbed, User } from 'discord.js'
 
 @ApplyOptions<ArielCommandOptions>({
   description: 'Fetch your warnings or another users warnings',

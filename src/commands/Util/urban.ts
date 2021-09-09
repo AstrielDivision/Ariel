@@ -1,7 +1,7 @@
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
-import { Message, MessageEmbed } from 'discord.js'
 import { ApplyOptions } from '@sapphire/decorators'
 import type { Args } from '@sapphire/framework'
+import { Message, MessageEmbed } from 'discord.js'
 import Urban from '../../lib/UrbanFetch'
 
 @ApplyOptions<ArielCommandOptions>({

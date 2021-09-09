@@ -1,4 +1,4 @@
-import { FetchMethods, FetchResultTypes, fetch } from '@sapphire/fetch'
+import { fetch, FetchMethods, FetchResultTypes } from '@sapphire/fetch'
 import c from './constants'
 
 type Endpoints = 'gay' | 'glass' | 'wasted' | 'passed' | 'jail' | 'comrade' | 'triggered'

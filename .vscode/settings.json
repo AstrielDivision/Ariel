@@ -62,5 +62,10 @@
     "uwuifed",
     "wikihow",
     "yarnpkg"
-  ]
+  ],
+  "javascript.format.semicolons": "remove",
+  "typescript.format.semicolons": "remove",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  }
 }

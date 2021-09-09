@@ -1,7 +1,7 @@
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
-import type { Message } from 'discord.js'
 import { ApplyOptions, RequiresUserPermissions } from '@sapphire/decorators'
 import type { Args } from '@sapphire/framework'
+import type { Message } from 'discord.js'
 
 @ApplyOptions<ArielCommandOptions>({
   name: 'kick',

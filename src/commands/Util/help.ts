@@ -2,12 +2,12 @@
  * Original: https://github.com/gitcord-project/Gitcord/blob/main/src/commands/Info/help.ts
  * Licensed under the MIT License.
  */
+import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
 import { ApplyOptions } from '@sapphire/decorators'
 import type { Args, Command } from '@sapphire/framework'
 import { Message, MessageEmbed, TextChannel } from 'discord.js'
-import cfg from '../../config'
-import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
 import i18 from 'i18next'
+import cfg from '../../config'
 
 @ApplyOptions<ArielCommandOptions>({
   aliases: ['h'],

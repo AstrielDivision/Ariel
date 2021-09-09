@@ -1,6 +1,6 @@
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
-import type { Message } from 'discord.js'
 import { ApplyOptions } from '@sapphire/decorators'
+import type { Message } from 'discord.js'
 
 @ApplyOptions<ArielCommandOptions>({
   name: 'reboot',

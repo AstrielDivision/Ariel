@@ -1,5 +1,5 @@
-import { Events, Listener, ListenerErrorPayload, ListenerOptions } from '@sapphire/framework'
 import { ApplyOptions } from '@sapphire/decorators'
+import { Events, Listener, ListenerErrorPayload, ListenerOptions } from '@sapphire/framework'
 import { captureException } from '@sentry/minimal'
 
 @ApplyOptions<ListenerOptions>({

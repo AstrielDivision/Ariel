@@ -1,11 +1,11 @@
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
-import { Message, MessageEmbed, version as djs } from 'discord.js'
 import { ApplyOptions } from '@sapphire/decorators'
 import { version } from '@sapphire/framework'
+import { roundNumber } from '@sapphire/utilities'
+import { Message, MessageEmbed, version as djs } from 'discord.js'
+import os from 'os'
 import { version as ts } from 'typescript'
 import { pkg } from '../../config'
-import os from 'os'
-import { roundNumber } from '@sapphire/utilities'
 
 @ApplyOptions<ArielCommandOptions>({
   name: 'stats',
