@@ -1,0 +1,33 @@
+{
+  "ban": {
+    "errors": {
+      "noMention": "You didn't mention a user to ban!",
+      "cannotBan": "You're not allowed to ban this user"
+    },
+    "noReason": "Not Specified",
+    "success": {
+      "ban": "**Successfully banned** `{{member}}`",
+      "softBan": "**Successfully soft banned** `{{member}}`"
+    }
+  },
+  "kick": {
+    "errors": {
+      "noMention": "You didn't mention a user to kick!",
+      "cannotKick": "You're not allowed to kick this user"
+    },
+    "noReason": "Not Specified",
+    "success": {
+      "kick": "**Successfully kicked** `{{member}}`"
+    }
+  },
+  "purge": {
+    "errors": {
+      "noAmount": "You didn't specify an amount",
+      "over": "I can only purge 100 messages!",
+      "little": "I can't purge less than 3 message"
+    },
+    "success": {
+      "purged": "Purged `{{amount}}` messages"
+    }
+  }
+}
