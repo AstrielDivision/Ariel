@@ -2,9 +2,9 @@ import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
 import { ApplyOptions, RequiresUserPermissions } from '@sapphire/decorators'
 import type { Args } from '@sapphire/framework'
 import type { Message } from 'discord.js'
+import i18n from 'i18next'
 
 @ApplyOptions<ArielCommandOptions>({
-  name: 'kick',
   description: 'Kick a user with or without reason',
   requiredClientPermissions: ['KICK_MEMBERS'],
   preconditions: ['GuildTextOnly'],
@@ -15,12 +15,12 @@ export default class Kick extends ArielCommand {
   public async run(message: Message, args: Args) {
     const member = (await args.pickResult('member')).value
     const reason = (await args.restResult('string')).value
-    if (!member) return await message.channel.send('You didn\'t mention a user to kick!')
+    if (!member) return await message.channel.send(i18n.t('commands/moderation:kick.errors.noMention'))
 
-    if (!member.kickable) return await message.channel.send('You\'re not allowed to kick this user!')
+    if (!member.kickable) return await message.channel.send(i18n.t('commands/moderation:kick.errors.cannotKick'))
 
-    await member.kick(reason || 'Not Specified')
+    await member.kick(reason || i18n.t('commands/moderation:kick.noReason'))
 
-    return await message.channel.send(`**Successfully kicked** \`${member.user.tag}\``)
+    return await message.channel.send(i18n.t('commands/moderation:kick.success.kick'))
   }
 }
