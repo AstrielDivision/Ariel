@@ -5,6 +5,6 @@
   "disabled": "**{{disabled}}** werden nicht mehr gefiltert",
   "unmentionable": "Filtering **unmentionable** names? {{yesNo}}",
   "filtering": "Filtering **{{name}}**? {{yesNo}}",
-  "disableFooter": "To disable these use {{prefix}}anti disable [name]",
-  "title": "Guild Settings"
+  "disableFooter": "Um Filter zu deaktivieren, verwende {{prefix}}anti disable [filter]",
+  "title": "Servereinstellungen"
 }
