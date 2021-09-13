@@ -10,7 +10,7 @@ Anti:
 AES, DES, Rabbit and RC4:
 ![Context](https://typescript.is-ne.at/59IyGYLoR.png)
 
-Base64: 
+Base64:
 ![Context](https://typescript.is-ne.at/59Izz4ZXq.png)
 
 Hash:
