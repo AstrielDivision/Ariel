@@ -1,6 +1,6 @@
 {
   "name": "ariel",
-  "version": "2.0.6",
+  "version": "2.1.0",
   "main": "build/index",
   "author": "AstrielDivision",
   "contributors": [
@@ -106,5 +106,9 @@
   },
   "lint-staged": {
     "./src/**/*.ts": "yarn prettiest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AstrielDivision/Ariel.git"
   }
 }
