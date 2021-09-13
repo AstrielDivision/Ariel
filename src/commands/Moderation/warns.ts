@@ -36,7 +36,7 @@ export default class Warns extends ArielCommand {
 
     embed.addField(
       'Warnings',
-      warnings
+      warnings.length
         ? warnings
           .map(w => `\`${w.id}\``)
           .join(', ')
