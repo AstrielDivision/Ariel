@@ -22,13 +22,13 @@ Hash:
 ## Moderation
 
 Ban:
-
 The reason is optional.
+
 ![Context](https://stackowoflow.com/mlkHXBfRUz.png)
 
 Kick:
-
 The reason is optional.
+
 ![Context](https://stackowoflow.com/iWHLUaEZbh.png)
 
 Warn:
