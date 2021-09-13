@@ -11,7 +11,7 @@ import { Message, MessageEmbed, User } from 'discord.js'
 export default class Warns extends ArielCommand {
   public async run(message: Message, args: Args) {
     const { user } = args.finished ? message.member : await args.pick('member')
-    const ID = await args.pick('string').catch(() => '')
+    const ID = args.finished ? null : await args.pick('string')
 
     const embed = new MessageEmbed()
 
@@ -22,7 +22,7 @@ export default class Warns extends ArielCommand {
 
       const moderator = await this.container.client.util.findUser(warn.mod)
 
-      embed.setTitle(`${user.id === message.author.id ? 'Your' : `${user.username}'s`} Warn | `)
+      embed.setTitle(`${user.id === message.author.id ? 'Your' : `${user.username}'s`} Warn`)
 
       embed.addField('Moderator', moderator.username, true)
       embed.addField('Reason', warn.reason, true)
@@ -36,7 +36,12 @@ export default class Warns extends ArielCommand {
 
     embed.addField(
       'Warnings',
-      warnings ? warnings.map(w => `\`${w.id}\``).join(', ') : 'This user doesn\'t have any warns.',
+      warnings
+        ? warnings
+          .map(w => `\`${w.id}\``)
+          .join(', ')
+          .toString()
+        : 'This user doesn\'t have any warns.',
       true
     )
 

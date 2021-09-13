@@ -4,7 +4,6 @@ import { editLocalized, sendLocalized } from '@sapphire/plugin-i18next'
 import type { Message } from 'discord.js'
 
 @ApplyOptions<ArielCommandOptions>({
-  name: 'ping',
   description: 'commands/ping:description'
 })
 export default class Ping extends ArielCommand {

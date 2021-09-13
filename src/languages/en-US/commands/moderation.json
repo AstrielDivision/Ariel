@@ -27,7 +27,33 @@
       "little": "I can't purge less than 3 message"
     },
     "success": {
-      "purged": "Purged `{{amount}}` messages"
+      "purged": "Purged `{{amount}}` messages!"
+    }
+  },
+  "reason": {
+    "errors": {
+      "noID": "You must provide a warn ID.",
+      "noNewVal": "You must provide a new value.",
+      "404": "Could not find a Warning with that ID.",
+      "403": "You cannot set warn reasons for yourself."
+    },
+    "200": "Successfully updated the reason to `{{newVal}}`"
+  },
+  "warn": {
+    "errors": {
+      "noUser": "You must provide a user to warn.",
+      "selfWarn": "You cannot warn yourself.",
+      "warnMe": "You cannot warn me.",
+      "noID": "You must provide a warn ID.",
+      "authorWarnRemove": "You cannot remove warnings from yourself.",
+      "removeMyWarns": "I would't have any warns.",
+      "404": "Could't find a Warning with that ID."
+    },
+    "pardoned": "{{user}}'s case has been pardoned.",
+    "unpardoned": "{{user}}'s case is no longer pardoned",
+    "removed": "Removed {{user}}'s warning.",
+    "embed": {
+      "title": "Warn {{user}} | {{ID}}"
     }
   }
 }

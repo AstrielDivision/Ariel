@@ -5,7 +5,6 @@ import type { Message } from 'discord.js'
 import owoify from 'owofire'
 
 @ApplyOptions<ArielCommandOptions>({
-  name: 'owoify',
   description: 'owoify your text',
   usage: '<text>'
 })

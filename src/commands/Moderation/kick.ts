@@ -21,6 +21,6 @@ export default class Kick extends ArielCommand {
 
     await member.kick(reason || i18n.t('commands/moderation:kick.noReason'))
 
-    return await message.channel.send(i18n.t('commands/moderation:kick.success.kick'))
+    return await message.channel.send(i18n.t('commands/moderation:kick.success.kick', { member: member.user.tag }))
   }
 }

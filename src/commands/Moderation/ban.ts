@@ -29,6 +29,6 @@ export default class Ban extends ArielCommand {
       return await message.channel.send(i18n.t('commands/moderation:ban.success.softBan', { member: member.user.tag }))
     }
 
-    return await message.channel.send(i18n.t('commands/moderation:ban.errors.ban', { member: member.user.tag }))
+    return await message.channel.send(i18n.t('commands/moderation:ban.success.ban', { member: member.user.tag }))
   }
 }

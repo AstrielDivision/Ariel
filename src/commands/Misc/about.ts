@@ -4,7 +4,6 @@ import { Message, MessageEmbed } from 'discord.js'
 import { pkg } from '../../config'
 
 @ApplyOptions<ArielCommandOptions>({
-  name: 'about',
   description: 'Discord bot about'
 })
 export default class About extends ArielCommand {

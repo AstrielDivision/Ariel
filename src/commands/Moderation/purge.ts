@@ -15,8 +15,7 @@ import i18n from 'i18next'
 })
 export default class Purge extends ArielCommand {
   @RequiresUserPermissions('MANAGE_MESSAGES')
-  // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
-  public async run(message: Message, args: Args): Promise<void | Message> {
+  public async run(message: Message, args: Args): Promise<unknown> {
     const amount = (await args.pickResult('number')).value
 
     if (!amount) return await message.channel.send(i18n.t('commands/moderation:purge.error.noAmount'))
