@@ -1,0 +1,14 @@
+{
+  "ping": {
+    "pong": "Pong!",
+    "success": "Ping: {{ws}}ms\nHeartbeat: {{heartbeat}}ms",
+    "description": "Returns bot ping"
+  },
+  "owoify": {
+    "description": "owoifies your text",
+    "noText": "No text provided!"
+  },
+  "about": {
+    "description": "What is this discord bot?"
+  }
+}
