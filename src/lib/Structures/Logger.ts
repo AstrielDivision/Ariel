@@ -60,7 +60,11 @@ export default class AstraeaLogger implements ILogger {
 
     const hook = new WebhookClient({ url: cfg.webhook })
 
-    const embed: MessageEmbed = new MessageEmbed().setTimestamp().setColor('YELLOW')
+    const embed: MessageEmbed = new MessageEmbed()
+      .setTitle(`[${this.namespace} | ${level}]`)
+      .setTimestamp()
+      .setColor('YELLOW')
+
     const options: WebhookMessageOptions = {
       embeds: [embed],
       username: this.namespace + ' Logger',
