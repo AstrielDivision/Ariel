@@ -121,9 +121,9 @@ export default class Warn extends ArielCommand {
     }).save()
 
     const embed = new MessageEmbed()
-      .setTitle(`Warned ${user.username} | ${warning.id}`)
-      .addField('Moderator', message.author.username, true)
-      .addField('Reason', warning.reason, true)
+      .setTitle(i18n.t('commands/moderation:warn.embed.title', { user: user.username, ID: warning.id }))
+      .addField(i18n.t('commands/moderation:warn.embed.fieldNames.1'), message.author.username, true)
+      .addField(i18n.t('commands/moderation:warn.embed.fieldNames.2'), warning.reason, true)
 
     return await message.channel.send({ embeds: [embed] })
   }
