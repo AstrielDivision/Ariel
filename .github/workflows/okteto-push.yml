@@ -2,7 +2,7 @@ name: Continuous Delivery
 
 on:
   push:
-    branches: [main]
+    branches: [main, rose]
   schedule:
     - cron: "* * */23 * *"
 
@@ -22,7 +22,13 @@ jobs:
           namespace: artiefuzzz
       - name: Configuration
         run: echo -n "${{ secrets.CONFIG }}" | base64 -d > config/main.json
-      - name: Deploy Stack
+      - name: Deploy Stack (Nightly / starlight)
+        if: github.ref == 'refs/heads/starlight'
+        uses: okteto/deploy-stack@master
+        with:
+          build: true
+      - name: Deploy Stack (Production / main)
+        if: github.ref == 'refs/heads/main'
         uses: okteto/deploy-stack@master
         with:
           build: true
