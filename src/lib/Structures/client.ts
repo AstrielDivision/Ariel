@@ -49,6 +49,15 @@ export default class Client extends SapphireClient {
     return this
   }
 
+  public stop() {
+    this.logger.warn('Received exit signal. Terminating in 5 seconds...')
+    this.destroy()
+    setTimeout(() => {
+      this.logger.warn('Terminating...')
+      process.exit(0)
+    }, 5000)
+  }
+
   private async init(): Promise<void> {
     Sentry.init({
       dsn: cfg.sentry,
@@ -76,5 +85,8 @@ export default class Client extends SapphireClient {
     setInterval(() => {
       void this.statusUpdater.updateStatus()
     }, 2 * 60 * 1000) // Change status every 2 minutes
+
+    process.once('SIGINT', () => this.stop())
+    process.once('SIGTERM', () => this.stop())
   }
 }
