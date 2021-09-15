@@ -33,7 +33,19 @@ export default class Client extends SapphireClient {
       },
       {
         type: 'PLAYING',
-        name: 'あなたは大丈夫？'
+        name: 'Rainbow 6 Siege'
+      },
+      {
+        type: 'PLAYING',
+        name: 'CS:GO'
+      },
+      {
+        type: 'COMPETING',
+        name: 'against others'
+      },
+      {
+        type: 'WATCHING',
+        name: 'The dark skies of the earth'
       }
     ])
   }
