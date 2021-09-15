@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 import type { KSoftClient } from '@aero/ksoft'
 import type { Piece, SapphireClientOptions, Store } from '@sapphire/framework'
+import type { Server, ServerOptions } from '@sapphire/plugin-api'
 import type { InternationalizationClientOptions } from '@sapphire/plugin-i18next'
 import type StatusUpdater from '@tmware/status-rotate'
 import type ClientUtils from './ClientUtils'
@@ -34,5 +35,11 @@ declare module '@sapphire/framework' {
   }
 }
 declare module 'discord.js' {
-  interface ClientOptions extends SapphireClientOptions, InternationalizationClientOptions {}
+  interface Client {
+    server: Server
+  }
+
+  interface ClientOptions extends SapphireClientOptions, InternationalizationClientOptions {
+    api: ServerOptions
+  }
 }

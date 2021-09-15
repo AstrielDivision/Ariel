@@ -1,3 +1,4 @@
+import '@sapphire/plugin-api/register'
 import '@sapphire/plugin-i18next/register'
 import { options as coloretteOptions } from 'colorette'
 import 'reflect-metadata'

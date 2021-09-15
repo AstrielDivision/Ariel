@@ -22,6 +22,12 @@ const client = new Client({
 
       return language
     }
+  },
+  api: {
+    listenOptions: {
+      port: 4000
+    },
+    prefix: '/v1/'
   }
 })
 
