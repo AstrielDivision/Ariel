@@ -67,7 +67,7 @@ export default class AstraeaLogger implements ILogger {
 
     const options: WebhookMessageOptions = {
       embeds: [embed],
-      username: this.namespace + ' Logger',
+      username: `${this.namespace} | Logs.`,
       avatarURL: 'https://lazy.devswhofuckdevs.xyz/55vQ3rlwU.png'
     }
 
