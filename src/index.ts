@@ -7,6 +7,7 @@ import Logger from './lib/Structures/Logger'
 
 const client = new Client({
   defaultPrefix: cfg.prefix,
+  regexPrefix: /^(hey +)?ariel[,! ]/i,
   caseInsensitivePrefixes: true,
   caseInsensitiveCommands: true,
   logger: { instance: new Logger('Ariel') },
