@@ -5,7 +5,7 @@ import type { Message } from 'discord.js'
 import i18n from 'i18next'
 
 @ApplyOptions<ArielCommandOptions>({
-  description: 'Ban a user with or without reason',
+  description: 'commands/moderation:ban.description',
   detailedDescription: 'Using the flags -s or --soft will ban then unban the user',
   requiredClientPermissions: ['BAN_MEMBERS'],
   flags: ['s', 'soft'],

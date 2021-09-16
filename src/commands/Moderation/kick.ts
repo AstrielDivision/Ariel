@@ -5,7 +5,7 @@ import type { Message } from 'discord.js'
 import i18n from 'i18next'
 
 @ApplyOptions<ArielCommandOptions>({
-  description: 'Kick a user with or without reason',
+  description: 'commands/moderation:kick.description',
   requiredClientPermissions: ['KICK_MEMBERS'],
   preconditions: ['GuildTextOnly'],
   usage: '<@user | userID> [reason]'

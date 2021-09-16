@@ -6,7 +6,7 @@ import type { Message } from 'discord.js'
 import i18n from 'i18next'
 
 @ApplyOptions<ArielCommandOptions>({
-  description: 'Set a warning reason',
+  description: 'commands/moderation:reason.description',
   usage: '<WarningID> <reason>'
 })
 export default class Reason extends ArielCommand {

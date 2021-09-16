@@ -7,7 +7,7 @@ import i18n from 'i18next'
 import { customAlphabet } from 'nanoid'
 
 @ApplyOptions<ArielCommandOptions>({
-  description: 'Warn a user',
+  description: 'commands/moderation:warn.description',
   detailedDescription: 'Warn a user, remove a warn or pardon a user warn.',
   usage: '[pardon | remove] [@user / warnID] [reason]',
   subCommands: ['remove', 'pardon', { input: 'warn', default: true }]

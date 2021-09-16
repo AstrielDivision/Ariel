@@ -5,8 +5,7 @@ import type { Message, TextChannel } from 'discord.js'
 import i18n from 'i18next'
 
 @ApplyOptions<ArielCommandOptions>({
-  name: 'purge',
-  description: 'Makes the bot purge X number of messages',
+  description: 'commands/moderation:purge.description',
   requiredClientPermissions: ['MANAGE_MESSAGES'],
   cooldownDelay: 2000,
   cooldownLimit: 2,
