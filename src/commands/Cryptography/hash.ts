@@ -1,10 +1,9 @@
+import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
 import { ApplyOptions } from '@sapphire/decorators'
 import type { Args } from '@sapphire/framework'
-import type { Message } from 'discord.js'
 import * as crypto from 'crypto'
-
-import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
 import cryptoJS from 'crypto-js'
+import type { Message } from 'discord.js'
 
 @ApplyOptions<ArielCommandOptions>({
   name: 'hash',

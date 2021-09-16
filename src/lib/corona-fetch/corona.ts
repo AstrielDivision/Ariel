@@ -1,5 +1,5 @@
-import type { All, Country } from './types'
 import request from './request'
+import type { All, Country } from './types'
 
 class CoronaFetch {
   public async all(): Promise<All> {

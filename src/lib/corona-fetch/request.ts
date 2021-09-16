@@ -1,4 +1,4 @@
-import { FetchMethods, FetchResultTypes, fetch } from '@sapphire/fetch'
+import { fetch, FetchMethods, FetchResultTypes } from '@sapphire/fetch'
 import c from './constants'
 
 export default async function request(country?: string): Promise<any> {

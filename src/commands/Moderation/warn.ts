@@ -1,12 +1,13 @@
-import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
-import { Message, User, MessageEmbed } from 'discord.js'
-import { ApplyOptions, RequiresUserPermissions } from '@sapphire/decorators'
 import Warnings from '#lib/Models/Warnings'
+import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
+import { ApplyOptions, RequiresUserPermissions } from '@sapphire/decorators'
 import type { Args } from '@sapphire/framework'
+import { Message, MessageEmbed, User } from 'discord.js'
+import i18n from 'i18next'
 import { customAlphabet } from 'nanoid'
 
 @ApplyOptions<ArielCommandOptions>({
-  description: 'Warn a user',
+  description: 'commands/moderation:warn.description',
   detailedDescription: 'Warn a user, remove a warn or pardon a user warn.',
   usage: '[pardon | remove] [@user / warnID] [reason]',
   subCommands: ['remove', 'pardon', { input: 'warn', default: true }]
@@ -17,10 +18,14 @@ export default class Warn extends ArielCommand {
     const { user } = (await args.pickResult('member')).value
     const reason = (await args.pickResult('string')).value
 
-    if (!user) return await message.channel.send('You must provide a user to warn.')
+    if (!user) return await message.channel.send(i18n.t('commands/moderation:warn.errors.noUser'))
 
-    if (user.id === message.author.id) return await message.channel.send('You cannot warn yourself.')
-    if (user.id === this.container.client.id) return await message.channel.send('You cannot warn me.')
+    if (user.id === message.author.id) {
+      return await message.channel.send(i18n.t('commands/moderation:warn.errors.selfWarn'))
+    }
+    if (user.id === this.container.client.id) {
+      return await message.channel.send(i18n.t('commands/moderation:warn.errors.warnMe'))
+    }
 
     return await this.CreateWarn(user, message, reason)
   }
@@ -30,12 +35,14 @@ export default class Warn extends ArielCommand {
     const warnID = (await args.pickResult('string')).value
     const member = args.finished ? null : await args.pick('member')
 
-    if (!warnID) return await message.channel.send('You must provide a warnID. (Must be a valid one)')
+    if (!warnID) return await message.channel.send(i18n.t('commands/moderation:warn.errors.noID'))
 
     if (member?.user.id === message.author.id) {
-      return await message.channel.send('You cannot remove warns from yourself.')
+      return await message.channel.send(i18n.t('commands/moderation:warn.errors.authorWarnRemove'))
     }
-    if (member?.user.id === this.container.client.id) return await message.channel.send('I won\'t have any warns.')
+    if (member?.user.id === this.container.client.id) {
+      return await message.channel.send(i18n.t('commands/moderation:warn.errors.removeMyWarns'))
+    }
 
     return await this.RemoveWarn(message, warnID, member?.user)
   }
@@ -45,7 +52,7 @@ export default class Warn extends ArielCommand {
     const warnID = (await args.pickResult('string')).value
     const member = args.finished ? null : await args.pick('member')
 
-    if (!warnID) return await message.channel.send('You must provide a warn ID. (Must be a valid one)')
+    if (!warnID) return await message.channel.send(i18n.t('commands/moderation:warn.errors.noID'))
 
     return await this.Pardon(message, warnID, member?.user)
   }
@@ -62,7 +69,9 @@ export default class Warn extends ArielCommand {
       )
 
       return await message.channel.send(
-        isPardoned ? `${user.toString()}'s case is no longer pardoned.` : `${user.toString()}'s case has been pardoned.`
+        isPardoned
+          ? i18n.t('commands/moderation:warn.unpardoned', { user: user.toString() })
+          : i18n.t('commands/moderation:warn.pardoned', { user: user.toString() })
       )
     } else {
       isPardoned = (await Warnings.findOne({ id: ID, guild: message.guild.id })).pardoned
@@ -76,8 +85,8 @@ export default class Warn extends ArielCommand {
 
       return await message.channel.send(
         isPardoned
-          ? `${member.toString()}'s case is no longer pardoned.`
-          : `${member.toString()}'s case has been pardoned.`
+          ? i18n.t('commands/moderation:warn.unpardoned', { user: member.toString() })
+          : i18n.t('commands/moderation:warn.pardoned', { user: member.toString() })
       )
     }
   }
@@ -86,19 +95,19 @@ export default class Warn extends ArielCommand {
     if (user) {
       const warning = await Warnings.findOneAndRemove({ user: user.id, id: ID, guild: message.guild.id })
 
-      if (!warning) return await message.channel.send('This warning doesn\'t exist')
+      if (!warning) return await message.channel.send(i18n.t('commands/moderation:warn.errors.404'))
 
       const member = await this.container.client.util.findUser(warning.user)
 
-      return await message.channel.send(`Successfully removed ${member.toString()}'s warning`)
+      return await message.channel.send(i18n.t('commands/moderation:warn.removed', { user: member.toString() }))
     } else {
       const warning = await Warnings.findOneAndRemove({ id: ID, guild: message.guild.id })
 
-      if (!warning) return await message.channel.send('This warning doesn\'t exist')
+      if (!warning) return await message.channel.send(i18n.t('commands/moderation:warn.errors.404'))
 
       const member = await this.container.client.util.findUser(warning.user)
 
-      return await message.channel.send(`Successfully removed ${member.toString()}'s warning`)
+      return await message.channel.send(i18n.t('commands/moderation:warn.removed', { user: member.toString() }))
     }
   }
 
@@ -112,9 +121,9 @@ export default class Warn extends ArielCommand {
     }).save()
 
     const embed = new MessageEmbed()
-      .setTitle(`Warned ${user.username} | ${warning.id}`)
-      .addField('Moderator', message.author.username, true)
-      .addField('Reason', warning.reason, true)
+      .setTitle(i18n.t('commands/moderation:warn.embed.title', { user: user.username, ID: warning.id }))
+      .addField(i18n.t('commands/moderation:warn.embed.fieldNames.1'), message.author.username, true)
+      .addField(i18n.t('commands/moderation:warn.embed.fieldNames.2'), warning.reason, true)
 
     return await message.channel.send({ embeds: [embed] })
   }

@@ -1,8 +1,8 @@
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
-import { ColorResolvable, Message, MessageEmbed } from 'discord.js'
 import { ApplyOptions } from '@sapphire/decorators'
-import type { Args } from '@sapphire/framework'
 import { FetchResultTypes } from '@sapphire/fetch'
+import type { Args } from '@sapphire/framework'
+import { ColorResolvable, Message, MessageEmbed } from 'discord.js'
 
 @ApplyOptions<ArielCommandOptions>({
   name: 'mdn',

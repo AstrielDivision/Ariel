@@ -1,8 +1,8 @@
+import GuildSettings from '#lib/Models/GuildSettings'
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
-import { Message, MessageEmbed } from 'discord.js'
 import { ApplyOptions, RequiresUserPermissions } from '@sapphire/decorators'
 import type { Args } from '@sapphire/framework'
-import GuildSettings from '#lib/Models/GuildSettings'
+import { Message, MessageEmbed } from 'discord.js'
 import i18 from 'i18next'
 
 @ApplyOptions<ArielCommandOptions>({

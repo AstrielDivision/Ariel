@@ -1,12 +1,12 @@
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
-import type { Message } from 'discord.js'
 import { ApplyOptions } from '@sapphire/decorators'
 import type { Args } from '@sapphire/framework'
+import type { Message } from 'discord.js'
+import i18n from 'i18next'
 import owoify from 'owofire'
 
 @ApplyOptions<ArielCommandOptions>({
-  name: 'owoify',
-  description: 'owoify your text',
+  description: 'commands/misc:owoify.description',
   usage: '<text>'
 })
 export default class OwOify extends ArielCommand {
@@ -14,7 +14,7 @@ export default class OwOify extends ArielCommand {
     const text = (await args.restResult('string')).value
 
     if (!text) {
-      return await message.channel.send('No text provided!')
+      return await message.channel.send(i18n.t('commands/misc:owoify.description'))
     }
 
     return await message.channel.send(owoify(text))

@@ -1,5 +1,5 @@
-import { Schema, model } from 'mongoose'
 import type { Warnings } from '#types'
+import { model, Schema } from 'mongoose'
 
 const schema = new Schema({
   user: { type: String, required: true },

@@ -1,6 +1,6 @@
-import { CommandErrorPayload, Events, Listener, ListenerOptions, UserError } from '@sapphire/framework'
-import { ApplyOptions } from '@sapphire/decorators'
 import type { ArielCommand } from '#lib/Structures/BaseCommand'
+import { ApplyOptions } from '@sapphire/decorators'
+import { CommandErrorPayload, Events, Listener, ListenerOptions, UserError } from '@sapphire/framework'
 import { captureException } from '@sentry/minimal'
 
 @ApplyOptions<ListenerOptions>({

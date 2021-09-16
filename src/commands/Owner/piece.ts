@@ -1,11 +1,11 @@
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
-import type { Message } from 'discord.js'
 import { ApplyOptions } from '@sapphire/decorators'
 import type { Args } from '@sapphire/framework'
+import type { Message } from 'discord.js'
 
 @ApplyOptions<ArielCommandOptions>({
   description: 'Enable, disable or reload Pieces',
-  usage: '<enable | disable | _reload> <Piece name>',
+  usage: '<enable | disable | $reload> <Piece name>',
   subCommands: ['disable', '$reload', 'enable']
 })
 export default class Piece extends ArielCommand {

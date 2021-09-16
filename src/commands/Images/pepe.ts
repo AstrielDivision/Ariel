@@ -1,7 +1,7 @@
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
+import type { Image } from '@aero/ksoft'
 import { ApplyOptions } from '@sapphire/decorators'
 import { Message, MessageEmbed } from 'discord.js'
-import type { Image } from '@aero/ksoft'
 import i18 from 'i18next'
 
 @ApplyOptions<ArielCommandOptions>({

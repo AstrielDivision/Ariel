@@ -1,5 +1,7 @@
 {
   "ban": {
+    "description": "Bans a user",
+    "detailedDescription": "Using the flags -s or --soft will ban then unban the user",
     "errors": {
       "noMention": "You didn't mention a user to ban!",
       "cannotBan": "You're not allowed to ban this user"
@@ -11,6 +13,7 @@
     }
   },
   "kick": {
+    "description": "Kicks a user",
     "errors": {
       "noMention": "You didn't mention a user to kick!",
       "cannotKick": "You're not allowed to kick this user"
@@ -21,6 +24,7 @@
     }
   },
   "purge": {
+    "description": "Purges X amount of messages",
     "errors": {
       "noAmount": "You didn't specify an amount",
       "over": "I can only purge 100 messages!",
@@ -31,6 +35,7 @@
     }
   },
   "reason": {
+    "description": "Set a warning reason",
     "errors": {
       "noID": "You must provide a warn ID.",
       "noNewVal": "You must provide a new value.",
@@ -40,6 +45,7 @@
     "200": "Successfully updated the reason to `{{newVal}}`"
   },
   "warn": {
+    "description": "Warns a member",
     "errors": {
       "noUser": "You must provide a user to warn.",
       "selfWarn": "You cannot warn yourself.",
@@ -47,7 +53,7 @@
       "noID": "You must provide a warn ID.",
       "authorWarnRemove": "You cannot remove warnings from yourself.",
       "removeMyWarns": "I would't have any warns.",
-      "404": "Could't find a Warning with that ID."
+      "404": "Could not resolve warning ID."
     },
     "pardoned": "{{user}}'s case has been pardoned.",
     "unpardoned": "{{user}}'s case is no longer pardoned",
@@ -57,6 +63,27 @@
       "fieldNames": {
         "1": "Moderator",
         "2": "Reason"
+      }
+    }
+  },
+  "warns": {
+    "description": "Get a members warnings",
+    "errors": {
+      "404": "Could not resolve warning ID."
+    },
+    "embed": {
+      "title": "{{who}} Warn",
+      "fields": {
+        "mod": "Moderator",
+        "reason": "Reason"
+      },
+      "footer": "Warn ID: {{ID}}"
+    },
+    "embed2": {
+      "title": "{{who}} Warns [{{count}}]",
+      "fields": {
+        "name": "Warnings",
+        "noWarns": "This user doesn't have any warnings."
       }
     }
   }

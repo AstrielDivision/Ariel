@@ -526,6 +526,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sapphire/plugin-api@npm:next":
+  version: 3.0.0-next.8ffa299.0
+  resolution: "@sapphire/plugin-api@npm:3.0.0-next.8ffa299.0"
+  dependencies:
+    "@types/node-fetch": ^2.5.12
+    "@types/psl": ^1.1.0
+    "@types/ws": 7.4.7
+    node-fetch: ^2.6.2
+    psl: ^1.8.0
+    tslib: ^2.3.1
+  checksum: 906b7c1d44b92b3e7ac78471f2263479f1d6faa018138f3a705990f9007997e3ddbc48ad7835dd1268991b065eca7c2853b96785b2e6f2768661d5ca3c2e3ce2
+  languageName: node
+  linkType: hard
+
 "@sapphire/plugin-i18next@npm:2.0.0-next.e24c125.0":
   version: 2.0.0-next.e24c125.0
   resolution: "@sapphire/plugin-i18next@npm:2.0.0-next.e24c125.0"
@@ -807,6 +821,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node-fetch@npm:^2.5.12":
+  version: 2.5.12
+  resolution: "@types/node-fetch@npm:2.5.12"
+  dependencies:
+    "@types/node": "*"
+    form-data: ^3.0.0
+  checksum: ad63c85ba6a9477b8e057ec8682257738130d98e8ece4e31141789bd99df9d9147985cc8bc0cb5c8983ed5aa6bb95d46df23d1e055f4ad5cf8b82fc69cf626c7
+  languageName: node
+  linkType: hard
+
 "@types/node@npm:*":
   version: 16.7.6
   resolution: "@types/node@npm:16.7.6"
@@ -842,6 +866,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/psl@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "@types/psl@npm:1.1.0"
+  checksum: 648a4a40827fb101a05616b9c448b04d40c467db9f09e08099274759fd5e032e7d276013296679765c7d7359f43f0479094c1d8b6a56a8f9445b84b5a9af1263
+  languageName: node
+  linkType: hard
+
 "@types/webidl-conversions@npm:*":
   version: 6.1.1
   resolution: "@types/webidl-conversions@npm:6.1.1"
@@ -859,7 +890,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/ws@npm:^7.4.7":
+"@types/ws@npm:7.4.7, @types/ws@npm:^7.4.7":
   version: 7.4.7
   resolution: "@types/ws@npm:7.4.7"
   dependencies:
@@ -1202,6 +1233,7 @@ __metadata:
     "@sapphire/discord.js-utilities": 3.0.0-next.c4f992f5.0
     "@sapphire/fetch": 2.0.0-next.c4f992f5.0
     "@sapphire/framework": 2.0.0-next.9f81b7bb.0
+    "@sapphire/plugin-api": next
     "@sapphire/plugin-i18next": 2.0.0-next.e24c125.0
     "@sapphire/plugin-subcommands": 2.0.0-next.3bd3e99.0
     "@sapphire/type": 2.1.0
@@ -1222,6 +1254,7 @@ __metadata:
     crypto-js: 4.1.1
     cz-conventional-changelog: 3.3.0
     dayjs: 1.10.6
+    discord-api-types: ^0.23.1
     discord.js: 13.1.0
     eslint: 7.32.0
     husky: 7.0.2
@@ -1973,6 +2006,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"discord-api-types@npm:^0.23.1":
+  version: 0.23.1
+  resolution: "discord-api-types@npm:0.23.1"
+  checksum: e2ea574d51bff9f74770194338ba2b981072c6814a4da4c1e9a6b09b5b6bcf4ecf9044397fd4d2d3bf245f7573f22f1c25ff3f57cfc23ed87dfee4629091c29d
+  languageName: node
+  linkType: hard
+
 "discord.js@npm:13.1.0":
   version: 13.1.0
   resolution: "discord.js@npm:13.1.0"
@@ -2600,6 +2640,17 @@ __metadata:
     debug:
       optional: true
   checksum: 53195df4a2f36202177f40a2d59d497d630f3b20e2e51e2b697ee5f9c0a5261985f164b23d3744a574e117618af668d07c0d000c2c5cb0c1546851671585ac4e
+  languageName: node
+  linkType: hard
+
+"form-data@npm:^3.0.0":
+  version: 3.0.1
+  resolution: "form-data@npm:3.0.1"
+  dependencies:
+    asynckit: ^0.4.0
+    combined-stream: ^1.0.8
+    mime-types: ^2.1.12
+  checksum: b019e8d35c8afc14a2bd8a7a92fa4f525a4726b6d5a9740e8d2623c30e308fbb58dc8469f90415a856698933c8479b01646a9dff33c87cc4e76d72aedbbf860d
   languageName: node
   linkType: hard
 
@@ -4064,6 +4115,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"node-fetch@npm:^2.6.2":
+  version: 2.6.2
+  resolution: "node-fetch@npm:2.6.2"
+  checksum: de367eae1dfbc0e12283c1cf92256ea7fba7eac8655e2e51ebb217727162396fc6cf24689ef9fc6accf075e3991e2ffaa061f7cfaa958215329649b2297ff06d
+  languageName: node
+  linkType: hard
+
 "node-gyp-build@npm:^4.2.0":
   version: 4.2.3
   resolution: "node-gyp-build@npm:4.2.3"
@@ -4559,6 +4617,13 @@ __metadata:
     err-code: ^2.0.2
     retry: ^0.12.0
   checksum: f96a3f6d90b92b568a26f71e966cbbc0f63ab85ea6ff6c81284dc869b41510e6cdef99b6b65f9030f0db422bf7c96652a3fff9f2e8fb4a0f069d8f4430359429
+  languageName: node
+  linkType: hard
+
+"psl@npm:^1.8.0":
+  version: 1.8.0
+  resolution: "psl@npm:1.8.0"
+  checksum: 6150048ed2da3f919478bee8a82f3828303bc0fc730fb015a48f83c9977682c7b28c60ab01425a72d82a2891a1681627aa530a991d50c086b48a3be27744bde7
   languageName: node
   linkType: hard
 

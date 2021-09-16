@@ -1,6 +1,6 @@
 {
   "name": "ariel",
-  "version": "2.0.6",
+  "version": "2.1.0",
   "main": "build/index",
   "author": "AstrielDivision",
   "contributors": [
@@ -78,6 +78,7 @@
     "@sapphire/discord.js-utilities": "3.0.0-next.c4f992f5.0",
     "@sapphire/fetch": "2.0.0-next.c4f992f5.0",
     "@sapphire/framework": "2.0.0-next.9f81b7bb.0",
+    "@sapphire/plugin-api": "next",
     "@sapphire/plugin-i18next": "2.0.0-next.e24c125.0",
     "@sapphire/plugin-subcommands": "2.0.0-next.3bd3e99.0",
     "@sapphire/type": "2.1.0",
@@ -90,6 +91,7 @@
     "convict": "6.2.0",
     "crypto-js": "4.1.1",
     "dayjs": "1.10.6",
+    "discord-api-types": "^0.23.1",
     "discord.js": "13.1.0",
     "mongoose": "6.0.4",
     "nanoid": "^3.1.25",
@@ -106,5 +108,9 @@
   },
   "lint-staged": {
     "./src/**/*.ts": "yarn prettiest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AstrielDivision/Ariel.git"
   }
 }

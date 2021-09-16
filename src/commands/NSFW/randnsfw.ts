@@ -1,7 +1,7 @@
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
+import type { RedditImage } from '@aero/ksoft'
 import { ApplyOptions } from '@sapphire/decorators'
 import { Message, MessageEmbed } from 'discord.js'
-import type { RedditImage } from '@aero/ksoft'
 
 @ApplyOptions<ArielCommandOptions>({
   name: 'randnsfw',

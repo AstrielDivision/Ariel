@@ -1,5 +1,5 @@
-import { Schema, model } from 'mongoose'
 import type { GuildSettings as Settings } from '#types'
+import { model, Schema } from 'mongoose'
 import cfg from '../../config'
 
 const schema = new Schema({
