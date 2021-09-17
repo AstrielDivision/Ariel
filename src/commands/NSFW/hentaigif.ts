@@ -4,7 +4,6 @@ import { ApplyOptions } from '@sapphire/decorators'
 import { Message, MessageEmbed } from 'discord.js'
 
 @ApplyOptions<ArielCommandOptions>({
-  name: 'hentaigif',
   description: 'Returns an animated image of hentai',
   cooldownLimit: 3,
   nsfw: true,

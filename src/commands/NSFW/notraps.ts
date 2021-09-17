@@ -4,7 +4,6 @@ import { ApplyOptions } from '@sapphire/decorators'
 import type { PieceContext } from '@sapphire/framework'
 
 @ApplyOptions<ArielCommandOptions>({
-  name: 'notraps',
   aliases: ['trap'],
   description: 'Returns a Image from r/NoTraps',
   cooldownLimit: 3,

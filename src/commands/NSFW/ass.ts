@@ -4,7 +4,6 @@ import { ApplyOptions } from '@sapphire/decorators'
 import { Message, MessageEmbed } from 'discord.js'
 
 @ApplyOptions<ArielCommandOptions>({
-  name: 'ass',
   aliases: ['butt'],
   description: 'Returns a random Image of ASS',
   cooldownLimit: 3,

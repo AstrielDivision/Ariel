@@ -4,7 +4,6 @@ import { ApplyOptions } from '@sapphire/decorators'
 import type { PieceContext } from '@sapphire/framework'
 
 @ApplyOptions<ArielCommandOptions>({
-  name: 'nonpoliticaltwitter',
   aliases: ['twitter'],
   description: 'Returns a Image from r/NonPoliticalTwitter',
   nsfw: false

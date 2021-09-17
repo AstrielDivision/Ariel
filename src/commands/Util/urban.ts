@@ -1,17 +1,15 @@
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
 import { ApplyOptions } from '@sapphire/decorators'
-import type { Args } from '@sapphire/framework'
 import { Message, MessageEmbed } from 'discord.js'
 import Urban from '../../lib/UrbanFetch'
 
 @ApplyOptions<ArielCommandOptions>({
-  name: 'urban',
   description: 'Get definitions of things on the trusty Urban Dictionary',
   nsfw: true,
   usage: '<word>'
 })
 export default class UrbanDictionary extends ArielCommand {
-  public async run(message: Message, args: Args) {
+  public async run(message: Message, args: ArielCommand.Args) {
     const search = (await args.pickResult('string')).value
 
     if (!search) return await message.channel.send('No search provided')

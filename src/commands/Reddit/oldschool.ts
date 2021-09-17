@@ -4,7 +4,6 @@ import { ApplyOptions } from '@sapphire/decorators'
 import type { PieceContext } from '@sapphire/framework'
 
 @ApplyOptions<ArielCommandOptions>({
-  name: 'oldschool',
   aliases: ['oldschoolocool'],
   description: 'Returns an image from r/oldschoolcool'
 })

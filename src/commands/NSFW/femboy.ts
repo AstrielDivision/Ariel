@@ -4,7 +4,6 @@ import { ApplyOptions } from '@sapphire/decorators'
 import type { PieceContext } from '@sapphire/framework'
 
 @ApplyOptions<ArielCommandOptions>({
-  name: 'femboy',
   aliases: ['femboy', 'femboys', 'femboi', 'fembois'],
   description: 'Returns a Image from r/FemBoys',
   nsfw: true

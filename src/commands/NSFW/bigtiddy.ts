@@ -4,7 +4,6 @@ import { ApplyOptions } from '@sapphire/decorators'
 import type { PieceContext } from '@sapphire/framework'
 
 @ApplyOptions<ArielCommandOptions>({
-  name: 'bigtiddy',
   aliases: ['booba'],
   description: 'Returns a Image from r/bigtiddygothgf',
   cooldownLimit: 3,

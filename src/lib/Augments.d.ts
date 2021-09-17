@@ -32,6 +32,12 @@ declare module '@sapphire/framework' {
 
   interface ArgType {
     piece: Piece
+    language: string
+    nanoID: string
+  }
+
+  interface Args {
+    t: TFunction
   }
 }
 declare module 'discord.js' {

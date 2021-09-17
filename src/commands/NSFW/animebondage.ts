@@ -15,7 +15,7 @@ export default class AnimeBondage extends ArielCommand {
       FetchResultTypes.JSON
     )
 
-    const embed = new MessageEmbed().setTitle(':smirk: Bondage').setImage(res.url).setURL(res.url)
+    const embed = new MessageEmbed().setImage(res.url).setURL(res.url)
 
     return await message.channel.send({
       embeds: [embed]

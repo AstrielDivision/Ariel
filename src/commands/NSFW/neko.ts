@@ -4,7 +4,6 @@ import { ApplyOptions } from '@sapphire/decorators'
 import { Message, MessageEmbed } from 'discord.js'
 
 @ApplyOptions<ArielCommandOptions>({
-  name: 'neko',
   description: 'Returns a random image of a neko (These images have been moderated)',
   cooldownLimit: 3,
   nsfw: true,

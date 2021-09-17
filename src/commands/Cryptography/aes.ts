@@ -1,9 +1,8 @@
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
 import { ApplyOptions } from '@sapphire/decorators'
-import type { Args } from '@sapphire/framework'
 import crypto from 'crypto-js'
 import { Message, Permissions } from 'discord.js'
-import i18 from 'i18next'
+import type { TFunction } from 'i18next'
 
 @ApplyOptions<ArielCommandOptions>({
   description: 'commands/cryptography:aesDescription',
@@ -12,20 +11,20 @@ import i18 from 'i18next'
   usage: '<text> <-s=randomLetters | --secret=randomLetters> [-d | --decrypt]'
 })
 export default class AES extends ArielCommand {
-  public async run(message: Message, args: Args) {
+  public async run(message: Message, args: ArielCommand.Args) {
     const decryptFlag = args.getFlags('d', 'decrypt')
     const text = (await args.restResult('string')).value
     const secret = args.getOption('s', 'secret')
 
-    if (!text) return await message.channel.send(i18.t('commands/cryptography:noText'))
+    if (!text) return await message.channel.send(args.t('commands/cryptography:noText'))
 
     if (!secret) {
-      return await message.channel.send(i18.t('commands/cryptography:noSecret'))
+      return await message.channel.send(args.t('commands/cryptography:noSecret'))
     }
 
     if (message.guild.me.permissions.has(Permissions.FLAGS.MANAGE_MESSAGES)) void message.delete()
 
-    const result = decryptFlag ? this.decrypt(text, secret) : this.encrypt(text, secret)
+    const result = decryptFlag ? this.decrypt(text, secret, args.t) : this.encrypt(text, secret)
 
     return await message.channel.send(result)
   }
@@ -44,10 +43,9 @@ export default class AES extends ArielCommand {
    * Secret: ABC
    * Output: ABC
    */
-  private decrypt(input: string, secret: string): string {
+  private decrypt(input: string, secret: string, t: TFunction): string {
     return (
-      crypto.AES.decrypt(input, secret).toString(crypto.enc.Utf8).toString() ||
-      i18.t('commands/cryptography:unsuccessful')
+      crypto.AES.decrypt(input, secret).toString(crypto.enc.Utf8).toString() || t('commands/cryptography:unsuccessful')
     )
   }
 }

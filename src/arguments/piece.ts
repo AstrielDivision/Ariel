@@ -7,6 +7,6 @@ export default class PieceArgument extends Argument<Piece> {
       if (piece) return this.ok(piece)
     }
 
-    return this.error({ parameter, context })
+    return this.error({ parameter, context, message: 'Could not resolve Piece name' })
   }
 }

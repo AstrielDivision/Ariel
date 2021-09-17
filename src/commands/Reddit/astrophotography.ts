@@ -4,7 +4,6 @@ import { ApplyOptions } from '@sapphire/decorators'
 import type { PieceContext } from '@sapphire/framework'
 
 @ApplyOptions<ArielCommandOptions>({
-  name: 'astrophotography',
   aliases: ['astronomy', 'astrophotography', 'astro'],
   description: 'Returns a Image from r/astrophotography',
   cooldownLimit: 3,

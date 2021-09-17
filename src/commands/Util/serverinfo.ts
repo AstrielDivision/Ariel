@@ -4,7 +4,6 @@ import dayjs from 'dayjs'
 import { Message, MessageEmbed } from 'discord.js'
 
 @ApplyOptions<ArielCommandOptions>({
-  name: 'serverinfo',
   aliases: ['si'],
   description: 'Fetch the current guild\'s info'
 })

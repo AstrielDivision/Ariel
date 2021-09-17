@@ -8,7 +8,6 @@ import { version as ts } from 'typescript'
 import { pkg } from '../../config'
 
 @ApplyOptions<ArielCommandOptions>({
-  name: 'stats',
   description: 'Get the discord bot statistics',
   aliases: ['statistics']
 })

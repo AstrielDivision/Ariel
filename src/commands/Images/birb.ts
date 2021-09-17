@@ -2,7 +2,6 @@ import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
 import type { Image } from '@aero/ksoft'
 import { ApplyOptions } from '@sapphire/decorators'
 import { Message, MessageEmbed } from 'discord.js'
-import i18 from 'i18next'
 
 @ApplyOptions<ArielCommandOptions>({
   aliases: ['bird'],
@@ -11,12 +10,12 @@ import i18 from 'i18next'
   cooldownDelay: 2000
 })
 export default class BirbCommand extends ArielCommand {
-  public async run(message: Message) {
+  public async run(message: Message, args: ArielCommand.Args) {
     const { url }: Image = await this.container.client.ksoft.images.random('birb', {
       nsfw: false
     })
     const embed = new MessageEmbed()
-      .setFooter(i18.t('commands/attributions:poweredByKSoft'))
+      .setFooter(args.t('commands/attributions:poweredByKSoft'))
       .setURL(url)
       .setColor('DARK_GREEN')
       .setTimestamp()

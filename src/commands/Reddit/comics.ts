@@ -4,7 +4,6 @@ import { ApplyOptions } from '@sapphire/decorators'
 import type { PieceContext } from '@sapphire/framework'
 
 @ApplyOptions<ArielCommandOptions>({
-  name: 'comics',
   aliases: ['comic'],
   description: 'Returns a Image from r/comics',
   cooldownLimit: 3,

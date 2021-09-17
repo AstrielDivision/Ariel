@@ -4,7 +4,6 @@ import { ApplyOptions } from '@sapphire/decorators'
 import type { PieceContext } from '@sapphire/framework'
 
 @ApplyOptions<ArielCommandOptions>({
-  name: 'rainbow',
   description: 'Add a rainbow overlay to your or someone elses profile picture',
   usage: '[@user]'
 })

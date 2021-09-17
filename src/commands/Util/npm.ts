@@ -1,16 +1,14 @@
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
 import { ApplyOptions } from '@sapphire/decorators'
 import { FetchResultTypes } from '@sapphire/fetch'
-import type { Args } from '@sapphire/framework'
 import { Message, MessageEmbed } from 'discord.js'
 
 @ApplyOptions<ArielCommandOptions>({
-  name: 'npm',
   description: 'Search an NPM package on the NPM registry',
   usage: '<package name>'
 })
 export default class NPM extends ArielCommand {
-  public async run(message: Message, args: Args) {
+  public async run(message: Message, args: ArielCommand.Args) {
     const packageName = (await args.pickResult('string')).value
 
     if (!packageName) return await message.channel.send('No package name provided')

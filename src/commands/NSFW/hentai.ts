@@ -4,7 +4,6 @@ import { ApplyOptions } from '@sapphire/decorators'
 import type { PieceContext } from '@sapphire/framework'
 
 @ApplyOptions<ArielCommandOptions>({
-  name: 'hentai',
   aliases: ['hentai!'],
   description: 'Returns a Image from r/hentai',
   cooldownLimit: 3,

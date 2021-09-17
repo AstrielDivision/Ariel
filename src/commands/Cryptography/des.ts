@@ -1,9 +1,7 @@
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
 import { ApplyOptions } from '@sapphire/decorators'
-import type { Args } from '@sapphire/framework'
 import crypto from 'crypto-js'
 import { Message, Permissions } from 'discord.js'
-import i18 from 'i18next'
 
 @ApplyOptions<ArielCommandOptions>({
   description: 'commands/cryptography:desDescription',
@@ -12,15 +10,15 @@ import i18 from 'i18next'
   flags: ['d', 'decrypt', 'triple', 't']
 })
 export default class DES extends ArielCommand {
-  public async run(message: Message, args: Args) {
+  public async run(message: Message, args: ArielCommand.Args) {
     const text = (await args.restResult('string')).value
     const secret = args.getOption('secret', 's')
     const decryptFlag = args.getFlags('decrypt', 'd')
     const tripleFlag = args.getFlags('triple', 't')
 
-    if (!text) return await message.channel.send(i18.t('commands/cryptography:noText'))
+    if (!text) return await message.channel.send(args.t('commands/cryptography:noText'))
     if (!secret) {
-      return await message.channel.send(i18.t('commands/cryptography:noSecret'))
+      return await message.channel.send(args.t('commands/cryptography:noSecret'))
     }
 
     if (message.guild.me.permissions.has(Permissions.FLAGS.MANAGE_MESSAGES)) void message.delete()

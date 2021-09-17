@@ -2,7 +2,6 @@ import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
 import type { WikiHowImage } from '@aero/ksoft'
 import { ApplyOptions } from '@sapphire/decorators'
 import { Message, MessageEmbed } from 'discord.js'
-import i18 from 'i18next'
 
 @ApplyOptions<ArielCommandOptions>({
   aliases: ['how'],
@@ -11,11 +10,11 @@ import i18 from 'i18next'
   cooldownDelay: 2000
 })
 export default class Wikihow extends ArielCommand {
-  public async run(message: Message) {
+  public async run(message: Message, args: ArielCommand.Args) {
     const { url, article }: WikiHowImage = await this.container.client.ksoft.images.wikihow()
     const embed = new MessageEmbed()
       .setTitle(article.title)
-      .setFooter(i18.t('commands/attributions:poweredByKSoft'))
+      .setFooter(args.t('commands/attributions:poweredByKSoft'))
       .setURL(url)
       .setColor('GREEN')
       .setTimestamp()
