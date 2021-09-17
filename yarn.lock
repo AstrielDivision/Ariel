@@ -540,16 +540,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/plugin-i18next@npm:2.0.0-next.e24c125.0":
-  version: 2.0.0-next.e24c125.0
-  resolution: "@sapphire/plugin-i18next@npm:2.0.0-next.e24c125.0"
+"@sapphire/plugin-i18next@npm:2.0.0-pr-97.11c4df4.0":
+  version: 2.0.0-pr-97.11c4df4.0
+  resolution: "@sapphire/plugin-i18next@npm:2.0.0-pr-97.11c4df4.0"
   dependencies:
     "@sapphire/utilities": ^2.0.1
     "@types/i18next-fs-backend": ^1.0.1
     i18next: ^19.9.2
     i18next-fs-backend: ^1.1.1
-    tslib: ^2.3.1
-  checksum: 0ca721768c6f721256f6fbc359c3e33d2a4d716f7ef2c5188a110aaecd9d83a150d81601785dd267d0172e68baadb3a2b9bc4d666cffd56c3c7405d748f68744
+    tslib: ^2.3.0
+  checksum: f31ebd83f9640f7a24764170176dfe4530178716b8b3ab3ea9865fab0db5801a2a8d4a1f05c19c5cad890baa25adf5413d401754172ae3f005e2b8ef3b57d4fe
   languageName: node
   linkType: hard
 
@@ -1234,7 +1234,7 @@ __metadata:
     "@sapphire/fetch": 2.0.0-next.c4f992f5.0
     "@sapphire/framework": 2.0.0-next.9f81b7bb.0
     "@sapphire/plugin-api": ^3.0.0-next.8ffa299.0
-    "@sapphire/plugin-i18next": 2.0.0-next.e24c125.0
+    "@sapphire/plugin-i18next": 2.0.0-pr-97.11c4df4.0
     "@sapphire/plugin-subcommands": 2.0.0-next.3bd3e99.0
     "@sapphire/type": 2.1.0
     "@sapphire/utilities": 2.0.1
