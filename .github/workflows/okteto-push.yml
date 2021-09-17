@@ -21,7 +21,11 @@ jobs:
         with:
           namespace: artiefuzzz
       - name: Configuration
+        if: github.ref == 'refs/heads/main'
         run: echo -n "${{ secrets.CONFIG }}" | base64 -d > config/main.json
+      - name: Configuration
+        if: github.ref == 'refs/heads/starlight'
+        run: echo -n "${{ secrets.DEVCONFIG }}" | base64 -d > config/main.json
       - name: Deploy Stack (Nightly / starlight)
         if: github.ref == 'refs/heads/starlight'
         uses: okteto/deploy-stack@master
