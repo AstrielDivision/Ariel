@@ -526,7 +526,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/plugin-api@npm:next":
+"@sapphire/plugin-api@npm:^3.0.0-next.8ffa299.0":
   version: 3.0.0-next.8ffa299.0
   resolution: "@sapphire/plugin-api@npm:3.0.0-next.8ffa299.0"
   dependencies:
@@ -1233,7 +1233,7 @@ __metadata:
     "@sapphire/discord.js-utilities": 3.0.0-next.c4f992f5.0
     "@sapphire/fetch": 2.0.0-next.c4f992f5.0
     "@sapphire/framework": 2.0.0-next.9f81b7bb.0
-    "@sapphire/plugin-api": next
+    "@sapphire/plugin-api": ^3.0.0-next.8ffa299.0
     "@sapphire/plugin-i18next": 2.0.0-next.e24c125.0
     "@sapphire/plugin-subcommands": 2.0.0-next.3bd3e99.0
     "@sapphire/type": 2.1.0
@@ -1249,24 +1249,24 @@ __metadata:
     all-contributors-cli: 6.20.0
     app-root-path: 3.0.0
     bufferutil: 4.0.3
-    colorette: 1.3.0
+    colorette: 1.4.0
     convict: 6.2.0
     crypto-js: 4.1.1
     cz-conventional-changelog: 3.3.0
-    dayjs: 1.10.6
+    dayjs: 1.10.7
     discord-api-types: ^0.23.1
     discord.js: 13.1.0
     eslint: 7.32.0
     husky: 7.0.2
     lint-staged: 11.1.2
-    mongoose: 6.0.4
-    nanoid: 3.1.25
+    mongoose: 6.0.6
+    nanoid: ^3.1.25
     owofire: 1.0.4
-    prettier: 2.3.2
-    reflect-metadata: 0.1.13
+    prettier: 2.4.1
+    reflect-metadata: ^0.1.13
     rimraf: 3.0.2
     tslib: 2.3.1
-    typescript: 4.4.2
+    typescript: 4.4.3
     utf-8-validate: 5.0.5
   languageName: unknown
   linkType: soft
@@ -1630,7 +1630,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"colorette@npm:1.3.0, colorette@npm:^1.2.2":
+"colorette@npm:1.4.0":
+  version: 1.4.0
+  resolution: "colorette@npm:1.4.0"
+  checksum: 01c3c16058b182a4ab4c126a65a75faa4d38a20fa7c845090b25453acec6c371bb2c5dceb0a2338511f17902b9d1a9af0cadd8509c9403894b79311032c256c3
+  languageName: node
+  linkType: hard
+
+"colorette@npm:^1.2.2":
   version: 1.3.0
   resolution: "colorette@npm:1.3.0"
   checksum: bda403dfba4d032bee4169f2a6436a83ae3da488a53bcb3be92dc44ace056518245cc614b12429d7529493d6b090a119b2523b0d55e8cd6b81ad939a3003c008
@@ -1855,10 +1862,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dayjs@npm:1.10.6":
-  version: 1.10.6
-  resolution: "dayjs@npm:1.10.6"
-  checksum: a79af6d19cf1e3aefc231e480037b37df50701e8d0cdbe1736fc6665b7045a159777215c5c8dd42ede7dd3c4c4f4a174d4ddd5bffca51df2a4ba0e0e25a6163c
+"dayjs@npm:1.10.7":
+  version: 1.10.7
+  resolution: "dayjs@npm:1.10.7"
+  checksum: a0a4ca95abaa03d0702161dc2c35d16121188e342f5052b9c61cdf784dab68af766f477c04f87f71c6af666fd4d13db9b9853b87265850d6093b7b04e1bb1cd7
   languageName: node
   linkType: hard
 
@@ -4013,9 +4020,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mongoose@npm:6.0.4":
-  version: 6.0.4
-  resolution: "mongoose@npm:6.0.4"
+"mongoose@npm:6.0.6":
+  version: 6.0.6
+  resolution: "mongoose@npm:6.0.6"
   dependencies:
     bson: ^4.2.2
     kareem: 2.3.2
@@ -4026,7 +4033,7 @@ __metadata:
     regexp-clone: 1.0.0
     sift: 13.5.2
     sliced: 1.0.1
-  checksum: cfe9506910f2224675262593a05265c4936fe792333ece641d1306314e8ad53cfc51230ac922e6935c9c465bd9486b8b79f5d6efb7d58557bc6ebf5b1985c30e
+  checksum: bd2e18460b358eac8eba82431a8545bf40cc472c5e38850db65d5db0c771a11c07c87607e814bcfd5e5cc1c3680b5a77e0279f61c86e77c13cd623cb3b47fa59
   languageName: node
   linkType: hard
 
@@ -4580,12 +4587,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:2.3.2":
-  version: 2.3.2
-  resolution: "prettier@npm:2.3.2"
+"prettier@npm:2.4.1":
+  version: 2.4.1
+  resolution: "prettier@npm:2.4.1"
   bin:
     prettier: bin-prettier.js
-  checksum: 17ce5784ac67621c292df58e2da60b2ee150c2d6aebea22a6ad9e52fcd6a5e66c349d0a8436ea3bd8ff9d778920a5f68000d7625b74f43558718a49755aa5259
+  checksum: cc6830588b401b0d742862fe9c46bc9118204fb307c3abe0e49e95b35ed23629573807ffdf9cdd65289c252a0bb51fc0171437f6626ee36378dea80f0ee80b91
   languageName: node
   linkType: hard
 
@@ -5557,6 +5564,16 @@ typescript@4.4.2:
   languageName: node
   linkType: hard
 
+typescript@4.4.3:
+  version: 4.4.3
+  resolution: "typescript@npm:4.4.3"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 05823f21796d450531a7e4ab299715d38fd9ded0e4ce7400876053f4b5166ca3dde7a68cecfe72d9086039f03c0b6edba36516fb10ed83c5837d9600532ea4c2
+  languageName: node
+  linkType: hard
+
 "typescript@patch:typescript@4.4.2#~builtin<compat/typescript>":
   version: 4.4.2
   resolution: "typescript@patch:typescript@npm%3A4.4.2#~builtin<compat/typescript>::version=4.4.2&hash=d8b4e7"
@@ -5564,6 +5581,16 @@ typescript@4.4.2:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 11d6ab6e868117908c388401e2ac06d503c5c8709115ab80ee69a1a6352c1f98471d1e595636bfe6a2d6b20b03a44df6bb2d3d198cea97c0c328968cd18d2b70
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@4.4.3#~builtin<compat/typescript>":
+  version: 4.4.3
+  resolution: "typescript@patch:typescript@npm%3A4.4.3#~builtin<compat/typescript>::version=4.4.3&hash=d8b4e7"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 215a59742afb7e0c3668e2c50ca19813deb24b3cc0d16ac3591990e033728050aaa99e159a72b54cb43653f16c778a5cf9dfeed1f51c3b105710ae082c064af7
   languageName: node
   linkType: hard
 

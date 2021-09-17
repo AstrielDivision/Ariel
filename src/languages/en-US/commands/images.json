@@ -19,9 +19,9 @@
     }
   },
   "doge": {
-    "description": "Returns an image of doge. Wow",
+    "description": "Returns an image of doge",
     "embed": {
-      "title": "Wow"
+      "title": "Doge"
     }
   },
   "fox": {
