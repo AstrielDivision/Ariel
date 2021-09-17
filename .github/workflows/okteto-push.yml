@@ -31,10 +31,12 @@ jobs:
         uses: okteto/deploy-stack@master
         with:
           name: starlight
+          file: docker/starlight.yml
           build: true
       - name: Deploy Stack (Production / main)
         if: github.ref == 'refs/heads/main'
         uses: okteto/deploy-stack@master
         with:
           name: ariel
+          file: docker/ariel.yml
           build: true
