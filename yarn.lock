@@ -433,12 +433,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/decorators@npm:3.0.0-next.c4f992f5.0":
-  version: 3.0.0-next.c4f992f5.0
-  resolution: "@sapphire/decorators@npm:3.0.0-next.c4f992f5.0"
+"@sapphire/decorators@npm:3.0.0-pr-160.676f855.0":
+  version: 3.0.0-pr-160.676f855.0
+  resolution: "@sapphire/decorators@npm:3.0.0-pr-160.676f855.0"
   dependencies:
     tslib: 2.x
-  checksum: 180631fd47b3f984b2d8ea36daf095af87f1926fe9bc59d4d8c611ccb3539b1016ecb53ebbf89ea615f194b75e0a405a877e61f77cc92b8f7607a0aa1abca1b6
+  checksum: bc0af59c81896211246ca6eb314ef8df07d00fbad0f9c8f2c572929666431d0d2110c2205f6144efdd831b318b833539cb84e41afb3f0401905e4d6a111a0e38
   languageName: node
   linkType: hard
 
@@ -1228,7 +1228,7 @@ __metadata:
     "@astriel-division/ts-config": 1.0.5
     "@commitlint/cli": 13.1.0
     "@commitlint/config-conventional": 13.1.0
-    "@sapphire/decorators": 3.0.0-next.c4f992f5.0
+    "@sapphire/decorators": 3.0.0-pr-160.676f855.0
     "@sapphire/discord-utilities": 2.1.5
     "@sapphire/discord.js-utilities": 3.0.0-next.c4f992f5.0
     "@sapphire/fetch": 2.0.0-next.c4f992f5.0
