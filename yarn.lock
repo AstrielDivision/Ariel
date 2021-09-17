@@ -500,29 +500,29 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/framework@npm:2.0.0-next.9f81b7bb.0":
-  version: 2.0.0-next.9f81b7bb.0
-  resolution: "@sapphire/framework@npm:2.0.0-next.9f81b7bb.0"
+"@sapphire/framework@npm:2.0.0-pr-261.c2a6471a.0":
+  version: 2.0.0-pr-261.c2a6471a.0
+  resolution: "@sapphire/framework@npm:2.0.0-pr-261.c2a6471a.0"
   dependencies:
     "@sapphire/discord-utilities": ^2.1.5
     "@sapphire/discord.js-utilities": next
-    "@sapphire/pieces": ^2.2.0
+    "@sapphire/pieces": ^3.0.0
     "@sapphire/ratelimits": ^2.0.1
     "@sapphire/utilities": ^2.0.1
     lexure: ^0.17.0
     tslib: ^2.3.1
-  checksum: 0eca40bc081a7759724376995b67518e5c53094a3434166a39af2f8f06fbb8fe7e999f94c5b30a8ff4a9b595be25f8f27d686e1834bb1195cd7bfa8c7292f7e0
+  checksum: 67274446e00860603d328df09e160f453d889bfdb121113e6b41d99f5682ff62d8320c6a0f89723356f4c0c417aaf00ed26160e807efd6d842983ed03b3b713f
   languageName: node
   linkType: hard
 
-"@sapphire/pieces@npm:^2.2.0":
-  version: 2.2.0
-  resolution: "@sapphire/pieces@npm:2.2.0"
+"@sapphire/pieces@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@sapphire/pieces@npm:3.0.0"
   dependencies:
     "@discordjs/collection": ^0.2.1
     "@sapphire/utilities": ^2.0.1
     tslib: ^2.3.1
-  checksum: 81e327f57b9971d98c46cf32f56b1b8177e61b47c4acf3f7ad389ebb5a4bdfc4f89882e0a96b04e3c2465f0ae165ca8a787870d28ed6ed9fc69b16062948156f
+  checksum: a63d38e4940c3e97ab78ded9877edc5b18f29060f92081b1000b6ad2d2a0b8864f680d7619c80f9a5da0a33044ba574b2d475e673691678295f6ddd314488b69
   languageName: node
   linkType: hard
 
@@ -1232,7 +1232,7 @@ __metadata:
     "@sapphire/discord-utilities": 2.1.5
     "@sapphire/discord.js-utilities": 3.0.0-next.c4f992f5.0
     "@sapphire/fetch": 2.0.0-next.c4f992f5.0
-    "@sapphire/framework": 2.0.0-next.9f81b7bb.0
+    "@sapphire/framework": 2.0.0-pr-261.c2a6471a.0
     "@sapphire/plugin-api": 3.0.0-next.8ffa299.0
     "@sapphire/plugin-i18next": 2.0.0-pr-97.11c4df4.0
     "@sapphire/plugin-subcommands": 2.0.0-next.3bd3e99.0
