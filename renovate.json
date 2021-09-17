@@ -1,5 +1,5 @@
 {
   "extends": ["config:base"],
-  "baseBranches": ["Arcane"],
+  "baseBranches": ["starlight"],
   "automerge": "true"
 }
