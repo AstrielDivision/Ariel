@@ -14,7 +14,7 @@ export default class YiffFloofyDev extends ArielCommand {
   public async run(message: Message) {
     const req: Request = await this.container.client.Yiff.floofy()
 
-    const embed = new MessageEmbed().setImage(req.url).setColor('RANDOM')
+    const embed = new MessageEmbed().setImage(req.url).setColor('LUMINOUS_VIVID_PINK')
 
     return await message.channel.send({
       embeds: [embed]

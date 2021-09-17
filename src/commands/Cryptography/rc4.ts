@@ -1,29 +1,25 @@
+import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
 import { ApplyOptions } from '@sapphire/decorators'
-import type { Args } from '@sapphire/framework'
 import crypto from 'crypto-js'
 import { Message, Permissions } from 'discord.js'
-import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
 
 @ApplyOptions<ArielCommandOptions>({
-  name: 'rc4',
   aliases: ['rc4drop'],
-  description: 'Encrypt messages by using the RC4Drop cipher or decrypt RC4Drop encrypted messages',
+  description: 'commands/cryptography:RC4Description',
   usage: '<text> <--secret=<randomLetters> or -s=<randomLetters>>',
   options: ['secret', 's'],
   flags: ['d', 'decrypt']
 })
 export default class RC4Drop extends ArielCommand {
-  public async run(message: Message, args: Args) {
+  public async run(message: Message, args: ArielCommand.Args) {
     const decryptFlag = args.getFlags('d', 'decrypt')
     const text = (await args.restResult('string')).value
     const secret = args.getOption('s', 'secret')
 
-    if (!text) return await message.channel.send('No text provided')
+    if (!text) return await message.channel.send(args.t('commands/cryptography:noText'))
 
     if (!secret) {
-      return await message.channel.send(
-        'No secret provided. (Hint: Use -s=<randomLetters> or --secret=<randomLetters>)'
-      )
+      return await message.channel.send(args.t('commands/cryptography:noSecret'))
     }
 
     if (message.guild.me.permissions.has(Permissions.FLAGS.MANAGE_MESSAGES)) void message.delete()

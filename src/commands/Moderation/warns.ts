@@ -1,42 +1,55 @@
-import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
-import { Message, User, MessageEmbed } from 'discord.js'
-import { ApplyOptions } from '@sapphire/decorators'
-import type { Args } from '@sapphire/framework'
 import Warnings from '#lib/Models/Warnings'
+import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
+import { ApplyOptions } from '@sapphire/decorators'
+import { Message, MessageEmbed, User } from 'discord.js'
 
 @ApplyOptions<ArielCommandOptions>({
-  description: 'Fetch your warnings or another users warnings',
+  description: 'commands/moderation:warns.description',
   usage: '<@user / userID> [warnID]'
 })
 export default class Warns extends ArielCommand {
-  public async run(message: Message, args: Args) {
+  public async run(message: Message, args: ArielCommand.Args) {
     const { user } = args.finished ? message.member : await args.pick('member')
-    const ID = await args.pick('string').catch(() => '')
+    const ID = args.finished ? null : await args.pick('nanoID')
 
     const embed = new MessageEmbed()
 
     if (ID) {
       const warn = await this.FetchWarn(user, message.guild.id, ID)
 
-      if (!warn) return await message.channel.send('No warning with that ID exists.')
+      if (!warn) return await message.channel.send(args.t('commands/moderation:warns.errors.404'))
 
       const moderator = await this.container.client.util.findUser(warn.mod)
 
-      embed.setTitle(`${user.id === message.author.id ? 'Your' : `${user.username}'s`} Warn | `)
+      embed.setTitle(
+        args.t('commands/moderation:warns.embed.title', {
+          who: user.id === message.author.id ? 'Your' : `${user.username}'s`
+        })
+      )
 
-      embed.addField('Moderator', moderator.username, true)
-      embed.addField('Reason', warn.reason, true)
-      embed.setFooter(`Warn ID: ${warn.id}`)
+      embed.addField(args.t('commands/moderation:warns.embed.fields.mod'), moderator.username, true)
+      embed.addField(args.t('commands/moderation:warns.embed.fields.reason'), warn.reason, true)
+      embed.setFooter(args.t('commands/moderation:warns.embed.footer', { ID: warn.id }))
 
       return await message.channel.send({ embeds: [embed] })
     }
 
     const { warnings, count } = await this.FetchWarnings(user, message.guild.id)
-    embed.setTitle(`${user.id === message.author.id ? 'Your' : `${user.username}'s`} Warnings [${count ?? 0}]`)
+    embed.setTitle(
+      args.t('commands/moderation:warns.embed2.title', {
+        who: user.id === message.author.id ? 'Your' : `${user.username}'s`,
+        count: count ?? 0
+      })
+    )
 
     embed.addField(
-      'Warnings',
-      warnings ? warnings.map(w => `\`${w.id}\``).join(', ') : 'This user doesn\'t have any warns.',
+      args.t('commands/moderation:warns.embed2.fields.name'),
+      warnings.length
+        ? warnings
+          .map(w => `\`${w.id}\``)
+          .join(', ')
+          .toString()
+        : args.t('commands/moderation:warns.embed2.fields.noWarns'),
       true
     )
 

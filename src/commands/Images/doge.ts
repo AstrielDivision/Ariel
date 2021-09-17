@@ -1,23 +1,22 @@
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
+import type { Image } from '@aero/ksoft'
 import { ApplyOptions } from '@sapphire/decorators'
 import { Message, MessageEmbed } from 'discord.js'
-import type { Image } from '@aero/ksoft'
 
 @ApplyOptions<ArielCommandOptions>({
-  name: 'doge',
   aliases: ['doge', 'wow'],
-  description: 'Returns an image of doge. Wow',
+  description: 'commands/images:doge.description',
   cooldownLimit: 3,
   cooldownDelay: 2000
 })
 export default class DogeWow extends ArielCommand {
-  public async run(message: Message) {
+  public async run(message: Message, args: ArielCommand.Args) {
     const { url }: Image = await this.container.client.ksoft.images.random('doge', {
       nsfw: false
     })
     const embed = new MessageEmbed()
-      .setTitle('Wow')
-      .setFooter('Powered by api.ksoft.si')
+      .setTitle(args.t('commands/images:doge.embed.title'))
+      .setFooter(args.t('commands/attributions:poweredByKSoft'))
       .setURL(url)
       .setColor('ORANGE')
       .setTimestamp()

@@ -12,8 +12,9 @@
       "#lib/*": ["lib/*"],
       "#setup": ["lib/setup.ts"]
     },
-    "strictNullChecks": false
+    "strictNullChecks": false,
+    "resolveJsonModule": true
   },
-  "include": ["."],
+  "include": [".", "./**/*.json"],
   "exclude": ["tsconfig.json"]
 }

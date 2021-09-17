@@ -1,10 +1,8 @@
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
 import { ApplyOptions } from '@sapphire/decorators'
 import { Message, MessageEmbed } from 'discord.js'
-import type { Args } from '@sapphire/framework'
 
 @ApplyOptions<ArielCommandOptions>({
-  name: 'e621',
   aliases: ['621'],
   description: 'Returns an Image from e621 with your selected tags',
   detailedDescription:
@@ -16,7 +14,7 @@ import type { Args } from '@sapphire/framework'
   usage: '<tags> [--results=1 or -r=1]'
 })
 export default class E621 extends ArielCommand {
-  public async run(message: Message, args: Args) {
+  public async run(message: Message, args: ArielCommand.Args) {
     const Tags = (await args.restResult('string')).value
     const resOption = args.getOption('results', 'r')
     const res = parseInt(resOption)

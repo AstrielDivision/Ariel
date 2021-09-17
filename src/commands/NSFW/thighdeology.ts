@@ -1,10 +1,9 @@
-import { ApplyOptions } from '@sapphire/decorators'
-import type { PieceContext } from '@sapphire/framework'
 import type { ArielCommandOptions } from '#lib/Structures/BaseCommand'
 import { ArielRedditCommand } from '#lib/Structures/commands/RedditCommand'
+import { ApplyOptions } from '@sapphire/decorators'
+import type { PieceContext } from '@sapphire/framework'
 
 @ApplyOptions<ArielCommandOptions>({
-  name: 'thigh',
   aliases: ['thighs', 'thighdeology'],
   description: 'Returns a Image from r/thighdeology',
   cooldownLimit: 3,

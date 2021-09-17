@@ -1,10 +1,8 @@
-import { ApplyOptions } from '@sapphire/decorators'
-import type { Args } from '@sapphire/framework'
-import type { Message } from 'discord.js'
-import * as crypto from 'crypto'
-
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
+import { ApplyOptions } from '@sapphire/decorators'
+import * as crypto from 'crypto'
 import cryptoJS from 'crypto-js'
+import type { Message } from 'discord.js'
 
 @ApplyOptions<ArielCommandOptions>({
   name: 'hash',
@@ -25,7 +23,7 @@ export default class Hash extends ArielCommand {
     }
   }
 
-  public async run(message: Message, args: Args) {
+  public async run(message: Message, args: ArielCommand.Args) {
     let allFlag = args.getFlags('all')
     let sha1Flag = args.getFlags('sha1')
     let sha256Flag = args.getFlags('sha256')

@@ -1,14 +1,12 @@
-import { ApplyOptions } from '@sapphire/decorators'
-import type { Args } from '@sapphire/framework'
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
+import { ApplyOptions } from '@sapphire/decorators'
+import { fetch, FetchMethods, FetchResultTypes } from '@sapphire/fetch'
 import { Type } from '@sapphire/type'
 import { codeBlock, isThenable } from '@sapphire/utilities'
 import type { Message } from 'discord.js'
 import { inspect } from 'util'
-import { FetchMethods, FetchResultTypes, fetch } from '@sapphire/fetch'
 
 @ApplyOptions<ArielCommandOptions>({
-  name: 'eval',
   aliases: ['ev'],
   description: 'Evals any JavaScript code',
   quotes: [],
@@ -18,7 +16,7 @@ import { FetchMethods, FetchResultTypes, fetch } from '@sapphire/fetch'
   preconditions: ['OwnerOnly']
 })
 export default class extends ArielCommand {
-  public async run(message: Message, args: Args) {
+  public async run(message: Message, args: ArielCommand.Args) {
     const code = (await args.restResult('string')).value
 
     if (!code) return await message.channel.send('I cannot evaluate nothingness!')

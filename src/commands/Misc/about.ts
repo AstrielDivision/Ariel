@@ -1,11 +1,10 @@
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
-import { Message, MessageEmbed } from 'discord.js'
 import { ApplyOptions } from '@sapphire/decorators'
+import { Message, MessageEmbed } from 'discord.js'
 import { pkg } from '../../config'
 
 @ApplyOptions<ArielCommandOptions>({
-  name: 'about',
-  description: 'Discord bot about'
+  description: 'commands/misc:about.description'
 })
 export default class About extends ArielCommand {
   /**
@@ -14,10 +13,8 @@ export default class About extends ArielCommand {
    */
   public async run(message: Message) {
     const embed = new MessageEmbed()
-      //
       .setTitle(`${this.container.client.user.username} - About`)
       .setDescription(
-        //
         `Hello! I'm ${this.container.client.user.username}.\nI am a Image discord bot with some other tools too.\n Need images? I'm the bot you need! :)`
       )
       .addFields(

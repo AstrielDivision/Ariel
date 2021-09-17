@@ -1,16 +1,14 @@
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
-import { ColorResolvable, Message, MessageEmbed } from 'discord.js'
 import { ApplyOptions } from '@sapphire/decorators'
-import type { Args } from '@sapphire/framework'
 import { FetchResultTypes } from '@sapphire/fetch'
+import { ColorResolvable, Message, MessageEmbed } from 'discord.js'
 
 @ApplyOptions<ArielCommandOptions>({
-  name: 'mdn',
   description: 'Find something on the MDN Docs',
   usage: '<query>'
 })
 export default class MDN extends ArielCommand {
-  public async run(message: Message, args: Args) {
+  public async run(message: Message, args: ArielCommand.Args) {
     const query = (await args.pickResult('string')).value
 
     if (!query) return await message.channel.send('I cannot search for nothing in the MDN Docs!')

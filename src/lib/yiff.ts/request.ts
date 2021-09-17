@@ -1,8 +1,8 @@
-import { FetchMethods, FetchResultTypes, fetch } from '@sapphire/fetch'
+import { fetch, FetchMethods, FetchResultTypes } from '@sapphire/fetch'
 import type Client from 'lib/Structures/client'
-import type { Config } from './types'
-import c from './constants'
 import cfg from '../../config'
+import c from './constants'
+import type { Config } from './types'
 
 export default async function request(client: Client, options: Config): Promise<unknown> {
   switch (options.site) {

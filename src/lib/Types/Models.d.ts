@@ -1,13 +1,15 @@
-import type { Document } from 'mongoose'
 import type { Snowflake } from 'discord.js'
+import type { Document } from 'mongoose'
 
 export interface GuildSettings extends Document {
   guild_id?: Snowflake
   prefix?: string | null
+  language?: string
   anti?: {
     unmentionable?: boolean
     invites?: boolean
     gifts?: boolean
+    hoisting?: boolean
   }
 }
 

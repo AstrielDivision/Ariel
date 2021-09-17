@@ -1,0 +1,10 @@
+{
+  "description": "Enable or Disable anti listeners (Per-server only)",
+  "permissionErr": "Mir fehlt die `{{perm}}` Berechtigung!",
+  "enabled": "**{{enabled}}** werden nun gefiltert",
+  "disabled": "**{{disabled}}** werden nicht mehr gefiltert",
+  "unmentionable": "Filtering **unmentionable** names? {{yesNo}}",
+  "filtering": "Filtering **{{name}}**? {{yesNo}}",
+  "disableFooter": "Um Filter zu deaktivieren, verwende {{prefix}}anti disable [filter]",
+  "title": "Servereinstellungen"
+}

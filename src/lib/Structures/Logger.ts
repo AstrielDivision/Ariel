@@ -1,8 +1,8 @@
 import type { ILogger, LogLevel } from '@sapphire/framework'
+import colorette from 'colorette'
 import { MessageAttachment, MessageEmbed, WebhookClient, WebhookMessageOptions } from 'discord.js'
 import { EOL } from 'os'
 import cfg from '../../config'
-import colorette from 'colorette'
 
 export default class AstraeaLogger implements ILogger {
   private readonly loglevel: LogLevel
@@ -60,10 +60,14 @@ export default class AstraeaLogger implements ILogger {
 
     const hook = new WebhookClient({ url: cfg.webhook })
 
-    const embed: MessageEmbed = new MessageEmbed().setTimestamp().setColor('YELLOW')
+    const embed: MessageEmbed = new MessageEmbed()
+      .setTitle(`[${this.namespace} | ${level}]`)
+      .setTimestamp()
+      .setColor('YELLOW')
+
     const options: WebhookMessageOptions = {
       embeds: [embed],
-      username: this.namespace + ' Logger',
+      username: `${this.namespace} | Logs.`,
       avatarURL: 'https://lazy.devswhofuckdevs.xyz/55vQ3rlwU.png'
     }
 

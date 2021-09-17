@@ -1,0 +1,10 @@
+{
+  "description": "Enable or Disable anti listeners (Per-server only)",
+  "permissionErr": "I don't have the `{{perm}}` permission!",
+  "enabled": "Now filtering **{{enabled}}**",
+  "disabled": "No longer filtering **{{disabled}}**",
+  "unmentionable": "Filtering **unmentionable** names? {{yesNo}}",
+  "filtering": "Filtering **{{name}}**? {{yesNo}}",
+  "disableFooter": "To disable these use {{prefix}}anti disable [name]",
+  "title": "Guild Settings"
+}

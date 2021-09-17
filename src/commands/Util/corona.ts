@@ -1,16 +1,14 @@
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
-import { Message, MessageEmbed } from 'discord.js'
 import { ApplyOptions } from '@sapphire/decorators'
-import type { Args } from '@sapphire/framework'
+import { Message, MessageEmbed } from 'discord.js'
 import CoronaFetch from '../../lib/corona-fetch/corona'
 
 @ApplyOptions<ArielCommandOptions>({
-  name: 'corona',
   description: 'Get COVID-19 statistics worldwide or by country',
   usage: '[country]'
 })
 export default class Corona extends ArielCommand {
-  public async run(message: Message, args: Args) {
+  public async run(message: Message, args: ArielCommand.Args) {
     const country = (await args.pickResult('string')).value
 
     const embed = new MessageEmbed().setFooter('This data may not be accurate')

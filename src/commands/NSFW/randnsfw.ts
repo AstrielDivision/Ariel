@@ -1,10 +1,9 @@
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
+import type { RedditImage } from '@aero/ksoft'
 import { ApplyOptions } from '@sapphire/decorators'
 import { Message, MessageEmbed } from 'discord.js'
-import type { RedditImage } from '@aero/ksoft'
 
 @ApplyOptions<ArielCommandOptions>({
-  name: 'randnsfw',
   aliases: ['nsfw'],
   description: 'Returns a random nsfw image or gif from various subreddits',
   cooldownLimit: 3,

@@ -1,38 +1,40 @@
-import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
-import { Message } from 'discord.js'
-import { ApplyOptions, RequiresUserPermissions } from '@sapphire/decorators'
-import type { Args } from '@sapphire/framework'
-import cfg from '../../config'
 import GuildSettings from '#lib/Models/GuildSettings'
+import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
+import { ApplyOptions, RequiresUserPermissions } from '@sapphire/decorators'
+import { resolveKey } from '@sapphire/plugin-i18next'
+import { Message } from 'discord.js'
+import cfg from '../../config'
 
 @ApplyOptions<ArielCommandOptions>({
-  description: 'Set the discord bot\'s prefix',
+  description: 'commands/prefix:description',
   usage: '[set | reset | show: default] [new prefix]',
   subCommands: ['reset', 'set', { input: 'show', default: true }]
 })
 export default class Prefix extends ArielCommand {
   @RequiresUserPermissions('MANAGE_GUILD')
-  public async set(message: Message, args: Args) {
+  public async set(message: Message, args: ArielCommand.Args) {
     const prefix = (await args.pickResult('string')).value
 
-    if (!prefix) return await message.channel.send('No new prefix provided')
-    if (prefix.length > 3) return await message.channel.send('The prefix cannot contain more than 3 characters')
+    if (!prefix) return await message.channel.send(await resolveKey(message, 'commands/prefix:error.noPrefix'))
+    if (prefix.length > 3) {
+      return await message.channel.send(await resolveKey(message, 'commands/prefix:error.prefixToLong'))
+    }
 
     await GuildSettings.findOneAndUpdate({ guild_id: message.guild.id }, { $set: { prefix: prefix } })
 
-    return await message.channel.send('Successfully set the prefix set to ' + prefix)
+    return await message.channel.send(await resolveKey(message, 'commands/prefix:success.setPrefix', { prefix }))
   }
 
   @RequiresUserPermissions('MANAGE_GUILD')
   public async reset(message: Message) {
     await GuildSettings.findOneAndUpdate({ guild_id: message.guild.id }, { $set: { prefix: cfg.prefix } })
 
-    return await message.channel.send('Successfully reset the prefix')
+    return await message.channel.send(await resolveKey(message, 'commands/prefix:success.resetPrefix'))
   }
 
   public async show(message: Message) {
     const { prefix } = await GuildSettings.findOneAndUpdate({ guild_id: message.guild.id })
 
-    return await message.channel.send(`The current guild prefix is: ${prefix}`)
+    return await message.channel.send(await resolveKey(message, 'commands/prefix:showPrefix', { prefix }))
   }
 }

@@ -1,13 +1,15 @@
-import { SapphireClient, version } from '@sapphire/framework'
-import { KSoftClient } from '@aero/ksoft'
-import StatusUpdater from '@tmware/status-rotate'
-import ClientUtils from '../ClientUtils'
-import cfg, { pkg } from '../../config'
-import { ClientOptions, version as djs } from 'discord.js'
 import Yiff from '#lib/yiff.ts/index'
-import * as Sentry from '@sentry/node'
-import mongoose from 'mongoose'
 import '#setup'
+import { KSoftClient } from '@aero/ksoft'
+import { SapphireClient, version } from '@sapphire/framework'
+import * as Sentry from '@sentry/node'
+import StatusUpdater from '@tmware/status-rotate'
+import { ClientOptions, version as djs } from 'discord.js'
+import mongoose from 'mongoose'
+import { join } from 'path'
+import cfg, { pkg } from '../../config'
+import ClientUtils from '../ClientUtils'
+import { TaskStore } from './TaskStore'
 
 export default class Client extends SapphireClient {
   ksoft: KSoftClient
@@ -31,7 +33,19 @@ export default class Client extends SapphireClient {
       },
       {
         type: 'PLAYING',
-        name: 'あなたは大丈夫？'
+        name: 'Rainbow 6 Siege'
+      },
+      {
+        type: 'PLAYING',
+        name: 'CS:GO'
+      },
+      {
+        type: 'COMPETING',
+        name: 'against others'
+      },
+      {
+        type: 'WATCHING',
+        name: 'The dark skies of the earth'
       }
     ])
   }
@@ -47,6 +61,15 @@ export default class Client extends SapphireClient {
     return this
   }
 
+  public stop() {
+    this.logger.warn('Received exit signal. Terminating in 5 seconds...')
+    this.destroy()
+    setTimeout(() => {
+      this.logger.warn('Terminating...')
+      process.exit(0)
+    }, 5000)
+  }
+
   private async init(): Promise<void> {
     Sentry.init({
       dsn: cfg.sentry,
@@ -58,6 +81,8 @@ export default class Client extends SapphireClient {
       framework: version,
       version: pkg.version
     })
+
+    this.stores.register(new TaskStore().registerPath(join(__dirname, '..', '..', 'tasks')))
 
     await mongoose
       .connect(cfg.mongo.uri)
@@ -72,5 +97,8 @@ export default class Client extends SapphireClient {
     setInterval(() => {
       void this.statusUpdater.updateStatus()
     }, 2 * 60 * 1000) // Change status every 2 minutes
+
+    process.once('SIGINT', () => this.stop())
+    process.once('SIGTERM', () => this.stop())
   }
 }

@@ -1,10 +1,9 @@
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
+import type { Image } from '@aero/ksoft'
 import { ApplyOptions } from '@sapphire/decorators'
 import { Message, MessageEmbed } from 'discord.js'
-import type { Image } from '@aero/ksoft'
 
 @ApplyOptions<ArielCommandOptions>({
-  name: 'hentaigif',
   description: 'Returns an animated image of hentai',
   cooldownLimit: 3,
   nsfw: true,

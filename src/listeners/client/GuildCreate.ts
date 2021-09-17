@@ -1,7 +1,7 @@
-import { Events, Listener, ListenerOptions } from '@sapphire/framework'
-import { ApplyOptions } from '@sapphire/decorators'
-import type { Guild } from 'discord.js'
 import GuildModel from '#lib/Models/GuildSettings'
+import { ApplyOptions } from '@sapphire/decorators'
+import { Events, Listener, ListenerOptions } from '@sapphire/framework'
+import type { Guild } from 'discord.js'
 
 @ApplyOptions<ListenerOptions>({
   event: Events.GuildCreate

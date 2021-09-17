@@ -1,23 +1,22 @@
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
+import type { Image } from '@aero/ksoft'
 import { ApplyOptions } from '@sapphire/decorators'
 import { Message, MessageEmbed } from 'discord.js'
-import type { Image } from '@aero/ksoft'
 
 @ApplyOptions<ArielCommandOptions>({
-  name: 'pepe',
   aliases: ['pepe', 'frog'],
-  description: 'Returns an image of Pepe the frog',
+  description: 'commands/images:pepe.description',
   cooldownLimit: 3,
   cooldownDelay: 2000
 })
 export default class Fox extends ArielCommand {
-  public async run(message: Message) {
+  public async run(message: Message, args: ArielCommand.Args) {
     const { url }: Image = await this.container.client.ksoft.images.random('pepe', {
       nsfw: false
     })
     const embed = new MessageEmbed()
-      .setTitle('Pepe the Frog')
-      .setFooter('Powered by api.ksoft.si')
+      .setTitle(args.t('commands/images:pepe.embed.title'))
+      .setFooter(args.t('commands/attributions:poweredByKSoft'))
       .setURL(url)
       .setColor('DARK_GREEN')
       .setTimestamp()

@@ -1,17 +1,15 @@
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
-import { GuildMember, Message, MessageEmbed } from 'discord.js'
 import { ApplyOptions } from '@sapphire/decorators'
-import type { Args } from '@sapphire/framework'
 import dayjs from 'dayjs'
+import { GuildMember, Message, MessageEmbed } from 'discord.js'
 
 @ApplyOptions<ArielCommandOptions>({
-  name: 'userinfo',
   aliases: ['ui'],
   description: 'Fetch a discord user\'s info.',
   usage: '[userID | @user]'
 })
 export default class UserInfo extends ArielCommand {
-  public async run(message: Message, args: Args) {
+  public async run(message: Message, args: ArielCommand.Args) {
     const member = (await args.pickResult('member')).value
 
     return await this.Info(message, member ?? message.member)
