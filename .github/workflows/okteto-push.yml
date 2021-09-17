@@ -30,9 +30,11 @@ jobs:
         if: github.ref == 'refs/heads/starlight'
         uses: okteto/deploy-stack@master
         with:
+          name: Starlight
           build: true
       - name: Deploy Stack (Production / main)
         if: github.ref == 'refs/heads/main'
         uses: okteto/deploy-stack@master
         with:
+          name: Ariel
           build: true
