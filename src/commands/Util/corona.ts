@@ -16,6 +16,8 @@ export default class Corona extends ArielCommand {
     if (country) {
       const res = await CoronaFetch.country(country)
 
+      if (!res) return await message.channel.send('Country could not be found.')
+
       embed.setTitle(`${res.country} COVID-19 Stats`)
       embed.addFields([
         { name: 'Active Cases', value: `${res.active}`, inline: true },
