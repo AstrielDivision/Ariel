@@ -3,5 +3,5 @@
   "ownerOnly": "You are not allowed to execute this command.",
   "admin": "You must be an Administrator to execute this command.",
   "mod": "You must be a Moderator to execute this command.\nYou must atleast have: `KICK_MEMBERS`, `BAN_MEMBERS`, `MANAGE_MESSAGES`",
-  "manager": "You must have the `GUILD_MANAGER` permission to execute this command."
+  "manager": "You must have the `MANAGE_GUILD` permission to execute this command."
 }
