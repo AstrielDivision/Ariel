@@ -1,10 +1,11 @@
+import GuildSettings from '#lib/Models/GuildSettings'
 import Yiff from '#lib/yiff.ts/index'
 import '#setup'
 import { KSoftClient } from '@aero/ksoft'
 import { SapphireClient, version } from '@sapphire/framework'
 import * as Sentry from '@sentry/node'
 import StatusUpdater from '@tmware/status-rotate'
-import { ClientOptions, version as djs } from 'discord.js'
+import { ClientOptions, Message, version as djs } from 'discord.js'
 import mongoose from 'mongoose'
 import { join } from 'path'
 import cfg, { pkg } from '../../config'
@@ -100,5 +101,11 @@ export default class Client extends SapphireClient {
 
     process.once('SIGINT', () => this.stop())
     process.once('SIGTERM', () => this.stop())
+  }
+
+  public fetchPrefix = async (message: Message) => {
+    const { prefix } = await GuildSettings.findOne({ guild_id: message.guild.id })
+
+    return prefix ?? cfg.prefix
   }
 }
