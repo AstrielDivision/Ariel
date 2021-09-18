@@ -5,7 +5,6 @@ import { fetchT } from '@sapphire/plugin-i18next'
 import { SubCommandPluginCommand } from '@sapphire/plugin-subcommands'
 import type { Message } from 'discord.js'
 import * as Lexure from 'lexure'
-import { sep } from 'path'
 import ArielArgs from './parsers/ArielArgs'
 
 export abstract class ArielCommand extends SubCommandPluginCommand<ArielArgs, ArielCommand> {
@@ -14,15 +13,6 @@ export abstract class ArielCommand extends SubCommandPluginCommand<ArielArgs, Ar
     super(Context, options)
 
     this.usage = `${this.name} ${options.usage ?? ''}`
-  }
-
-  public get category(): string {
-    const path = this.path
-
-    const splittedPath = path.split(sep)
-    const finalPath = splittedPath.slice(splittedPath.indexOf('commands') + 1, -1)
-
-    return finalPath[0]
   }
 
   public async preParse(message: Message, parameters: string, context: CommandContext): Promise<ArielCommand.Args> {

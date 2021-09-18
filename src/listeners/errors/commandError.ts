@@ -14,7 +14,7 @@ export default class CoreEvent extends Listener {
 
     const command = piece as ArielCommand
 
-    this.container.logger.fatal(`[COMMAND] ${command.path}\n${error.stack ?? error.message}`)
+    this.container.logger.fatal(`[COMMAND] ${command.name}\n${error.stack ?? error.message}`)
 
     captureException(error.stack ?? error.message, { tags: { name: piece.name } })
 
