@@ -1,4 +1,4 @@
-import { LanguageKeys } from '#lib/i18n/LanguageKeys'
+import { LanguageKeys } from '#languages'
 import { Precondition, PreconditionResult } from '@sapphire/framework'
 import type { Message } from 'discord.js'
 
