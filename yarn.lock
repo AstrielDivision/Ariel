@@ -500,35 +500,35 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/framework@npm:2.0.0-next.9f81b7bb.0":
-  version: 2.0.0-next.9f81b7bb.0
-  resolution: "@sapphire/framework@npm:2.0.0-next.9f81b7bb.0"
+"@sapphire/framework@npm:2.0.0-next.71c18830.0":
+  version: 2.0.0-next.71c18830.0
+  resolution: "@sapphire/framework@npm:2.0.0-next.71c18830.0"
   dependencies:
     "@sapphire/discord-utilities": ^2.1.5
     "@sapphire/discord.js-utilities": next
-    "@sapphire/pieces": ^2.2.0
+    "@sapphire/pieces": ^3.0.0
     "@sapphire/ratelimits": ^2.0.1
     "@sapphire/utilities": ^2.0.1
     lexure: ^0.17.0
     tslib: ^2.3.1
-  checksum: 0eca40bc081a7759724376995b67518e5c53094a3434166a39af2f8f06fbb8fe7e999f94c5b30a8ff4a9b595be25f8f27d686e1834bb1195cd7bfa8c7292f7e0
+  checksum: ad7ff7227c873f03a60c40b5ddf237563126ba8743452a24fd52f261dd38e6d7f5ff2d016afa8a293585d47af1861b2587034bad5486313135f8712e108faf68
   languageName: node
   linkType: hard
 
-"@sapphire/pieces@npm:^2.2.0":
-  version: 2.2.0
-  resolution: "@sapphire/pieces@npm:2.2.0"
+"@sapphire/pieces@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@sapphire/pieces@npm:3.0.0"
   dependencies:
     "@discordjs/collection": ^0.2.1
     "@sapphire/utilities": ^2.0.1
     tslib: ^2.3.1
-  checksum: 81e327f57b9971d98c46cf32f56b1b8177e61b47c4acf3f7ad389ebb5a4bdfc4f89882e0a96b04e3c2465f0ae165ca8a787870d28ed6ed9fc69b16062948156f
+  checksum: a63d38e4940c3e97ab78ded9877edc5b18f29060f92081b1000b6ad2d2a0b8864f680d7619c80f9a5da0a33044ba574b2d475e673691678295f6ddd314488b69
   languageName: node
   linkType: hard
 
-"@sapphire/plugin-api@npm:3.0.0-next.8ffa299.0":
-  version: 3.0.0-next.8ffa299.0
-  resolution: "@sapphire/plugin-api@npm:3.0.0-next.8ffa299.0"
+"@sapphire/plugin-api@npm:3.0.0-next.23809.0":
+  version: 3.0.0-next.23809.0
+  resolution: "@sapphire/plugin-api@npm:3.0.0-next.23809.0"
   dependencies:
     "@types/node-fetch": ^2.5.12
     "@types/psl": ^1.1.0
@@ -536,29 +536,29 @@ __metadata:
     node-fetch: ^2.6.2
     psl: ^1.8.0
     tslib: ^2.3.1
-  checksum: 906b7c1d44b92b3e7ac78471f2263479f1d6faa018138f3a705990f9007997e3ddbc48ad7835dd1268991b065eca7c2853b96785b2e6f2768661d5ca3c2e3ce2
+  checksum: e2b578d455a9d1c302b97dd7055a4bc7f5b4c44fda42bbe6f1757cedb283e6038c1b0ceb6196160123fdf9ac7b1c097767de9239ec78ff246b87fefa158777e1
   languageName: node
   linkType: hard
 
-"@sapphire/plugin-i18next@npm:2.0.0-next.e24c125.0":
-  version: 2.0.0-next.e24c125.0
-  resolution: "@sapphire/plugin-i18next@npm:2.0.0-next.e24c125.0"
+"@sapphire/plugin-i18next@npm:2.0.0-next.8ffa299.0":
+  version: 2.0.0-next.8ffa299.0
+  resolution: "@sapphire/plugin-i18next@npm:2.0.0-next.8ffa299.0"
   dependencies:
     "@sapphire/utilities": ^2.0.1
     "@types/i18next-fs-backend": ^1.0.1
     i18next: ^19.9.2
     i18next-fs-backend: ^1.1.1
     tslib: ^2.3.1
-  checksum: 0ca721768c6f721256f6fbc359c3e33d2a4d716f7ef2c5188a110aaecd9d83a150d81601785dd267d0172e68baadb3a2b9bc4d666cffd56c3c7405d748f68744
+  checksum: 14189f7189fceb4ba78a6d188c5e6b2e3ebc607241928e687051a423444edffc19e75190876386f121714a6baf5bed24e7cae6f9d1bed1c7f308609d3bbd4af1
   languageName: node
   linkType: hard
 
-"@sapphire/plugin-subcommands@npm:2.0.0-next.3bd3e99.0":
-  version: 2.0.0-next.3bd3e99.0
-  resolution: "@sapphire/plugin-subcommands@npm:2.0.0-next.3bd3e99.0"
+"@sapphire/plugin-subcommands@npm:2.0.0-next.8ffa299.0":
+  version: 2.0.0-next.8ffa299.0
+  resolution: "@sapphire/plugin-subcommands@npm:2.0.0-next.8ffa299.0"
   dependencies:
     tslib: ^2.3.1
-  checksum: 80b0bb7baaa81745a13b3340626e54aa3801821d599cee2b0116db02192250c7b0f8c01405e7fabc8712922547d18552b28def762b050b849e785a73e67fe825
+  checksum: b9cb5a43df74d0a2f5dcaa60461700d133aba4ebb3e037e901a086326a2663976d995b46f2cb99048cdf99033e2f5c27e423fd7bb56b53e7d86658f4d6e574ca
   languageName: node
   linkType: hard
 
@@ -1232,10 +1232,10 @@ __metadata:
     "@sapphire/discord-utilities": 2.1.5
     "@sapphire/discord.js-utilities": 3.0.0-next.c4f992f5.0
     "@sapphire/fetch": 2.0.0-pr-160.676f855.0
-    "@sapphire/framework": 2.0.0-next.9f81b7bb.0
-    "@sapphire/plugin-api": 3.0.0-next.8ffa299.0
-    "@sapphire/plugin-i18next": 2.0.0-next.e24c125.0
-    "@sapphire/plugin-subcommands": 2.0.0-next.3bd3e99.0
+    "@sapphire/framework": 2.0.0-next.71c18830.0
+    "@sapphire/plugin-api": 3.0.0-next.23809.0
+    "@sapphire/plugin-i18next": 2.0.0-next.8ffa299.0
+    "@sapphire/plugin-subcommands": 2.0.0-next.8ffa299.0
     "@sapphire/type": 2.1.0
     "@sapphire/utilities": 2.0.1
     "@sentry/node": 6.12.0
