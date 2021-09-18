@@ -1,3 +1,4 @@
+import { LanguageKeys } from '#languages'
 import { Argument, ArgumentContext, Piece } from '@sapphire/framework'
 
 export default class PieceArgument extends Argument<Piece> {
@@ -7,6 +8,6 @@ export default class PieceArgument extends Argument<Piece> {
       if (piece) return this.ok(piece)
     }
 
-    return this.error({ parameter, context, message: 'Could not resolve Piece name' })
+    return this.error({ parameter, context, identifier: LanguageKeys.Arguments.Piece })
   }
 }

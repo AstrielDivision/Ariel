@@ -1,10 +1,10 @@
 import { Identifiers } from '@sapphire/framework'
-import { keys } from './keys'
+import { LanguageKeys } from './LanguageKeys'
 
 export function translate(identifier: string) {
   switch (identifier) {
     case Identifiers.PreconditionNSFW:
-      return keys.Nsfw
+      return LanguageKeys.Preconditions.Nsfw
     default:
       return identifier
   }

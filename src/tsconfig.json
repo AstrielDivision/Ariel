@@ -10,7 +10,8 @@
       "#lib/Structures/commands/RedditCommand": ["lib/Structures/commands/RedditCommand.ts"],
       "#types": ["lib/Types"],
       "#lib/*": ["lib/*"],
-      "#setup": ["lib/setup.ts"]
+      "#setup": ["lib/setup.ts"],
+      "#languages": ["lib/i18n/LanguageKeys/index"]
     },
     "strictNullChecks": false,
     "resolveJsonModule": true

@@ -38,7 +38,7 @@
     "@types/app-root-path": "1.2.4",
     "@types/convict": "6.1.1",
     "@types/crypto-js": "4.0.2",
-    "@types/node": "16.7.10",
+    "@types/node": "16.9.2",
     "@types/prettier": "2.3.2",
     "all-contributors-cli": "6.20.0",
     "cz-conventional-changelog": "3.3.0",
@@ -104,7 +104,8 @@
     "#lib/Structures/commands/RedditCommand": "./build/lib/Structures/commands/RedditCommand.js",
     "#types": "/build/lib/Models/types.js",
     "#lib/*": "./build/lib/*.js",
-    "#setup": "./build/lib/setup.js"
+    "#setup": "./build/lib/setup.js",
+    "#languages": "./build/lib/i18n/LanguageKeys/index.js"
   },
   "lint-staged": {
     "./src/**/*.ts": "yarn prettiest"
