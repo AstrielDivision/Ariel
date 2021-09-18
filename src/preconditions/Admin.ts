@@ -1,3 +1,4 @@
+import { LanguageKeys } from '#lib/i18n/LanguageKeys'
 import { Precondition, PreconditionResult } from '@sapphire/framework'
 import type { Message } from 'discord.js'
 
@@ -6,6 +7,6 @@ export default class Admin extends Precondition {
     if (!message.guild) return this.error({ message: 'You cannot run this command in DMs.' })
     return message.member.permissions.has('ADMINISTRATOR')
       ? this.ok()
-      : this.error({ message: 'You are not an Administrator.' })
+      : this.error({ identifier: LanguageKeys.Preconditions.Admin })
   }
 }

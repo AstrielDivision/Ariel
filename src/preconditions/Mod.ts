@@ -1,3 +1,4 @@
+import { LanguageKeys } from '#lib/i18n/LanguageKeys'
 import { Precondition, PreconditionResult } from '@sapphire/framework'
 import type { Message } from 'discord.js'
 import { Permissions } from 'discord.js'
@@ -5,8 +6,7 @@ import { Permissions } from 'discord.js'
 const authorizingPermissions = [
   Permissions.FLAGS.KICK_MEMBERS,
   Permissions.FLAGS.BAN_MEMBERS,
-  Permissions.FLAGS.MANAGE_MESSAGES,
-  Permissions.FLAGS.MANAGE_NICKNAMES
+  Permissions.FLAGS.MANAGE_MESSAGES
 ]
 
 export default class Mod extends Precondition {
@@ -24,6 +24,6 @@ export default class Mod extends Precondition {
 
     if (isAuthorized) return this.ok()
 
-    return this.error({ message: 'You aren\'t allowed to execute this command.' })
+    return this.error({ identifier: LanguageKeys.Preconditions.Mod })
   }
 }
