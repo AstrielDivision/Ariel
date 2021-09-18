@@ -491,12 +491,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/fetch@npm:2.0.0-next.c4f992f5.0":
-  version: 2.0.0-next.c4f992f5.0
-  resolution: "@sapphire/fetch@npm:2.0.0-next.c4f992f5.0"
+"@sapphire/fetch@npm:2.0.0-pr-160.676f855.0":
+  version: 2.0.0-pr-160.676f855.0
+  resolution: "@sapphire/fetch@npm:2.0.0-pr-160.676f855.0"
   dependencies:
     cross-fetch: ^3.1.4
-  checksum: 7fd0cd9b21aa3265e457939ba7b7bc25aee1d0c22b31ff0a8da7bb914be46684175f2436f812f4920cf5d87e551a299e7eb8810618e80c8ebb6e764605aaec9f
+  checksum: 656c7deb86d1ef86c33b91b346e59719b8f4e30a6e3e9a9ca6b1235a4568804b3010938ed8aacdd8d7a847326fea987cf7f4a5339c1a7c984fc29365f1d3cdfc
   languageName: node
   linkType: hard
 
@@ -540,16 +540,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/plugin-i18next@npm:2.0.0-pr-97.11c4df4.0":
-  version: 2.0.0-pr-97.11c4df4.0
-  resolution: "@sapphire/plugin-i18next@npm:2.0.0-pr-97.11c4df4.0"
+"@sapphire/plugin-i18next@npm:2.0.0-next.e24c125.0":
+  version: 2.0.0-next.e24c125.0
+  resolution: "@sapphire/plugin-i18next@npm:2.0.0-next.e24c125.0"
   dependencies:
     "@sapphire/utilities": ^2.0.1
     "@types/i18next-fs-backend": ^1.0.1
     i18next: ^19.9.2
     i18next-fs-backend: ^1.1.1
-    tslib: ^2.3.0
-  checksum: f31ebd83f9640f7a24764170176dfe4530178716b8b3ab3ea9865fab0db5801a2a8d4a1f05c19c5cad890baa25adf5413d401754172ae3f005e2b8ef3b57d4fe
+    tslib: ^2.3.1
+  checksum: 0ca721768c6f721256f6fbc359c3e33d2a4d716f7ef2c5188a110aaecd9d83a150d81601785dd267d0172e68baadb3a2b9bc4d666cffd56c3c7405d748f68744
   languageName: node
   linkType: hard
 
@@ -738,19 +738,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tmware/status-rotate@npm:1.2.8":
-  version: 1.2.8
-  resolution: "@tmware/status-rotate@npm:1.2.8"
+"@tmware/status-rotate@npm:1.2.9":
+  version: 1.2.9
+  resolution: "@tmware/status-rotate@npm:1.2.9"
   dependencies:
     "@tmware/jitsuyo": ^1.6.5
     "@tmware/variable-parser": ^1.2.2
-    axios: 0.21.1
+    axios: 0.21.4
   peerDependencies:
     discord.js: ">= 13.0.0"
   peerDependenciesMeta:
     discord.js:
       optional: false
-  checksum: af5d370cb657914fab651355f4d559bd5649ca6a581356bbe4f80803be6ad9852ae2a0d8e17178833835b8b338f1aa1c7020fa4514f9d65531b90a2af04a1576
+  checksum: 7cfd7b79903a2a0fead6bf5b44502c8b474bc3d69ecb69f4539e632caaa8dab04b18f288f78b8554014986273c67263a29b25fbcd438b7b261ee06d1a2a8209f
   languageName: node
   linkType: hard
 
@@ -1231,16 +1231,16 @@ __metadata:
     "@sapphire/decorators": 3.0.0-next.c4f992f5.0
     "@sapphire/discord-utilities": 2.1.5
     "@sapphire/discord.js-utilities": 3.0.0-next.c4f992f5.0
-    "@sapphire/fetch": 2.0.0-next.c4f992f5.0
+    "@sapphire/fetch": 2.0.0-pr-160.676f855.0
     "@sapphire/framework": 2.0.0-next.9f81b7bb.0
     "@sapphire/plugin-api": 3.0.0-next.8ffa299.0
-    "@sapphire/plugin-i18next": 2.0.0-pr-97.11c4df4.0
+    "@sapphire/plugin-i18next": 2.0.0-next.e24c125.0
     "@sapphire/plugin-subcommands": 2.0.0-next.3bd3e99.0
     "@sapphire/type": 2.1.0
     "@sapphire/utilities": 2.0.1
     "@sentry/node": 6.12.0
     "@tmware/prettier-config": 1.0.3
-    "@tmware/status-rotate": 1.2.8
+    "@tmware/status-rotate": 1.2.9
     "@types/app-root-path": 1.2.4
     "@types/convict": 6.1.1
     "@types/crypto-js": 4.0.2
@@ -1337,12 +1337,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:0.21.1":
-  version: 0.21.1
-  resolution: "axios@npm:0.21.1"
+"axios@npm:0.21.4":
+  version: 0.21.4
+  resolution: "axios@npm:0.21.4"
   dependencies:
-    follow-redirects: ^1.10.0
-  checksum: c87915fa0b18c15c63350112b6b3563a3e2ae524d7707de0a73d2e065e0d30c5d3da8563037bc29d4cc1b7424b5a350cb7274fa52525c6c04a615fe561c6ab11
+    follow-redirects: ^1.14.0
+  checksum: 44245f24ac971e7458f3120c92f9d66d1fc695e8b97019139de5b0cc65d9b8104647db01e5f46917728edfc0cfd88eb30fc4c55e6053eef4ace76768ce95ff3c
   languageName: node
   linkType: hard
 
@@ -2640,13 +2640,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"follow-redirects@npm:^1.10.0":
-  version: 1.14.2
-  resolution: "follow-redirects@npm:1.14.2"
+"follow-redirects@npm:^1.14.0":
+  version: 1.14.3
+  resolution: "follow-redirects@npm:1.14.3"
   peerDependenciesMeta:
     debug:
       optional: true
-  checksum: 53195df4a2f36202177f40a2d59d497d630f3b20e2e51e2b697ee5f9c0a5261985f164b23d3744a574e117618af668d07c0d000c2c5cb0c1546851671585ac4e
+  checksum: b4d89339afd119b5e6fd92f0e81ae7d3621a5421af7d4a7d94539765c1d5546cf61d2f3219d40596e53c7c253307fbaf5dc772254aa9170fdfe1f9d7731732a9
   languageName: node
   linkType: hard
 
