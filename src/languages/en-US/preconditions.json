@@ -2,6 +2,6 @@
   "nsfw": "This command cannot be ran outside NSFW channels.",
   "ownerOnly": "You are not allowed to execute this command.",
   "admin": "You must be an Administrator to execute this command.",
-  "mod": "You must be a Moderator to execute this command.\nYou must atleast have: `KICK_MEMBERS`, `BAN_MEMBERS`, `MANAGE_MESSAGES`",
+  "mod": "You must be a Moderator to execute this command.\nYou must at least have: `KICK_MEMBERS`, `BAN_MEMBERS`, `MANAGE_MESSAGES`",
   "manager": "You must have the `MANAGE_GUILD` permission to execute this command."
 }
