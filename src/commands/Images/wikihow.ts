@@ -1,4 +1,4 @@
-import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
+import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
 import type { WikiHowImage } from '@aero/ksoft'
 import { ApplyOptions } from '@sapphire/decorators'
 import { Message, MessageEmbed } from 'discord.js'

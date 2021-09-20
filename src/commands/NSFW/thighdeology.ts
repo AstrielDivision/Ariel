@@ -1,5 +1,5 @@
-import type { ArielCommandOptions } from '#lib/Structures/BaseCommand'
-import { ArielRedditCommand } from '#lib/Structures/commands/RedditCommand'
+import type { ArielCommandOptions } from '#lib/Structures/Command'
+import { ArielRedditCommand } from '#lib/Structures/RedditCommand'
 import { ApplyOptions } from '@sapphire/decorators'
 import type { PieceContext } from '@sapphire/framework'
 

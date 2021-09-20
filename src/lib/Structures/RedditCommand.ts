@@ -1,7 +1,7 @@
 import type { RedditImage } from '@aero/ksoft'
 import type { PieceContext } from '@sapphire/framework'
 import { ColorResolvable, Message, MessageEmbed } from 'discord.js'
-import { ArielCommand, ArielCommandOptions } from '../Command'
+import { ArielCommand, ArielCommandOptions } from './Command'
 
 export abstract class ArielRedditCommand extends ArielCommand {
   subreddit: string

@@ -99,7 +99,7 @@
     "utf-8-validate": "5.0.5"
   },
   "imports": {
-    "#lib/Structures/BaseCommand": "./build/lib/Structures/Command.js",
+    "#lib/Structures/Command": "./build/lib/Structures/Command.js",
     "#lib/Structures/commands/CanvasCommand": "./build/lib/Structures/commands/CanvasCommand.js",
     "#lib/Structures/commands/RedditCommand": "./build/lib/Structures/commands/RedditCommand.js",
     "#types": "/build/lib/Models/types.js",

@@ -1,4 +1,4 @@
-import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
+import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
 import { ApplyOptions } from '@sapphire/decorators'
 import * as crypto from 'crypto'
 import cryptoJS from 'crypto-js'

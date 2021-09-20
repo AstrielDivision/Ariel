@@ -1,5 +1,5 @@
 import { translate } from '#lib/i18n/translate'
-import type { ArielCommand } from '#lib/Structures/BaseCommand'
+import type { ArielCommand } from '#lib/Structures/Command'
 import { ApplyOptions } from '@sapphire/decorators'
 import { CommandErrorPayload, Events, Listener, ListenerOptions, UserError } from '@sapphire/framework'
 import { captureException } from '@sentry/minimal'

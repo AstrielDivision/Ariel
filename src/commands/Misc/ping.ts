@@ -1,4 +1,4 @@
-import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
+import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
 import { ApplyOptions } from '@sapphire/decorators'
 import { editLocalized, sendLocalized } from '@sapphire/plugin-i18next'
 import type { Message } from 'discord.js'

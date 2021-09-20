@@ -1,5 +1,5 @@
 import GuildSettings from '#lib/Models/GuildSettings'
-import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
+import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
 import { ApplyOptions, RequiresUserPermissions } from '@sapphire/decorators'
 import type { TFunction } from '@sapphire/plugin-i18next'
 import { Message, MessageEmbed } from 'discord.js'

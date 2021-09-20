@@ -1,4 +1,4 @@
-import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
+import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
 import { ApplyOptions } from '@sapphire/decorators'
 import { version } from '@sapphire/framework'
 import { roundNumber } from '@sapphire/utilities'
