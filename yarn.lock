@@ -553,12 +553,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/plugin-subcommands@npm:2.0.0-next.8ffa299.0":
-  version: 2.0.0-next.8ffa299.0
-  resolution: "@sapphire/plugin-subcommands@npm:2.0.0-next.8ffa299.0"
+"@sapphire/plugin-subcommands@npm:2.0.0-pr-97.11c4df4.0":
+  version: 2.0.0-pr-97.11c4df4.0
+  resolution: "@sapphire/plugin-subcommands@npm:2.0.0-pr-97.11c4df4.0"
   dependencies:
-    tslib: ^2.3.1
-  checksum: b9cb5a43df74d0a2f5dcaa60461700d133aba4ebb3e037e901a086326a2663976d995b46f2cb99048cdf99033e2f5c27e423fd7bb56b53e7d86658f4d6e574ca
+    tslib: ^2.3.0
+  checksum: f5398ec93612d824f248b944187b07c9f1f3a7499b5f341214bcfca9e998cea46c5eead346e59900dbe8efaed07f8b5c9862c230b831e6c92379bd0f5bd9a7ee
   languageName: node
   linkType: hard
 
@@ -1235,7 +1235,7 @@ __metadata:
     "@sapphire/framework": 2.0.0-next.71c18830.0
     "@sapphire/plugin-api": 3.0.0-next.23809.0
     "@sapphire/plugin-i18next": 2.0.0-pr-97.11c4df4.0
-    "@sapphire/plugin-subcommands": 2.0.0-next.8ffa299.0
+    "@sapphire/plugin-subcommands": 2.0.0-pr-97.11c4df4.0
     "@sapphire/type": 2.1.0
     "@sapphire/utilities": 2.0.1
     "@sentry/node": 6.12.0
