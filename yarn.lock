@@ -540,16 +540,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/plugin-i18next@npm:2.0.0-pr-97.11c4df4.0":
-  version: 2.0.0-pr-97.11c4df4.0
-  resolution: "@sapphire/plugin-i18next@npm:2.0.0-pr-97.11c4df4.0"
+"@sapphire/plugin-i18next@npm:^2.0.0-next.23809.0":
+  version: 2.0.0-next.d810c56.0
+  resolution: "@sapphire/plugin-i18next@npm:2.0.0-next.d810c56.0"
   dependencies:
     "@sapphire/utilities": ^2.0.1
     "@types/i18next-fs-backend": ^1.0.1
-    i18next: ^19.9.2
+    i18next: ^20.6.1
     i18next-fs-backend: ^1.1.1
-    tslib: ^2.3.0
-  checksum: f31ebd83f9640f7a24764170176dfe4530178716b8b3ab3ea9865fab0db5801a2a8d4a1f05c19c5cad890baa25adf5413d401754172ae3f005e2b8ef3b57d4fe
+    tslib: ^2.3.1
+  checksum: fc0ae584831e08bf2d13f7490c2f2d48969bc3794e1796d5ef60b48dc1e985583d9cd642a05617f814c4794629319d193616ee72173349b76612c66fd9164bb2
   languageName: node
   linkType: hard
 
@@ -1234,7 +1234,7 @@ __metadata:
     "@sapphire/fetch": 2.0.0-pr-160.676f855.0
     "@sapphire/framework": 2.0.0-next.71c18830.0
     "@sapphire/plugin-api": 3.0.0-next.23809.0
-    "@sapphire/plugin-i18next": 2.0.0-pr-97.11c4df4.0
+    "@sapphire/plugin-i18next": ^2.0.0-next.23809.0
     "@sapphire/plugin-subcommands": 2.0.0-pr-97.11c4df4.0
     "@sapphire/type": 2.1.0
     "@sapphire/utilities": 2.0.1
@@ -3038,12 +3038,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next@npm:^19.7.0, i18next@npm:^19.9.2":
+"i18next@npm:^19.7.0":
   version: 19.9.2
   resolution: "i18next@npm:19.9.2"
   dependencies:
     "@babel/runtime": ^7.12.0
   checksum: a24207707eacb28488975f8921d843bc35b86f2a48504cb82eaf620e1aacddbda8d53a4dc600543a708ba49bc45e61072a753f250e89fad2c1932259190ef81a
+  languageName: node
+  linkType: hard
+
+"i18next@npm:^20.6.1":
+  version: 20.6.1
+  resolution: "i18next@npm:20.6.1"
+  dependencies:
+    "@babel/runtime": ^7.12.0
+  checksum: 313cd4b17f9092eaf8ca92a02bb74d099f4a8b26de6e38018f438ce6f706220e5f72d865e1f50d815e13504ec38bc77e0f6341f670ca5162689f8d11a859e564
   languageName: node
   linkType: hard
 
