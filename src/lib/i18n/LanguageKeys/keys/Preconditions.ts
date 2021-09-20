@@ -1,4 +1,7 @@
-import { T } from '../../Utils'
+import { FT, T } from '../../Utils'
+
+export const ClientPermissions = FT<{ missing: string[] }>('preconditions:clientPermissions')
+export const UserPermissions = FT<{ missing: string[] }>('preconditions:userPermissions')
 
 export const Nsfw = T('preconditions:nsfw')
 export const Admin = T('preconditions:admin')

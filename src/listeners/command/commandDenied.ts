@@ -13,7 +13,7 @@ export default class CommandDenied extends Listener {
     if (Reflect.get(Object(error.context), 'silent')) return
 
     const identifier = translate(error.identifier)
-    const content = await resolveKey(message, identifier, { message, command })
+    const content = await resolveKey(message, identifier, { message, command, ...(error.context as any) })
 
     return await message.channel.send({ content, allowedMentions: { users: [message.author.id], roles: [] } })
   }

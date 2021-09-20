@@ -1,7 +1,9 @@
 {
   "nsfw": "This command cannot be ran outside NSFW channels.",
-  "ownerOnly": "You are not allowed to execute this command.",
-  "admin": "You must be an Administrator to execute this command.",
-  "mod": "You must be a Moderator to execute this command.\nYou must at least have: `KICK_MEMBERS`, `BAN_MEMBERS`, `MANAGE_MESSAGES`",
-  "manager": "You must have the `MANAGE_GUILD` permission to execute this command."
+  "ownerOnly": "Only the bot owner can run this command.",
+  "admin": "You must be an Administrator to execute {{command.name}}",
+  "mod": "You need moderator permissions to execute {{command.name}}",
+  "manager": "You must have the `MANAGE_GUILD` permission to execute {{command.name}} ",
+  "clientPermissions": "I don't have the sufficient permissions: {{missing, permissions}}",
+  "userPermissions": "You don't have the sufficient permissions: {{missing, permissions}}"
 }
