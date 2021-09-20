@@ -14,7 +14,7 @@ export default class Wikihow extends ArielCommand {
     const { url, article }: WikiHowImage = await this.container.client.ksoft.images.wikihow()
     const embed = new MessageEmbed()
       .setTitle(article.title)
-      .setFooter(args.t('commands/attributions:poweredByKSoft'))
+      .setFooter(args.t('attributions:poweredByKSoft'))
       .setURL(url)
       .setColor('GREEN')
       .setTimestamp()

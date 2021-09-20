@@ -13,7 +13,7 @@ export default class Aww extends ArielCommand {
   public async run(message: Message, args: ArielCommand.Args) {
     const { url }: Image = await this.container.client.ksoft.images.aww()
     const embed = new MessageEmbed()
-      .setFooter(args.t('commands/attributions:poweredByKSoft'))
+      .setFooter(args.t('attributions:poweredByKSoft'))
       .setTimestamp()
       .setImage(url)
       .setColor('AQUA')

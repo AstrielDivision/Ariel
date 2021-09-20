@@ -16,7 +16,7 @@ export default class DogeWow extends ArielCommand {
     })
     const embed = new MessageEmbed()
       .setTitle(args.t('commands/images:doge.embed.title'))
-      .setFooter(args.t('commands/attributions:poweredByKSoft'))
+      .setFooter(args.t('attributions:poweredByKSoft'))
       .setURL(url)
       .setColor('ORANGE')
       .setTimestamp()

@@ -16,7 +16,7 @@ export default class Cat extends ArielCommand {
     })
     const embed = new MessageEmbed()
       .setTitle(args.t('commands/images:cat.embed.title'))
-      .setFooter(args.t('commands/attributions:poweredByKSoft'))
+      .setFooter(args.t('attributions:poweredByKSoft'))
       .setURL(url)
       .setColor('WHITE')
       .setTimestamp()

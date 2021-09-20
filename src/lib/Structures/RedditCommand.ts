@@ -18,14 +18,14 @@ export abstract class ArielRedditCommand extends ArielCommand {
     this.nsfw = nsfw
   }
 
-  public async run(message: Message) {
+  public async run(message: Message, args: ArielCommand.Args) {
     const { post, url }: RedditImage = await this.container.client.ksoft.images.reddit(this.subreddit, {
       removeNSFW: !this.nsfw,
       span: 'week'
     })
     const embed = new MessageEmbed()
       .setTitle(post.title)
-      .setFooter(`Powered by KSoft.si ${post.author} | Upvotes: ${post.upvotes} | Downvotes ${post.downvotes}`)
+      .setFooter(args.t('attributions:poweredByKSoftReddit', { post }))
       .setURL(post.link)
       .setTimestamp()
       .setImage(url)

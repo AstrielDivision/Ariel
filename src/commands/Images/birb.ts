@@ -15,7 +15,7 @@ export default class BirbCommand extends ArielCommand {
       nsfw: false
     })
     const embed = new MessageEmbed()
-      .setFooter(args.t('commands/attributions:poweredByKSoft'))
+      .setFooter(args.t('attributions:poweredByKSoft'))
       .setURL(url)
       .setColor('DARK_GREEN')
       .setTimestamp()

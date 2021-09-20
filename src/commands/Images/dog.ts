@@ -16,7 +16,7 @@ export default class Dog extends ArielCommand {
     })
     const embed = new MessageEmbed()
       .setTitle(args.t('commands/images:dog.embed.title'))
-      .setFooter(args.t('commands/attributions:poweredByKSoft'))
+      .setFooter(args.t('attributions:poweredByKSoft'))
       .setURL(url)
       .setColor('DARK_GREY')
       .setTimestamp()
