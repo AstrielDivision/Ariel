@@ -36,7 +36,7 @@ export abstract class Task extends Piece {
     if (this.runOnStart) void this.run()
     return (this._interval = setInterval(() => {
       void this.run()
-    }, 1000 * this.time))
+    }, this.time))
   }
 }
 
