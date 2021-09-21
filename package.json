@@ -83,7 +83,7 @@
     "@sapphire/plugin-subcommands": "2.0.0-pr-97.11c4df4.0",
     "@sapphire/type": "2.1.0",
     "@sapphire/utilities": "2.0.1",
-    "@sentry/node": "6.13.1",
+    "@sentry/node": "6.13.2",
     "@tmware/status-rotate": "1.2.9",
     "app-root-path": "3.0.0",
     "bufferutil": "4.0.3",
