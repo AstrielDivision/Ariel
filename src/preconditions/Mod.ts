@@ -11,7 +11,7 @@ const authorizingPermissions = [
 
 export default class Mod extends Precondition {
   public run(message: Message): PreconditionResult {
-    if (!message.guild) return this.error({ message: 'You cannot run this command in DMs.' })
+    if (!message.guild) return this.error()
 
     let isAuthorized = false
 
