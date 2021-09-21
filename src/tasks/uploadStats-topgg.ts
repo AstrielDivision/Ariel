@@ -10,7 +10,7 @@ import cfg from '../config'
 })
 export default class uploadStatsTOPGG extends Task {
   public async run() {
-    await fetch<TopGGResponse>(`https://botsfordiscord.com/api/bot/${this.container.client.id}/stats`, {
+    await fetch<TopGGResponse>(`https://top.gg/api/bots/${this.container.client.id}/stats`, {
       method: 'POST',
       headers: {
         Authorization: cfg.stats.topgg,
