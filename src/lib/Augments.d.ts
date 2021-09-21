@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/method-signature-style */
-/* eslint-disable no-unused-vars */
 import type { KSoftClient } from '@aero/ksoft'
 import type { Piece, SapphireClientOptions, Store } from '@sapphire/framework'
 import type { Server, ServerOptions } from '@sapphire/plugin-api'

@@ -2,7 +2,7 @@
  * Original: https://github.com/gitcord-project/Gitcord/blob/main/src/commands/Info/help.ts
  * Licensed under the MIT License.
  */
-import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
+import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
 import { ApplyOptions } from '@sapphire/decorators'
 import type { Command } from '@sapphire/framework'
 import { Message, MessageEmbed, TextChannel } from 'discord.js'

@@ -1,4 +1,4 @@
-import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
+import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
 import { ApplyOptions } from '@sapphire/decorators'
 import { Message, MessageEmbed } from 'discord.js'
 import CoronaFetch from '../../lib/corona-fetch/corona'
@@ -16,11 +16,13 @@ export default class Corona extends ArielCommand {
     if (country) {
       const res = await CoronaFetch.country(country)
 
+      if (!res) return await message.channel.send('Country could not be found.')
+
       embed.setTitle(`${res.country} COVID-19 Stats`)
       embed.addFields([
         { name: 'Active Cases', value: `${res.active}`, inline: true },
         { name: 'Today Cases', value: `${res.todayCases}`, inline: true },
-        { name: 'Cases Per Million', value: `${res.casesPerOneMillion}, inline: true` },
+        { name: 'Cases Per Million', value: `${res.casesPerOneMillion}`, inline: true },
         { name: 'Deaths', value: `${res.deaths}` },
         { name: 'Today Deaths', value: `${res.todayDeaths}`, inline: true },
         { name: 'Critical Cases', value: `${res.critical}`, inline: true },

@@ -1,7 +1,7 @@
 import type { PieceContext } from '@sapphire/framework'
 import { Message, MessageAttachment } from 'discord.js'
-import canvas from '../../Canvas-SRA/requests'
-import { ArielCommand, ArielCommandOptions } from '../Command'
+import canvas from '../Canvas-SRA/requests'
+import { ArielCommand, ArielCommandOptions } from './Command'
 
 export abstract class ArielOverlayCommand extends ArielCommand {
   overlay: 'gay' | 'glass' | 'wasted' | 'passed' | 'jail' | 'comrade' | 'triggered'

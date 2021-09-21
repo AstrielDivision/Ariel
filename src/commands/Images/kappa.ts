@@ -1,4 +1,4 @@
-import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
+import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
 import type { Image } from '@aero/ksoft'
 import { ApplyOptions } from '@sapphire/decorators'
 import { Message, MessageEmbed } from 'discord.js'
@@ -15,7 +15,7 @@ export default class Fox extends ArielCommand {
     })
     const embed = new MessageEmbed()
       .setTitle(args.t('commands/images:kappa.embed.title'))
-      .setFooter(args.t('commands/attributions:poweredByKSoft'))
+      .setFooter(args.t('attributions:poweredByKSoft'))
       .setURL(url)
       .setColor('NOT_QUITE_BLACK')
       .setTimestamp()

@@ -23,6 +23,9 @@ interface Configuration {
     uri: string
   }
   sentry: string
+  stats?: {
+    topgg: string
+  }
 }
 
 interface Contributor {
@@ -115,6 +118,12 @@ const config = convict<Configuration>({
   sentry: {
     format: String,
     default: ''
+  },
+  stats: {
+    topgg: {
+      format: String,
+      default: ''
+    }
   }
 })
 

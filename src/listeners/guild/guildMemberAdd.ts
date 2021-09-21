@@ -13,7 +13,6 @@ export default class guildMemberAdd extends Listener {
     const { anti } = await GuildSettings.findOne({ guild_id: member.guild.id })
 
     if (anti.unmentionable) await this.cleanName(member)
-    if (anti.hoisting) await this.dehoist(member)
 
     return member
   }
@@ -22,17 +21,5 @@ export default class guildMemberAdd extends Listener {
     const name: string = clean(member.displayName)
 
     return await member.setNickname(name.slice(0, 32), 'Cleaning nickname')
-  }
-
-  private async dehoist(member: GuildMember) {
-    if (member.displayName[0] < '0') {
-      const name: string = member.displayName.startsWith('⬇')
-        ? `⬇${clean(member.displayName.slice(1)) as string}`
-        : (clean(member.displayName.slice(0, 32)) as string)
-
-      return await member.setNickname(name, 'Cleaning nickname')
-    }
-
-    return member
   }
 }

@@ -1,5 +1,5 @@
 import Warnings from '#lib/Models/Warnings'
-import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
+import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
 import { ApplyOptions, RequiresUserPermissions } from '@sapphire/decorators'
 import { Message, MessageEmbed, User } from 'discord.js'
 import i18n, { TFunction } from 'i18next'

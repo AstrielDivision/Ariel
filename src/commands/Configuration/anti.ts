@@ -1,5 +1,5 @@
 import GuildSettings from '#lib/Models/GuildSettings'
-import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'
+import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
 import { ApplyOptions, RequiresUserPermissions } from '@sapphire/decorators'
 import type { TFunction } from '@sapphire/plugin-i18next'
 import { Message, MessageEmbed } from 'discord.js'
@@ -30,7 +30,6 @@ export default class Settings extends ArielCommand {
 
         return await message.channel.send(args.t('commands/anti:enabled', { enabled: 'unmentionable names' }))
       }
-
       case 'invite':
       case 'invites': {
         if (!message.guild.me.permissions.has('MANAGE_MESSAGES')) {
@@ -41,7 +40,6 @@ export default class Settings extends ArielCommand {
 
         return await message.channel.send(args.t('commands/anti:enabled', { enabled: 'discord invites' }))
       }
-
       case 'gift':
       case 'gifts': {
         if (!message.guild.me.permissions.has('MANAGE_MESSAGES')) {
@@ -52,7 +50,6 @@ export default class Settings extends ArielCommand {
 
         return await message.channel.send(args.t('commands/anti:enabled', { enabled: 'discord gifts' }))
       }
-
       default: {
         return await this.defaultEmbed(message, args.t)
       }
@@ -71,21 +68,18 @@ export default class Settings extends ArielCommand {
 
         return await message.channel.send(args.t('commands/anti:disabled', { disabled: 'unmentionable names' }))
       }
-
       case 'invite':
       case 'invites': {
         await GuildSettings.findOneAndUpdate({ guild_id: message.guild.id }, { $set: { 'anti.invites': false } })
 
         return await message.channel.send(args.t('commands/anti:disabled', { disabled: 'discord invites' }))
       }
-
       case 'gift':
       case 'gifts': {
         await GuildSettings.findOneAndUpdate({ guild_id: message.guild.id }, { $set: { 'anti.gifts': true } })
 
         return await message.channel.send(args.t('commands/anti:disabled', { disabled: 'discord gifts' }))
       }
-
       default: {
         return await this.defaultEmbed(message, args.t)
       }

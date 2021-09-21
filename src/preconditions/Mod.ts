@@ -1,3 +1,4 @@
+import { LanguageKeys } from '#languages'
 import { Precondition, PreconditionResult } from '@sapphire/framework'
 import type { Message } from 'discord.js'
 import { Permissions } from 'discord.js'
@@ -5,13 +6,12 @@ import { Permissions } from 'discord.js'
 const authorizingPermissions = [
   Permissions.FLAGS.KICK_MEMBERS,
   Permissions.FLAGS.BAN_MEMBERS,
-  Permissions.FLAGS.MANAGE_MESSAGES,
-  Permissions.FLAGS.MANAGE_NICKNAMES
+  Permissions.FLAGS.MANAGE_MESSAGES
 ]
 
 export default class Mod extends Precondition {
   public run(message: Message): PreconditionResult {
-    if (!message.guild) return this.error({ message: 'You cannot run this command in DMs.' })
+    if (!message.guild) return this.error()
 
     let isAuthorized = false
 
@@ -24,6 +24,6 @@ export default class Mod extends Precondition {
 
     if (isAuthorized) return this.ok()
 
-    return this.error({ message: 'You aren\'t allowed to execute this command.' })
+    return this.error({ identifier: LanguageKeys.Preconditions.Mod })
   }
 }

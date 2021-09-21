@@ -18,7 +18,7 @@
 	"Astraea Command": {
     "prefix": "ArielCommand",
     "body": [
-      "import { ArielCommand, ArielCommandOptions } from '#lib/Structures/BaseCommand'",
+      "import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'",
       "import type { Message } from 'discord.js'",
       "import { ApplyOptions } from '@sapphire/decorators'",
       "import type { ArielCommand.Args } from '@sapphire/framework'",
@@ -59,7 +59,7 @@
 		"body": [
 		  "import { ApplyOptions } from '@sapphire/decorators'",
 		  "import type { PieceContext } from '@sapphire/framework'",
-		  "import type { ArielCommandOptions } from '#lib/Structures/BaseCommand'",
+		  "import type { ArielCommandOptions } from '#lib/Structures/Command'",
 		  "import { ArielRedditCommand } from '#lib/Structures/commands/RedditCommand'",
 		  "",
 		  "@ApplyOptions<ArielCommandOptions>({",

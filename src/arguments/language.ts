@@ -1,3 +1,4 @@
+import { LanguageKeys } from '#languages'
 import { Argument, ArgumentContext } from '@sapphire/framework'
 
 export default class LanguageArgument extends Argument<string> {
@@ -6,6 +7,6 @@ export default class LanguageArgument extends Argument<string> {
 
     if (languages.has(parameter)) return this.ok(parameter)
 
-    return this.error({ parameter, context, message: 'Could not resolve parameter to a language' })
+    return this.error({ parameter, context, identifier: LanguageKeys.Arguments.Language })
   }
 }
