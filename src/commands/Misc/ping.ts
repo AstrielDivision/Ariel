@@ -10,7 +10,7 @@ export default class Ping extends ArielCommand {
   public async run(message: Message) {
     const ping = await sendLocalized(message, 'commands/misc:ping.pong')
 
-    const ws = this.container.client.ws.ping
+    const ws = message.client.ws.ping
     const heartbeat = ping.createdTimestamp - message.createdTimestamp
 
     return await editLocalized(ping, { keys: 'commands/misc:ping.success', formatOptions: { ws, heartbeat } })
