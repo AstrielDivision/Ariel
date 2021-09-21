@@ -8,7 +8,7 @@ import cfg from '../config'
   enabled: cfg.stats.topgg.length > 0,
   time: Timeouts.Hour
 })
-export default class testTask extends Task {
+export default class uploadStatsTOPGG extends Task {
   public async run() {
     await fetch<TopGGResponse>(`https://botsfordiscord.com/api/bot/${this.container.client.id}/stats`, {
       method: 'POST',

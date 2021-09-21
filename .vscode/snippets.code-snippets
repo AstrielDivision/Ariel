@@ -15,13 +15,12 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
-	"Astraea Command": {
+	"Command": {
     "prefix": "ArielCommand",
     "body": [
       "import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'",
-      "import type { Message } from 'discord.js'",
       "import { ApplyOptions } from '@sapphire/decorators'",
-      "import type { ArielCommand.Args } from '@sapphire/framework'",
+      "import type { Message } from 'discord.js'",
       "",
       "@ApplyOptions<ArielCommandOptions>({",
       "  description: 'Solve this',",
@@ -33,9 +32,9 @@
       "}",
       ""
     ],
-    "description": "Astraea Command"
-	  },
-	  "AstraeaListener": {
+    "description": "Command"
+  },
+	  "Listener": {
       "prefix": "ArielListener",
       "body": [
         "import { Events, Listener, ListenerOptions } from '@sapphire/framework'",
@@ -52,9 +51,9 @@
         "}",
         ""
       ],
-      "description": "AstraeaListener"
+      "description": "Listener"
     },
-	  "ArielRedditCommand": {
+	  "RedditCommand": {
 		"prefix": "ArielRedditCommand",
 		"body": [
 		  "import { ApplyOptions } from '@sapphire/decorators'",
@@ -75,6 +74,20 @@
 		  "}",
 		  ""
 		],
-		"description": "ArielRedditCommand"
-	  }
+		"description": "RedditCommand"
+	  },
+    "Task": {
+      "prefix": "ArielTask",
+      "body": [
+        "import { Task } from '#lib/Structures/Task'",
+        "",
+        "export default class testTask extends Task {",
+        "  public run() {",
+        "    return 200",
+        "  }",
+        "}",
+        ""
+      ],
+      "description": "Task"
+    }
 }
