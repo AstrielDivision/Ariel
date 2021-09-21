@@ -12,7 +12,7 @@ export default class OwOify extends ArielCommand {
     const text = (await args.restResult('string')).value
 
     if (!text) {
-      return await message.channel.send(args.t('commands/misc:owoify.description'))
+      return await message.channel.send(args.t('commands/misc:owoify.noText'))
     }
 
     return await message.channel.send(owoify(text))
