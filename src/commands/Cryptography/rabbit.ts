@@ -20,7 +20,7 @@ export default class Rabbit extends ArielCommand {
       return await message.channel.send(args.t('commands/cryptography:noSecret'))
     }
 
-    if (message.guild.me.permissions.has(Permissions.FLAGS.MANAGE_MESSAGES)) void message.delete()
+    if (message.guild.me.permissions.has(Permissions.FLAGS.MANAGE_MESSAGES)) await message.delete()
 
     const result = decryptFlag ? this.decrypt(text, secret) : this.encrypt(text, secret)
 

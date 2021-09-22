@@ -13,6 +13,7 @@ export default class Kick extends ArielCommand {
   public async run(message: Message, args: ArielCommand.Args) {
     const member = (await args.pickResult('member')).value
     const reason = (await args.restResult('string')).value
+
     if (!member) return await message.channel.send(args.t('commands/moderation:kick.errors.noMention'))
 
     if (!member.kickable) return await message.channel.send(args.t('commands/moderation:kick.errors.cannotKick'))
