@@ -24,7 +24,8 @@ interface Configuration {
   }
   sentry: string
   stats?: {
-    topgg: string
+    topgg?: string
+    discords?: string
   }
 }
 
@@ -121,6 +122,10 @@ const config = convict<Configuration>({
   },
   stats: {
     topgg: {
+      format: String,
+      default: ''
+    },
+    discords: {
       format: String,
       default: ''
     }
