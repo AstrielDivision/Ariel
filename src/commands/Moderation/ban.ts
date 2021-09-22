@@ -16,6 +16,7 @@ export default class Ban extends ArielCommand {
     const member = (await args.pickResult('member')).value
     const reason = (await args.restResult('string')).value
     const softBan = args.getFlags('s', 'soft')
+
     if (!member) return await message.channel.send(args.t('commands/moderation:ban.errors.noMention'))
 
     if (!member.bannable) return await message.channel.send(args.t('commands/moderation:ban.errors.cannotBan'))
