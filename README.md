@@ -4,8 +4,8 @@
 
 [![Continuous Delivery](https://github.com/AstrielDivision/Ariel/actions/workflows/okteto-push.yml/badge.svg)](https://github.com/AstrielDivision/Ariel/actions/workflows/okteto-push.yml)
 
-![GitHub issues](https://img.shields.io/github/issues-raw/AstrielDivision/Ariel)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/AstrielDivision/Ariel)
+[![Discord Bots](https://top.gg/api/widget/servers/609269728455688193.svg?noavatar=true)(https://top.gg/bot/609269728455688193)
 [![Discord Bots](https://top.gg/api/widget/status/609269728455688193.svg)](https://top.gg/bot/609269728455688193)
 
 > Image, Moderation and Utility bot.
@@ -24,7 +24,7 @@ Problems with self hosting join the support server [here](https://discord.gg/sb9
 
 ## License
 
-**Licensed under the [MIT License](https://github.com/AstraeaStudios/Astraea/blob/main/LICENSE)**
+**Licensed under the [Apache License, Version 2.0](https://github.com/AstraeaStudios/Ariel/blob/main/LICENSE)**
 
 ## Contributors ✨
 
@@ -38,14 +38,6 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
 </table>
 
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
 
