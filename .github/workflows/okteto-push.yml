@@ -4,7 +4,7 @@ on:
   push:
     branches: [main, starlight]
   schedule:
-    - cron: "* * */23 * *"
+    - cron: "* */20 * * *"
 
 jobs:
   push:
