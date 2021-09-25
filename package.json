@@ -86,7 +86,7 @@
     "@sentry/node": "6.13.2",
     "@tmware/status-rotate": "1.2.9",
     "app-root-path": "3.0.0",
-    "bufferutil": "4.0.3",
+    "bufferutil": "4.0.4",
     "colorette": "2.0.11",
     "convict": "6.2.0",
     "crypto-js": "4.1.1",
