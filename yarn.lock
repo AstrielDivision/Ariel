@@ -857,10 +857,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/prettier@npm:2.3.2":
-  version: 2.3.2
-  resolution: "@types/prettier@npm:2.3.2"
-  checksum: c4313e16650811f47b07a0fa7ac0742e966f61283a7292eb667fd4626d760bf3b7d896be3eaabb3354ad45fdbe3a340299b018dd3bcce1ff753d030a8cd2479c
+"@types/prettier@npm:2.4.0":
+  version: 2.4.0
+  resolution: "@types/prettier@npm:2.4.0"
+  checksum: f7128dc36e68906c9316c7d284b29561c6aa294e9b04d860ab41ebb9734080fdcbbedb42dd1bfa45ed72f9b34e28233d8e2e98c715b31b333d31f77da3dcad01
   languageName: node
   linkType: hard
 
@@ -1253,11 +1253,11 @@ __metadata:
     "@types/convict": 6.1.1
     "@types/crypto-js": 4.0.2
     "@types/node": 16.9.4
-    "@types/prettier": 2.3.2
+    "@types/prettier": 2.4.0
     all-contributors-cli: 6.20.0
     app-root-path: 3.0.0
     bufferutil: 4.0.3
-    colorette: 2.0.8
+    colorette: 2.0.10
     convict: 6.2.0
     crypto-js: 4.1.1
     cz-conventional-changelog: 3.3.0
@@ -1638,10 +1638,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"colorette@npm:2.0.8":
-  version: 2.0.8
-  resolution: "colorette@npm:2.0.8"
-  checksum: 550b43f2a57e6edc0d7d48bcf3db67ef57696a52e2c1305d865304a6bd65e5f3756bc2034b856b152eaf869c38f71827962ce80810042c3f349671a114a1e6c1
+"colorette@npm:2.0.10":
+  version: 2.0.10
+  resolution: "colorette@npm:2.0.10"
+  checksum: a8d6b709b0e1e5fd42eb91622729521d72cfbb10577b396f7499ea134d7c7be15ec006e3a64d5d9aca19ad2715a31e1e2b743ac8a9c02b687e8ba59d91de9666
   languageName: node
   linkType: hard
 
