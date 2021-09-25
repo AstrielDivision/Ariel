@@ -8,7 +8,7 @@ import cfg from '../config'
   time: Timeouts.Hour
 })
 export default class uploadStats extends Task {
-  public async run() {
+  public async run(): Promise<unknown> {
     if (cfg.stats.topgg) {
       await fetch<TopGGResponse>(`https://top.gg/api/bots/${this.container.client.id}/stats`, {
         method: 'POST',
@@ -39,6 +39,8 @@ export default class uploadStats extends Task {
 
       this.container.logger.console('Posted stats to discords.com API / botsfordiscord.com API.')
     }
+
+    return null
   }
 }
 

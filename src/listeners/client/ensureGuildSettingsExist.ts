@@ -3,14 +3,14 @@ import { ApplyOptions } from '@sapphire/decorators'
 import { Events, Listener, ListenerOptions } from '@sapphire/framework'
 import type { Message } from 'discord.js'
 
-const cached: string[] = []
+const cached = new Set<string>()
 
 @ApplyOptions<ListenerOptions>({
   event: Events.MessageCreate
 })
 export default class ensureGuildSettingsExist extends Listener {
   public async run(message: Message): Promise<undefined> {
-    if (cached.includes(message.guild.id)) return undefined
+    if (cached.has(message.guild.id)) return undefined
 
     const guild = await GuildModel.findOne({ guild_id: message.guild.id })
 
@@ -20,7 +20,7 @@ export default class ensureGuildSettingsExist extends Listener {
       }).save()
     }
 
-    cached.push(message.guild.id)
+    cached.add(message.guild.id)
 
     return undefined
   }
