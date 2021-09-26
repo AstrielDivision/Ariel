@@ -1257,7 +1257,6 @@ __metadata:
     all-contributors-cli: 6.20.0
     app-root-path: 3.0.0
     bufferutil: 4.0.4
-    colorette: 2.0.11
     convict: 6.2.0
     crypto-js: 4.1.1
     cz-conventional-changelog: 3.3.0
@@ -1635,13 +1634,6 @@ __metadata:
   bin:
     color-support: bin.js
   checksum: 9b7356817670b9a13a26ca5af1c21615463b500783b739b7634a0c2047c16cef4b2865d7576875c31c3cddf9dd621fa19285e628f20198b233a5cfdda6d0793b
-  languageName: node
-  linkType: hard
-
-"colorette@npm:2.0.11":
-  version: 2.0.11
-  resolution: "colorette@npm:2.0.11"
-  checksum: 936b9b7a82f085d78c3d15bdd0ae837f6852d136fc30b1d0dbf19bc72f71eb5ca03c09a7a0d7df77e3109a07ea7f87d3c95e9aee3046c7db04be1436bce8cc83
   languageName: node
   linkType: hard
 

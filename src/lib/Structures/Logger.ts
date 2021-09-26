@@ -1,5 +1,4 @@
 import type { ILogger, LogLevel } from '@sapphire/framework'
-import colorette from 'colorette'
 import { MessageAttachment, MessageEmbed, WebhookClient, WebhookMessageOptions } from 'discord.js'
 import { EOL } from 'os'
 import cfg from '../../config'
@@ -48,12 +47,9 @@ export default class AstraeaLogger implements ILogger {
     this._write('LOG', message)
   }
 
-  protected _write(level: Levels, ...values: readonly unknown[]): void {
+  protected _write(level: string, ...values: readonly unknown[]): void {
     process.stdout.write(
-      `[${this.formatLevel('foreground', new Date().toLocaleString())} | ${this.formatLevel(
-        'foreground',
-        this.namespace + ' Logger'
-      )} | ${this.formatLevel(level, level)}]: ${values.join(' ')} ${EOL}`
+      `[${new Date().toLocaleString()} | ${this.namespace} Logger | ${level}]: ${values.join('')} ${EOL}`
     )
 
     if (level === 'LOG') return
@@ -79,39 +75,4 @@ export default class AstraeaLogger implements ILogger {
     }
     void hook.send(options).catch(() => null)
   }
-
-  formatLevel(level: Levels, text: string): string {
-    switch (level) {
-      case 'TRACE': {
-        return colorette.gray(text)
-      }
-      case 'INFO': {
-        return colorette.greenBright(text)
-      }
-      case 'DEBUG': {
-        return colorette.cyan(text)
-      }
-      case 'WARN': {
-        return colorette.yellow(text)
-      }
-      case 'FATAL':
-      case 'ERROR': {
-        return colorette.bgRed(text)
-      }
-      case 'LOG': {
-        return colorette.magenta(text)
-      }
-      case 'foreground': {
-        return colorette.gray(text)
-      }
-      case 'WRITE': {
-        return colorette.dim(text)
-      }
-      default: {
-        return colorette.gray(text)
-      }
-    }
-  }
 }
-
-type Levels = 'TRACE' | 'INFO' | 'DEBUG' | 'WARN' | 'ERROR' | 'FATAL' | 'LOG' | 'foreground' | 'WRITE'
