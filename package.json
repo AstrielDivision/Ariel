@@ -1,6 +1,6 @@
 {
   "name": "ariel",
-  "version": "2.2.9",
+  "version": "2.3.0",
   "main": "build/index",
   "author": "AstrielDivision",
   "contributors": [
@@ -39,7 +39,7 @@
     "@types/convict": "6.1.1",
     "@types/crypto-js": "4.0.2",
     "@types/node": "16.9.4",
-    "@types/prettier": "2.3.2",
+    "@types/prettier": "2.4.0",
     "all-contributors-cli": "6.20.0",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "7.32.0",
@@ -86,8 +86,7 @@
     "@sentry/node": "6.13.2",
     "@tmware/status-rotate": "1.2.9",
     "app-root-path": "3.0.0",
-    "bufferutil": "4.0.3",
-    "colorette": "2.0.8",
+    "bufferutil": "4.0.4",
     "convict": "6.2.0",
     "crypto-js": "4.1.1",
     "dayjs": "1.10.7",
