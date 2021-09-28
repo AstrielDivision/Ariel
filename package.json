@@ -95,7 +95,7 @@
     "mongoose": "6.0.8",
     "nanoid": "3.1.25",
     "owofire": "1.0.4",
-    "utf-8-validate": "5.0.5"
+    "utf-8-validate": "5.0.6"
   },
   "imports": {
     "#lib/Structures/Command": "./build/lib/Structures/Command.js",
