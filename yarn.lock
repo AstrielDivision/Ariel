@@ -1332,7 +1332,7 @@ __metadata:
     husky: 7.0.2
     lint-staged: 11.1.2
     mongoose: 6.0.8
-    nanoid: 3.1.25
+    nanoid: 3.1.28
     owofire: 1.0.4
     prettier: 2.4.1
     reflect-metadata: 0.1.13
@@ -4218,12 +4218,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nanoid@npm:3.1.25":
-  version: 3.1.25
-  resolution: "nanoid@npm:3.1.25"
+"nanoid@npm:3.1.28":
+  version: 3.1.28
+  resolution: "nanoid@npm:3.1.28"
   bin:
     nanoid: bin/nanoid.cjs
-  checksum: e2353828c7d8fde65265e9c981380102e2021f292038a93fd27288bad390339833286e8cbc7531abe1cb2c6b317e55f38b895dcb775151637bb487388558e0ff
+  checksum: ae2fa9f3ce7a690ec62fc2fdf92345f023b20db760024f767c25ad392bde6414dc0b44a8e66dc1209426f36e4771e63b09ad2b49d8f1b04063b37e21b46af8d0
   languageName: node
   linkType: hard
 
