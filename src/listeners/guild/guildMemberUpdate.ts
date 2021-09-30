@@ -11,6 +11,7 @@ import type { GuildMember } from 'discord.js'
 export default class guildMemberUpdate extends Listener {
   public async run(oldMember: GuildMember, newMember: GuildMember) {
     if (oldMember.displayName === newMember.displayName) return undefined
+    if (!newMember.manageable) return undefined
 
     const { anti } = await GuildSettings.findOne({ guild_id: newMember.guild.id })
 
