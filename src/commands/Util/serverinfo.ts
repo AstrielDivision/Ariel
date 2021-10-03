@@ -19,17 +19,21 @@ export default class example extends ArielCommand {
     })
 
     const embed = new MessageEmbed()
-      .setTitle(`${guild.name} | Guild Info`)
+      .setTitle(`${guild.name} (${guild.id})`)
       .setColor('BLURPLE')
       .addFields(
-        { name: 'Owner', value: `<@!${(await guild.fetchOwner()).id}>`, inline: true },
-        { name: 'Channels', value: guild.channels.cache.size.toString(), inline: true },
-        { name: 'Member Count', value: guild.memberCount.toString(), inline: true },
-        { name: 'Human Members', value: guild.members.cache.filter(member => !member.user.bot).size.toString() },
-        { name: 'Verification Level', value: verificationLevels[guild.verificationLevel], inline: true },
-        { name: 'Created At', value: dayjs(guild.createdTimestamp).format('MM/DD/YYYY'), inline: true },
+        { name: '• Owner', value: `<@!${(await guild.fetchOwner()).id}>`, inline: true },
+        { name: '• Verification Level', value: verificationLevels[guild.verificationLevel], inline: true },
+        { name: '• Created At', value: `<t:${dayjs(guild.createdTimestamp).unix()}>`, inline: true },
+        { name: '• Channels', value: guild.channels.cache.size.toString(), inline: true },
+        { name: '• Member Count', value: guild.memberCount.toString(), inline: true },
         {
-          name: `Roles (${guild.roles.cache.size})`,
+          name: '• Human Members',
+          value: guild.members.cache.filter(member => !member.user.bot).size.toString(),
+          inline: true
+        },
+        {
+          name: `• Roles (${guild.roles.cache.size})`,
           value: roles.length < 10 ? roles.join(', ') : roles.length > 10 ? this.trimArray(roles).join(', ') : 'None',
           inline: true
         }
