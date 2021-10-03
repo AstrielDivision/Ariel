@@ -5,51 +5,51 @@
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
 import { ApplyOptions } from '@sapphire/decorators'
 import type { Command } from '@sapphire/framework'
+import type { TFunction } from '@sapphire/plugin-i18next'
 import { Message, MessageEmbed, TextChannel } from 'discord.js'
-import i18 from 'i18next'
 import cfg from '../../config'
 
 @ApplyOptions<ArielCommandOptions>({
   aliases: ['h'],
-  description: 'Gives you a list of commands',
-  detailedDescription: 'You may also provide a command, which will return info about that command',
+  description: 'commands/help:description',
+  detailedDescription: 'commands/help:detailedDescription',
   preconditions: ['GuildTextOnly'],
   usage: '[command]'
 })
 export default class Help extends ArielCommand {
   public async run(message: Message, args: ArielCommand.Args) {
     const command = await args.pickResult('string')
-    if (command.success) return await this.commandHelp(message, command.value)
+    if (command.success) return await this.commandHelp(message, command.value, args.t)
 
-    return await this.commands(message)
+    return await this.commands(message, args.t)
   }
 
-  private async commandHelp(message: Message, cmd: string) {
+  private async commandHelp(message: Message, cmd: string, t: TFunction) {
     const commands = this.container.stores.get('commands')
     const command: Command = commands.get(cmd.toLowerCase())
 
     if (typeof command === 'undefined') {
-      return await message.channel.send('Couldn\'t find that command!')
+      return await message.channel.send(t('commands/help:errors.404'))
     }
     const embed = new MessageEmbed()
       .setColor('BLUE')
       .setFooter(
-        `${message.author.tag} | Parameter Key: <> Required, [] Optional`,
+        t('commands/help:embed1.footer', { author: message.author.tag }),
         message.author.avatarURL({ dynamic: true })
       )
-      .setTitle(`Command | ${command.name}`)
-      .addField('Description', i18.t(command.description))
+      .setTitle(t('commands/help:embed1.title', { command }))
+      .addField(t('commands/help:embed1.fields.1'), t(command.description))
 
     if (command.aliases.length > 0) {
-      embed.addField('Aliases', command.aliases.join(', '))
+      embed.addField(t('commands/help:embed1.fields.2'), command.aliases.join(', '))
     }
 
     if (command.detailedDescription) {
-      embed.addField('Detailed Description', command.detailedDescription)
+      embed.addField(t('commands/help:embed1.fields.3'), command.detailedDescription)
     }
 
     if ((command as ArielCommand).usage.length > 0) {
-      embed.addField('Usage', `${cfg.prefix}${(command as ArielCommand).usage}`)
+      embed.addField(t('commands/help:embed1.fields.4'), `${cfg.prefix}${(command as ArielCommand).usage}`)
     }
 
     return await message.channel.send({
@@ -57,18 +57,16 @@ export default class Help extends ArielCommand {
     })
   }
 
-  private async commands(message: Message) {
+  private async commands(message: Message, t: TFunction) {
     let categories: string[] = []
 
-    let embed = new MessageEmbed()
+    let embed = new MessageEmbed().setTitle(t('commands/help:embed2.title'))
 
     // @ts-ignore
-    // eslint-disable-next-line array-callback-return
     this.container.stores.get('commands').map((cmd: ArielCommand) => {
-      // eslint-disable-next-line array-callback-return
-      if (categories.includes(cmd.category)) return
+      if (categories.includes(cmd.category)) return undefined
 
-      categories.push(cmd.category)
+      return categories.push(cmd.category)
     })
 
     categories.forEach(category => {
