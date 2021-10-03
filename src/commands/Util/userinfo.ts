@@ -20,18 +20,18 @@ export default class UserInfo extends ArielCommand {
     const isBot = member.user.bot
 
     const embed = new MessageEmbed()
-      .setTitle(`${member.toString()}'s Info`)
+      .setTitle(`${member.user.tag} (${member.user.id})`)
       .setColor('BLURPLE')
       .setTimestamp()
       .setThumbnail(member.user.avatarURL({ dynamic: true }))
       .addFields(
-        { name: 'Discrim', value: member.user.discriminator, inline: true },
-        { name: 'Joined', value: dayjs(member.joinedAt).format('MM/DD/YYYY'), inline: true },
-        { name: 'Registered', value: dayjs(member.user.createdAt).format('MM/DD/YYYY'), inline: true },
-        { name: 'Banned on KSoft?', value: KSoftBan ? 'Yes' : 'No', inline: true },
-        { name: 'Is a Bot?', value: isBot ? 'Yes' : 'No', inline: true }
+        { name: '• Joined', value: `<t:${dayjs(member.joinedAt).unix()}>`, inline: true },
+        { name: '• Registered', value: `<t:${dayjs(member.user.createdAt).unix()}>`, inline: true },
+        { name: '\u200B', value: '\u200B', inline: true },
+        { name: '• Banned on KSoft?', value: KSoftBan ? 'Yes' : 'No', inline: true },
+        { name: '• Is a Bot?', value: isBot ? 'Yes' : 'No', inline: true },
+        { name: '\u200B', value: '\u200B', inline: true }
       )
-      .setFooter(`ID: ${member.user.id}`)
 
     return await message.channel.send({ embeds: [embed] })
   }

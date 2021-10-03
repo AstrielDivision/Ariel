@@ -549,9 +549,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/framework@npm:2.0.0-pr-261.c2a6471a.0":
-  version: 2.0.0-pr-261.c2a6471a.0
-  resolution: "@sapphire/framework@npm:2.0.0-pr-261.c2a6471a.0"
+"@sapphire/framework@npm:2.0.0-next.dc6c8d45.0":
+  version: 2.0.0-next.dc6c8d45.0
+  resolution: "@sapphire/framework@npm:2.0.0-next.dc6c8d45.0"
   dependencies:
     "@sapphire/discord-utilities": ^2.1.5
     "@sapphire/discord.js-utilities": next
@@ -560,7 +560,7 @@ __metadata:
     "@sapphire/utilities": ^2.0.1
     lexure: ^0.17.0
     tslib: ^2.3.1
-  checksum: 67274446e00860603d328df09e160f453d889bfdb121113e6b41d99f5682ff62d8320c6a0f89723356f4c0c417aaf00ed26160e807efd6d842983ed03b3b713f
+  checksum: 537fb2269095144d6af5500de64ae4d3f8e72e8a1ef20aae6e7630143146843703b3f9840d215c8efe28e665e486aab6e0e34df78a6ec5ce041218e7376fdcf5
   languageName: node
   linkType: hard
 
@@ -1305,7 +1305,7 @@ __metadata:
     "@sapphire/discord-utilities": 2.1.5
     "@sapphire/discord.js-utilities": 3.0.0-next.c4f992f5.0
     "@sapphire/fetch": 2.0.0-pr-160.676f855.0
-    "@sapphire/framework": 2.0.0-pr-261.c2a6471a.0
+    "@sapphire/framework": 2.0.0-next.dc6c8d45.0
     "@sapphire/plugin-api": 3.0.0-next.23809.0
     "@sapphire/plugin-i18next": 2.0.0-next.d810c56.0
     "@sapphire/plugin-subcommands": 2.0.0-pr-97.11c4df4.0
@@ -1330,7 +1330,7 @@ __metadata:
     discord.js: 13.1.0
     eslint: 7.32.0
     husky: 7.0.2
-    lint-staged: 11.1.2
+    lint-staged: 11.1.4
     mongoose: 6.0.8
     nanoid: 3.1.28
     owofire: 1.0.4
@@ -3686,9 +3686,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:11.1.2":
-  version: 11.1.2
-  resolution: "lint-staged@npm:11.1.2"
+"lint-staged@npm:11.1.4":
+  version: 11.1.4
+  resolution: "lint-staged@npm:11.1.4"
   dependencies:
     chalk: ^4.1.1
     cli-truncate: ^2.1.0
@@ -3706,7 +3706,7 @@ __metadata:
     stringify-object: ^3.3.0
   bin:
     lint-staged: bin/lint-staged.js
-  checksum: 0050d1836dda879c58561fa4efd100f5cd14fcbf8ee3fdeab7e89ec4219c019543bb5bf2442f760557ebe4bb8b7bfc56a9c98b9384acecfe0f8553f091723e36
+  checksum: aa2a54678f639f90a08d059f510274371d2fceb4866da35dbd2d84205027ddca30114702c78507ee34c12d850d640a20434b508df1e0e8827a1276eb5d0939b0
   languageName: node
   linkType: hard
 
