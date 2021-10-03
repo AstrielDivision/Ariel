@@ -25,8 +25,8 @@ export default class Client extends SapphireClient {
     this.Yiff = new Yiff(this)
     this.statusUpdater = new StatusUpdater(this, [
       {
-        type: 'LISTENING',
-        name: `Signals from the endless outer space | ${cfg.prefix}`
+        type: 'WATCHING',
+        name: `The Stars Get Dark. | ${cfg.prefix}`
       },
       {
         type: 'LISTENING',
@@ -35,10 +35,6 @@ export default class Client extends SapphireClient {
       {
         type: 'PLAYING',
         name: 'Rainbow 6 Siege'
-      },
-      {
-        type: 'PLAYING',
-        name: 'CS:GO'
       },
       {
         type: 'COMPETING',
