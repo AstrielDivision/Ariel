@@ -549,9 +549,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/framework@npm:2.0.0-next.9641b390.0":
-  version: 2.0.0-next.9641b390.0
-  resolution: "@sapphire/framework@npm:2.0.0-next.9641b390.0"
+"@sapphire/framework@npm:2.0.0-next.dc6c8d45.0":
+  version: 2.0.0-next.dc6c8d45.0
+  resolution: "@sapphire/framework@npm:2.0.0-next.dc6c8d45.0"
   dependencies:
     "@sapphire/discord-utilities": ^2.1.5
     "@sapphire/discord.js-utilities": next
@@ -560,7 +560,7 @@ __metadata:
     "@sapphire/utilities": ^2.0.1
     lexure: ^0.17.0
     tslib: ^2.3.1
-  checksum: 8e8b82fd48bade2e77f00af66987d3eea8eba0098f19c8a439a46aeb39ad3c2495f3b14a3573d3192b9e825db51200f10e603183c0850746c63fa1dae5d3c64b
+  checksum: 537fb2269095144d6af5500de64ae4d3f8e72e8a1ef20aae6e7630143146843703b3f9840d215c8efe28e665e486aab6e0e34df78a6ec5ce041218e7376fdcf5
   languageName: node
   linkType: hard
 
@@ -1305,7 +1305,7 @@ __metadata:
     "@sapphire/discord-utilities": 2.1.5
     "@sapphire/discord.js-utilities": 3.0.0-next.c4f992f5.0
     "@sapphire/fetch": 2.0.0-pr-160.676f855.0
-    "@sapphire/framework": 2.0.0-next.9641b390.0
+    "@sapphire/framework": 2.0.0-next.dc6c8d45.0
     "@sapphire/plugin-api": 3.0.0-next.23809.0
     "@sapphire/plugin-i18next": 2.0.0-next.d810c56.0
     "@sapphire/plugin-subcommands": 2.0.0-pr-97.11c4df4.0
