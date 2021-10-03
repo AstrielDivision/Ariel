@@ -37,12 +37,8 @@ export default class Client extends SapphireClient {
         name: 'Rainbow 6 Siege'
       },
       {
-        type: 'COMPETING',
-        name: 'against others'
-      },
-      {
         type: 'WATCHING',
-        name: 'The dark skies of the earth'
+        name: 'The dark skies of the earth.'
       }
     ])
   }
