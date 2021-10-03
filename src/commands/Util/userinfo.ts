@@ -20,12 +20,11 @@ export default class UserInfo extends ArielCommand {
     const isBot = member.user.bot
 
     const embed = new MessageEmbed()
-      .setTitle(`${member.toString()}'s Info`)
+      .setTitle(`${member.user.tag}'s Info`)
       .setColor('BLURPLE')
       .setTimestamp()
       .setThumbnail(member.user.avatarURL({ dynamic: true }))
       .addFields(
-        { name: 'Discrim', value: member.user.discriminator, inline: true },
         { name: 'Joined', value: dayjs(member.joinedAt).format('MM/DD/YYYY'), inline: true },
         { name: 'Registered', value: dayjs(member.user.createdAt).format('MM/DD/YYYY'), inline: true },
         { name: 'Banned on KSoft?', value: KSoftBan ? 'Yes' : 'No', inline: true },
