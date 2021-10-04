@@ -540,12 +540,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/fetch@npm:2.0.0-pr-160.676f855.0":
-  version: 2.0.0-pr-160.676f855.0
-  resolution: "@sapphire/fetch@npm:2.0.0-pr-160.676f855.0"
+"@sapphire/fetch@npm:2.0.0":
+  version: 2.0.0
+  resolution: "@sapphire/fetch@npm:2.0.0"
   dependencies:
     cross-fetch: ^3.1.4
-  checksum: 656c7deb86d1ef86c33b91b346e59719b8f4e30a6e3e9a9ca6b1235a4568804b3010938ed8aacdd8d7a847326fea987cf7f4a5339c1a7c984fc29365f1d3cdfc
+  checksum: 5afa6898a520063a543c99db18d4e81da00f9cd62b047075dc3e9794a6742ed26a8f7f42f58366ec9b40c8a4a10f317680ee3b30ccf7733e728a3e8efb10fb5a
   languageName: node
   linkType: hard
 
@@ -1297,7 +1297,7 @@ __metadata:
     "@sapphire/decorators": 3.0.0-next.c4f992f5.0
     "@sapphire/discord-utilities": 2.1.5
     "@sapphire/discord.js-utilities": 3.0.1
-    "@sapphire/fetch": 2.0.0-pr-160.676f855.0
+    "@sapphire/fetch": 2.0.0
     "@sapphire/framework": 2.0.0-next.dc6c8d45.0
     "@sapphire/plugin-api": 3.0.0-next.23809.0
     "@sapphire/plugin-i18next": 2.0.0-next.d810c56.0

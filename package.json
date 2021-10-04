@@ -76,7 +76,7 @@
     "@sapphire/decorators": "3.0.0-next.c4f992f5.0",
     "@sapphire/discord-utilities": "2.1.5",
     "@sapphire/discord.js-utilities": "3.0.1",
-    "@sapphire/fetch": "2.0.0-pr-160.676f855.0",
+    "@sapphire/fetch": "2.0.0",
     "@sapphire/framework": "2.0.0-next.dc6c8d45.0",
     "@sapphire/plugin-api": "3.0.0-next.23809.0",
     "@sapphire/plugin-i18next": "2.0.0-next.d810c56.0",
