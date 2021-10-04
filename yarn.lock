@@ -500,6 +500,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sapphire/discord-utilities@npm:^2.2.0":
+  version: 2.2.0
+  resolution: "@sapphire/discord-utilities@npm:2.2.0"
+  dependencies:
+    twemoji-parser: ^13.1.0
+  checksum: 25ec1633e1413d31177eefad45a24a58ca27c46932a10c50972c53af738bada6073509232dd1aceac57b7d241317a912e9274e67e07275ee561317a2e9f710e5
+  languageName: node
+  linkType: hard
+
 "@sapphire/discord-utilities@npm:^2.2.0-next.8f9e6156.0":
   version: 2.2.0-next.8f9e6156.0
   resolution: "@sapphire/discord-utilities@npm:2.2.0-next.8f9e6156.0"
@@ -509,23 +518,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/discord-utilities@npm:^2.2.0-next.c4f992f5.0":
-  version: 2.2.0-pr-160.676f855.0
-  resolution: "@sapphire/discord-utilities@npm:2.2.0-pr-160.676f855.0"
+"@sapphire/discord.js-utilities@npm:3.0.1":
+  version: 3.0.1
+  resolution: "@sapphire/discord.js-utilities@npm:3.0.1"
   dependencies:
-    twemoji-parser: ^13.1.0
-  checksum: 4d7ac986899a259cbadea306fc67c31bbaa331890c4259764a3607a7d6e5e2c8a9fbecb67c65543d3c781c91c6dbac0b748f2afb4796cc1841eb1a2acc724825
-  languageName: node
-  linkType: hard
-
-"@sapphire/discord.js-utilities@npm:3.0.0-next.c4f992f5.0":
-  version: 3.0.0-next.c4f992f5.0
-  resolution: "@sapphire/discord.js-utilities@npm:3.0.0-next.c4f992f5.0"
-  dependencies:
-    "@sapphire/discord-utilities": ^2.2.0-next.c4f992f5.0
-    "@sapphire/time-utilities": ^1.4.0-next.c4f992f5.0
-    "@sapphire/utilities": ^2.1.0-next.c4f992f5.0
-  checksum: 7e151965c82d282e09ae3fb023cf0ce632f132cbefaa11e919c909a45e9e7c57831f92e2a18ba6eb2e45543f14fca9d31348eda119d43bec0f13665055797995
+    "@sapphire/discord-utilities": ^2.2.0
+    "@sapphire/time-utilities": ^1.4.1
+    "@sapphire/utilities": ^3.0.1
+  checksum: 8e2df1900771695058706a54e2d2edb12ad1ed1751b4f5009c20244108ce8e383ebf1844d83489f0909acbe642eba7ce5fa6e6fd2a3af14b94bb02b9ab7e642c
   languageName: node
   linkType: hard
 
@@ -638,12 +638,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/time-utilities@npm:^1.4.0-next.c4f992f5.0":
-  version: 1.4.0-pr-160.676f855.0
-  resolution: "@sapphire/time-utilities@npm:1.4.0-pr-160.676f855.0"
+"@sapphire/time-utilities@npm:^1.4.1":
+  version: 1.4.1
+  resolution: "@sapphire/time-utilities@npm:1.4.1"
   dependencies:
-    "@sapphire/utilities": ^3.0.0-pr-160.676f855.0
-  checksum: a1f9724f59169c888a50895c8b477c1620c6fa894dbf862595b3478b05d3cef4edf520fc27764a5d6b82a675c92d57d6583ab5e82317c06106a65fcb893bf766
+    "@sapphire/utilities": ^3.0.1
+  checksum: bc456385ae9c3d9cb8b9c05e26153b11032f8d1a6c18a764e6d9e206ef6aff67fe5d95238edadc4eaf2c312567c3c99fe095e2375aa17f6cd5a15749e1b25c2f
   languageName: node
   linkType: hard
 
@@ -672,17 +672,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/utilities@npm:^2.1.0-next.c4f992f5.0":
-  version: 2.1.0-pr-159.fae7a606.0
-  resolution: "@sapphire/utilities@npm:2.1.0-pr-159.fae7a606.0"
-  checksum: 5c9c88d40679fcf319fa3db0ff6b4726c623c50c404c79387016778700ae4bda9a16b2c4390c5b98997287ab089542328966d3a77af7cf7b460c8cf001af9da3
-  languageName: node
-  linkType: hard
-
-"@sapphire/utilities@npm:^3.0.0-pr-160.676f855.0":
-  version: 3.0.0-pr-160.676f855.0
-  resolution: "@sapphire/utilities@npm:3.0.0-pr-160.676f855.0"
-  checksum: 2ab5490763bc29bc3c5272fc65d3708551c1795978a4e7dc8a0221dfeba8e56dc28f664bce4521eb1ef5b713e0ad3ba7a7b04e52bb16df72b752508161bc7273
+"@sapphire/utilities@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "@sapphire/utilities@npm:3.0.1"
+  checksum: cc62d199f21ec33f0d41e71bb222093e65c674cb0c4863b57acc81118483ce6f27b1ef253962473dcd34b69d6955c10ea26b1c3aa645ca3a23f0f160dd7a0bd6
   languageName: node
   linkType: hard
 
@@ -1303,7 +1296,7 @@ __metadata:
     "@commitlint/config-conventional": 13.2.0
     "@sapphire/decorators": 3.0.0-next.c4f992f5.0
     "@sapphire/discord-utilities": 2.1.5
-    "@sapphire/discord.js-utilities": 3.0.0-next.c4f992f5.0
+    "@sapphire/discord.js-utilities": 3.0.1
     "@sapphire/fetch": 2.0.0-pr-160.676f855.0
     "@sapphire/framework": 2.0.0-next.dc6c8d45.0
     "@sapphire/plugin-api": 3.0.0-next.23809.0
