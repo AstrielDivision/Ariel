@@ -12,7 +12,7 @@ import { Message, Permissions } from 'discord.js'
 export default class Rabbit extends ArielCommand {
   public async run(message: Message, args: ArielCommand.Args) {
     const decryptFlag = args.getFlags('d', 'decrypt')
-    const text = (await args.restResult('string')).value
+    const text = args.finished ? null : await args.rest('string')
     const secret = args.getOption('s', 'secret')
 
     if (!text) return await message.channel.send(args.t('commands/cryptography:noText'))
