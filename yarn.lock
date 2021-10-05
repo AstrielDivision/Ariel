@@ -575,17 +575,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/plugin-api@npm:3.0.0-next.1f577088.0":
-  version: 3.0.0-next.1f577088.0
-  resolution: "@sapphire/plugin-api@npm:3.0.0-next.1f577088.0"
+"@sapphire/plugin-api@npm:3.0.0-pr-145.4dbd0994.0":
+  version: 3.0.0-pr-145.4dbd0994.0
+  resolution: "@sapphire/plugin-api@npm:3.0.0-pr-145.4dbd0994.0"
   dependencies:
-    "@types/node-fetch": ^2.5.12
     "@types/psl": ^1.1.0
     "@types/ws": 8.2.0
-    node-fetch: ^2.6.5
     psl: ^1.8.0
     tslib: ^2.3.1
-  checksum: cf2736ed1c34d1b0e523282294e90f91f2babb44e93111b31de873dcfedc3e7509aff1fc0d096b0b9f7d2942e082608403817d8be4c221b062e7ad6b3118f64a
+    undici: ^4.7.0
+  checksum: 998a0b370cf0c8762f8a517b95e6a20010a9e947d85e43d277a56ef2aa302146be4a609db80dd297251cd93865df87ed11bc960e0cd229a2f0e41db6cc260b65
   languageName: node
   linkType: hard
 
@@ -867,16 +866,6 @@ __metadata:
   version: 1.2.2
   resolution: "@types/minimist@npm:1.2.2"
   checksum: b8da83c66eb4aac0440e64674b19564d9d86c80ae273144db9681e5eeff66f238ade9515f5006ffbfa955ceff8b89ad2bd8ec577d7caee74ba101431fb07045d
-  languageName: node
-  linkType: hard
-
-"@types/node-fetch@npm:^2.5.12":
-  version: 2.5.12
-  resolution: "@types/node-fetch@npm:2.5.12"
-  dependencies:
-    "@types/node": "*"
-    form-data: ^3.0.0
-  checksum: ad63c85ba6a9477b8e057ec8682257738130d98e8ece4e31141789bd99df9d9147985cc8bc0cb5c8983ed5aa6bb95d46df23d1e055f4ad5cf8b82fc69cf626c7
   languageName: node
   linkType: hard
 
@@ -1308,7 +1297,7 @@ __metadata:
     "@sapphire/discord.js-utilities": 3.0.1
     "@sapphire/fetch": 2.0.0
     "@sapphire/framework": 2.0.0-next.dc6c8d45.0
-    "@sapphire/plugin-api": 3.0.0-next.1f577088.0
+    "@sapphire/plugin-api": 3.0.0-pr-145.4dbd0994.0
     "@sapphire/plugin-i18next": 2.0.0-pr-145.4dbd0994.0
     "@sapphire/plugin-subcommands": 2.0.0-pr-145.4dbd0994.0
     "@sapphire/type": 2.1.0
@@ -2735,17 +2724,6 @@ __metadata:
     debug:
       optional: true
   checksum: d4ce74cf5c6f363168b97e706b914eb9ffb6bf4d4c6d8f8330b93088d9b90e566611ddbcf0e42c8ed5fd17598dfeda1d19230d3e9d6d6c6b4d1c10ec3a0b99be
-  languageName: node
-  linkType: hard
-
-"form-data@npm:^3.0.0":
-  version: 3.0.1
-  resolution: "form-data@npm:3.0.1"
-  dependencies:
-    asynckit: ^0.4.0
-    combined-stream: ^1.0.8
-    mime-types: ^2.1.12
-  checksum: b019e8d35c8afc14a2bd8a7a92fa4f525a4726b6d5a9740e8d2623c30e308fbb58dc8469f90415a856698933c8479b01646a9dff33c87cc4e76d72aedbbf860d
   languageName: node
   linkType: hard
 
@@ -4226,7 +4204,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-fetch@npm:^2.6.0, node-fetch@npm:^2.6.1, node-fetch@npm:^2.6.5":
+"node-fetch@npm:^2.6.0, node-fetch@npm:^2.6.1":
   version: 2.6.5
   resolution: "node-fetch@npm:2.6.5"
   dependencies:
@@ -5756,6 +5734,13 @@ typescript@4.4.3:
     has-symbols: ^1.0.2
     which-boxed-primitive: ^1.0.2
   checksum: 89d950e18fb45672bc6b3c961f1e72c07beb9640c7ceed847b571ba6f7d2af570ae1a2584cfee268b9d9ea1e3293f7e33e0bc29eaeb9f8e8a0bab057ff9e6bba
+  languageName: node
+  linkType: hard
+
+"undici@npm:^4.7.0":
+  version: 4.7.0
+  resolution: "undici@npm:4.7.0"
+  checksum: bfa38ba56f2d90c1c6b9eb2e5cfd8e183c79062c81edf1aa35f24f504bcd474c4c117b48ba97f2e510c1627f48ca2f2eb3bf712e2da1bce6ec2bf87b223e9625
   languageName: node
   linkType: hard
 
