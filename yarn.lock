@@ -575,39 +575,39 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/plugin-api@npm:3.0.0-next.23809.0":
-  version: 3.0.0-next.23809.0
-  resolution: "@sapphire/plugin-api@npm:3.0.0-next.23809.0"
+"@sapphire/plugin-api@npm:3.0.0-next.1f577088.0":
+  version: 3.0.0-next.1f577088.0
+  resolution: "@sapphire/plugin-api@npm:3.0.0-next.1f577088.0"
   dependencies:
     "@types/node-fetch": ^2.5.12
     "@types/psl": ^1.1.0
-    "@types/ws": 7.4.7
-    node-fetch: ^2.6.2
+    "@types/ws": 8.2.0
+    node-fetch: ^2.6.5
     psl: ^1.8.0
     tslib: ^2.3.1
-  checksum: e2b578d455a9d1c302b97dd7055a4bc7f5b4c44fda42bbe6f1757cedb283e6038c1b0ceb6196160123fdf9ac7b1c097767de9239ec78ff246b87fefa158777e1
+  checksum: cf2736ed1c34d1b0e523282294e90f91f2babb44e93111b31de873dcfedc3e7509aff1fc0d096b0b9f7d2942e082608403817d8be4c221b062e7ad6b3118f64a
   languageName: node
   linkType: hard
 
-"@sapphire/plugin-i18next@npm:2.0.0-next.d810c56.0":
-  version: 2.0.0-next.d810c56.0
-  resolution: "@sapphire/plugin-i18next@npm:2.0.0-next.d810c56.0"
+"@sapphire/plugin-i18next@npm:2.0.0-next.1f577088.0":
+  version: 2.0.0-next.1f577088.0
+  resolution: "@sapphire/plugin-i18next@npm:2.0.0-next.1f577088.0"
   dependencies:
     "@sapphire/utilities": ^2.0.1
-    "@types/i18next-fs-backend": ^1.0.1
-    i18next: ^20.6.1
+    "@types/i18next-fs-backend": ^1.1.2
+    i18next: ^21.2.4
     i18next-fs-backend: ^1.1.1
     tslib: ^2.3.1
-  checksum: fc0ae584831e08bf2d13f7490c2f2d48969bc3794e1796d5ef60b48dc1e985583d9cd642a05617f814c4794629319d193616ee72173349b76612c66fd9164bb2
+  checksum: 991567016e5b3a69aaf3f85507f08f30d5394e5941dd74d1e3dc94faff74a1483483348e1fa3ff3da107301ce80937f0ec238560e6af86d57ff082a40ef1f5ce
   languageName: node
   linkType: hard
 
-"@sapphire/plugin-subcommands@npm:2.0.0-pr-97.11c4df4.0":
-  version: 2.0.0-pr-97.11c4df4.0
-  resolution: "@sapphire/plugin-subcommands@npm:2.0.0-pr-97.11c4df4.0"
+"@sapphire/plugin-subcommands@npm:2.0.0-next.1f577088.0":
+  version: 2.0.0-next.1f577088.0
+  resolution: "@sapphire/plugin-subcommands@npm:2.0.0-next.1f577088.0"
   dependencies:
-    tslib: ^2.3.0
-  checksum: f5398ec93612d824f248b944187b07c9f1f3a7499b5f341214bcfca9e998cea46c5eead346e59900dbe8efaed07f8b5c9862c230b831e6c92379bd0f5bd9a7ee
+    tslib: ^2.3.1
+  checksum: 0f13b392c54b0b23e3b26c6ce19a12e3feb2e6c39972a7d9f144082e625f9367a607a3af79eb07cfd4d38296defd46aedfd750b4379141f312308b6314180150
   languageName: node
   linkType: hard
 
@@ -840,7 +840,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/i18next-fs-backend@npm:^1.0.1":
+"@types/i18next-fs-backend@npm:^1.1.2":
   version: 1.1.2
   resolution: "@types/i18next-fs-backend@npm:1.1.2"
   dependencies:
@@ -939,7 +939,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/ws@npm:7.4.7, @types/ws@npm:^7.4.7":
+"@types/ws@npm:8.2.0":
+  version: 8.2.0
+  resolution: "@types/ws@npm:8.2.0"
+  dependencies:
+    "@types/node": "*"
+  checksum: fb2f1cc1bc294607cf737a998a04d4eaca78b0a183905b879849c0e009f47ff4adaa6cbc7d9ac2d2ecc61652c8367e0f8bb02aab0af67a82e8c922746e96434b
+  languageName: node
+  linkType: hard
+
+"@types/ws@npm:^7.4.7":
   version: 7.4.7
   resolution: "@types/ws@npm:7.4.7"
   dependencies:
@@ -1299,9 +1308,9 @@ __metadata:
     "@sapphire/discord.js-utilities": 3.0.1
     "@sapphire/fetch": 2.0.0
     "@sapphire/framework": 2.0.0-next.dc6c8d45.0
-    "@sapphire/plugin-api": 3.0.0-next.23809.0
-    "@sapphire/plugin-i18next": 2.0.0-next.d810c56.0
-    "@sapphire/plugin-subcommands": 2.0.0-pr-97.11c4df4.0
+    "@sapphire/plugin-api": 3.0.0-next.1f577088.0
+    "@sapphire/plugin-i18next": 2.0.0-next.1f577088.0
+    "@sapphire/plugin-subcommands": 2.0.0-next.1f577088.0
     "@sapphire/type": 2.1.0
     "@sapphire/utilities": 3.0.1
     "@sentry/node": 6.13.2
@@ -3127,21 +3136,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next@npm:^20.6.1":
-  version: 20.6.1
-  resolution: "i18next@npm:20.6.1"
-  dependencies:
-    "@babel/runtime": ^7.12.0
-  checksum: 313cd4b17f9092eaf8ca92a02bb74d099f4a8b26de6e38018f438ce6f706220e5f72d865e1f50d815e13504ec38bc77e0f6341f670ca5162689f8d11a859e564
-  languageName: node
-  linkType: hard
-
 "i18next@npm:^21.0.1":
   version: 21.1.0
   resolution: "i18next@npm:21.1.0"
   dependencies:
     "@babel/runtime": ^7.12.0
   checksum: 95857d20d64f5441af1551936a24fb53aa28f224f1e35bcbb2b2e8d6bdafff45806c8bcdca40474e78ab50814a65f38f96b20302be90c03f5b3c6d70023ace95
+  languageName: node
+  linkType: hard
+
+"i18next@npm:^21.2.4":
+  version: 21.2.4
+  resolution: "i18next@npm:21.2.4"
+  dependencies:
+    "@babel/runtime": ^7.12.0
+  checksum: 2ec6c52da2e51bc35a4ca60ad2339c2eb91020a272b18695053f1842538313886d5293205e7290a83cd029c838e99351fad89444b6873d18d104383af1c95cdf
   languageName: node
   linkType: hard
 
@@ -4234,7 +4243,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-fetch@npm:^2.6.0, node-fetch@npm:^2.6.1, node-fetch@npm:^2.6.2":
+"node-fetch@npm:^2.6.0, node-fetch@npm:^2.6.1, node-fetch@npm:^2.6.5":
   version: 2.6.5
   resolution: "node-fetch@npm:2.6.5"
   dependencies:
