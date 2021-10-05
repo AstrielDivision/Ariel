@@ -31,7 +31,7 @@ export default class Hash extends ArielCommand {
     let md5Flag = args.getFlags('md5')
     let ripeMDFlag = args.getFlags('ripemd')
 
-    const text = (await args.restResult('string')).value
+    const text = args.finished ? null : await args.rest('string')
 
     if (!text) return await message.channel.send('No text provided!')
 

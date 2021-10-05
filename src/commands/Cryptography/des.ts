@@ -11,7 +11,7 @@ import { Message, Permissions } from 'discord.js'
 })
 export default class DES extends ArielCommand {
   public async run(message: Message, args: ArielCommand.Args) {
-    const text = (await args.restResult('string')).value
+    const text = args.finished ? null : await args.rest('string')
     const secret = args.getOption('secret', 's')
     const decryptFlag = args.getFlags('decrypt', 'd')
     const tripleFlag = args.getFlags('triple', 't')

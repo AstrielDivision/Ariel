@@ -15,7 +15,7 @@ export default class example extends ArielCommand {
     guild.roles.cache.forEach(r => {
       if (r.name === '@everyone') return null
 
-      return roles.push(r.name)
+      return roles.push(r.toString())
     })
 
     const embed = new MessageEmbed()

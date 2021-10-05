@@ -10,7 +10,7 @@ import type { Message } from 'discord.js'
 })
 export default class Base64 extends ArielCommand {
   public async run(message: Message, args: ArielCommand.Args) {
-    const string = (await args.restResult('string')).value
+    const string = args.finished ? null : await args.rest('string')
     const decode = args.getFlags('d', 'decode')
 
     if (!string) return await message.channel.send(args.t('commands/cryptography:noText'))
