@@ -80,7 +80,7 @@
     "@sapphire/framework": "2.0.0-next.dc6c8d45.0",
     "@sapphire/plugin-api": "3.0.0-next.1f577088.0",
     "@sapphire/plugin-i18next": "2.0.0-next.1f577088.0",
-    "@sapphire/plugin-subcommands": "2.0.0-next.1f577088.0",
+    "@sapphire/plugin-subcommands": "2.0.0-pr-145.4dbd0994.0",
     "@sapphire/type": "2.1.0",
     "@sapphire/utilities": "3.0.1",
     "@sentry/node": "6.13.2",
