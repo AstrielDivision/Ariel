@@ -34,9 +34,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astriel-division/eslint-config@npm:1.1.7":
-  version: 1.1.7
-  resolution: "@astriel-division/eslint-config@npm:1.1.7"
+"@astriel-division/eslint-config@npm:1.1.8":
+  version: 1.1.8
+  resolution: "@astriel-division/eslint-config@npm:1.1.8"
   dependencies:
     "@typescript-eslint/eslint-plugin": ^5.0.0
     "@typescript-eslint/parser": ^5.0.0
@@ -47,7 +47,7 @@ __metadata:
   peerDependencies:
     eslint: ^7.32.0 || ^8.0.0
     typescript: ^4.3.5
-  checksum: 32b7c4bb7a4f75fff71821d5a8838d912d375917d9876cd1821204550ee0816d060ef056ebc2cec17fdc9bfe07c1029eee3e6467c5e0e1f18f39ae8ade815f2c
+  checksum: 832395ce7100c396d8ee689e0f5cd891f293cde874c9f4393ed1231073540d391eeb54ebd968f06b3e253219e8938fb7c6655c3421b715d562152a679ffefde6
   languageName: node
   linkType: hard
 
@@ -1329,7 +1329,7 @@ __metadata:
   dependencies:
     "@aero/ksoft": 4.0.0-rc1
     "@aero/sanitizer": 1.2.0
-    "@astriel-division/eslint-config": 1.1.7
+    "@astriel-division/eslint-config": 1.1.8
     "@astriel-division/ts-config": 1.0.5
     "@commitlint/cli": 13.2.1
     "@commitlint/config-conventional": 13.2.0
