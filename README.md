@@ -22,10 +22,6 @@
 
 Problems with self hosting join the support server [here](https://discord.gg/sb9sF2kFg8)
 
-## License
-
-**Licensed under the [Apache License, Version 2.0](https://github.com/AstraeaStudios/Ariel/blob/main/LICENSE)**
-
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
@@ -44,3 +40,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
+## License
+
+**Licensed under the [Apache License, Version 2.0](https://github.com/AstraeaStudios/Ariel/blob/main/LICENSE)**
