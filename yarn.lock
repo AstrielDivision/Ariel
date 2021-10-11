@@ -474,12 +474,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/decorators@npm:3.0.0":
-  version: 3.0.0
-  resolution: "@sapphire/decorators@npm:3.0.0"
+"@sapphire/decorators@npm:3.1.1":
+  version: 3.1.1
+  resolution: "@sapphire/decorators@npm:3.1.1"
   dependencies:
-    tslib: 2.x
-  checksum: 740596993b02b18f8413014525493f8e559640b90b605afa344543c44597ee8f74457fcdf8e6b56d39630b86750de0ae2331b723241c12701ea14404d9387367
+    tslib: ^2.3.1
+  checksum: 348d6b50eb9ac847faa8c788deca283e0a665d26f9add51e051fa684f59690fce5859e9b65f3659820013e2a95fbf908cd74e38cadd96502625031bcd498855a
   languageName: node
   linkType: hard
 
@@ -1286,7 +1286,7 @@ __metadata:
     "@astriel-division/ts-config": 1.0.5
     "@commitlint/cli": 13.2.1
     "@commitlint/config-conventional": 13.2.0
-    "@sapphire/decorators": 3.0.0
+    "@sapphire/decorators": 3.1.1
     "@sapphire/discord-utilities": 2.2.0
     "@sapphire/discord.js-utilities": 3.2.1
     "@sapphire/fetch": 2.0.1
@@ -5605,7 +5605,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:2.3.1, tslib@npm:2.x, tslib@npm:^2, tslib@npm:^2.3.0, tslib@npm:^2.3.1":
+"tslib@npm:2.3.1, tslib@npm:^2, tslib@npm:^2.3.0, tslib@npm:^2.3.1":
   version: 2.3.1
   resolution: "tslib@npm:2.3.1"
   checksum: de17a98d4614481f7fcb5cd53ffc1aaf8654313be0291e1bfaee4b4bb31a20494b7d218ff2e15017883e8ea9626599b3b0e0229c18383ba9dce89da2adf15cb9
