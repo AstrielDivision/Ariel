@@ -1353,7 +1353,7 @@ __metadata:
     "@types/prettier": 2.4.1
     all-contributors-cli: 6.20.0
     app-root-path: 3.0.0
-    bufferutil: 4.0.4
+    bufferutil: 4.0.5
     convict: 6.2.0
     crypto-js: 4.1.1
     cz-conventional-changelog: 3.3.0
@@ -1509,13 +1509,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bufferutil@npm:4.0.4":
-  version: 4.0.4
-  resolution: "bufferutil@npm:4.0.4"
+"bufferutil@npm:4.0.5":
+  version: 4.0.5
+  resolution: "bufferutil@npm:4.0.5"
   dependencies:
     node-gyp: latest
-    node-gyp-build: ^4.2.0
-  checksum: 9ccea8c9c81c5d3a02de47dfac19f4ee2d42ffa319c86d6e2d6e510dc2fad1e6a8feb1a271e1ebfd81c53c4e7da560ea8a3f59a143679264e7791b6ebcc90bec
+    node-gyp-build: ^4.3.0
+  checksum: 37d5bef7cb38d29f9377b8891ff8a57f53ae6057313d77a8aa2a7417df37a72f16987100796cb2f1e1862f3eb80057705f3c052615ec076a0dcc7aa6c83b68c9
   languageName: node
   linkType: hard
 
@@ -4284,7 +4284,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-gyp-build@npm:^4.2.0":
+"node-gyp-build@npm:^4.2.0, node-gyp-build@npm:^4.3.0":
   version: 4.3.0
   resolution: "node-gyp-build@npm:4.3.0"
   bin:
