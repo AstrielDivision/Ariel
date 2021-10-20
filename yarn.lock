@@ -302,7 +302,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@discordjs/node-pre-gyp@npm:^0.4.0":
+"@discordjs/node-pre-gyp@npm:^0.4.1":
   version: 0.4.1
   resolution: "@discordjs/node-pre-gyp@npm:0.4.1"
   dependencies:
@@ -549,14 +549,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/type@npm:2.1.0":
-  version: 2.1.0
-  resolution: "@sapphire/type@npm:2.1.0"
+"@sapphire/type@npm:2.1.1":
+  version: 2.1.1
+  resolution: "@sapphire/type@npm:2.1.1"
   dependencies:
-    "@discordjs/node-pre-gyp": ^0.4.0
-    nan: ^2.14.2
-    tslib: ^2.3.0
-  checksum: 3cc0cd702bad2002cdd8dd1ca18cbf34df27a0516f25566d6ffb7a18cb17da7e0969791a66d531395b576c29263600e0ab39c403a6e90fb69a7805b188915298
+    "@discordjs/node-pre-gyp": ^0.4.1
+    nan: ^2.15.0
+    tslib: ^2.3.1
+  checksum: bd71bbc2da75776f463505693b37f366a5dad033779b36d6182ac24124aca360cc9ea89a42ad08ff08dcb092ffc540e28e14025a58f269dc7f752fab4a94dba7
   languageName: node
   linkType: hard
 
@@ -1255,7 +1255,7 @@ __metadata:
     "@sapphire/plugin-api": 3.0.1
     "@sapphire/plugin-i18next": 2.0.1
     "@sapphire/plugin-subcommands": 2.0.1
-    "@sapphire/type": 2.1.0
+    "@sapphire/type": 2.1.1
     "@sapphire/utilities": 3.0.4
     "@sentry/node": 6.13.3
     "@tmware/prettier-config": 1.0.3
@@ -4164,7 +4164,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nan@npm:^2.14.2":
+"nan@npm:^2.15.0":
   version: 2.15.0
   resolution: "nan@npm:2.15.0"
   dependencies:
@@ -5517,7 +5517,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:2.3.1, tslib@npm:^2, tslib@npm:^2.3.0, tslib@npm:^2.3.1":
+"tslib@npm:2.3.1, tslib@npm:^2, tslib@npm:^2.3.1":
   version: 2.3.1
   resolution: "tslib@npm:2.3.1"
   checksum: de17a98d4614481f7fcb5cd53ffc1aaf8654313be0291e1bfaee4b4bb31a20494b7d218ff2e15017883e8ea9626599b3b0e0229c18383ba9dce89da2adf15cb9
