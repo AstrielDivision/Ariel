@@ -87,7 +87,7 @@
     "@tmware/status-rotate": "1.2.9",
     "app-root-path": "3.0.0",
     "bufferutil": "4.0.5",
-    "convict": "6.2.0",
+    "convict": "6.2.1",
     "crypto-js": "4.1.1",
     "dayjs": "1.10.7",
     "discord-api-types": "0.23.1",
