@@ -8,7 +8,7 @@ import type { Message } from 'discord.js'
 })
 export default class AntiInvites extends Listener {
   private readonly regex: RegExp =
-  /(http|https?:\/\/)?(.*?@)?(www\.)?((discord|invite)\.(gg|li|me|io)|discord(app)?\.com\/invite)\/(\s)?.+/iu
+    /(http|https?:\/\/)?(.*?@)?(www\.)?((discord|invite)\.(gg|li|me|io)|discord(app)?\.com\/invite)\/(\s)?.+/iu
 
   public async run(message: Message) {
     if (!this.regex.test(message.content)) return message
