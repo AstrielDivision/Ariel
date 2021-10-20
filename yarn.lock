@@ -1293,7 +1293,7 @@ __metadata:
     all-contributors-cli: 6.20.0
     app-root-path: 3.0.0
     bufferutil: 4.0.5
-    convict: 6.2.0
+    convict: 6.2.1
     crypto-js: 4.1.1
     cz-conventional-changelog: 3.3.0
     dayjs: 1.10.7
@@ -1797,13 +1797,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"convict@npm:6.2.0":
-  version: 6.2.0
-  resolution: "convict@npm:6.2.0"
+"convict@npm:6.2.1":
+  version: 6.2.1
+  resolution: "convict@npm:6.2.1"
   dependencies:
     lodash.clonedeep: ^4.5.0
     yargs-parser: ^20.2.7
-  checksum: a84eafea256c193a0e21f55f8f54ab3720039f3241428f2ad3cff91a847563ac79fca8b5a4d691648638f36abc54ad0985320b9af9ecef5ca138765ceadb1687
+  checksum: b363d5844cc044041e95ac01fa245444919c8e9a3114ee6cf61e2c6c5d8318891d2b4b7ecc9d9153829ddba35f4da12274da23ae4ca72623cba741ffb7d099ac
   languageName: node
   linkType: hard
 
