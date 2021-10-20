@@ -588,10 +588,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/utilities@npm:3.0.3, @sapphire/utilities@npm:^3.0.3":
-  version: 3.0.3
-  resolution: "@sapphire/utilities@npm:3.0.3"
-  checksum: 21fca640a8e0de16f00b0d1f057683aed9e8a03e56320295d410aa5bcf74a9f873c45622bfcdda42092975b858565709c52eac93a0298b14d109d77a84d96736
+"@sapphire/utilities@npm:3.0.4, @sapphire/utilities@npm:^3.0.4":
+  version: 3.0.4
+  resolution: "@sapphire/utilities@npm:3.0.4"
+  checksum: 3a0026b3888c655f26f0616fe899573d3864b49fa032e019f15c79e837c639779b547e25386cbd5244008b910009e84a202dd97b64877c72382cb39563c75dba
   languageName: node
   linkType: hard
 
@@ -602,10 +602,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/utilities@npm:^3.0.4":
-  version: 3.0.4
-  resolution: "@sapphire/utilities@npm:3.0.4"
-  checksum: 3a0026b3888c655f26f0616fe899573d3864b49fa032e019f15c79e837c639779b547e25386cbd5244008b910009e84a202dd97b64877c72382cb39563c75dba
+"@sapphire/utilities@npm:^3.0.3":
+  version: 3.0.3
+  resolution: "@sapphire/utilities@npm:3.0.3"
+  checksum: 21fca640a8e0de16f00b0d1f057683aed9e8a03e56320295d410aa5bcf74a9f873c45622bfcdda42092975b858565709c52eac93a0298b14d109d77a84d96736
   languageName: node
   linkType: hard
 
@@ -1281,7 +1281,7 @@ __metadata:
     "@sapphire/plugin-i18next": 2.0.0-pr-145.4dbd0994.0
     "@sapphire/plugin-subcommands": 2.0.0-pr-145.4dbd0994.0
     "@sapphire/type": 2.1.0
-    "@sapphire/utilities": 3.0.3
+    "@sapphire/utilities": 3.0.4
     "@sentry/node": 6.13.3
     "@tmware/prettier-config": 1.0.3
     "@tmware/status-rotate": 1.2.9
