@@ -9,7 +9,7 @@ import { Message, MessageEmbed } from 'discord.js'
   nsfw: true
 })
 export default class AnimeBondage extends ArielCommand {
-  public async run(message: Message) {
+  public async messageRun(message: Message) {
     const res = await this.container.client.util.fetch<{ url: string }>(
       'https://shiro.gg/api/images/nsfw/bondage',
       FetchResultTypes.JSON

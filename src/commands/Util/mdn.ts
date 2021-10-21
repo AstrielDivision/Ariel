@@ -8,7 +8,7 @@ import { ColorResolvable, Message, MessageEmbed } from 'discord.js'
   usage: '<query>'
 })
 export default class MDN extends ArielCommand {
-  public async run(message: Message, args: ArielCommand.Args) {
+  public async messageRun(message: Message, args: ArielCommand.Args) {
     const query = (await args.pickResult('string')).value
 
     if (!query) return await message.channel.send('I cannot search for nothing in the MDN Docs!')

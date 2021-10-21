@@ -9,7 +9,7 @@ import { Message, MessageEmbed } from 'discord.js'
   usage: '[userID | @user]'
 })
 export default class UserInfo extends ArielCommand {
-  public async run(message: Message, args: ArielCommand.Args) {
+  public async messageRun(message: Message, args: ArielCommand.Args) {
     const member = args.finished ? message.member : await args.pick('member')
     const KSoftBan = await this.container.client.ksoft.bans.check(member.user.id)
     const isBot = member.user.bot

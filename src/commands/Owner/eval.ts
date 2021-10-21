@@ -16,7 +16,7 @@ import { inspect } from 'util'
   preconditions: ['OwnerOnly']
 })
 export default class extends ArielCommand {
-  public async run(message: Message, args: ArielCommand.Args) {
+  public async messageRun(message: Message, args: ArielCommand.Args) {
     const code = (await args.restResult('string')).value
 
     if (!code) return await message.channel.send('I cannot evaluate nothingness!')

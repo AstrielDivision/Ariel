@@ -8,7 +8,7 @@ import owoify from 'owofire'
   usage: '<text>'
 })
 export default class OwOify extends ArielCommand {
-  public async run(message: Message, args: ArielCommand.Args) {
+  public async messageRun(message: Message, args: ArielCommand.Args) {
     const text = (await args.restResult('string')).value
 
     if (!text) {

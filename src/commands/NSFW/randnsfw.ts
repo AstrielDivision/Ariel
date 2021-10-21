@@ -11,7 +11,7 @@ import { Message, MessageEmbed } from 'discord.js'
   cooldownDelay: 2000
 })
 export default class RandomNSFW extends ArielCommand {
-  public async run(message: Message) {
+  public async messageRun(message: Message) {
     const { url, post }: RedditImage = await this.container.client.ksoft.images.nsfw(true)
     const embed = new MessageEmbed()
       .setTitle(post.title)

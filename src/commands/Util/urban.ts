@@ -9,7 +9,7 @@ import Urban from '../../lib/UrbanFetch'
   usage: '<word>'
 })
 export default class UrbanDictionary extends ArielCommand {
-  public async run(message: Message, args: ArielCommand.Args) {
+  public async messageRun(message: Message, args: ArielCommand.Args) {
     const search = (await args.pickResult('string')).value
 
     if (!search) return await message.channel.send('No search provided')

@@ -11,7 +11,7 @@ import { Message, Permissions } from 'discord.js'
   flags: ['d', 'decrypt']
 })
 export default class RC4Drop extends ArielCommand {
-  public async run(message: Message, args: ArielCommand.Args) {
+  public async messageRun(message: Message, args: ArielCommand.Args) {
     const decryptFlag = args.getFlags('d', 'decrypt')
     const text = args.finished ? null : await args.rest('string')
     const secret = args.getOption('s', 'secret')

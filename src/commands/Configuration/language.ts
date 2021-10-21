@@ -9,7 +9,7 @@ import type { Message } from 'discord.js'
   usage: '<en-US | de-DE>'
 })
 export default class Language extends ArielCommand {
-  public async run(message: Message, args: ArielCommand.Args) {
+  public async messageRun(message: Message, args: ArielCommand.Args) {
     const lang = await args.pick('language')
 
     await GuildSettings.findOneAndUpdate({ guild_id: message.guild.id }, { $set: { language: lang } })

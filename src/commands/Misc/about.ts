@@ -11,7 +11,7 @@ export default class About extends ArielCommand {
    * * Based on https://github.com/TMUniversal/discord-bot-template/blob/master/src/commands/basic/AboutCommand.ts
    * * Licensed under the MIT License
    */
-  public async run(message: Message) {
+  public async messageRun(message: Message) {
     const embed = new MessageEmbed()
       .setTitle(`${this.container.client.user.username} - About`)
       .setDescription(

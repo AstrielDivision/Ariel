@@ -12,7 +12,7 @@ import type { Message } from 'discord.js'
 })
 export default class Ban extends ArielCommand {
   @RequiresUserPermissions('BAN_MEMBERS')
-  public async run(message: Message, args: ArielCommand.Args) {
+  public async messageRun(message: Message, args: ArielCommand.Args) {
     const member = (await args.pickResult('member')).value
     const reason = (await args.restResult('string')).value
     const softBan = args.getFlags('s', 'soft')

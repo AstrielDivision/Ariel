@@ -8,7 +8,7 @@ import { Message, MessageEmbed } from 'discord.js'
   description: 'Fetch the current guild\'s info'
 })
 export default class example extends ArielCommand {
-  public async run(message: Message) {
+  public async messageRun(message: Message) {
     const guild = message.guild
     const roles: string[] = []
 

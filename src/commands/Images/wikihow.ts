@@ -10,7 +10,7 @@ import { Message, MessageEmbed } from 'discord.js'
   cooldownDelay: 2000
 })
 export default class Wikihow extends ArielCommand {
-  public async run(message: Message, args: ArielCommand.Args) {
+  public async messageRun(message: Message, args: ArielCommand.Args) {
     const { url, article }: WikiHowImage = await this.container.client.ksoft.images.wikihow()
     const embed = new MessageEmbed()
       .setTitle(article.title)

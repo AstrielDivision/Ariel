@@ -1,4 +1,4 @@
-import { Awaited, Piece, PieceContext, PieceOptions } from '@sapphire/framework'
+import { Awaitable, Piece, PieceContext, PieceOptions } from '@sapphire/framework'
 
 export abstract class Task extends Piece {
   private _interval: NodeJS.Timer | null
@@ -11,7 +11,7 @@ export abstract class Task extends Piece {
     this.runOnStart = options.runOnStart ?? false
   }
 
-  public abstract run(...args: readonly unknown[]): Awaited<any>
+  public abstract run(...args: readonly unknown[]): Awaitable<any>
 
   public onLoad() {
     this.create()

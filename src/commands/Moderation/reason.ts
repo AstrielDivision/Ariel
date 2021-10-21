@@ -9,7 +9,7 @@ import type { Message } from 'discord.js'
 })
 export default class Reason extends ArielCommand {
   @RequiresUserPermissions('KICK_MEMBERS')
-  public async run(message: Message, args: ArielCommand.Args) {
+  public async messageRun(message: Message, args: ArielCommand.Args) {
     const warnID = await args.pick('nanoID')
     const newVal = (await args.restResult('string')).value
 

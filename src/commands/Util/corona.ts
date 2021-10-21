@@ -8,7 +8,7 @@ import CoronaFetch from '../../lib/corona-fetch/corona'
   usage: '[country]'
 })
 export default class Corona extends ArielCommand {
-  public async run(message: Message, args: ArielCommand.Args) {
+  public async messageRun(message: Message, args: ArielCommand.Args) {
     const country = (await args.pickResult('string')).value
 
     const embed = new MessageEmbed().setFooter('This data may not be accurate')

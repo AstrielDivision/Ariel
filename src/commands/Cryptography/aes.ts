@@ -11,7 +11,7 @@ import type { TFunction } from 'i18next'
   usage: '<text> <-s=randomLetters | --secret=randomLetters> [-d | --decrypt]'
 })
 export default class AES extends ArielCommand {
-  public async run(message: Message, args: ArielCommand.Args) {
+  public async messageRun(message: Message, args: ArielCommand.Args) {
     const decryptFlag = args.getFlags('d', 'decrypt')
     const text = args.finished ? null : await args.rest('string')
     const secret = args.getOption('s', 'secret')

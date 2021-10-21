@@ -18,7 +18,7 @@ export abstract class ArielRedditCommand extends ArielCommand {
     this.nsfw = nsfw
   }
 
-  public async run(message: Message, args: ArielCommand.Args) {
+  public async messageRun(message: Message, args: ArielCommand.Args) {
     const { post, url }: RedditImage = await this.container.client.ksoft.images.reddit(this.subreddit, {
       removeNSFW: !this.nsfw,
       span: 'week'

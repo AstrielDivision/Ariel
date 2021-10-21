@@ -6,7 +6,7 @@ import type { Message } from 'discord.js'
   description: 'commands/misc:ping.description'
 })
 export default class Ping extends ArielCommand {
-  public async run(message: Message, args: ArielCommand.Args) {
+  public async messageRun(message: Message, args: ArielCommand.Args) {
     const ping = await message.channel.send(args.t('commands/misc:ping.pong'))
 
     return await ping.edit(

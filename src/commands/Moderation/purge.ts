@@ -12,7 +12,7 @@ import type { Message, TextChannel } from 'discord.js'
 })
 export default class Purge extends ArielCommand {
   @RequiresUserPermissions('MANAGE_MESSAGES')
-  public async run(message: Message, args: ArielCommand.Args): Promise<unknown> {
+  public async messageRun(message: Message, args: ArielCommand.Args): Promise<unknown> {
     const amount = (await args.pickResult('number')).value
 
     if (!amount) return await message.channel.send(args.t('commands/moderation:purge.error.noAmount'))
