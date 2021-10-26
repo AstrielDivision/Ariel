@@ -775,10 +775,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:16.9.4":
-  version: 16.9.4
-  resolution: "@types/node@npm:16.9.4"
-  checksum: ae281eec8e0ead86fd5fd76f56312db85dce27d0ac086d07bc917df98e16af792adc4f26dab099698509e2c3704cbd17224ec8138e822d569e3cadfc15569a71
+"@types/node@npm:16.11.6":
+  version: 16.11.6
+  resolution: "@types/node@npm:16.11.6"
+  checksum: 6e19634766ff589d3d2f361c2196b671f8f133cdadc5ad347a621c360d8994b6c4fbccfb2ad9c60c588c593831a96497c9c6b77d2b7e91be723384b94f6368e7
   languageName: node
   linkType: hard
 
@@ -1256,7 +1256,7 @@ __metadata:
     "@types/app-root-path": 1.2.4
     "@types/convict": 6.1.1
     "@types/crypto-js": 4.0.2
-    "@types/node": 16.9.4
+    "@types/node": 16.11.6
     "@types/prettier": 2.4.1
     all-contributors-cli: 6.20.0
     app-root-path: 3.0.0
