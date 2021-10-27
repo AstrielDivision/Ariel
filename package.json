@@ -30,7 +30,7 @@
     "prettiest": "prettier --write src && yarn lint:fix"
   },
   "devDependencies": {
-    "@astriel-division/eslint-config": "1.2.0",
+    "@astriel-division/eslint-config": "1.2.2",
     "@astriel-division/ts-config": "1.0.5",
     "@commitlint/cli": "13.2.1",
     "@commitlint/config-conventional": "13.2.0",
