@@ -142,6 +142,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@commitlint/execute-rule@npm:^14.0.0":
+  version: 14.0.0
+  resolution: "@commitlint/execute-rule@npm:14.0.0"
+  checksum: 05adf35da90846fdbbec2d8bf95f738c93c6e9a209d62296f21e5e46305b97d5702a91a0491d9003b3c41e585eac9a660d3cda222053923d39b1867e0f86304e
+  languageName: node
+  linkType: hard
+
 "@commitlint/format@npm:^13.2.0":
   version: 13.2.0
   resolution: "@commitlint/format@npm:13.2.0"
@@ -174,7 +181,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/load@npm:>6.1.1, @commitlint/load@npm:^13.2.1":
+"@commitlint/load@npm:>6.1.1":
+  version: 14.0.0
+  resolution: "@commitlint/load@npm:14.0.0"
+  dependencies:
+    "@commitlint/execute-rule": ^14.0.0
+    "@commitlint/resolve-extends": ^14.0.0
+    "@commitlint/types": ^14.0.0
+    "@endemolshinegroup/cosmiconfig-typescript-loader": ^3.0.2
+    chalk: ^4.0.0
+    cosmiconfig: ^7.0.0
+    lodash: ^4.17.19
+    resolve-from: ^5.0.0
+    typescript: ^4.4.3
+  checksum: 6227e9ed5a947cb75583857d14f5551f18a3c4e7d665b04a5c3501ffdd202d3d99e116112cd7d596234a70e94e9c723c076c440f382c8171d050e9d1aed21133
+  languageName: node
+  linkType: hard
+
+"@commitlint/load@npm:^13.2.1":
   version: 13.2.1
   resolution: "@commitlint/load@npm:13.2.1"
   dependencies:
@@ -233,6 +257,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@commitlint/resolve-extends@npm:^14.0.0":
+  version: 14.0.0
+  resolution: "@commitlint/resolve-extends@npm:14.0.0"
+  dependencies:
+    import-fresh: ^3.0.0
+    lodash: ^4.17.19
+    resolve-from: ^5.0.0
+    resolve-global: ^1.0.0
+  checksum: 69975ce32c17a74f651231296a9fa412cf28694b08d45f10032feae1336c5dc64b696d99c7eb69186c6e4aa47609ae91a5dc817cb93db441737cc3ba34c91a52
+  languageName: node
+  linkType: hard
+
 "@commitlint/rules@npm:^13.2.0":
   version: 13.2.0
   resolution: "@commitlint/rules@npm:13.2.0"
@@ -271,6 +307,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@commitlint/types@npm:^14.0.0":
+  version: 14.0.0
+  resolution: "@commitlint/types@npm:14.0.0"
+  dependencies:
+    chalk: ^4.0.0
+  checksum: e9164cfdb0e24f8427e1633fe5bc1866fb71b0f626922d8c5c8233a357faf55fd840cf7cd74f86d5947c84e39b57c214c146fd2c17c4f75e551a4ff6e8d22fa7
+  languageName: node
+  linkType: hard
+
 "@discordjs/builders@npm:^0.6.0":
   version: 0.6.0
   resolution: "@discordjs/builders@npm:0.6.0"
@@ -285,9 +330,9 @@ __metadata:
   linkType: hard
 
 "@discordjs/collection@npm:^0.2.1":
-  version: 0.2.1
-  resolution: "@discordjs/collection@npm:0.2.1"
-  checksum: e68d4bbf83b03bc18c7648d0f5c5669d1f1a394596bc2fcbb907284cff65657b28dbf165a1b8ccae20b6bc0726bc8a0a276d8adba8f9413502bb19d61b98598f
+  version: 0.2.4
+  resolution: "@discordjs/collection@npm:0.2.4"
+  checksum: 3333b65b742a876e0fe09faaff1aa5052873a68f15d47baaee39b59364d888e01f12fd04296ab1badb41af87f624bc75eaafa2d6753fdc9c5bf280667f4cb3c2
   languageName: node
   linkType: hard
 
@@ -425,9 +470,9 @@ __metadata:
   linkType: hard
 
 "@sapphire/async-queue@npm:^1.1.5":
-  version: 1.1.7
-  resolution: "@sapphire/async-queue@npm:1.1.7"
-  checksum: cdfd7819bc0847be3d11e663712d42a3a3b574897fb253274acdbff5433bf4ddba37cf0541233d070cdd6757ce5f565829f36abdd98257507b5a00b727b8abcf
+  version: 1.1.8
+  resolution: "@sapphire/async-queue@npm:1.1.8"
+  checksum: 6a033c41dd672af51f33c262d7b901dd636b7f9c625022a5efb4da94298b5cea31e1dca8b9ab82d7f9aa124ccd7bca19aef2dde7e09a1dd0f7b179cc3cbbcef4
   languageName: node
   linkType: hard
 
@@ -543,24 +588,15 @@ __metadata:
   linkType: hard
 
 "@sapphire/ratelimits@npm:^2.1.4":
-  version: 2.1.4
-  resolution: "@sapphire/ratelimits@npm:2.1.4"
+  version: 2.1.5
+  resolution: "@sapphire/ratelimits@npm:2.1.5"
   dependencies:
-    "@sapphire/time-utilities": ^1.4.4
-  checksum: 9bae33d0fea72c6bae748ea439e11bb84cf6e188889f50429e8353a9590a00afbc27d933abdd8288dd1e71987689050d41af726a6ca395e6b19a8834cc6a1e29
+    "@sapphire/time-utilities": ^1.4.5
+  checksum: 28784f4bd8bfedd741b0b61b5acf29f1aabc3b12df539cfff3158e9fbc1332b30a6b46c8dda9c158ba86e6057fdcdf4cea953295252d8cfb537d9171186e747f
   languageName: node
   linkType: hard
 
-"@sapphire/time-utilities@npm:^1.4.4":
-  version: 1.4.4
-  resolution: "@sapphire/time-utilities@npm:1.4.4"
-  dependencies:
-    "@sapphire/utilities": ^3.0.4
-  checksum: 0c3e72f2fb084d7a7fece0ce6aa3fba553e0de1c84bb7985dcf666488582ae1e65910fa260ff0df68f15c27276551feb1b7857f5ca8fa336755ef432904118f0
-  languageName: node
-  linkType: hard
-
-"@sapphire/time-utilities@npm:^1.4.5":
+"@sapphire/time-utilities@npm:^1.4.4, @sapphire/time-utilities@npm:^1.4.5":
   version: 1.4.5
   resolution: "@sapphire/time-utilities@npm:1.4.5"
   dependencies:
@@ -580,17 +616,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/utilities@npm:3.0.5, @sapphire/utilities@npm:^3.0.5":
+"@sapphire/utilities@npm:3.0.5, @sapphire/utilities@npm:^3.0.3, @sapphire/utilities@npm:^3.0.4, @sapphire/utilities@npm:^3.0.5":
   version: 3.0.5
   resolution: "@sapphire/utilities@npm:3.0.5"
   checksum: 198cc9e159ca4a6de666406a79de0c90f37469320eecd4a2b4fe471b4432281ff286f9b5387ea996b9386583edb77e9d6c33c82edf3c2cc63b29aaba8805517f
-  languageName: node
-  linkType: hard
-
-"@sapphire/utilities@npm:^3.0.3, @sapphire/utilities@npm:^3.0.4":
-  version: 3.0.4
-  resolution: "@sapphire/utilities@npm:3.0.4"
-  checksum: 3a0026b3888c655f26f0616fe899573d3864b49fa032e019f15c79e837c639779b547e25386cbd5244008b910009e84a202dd97b64877c72382cb39563c75dba
   languageName: node
   linkType: hard
 
@@ -795,14 +824,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*":
-  version: 16.11.4
-  resolution: "@types/node@npm:16.11.4"
-  checksum: 96e08c0f8bb17601c18640a8eac61e2f236fe0c8a6b01a9221c10749157358fb29fdef4b5e264f72559e72f9830e6093f3ab5fef2df90afdad562ffa45ac534c
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:16.11.6":
+"@types/node@npm:*, @types/node@npm:16.11.6":
   version: 16.11.6
   resolution: "@types/node@npm:16.11.6"
   checksum: 6e19634766ff589d3d2f361c2196b671f8f133cdadc5ad347a621c360d8994b6c4fbccfb2ad9c60c588c593831a96497c9c6b77d2b7e91be723384b94f6368e7
@@ -2511,9 +2533,9 @@ __metadata:
   linkType: hard
 
 "estraverse@npm:^5.1.0, estraverse@npm:^5.2.0":
-  version: 5.2.0
-  resolution: "estraverse@npm:5.2.0"
-  checksum: ec11b70d946bf5d7f76f91db38ef6f08109ac1b36cda293a26e678e58df4719f57f67b9ec87042afdd1f0267cee91865be3aa48d2161765a93defab5431be7b8
+  version: 5.3.0
+  resolution: "estraverse@npm:5.3.0"
+  checksum: 072780882dc8416ad144f8fe199628d2b3e7bbc9989d9ed43795d2c90309a2047e6bc5979d7e2322a341163d22cfad9e21f4110597fe487519697389497e4e2b
   languageName: node
   linkType: hard
 
@@ -2965,11 +2987,11 @@ __metadata:
   linkType: hard
 
 "globals@npm:^13.6.0, globals@npm:^13.9.0":
-  version: 13.11.0
-  resolution: "globals@npm:13.11.0"
+  version: 13.12.0
+  resolution: "globals@npm:13.12.0"
   dependencies:
     type-fest: ^0.20.2
-  checksum: e9e5624154261a3e5344d2105a94886c5f2ca48028fa8258cd7b9119c5f00cf2909392817bb2d162c9a1a31b55d9b2c14e8f2271c45a22f77806f5b9322541cf
+  checksum: 1f959abb11117916468a1afcba527eead152900cad652c8383c4e8976daea7ec55e1ee30c086f48d1b8655719f214e9d92eca083c3a43b5543bc4056e7e5fccf
   languageName: node
   linkType: hard
 
@@ -4870,7 +4892,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve@^1.10.0, resolve@^1.10.1, resolve@^1.20.0":
+"resolve@npm:^1.10.0, resolve@npm:^1.10.1, resolve@npm:^1.20.0":
   version: 1.20.0
   resolution: "resolve@npm:1.20.0"
   dependencies:
@@ -5626,7 +5648,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-typescript@4.4.2:
+"typescript@npm:4.4.2":
   version: 4.4.2
   resolution: "typescript@npm:4.4.2"
   bin:
@@ -5636,7 +5658,7 @@ typescript@4.4.2:
   languageName: node
   linkType: hard
 
-"typescript@4.4.4, typescript@^4.4.3":
+"typescript@npm:4.4.4, typescript@npm:^4.4.3":
   version: 4.4.4
   resolution: "typescript@npm:4.4.4"
   bin:
