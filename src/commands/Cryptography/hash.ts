@@ -23,7 +23,7 @@ export default class Hash extends ArielCommand {
     }
   }
 
-  public async run(message: Message, args: ArielCommand.Args) {
+  public async messageRun(message: Message, args: ArielCommand.Args) {
     let allFlag = args.getFlags('all')
     let sha1Flag = args.getFlags('sha1')
     let sha256Flag = args.getFlags('sha256')

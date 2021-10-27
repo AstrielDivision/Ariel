@@ -14,7 +14,7 @@ export abstract class ArielOverlayCommand extends ArielCommand {
     this.overlay = overlay
   }
 
-  public async run(message: Message, args: ArielCommand.Args) {
+  public async messageRun(message: Message, args: ArielCommand.Args) {
     let buffer: Buffer
     const mention = (await args.pickResult('user')).value
 

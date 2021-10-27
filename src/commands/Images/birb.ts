@@ -10,7 +10,7 @@ import { Message, MessageEmbed } from 'discord.js'
   cooldownDelay: 2000
 })
 export default class BirbCommand extends ArielCommand {
-  public async run(message: Message, args: ArielCommand.Args) {
+  public async messageRun(message: Message, args: ArielCommand.Args) {
     const { url }: Image = await this.container.client.ksoft.images.random('birb', {
       nsfw: false
     })

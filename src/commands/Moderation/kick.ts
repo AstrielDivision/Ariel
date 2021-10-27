@@ -10,7 +10,7 @@ import type { Message } from 'discord.js'
 })
 export default class Kick extends ArielCommand {
   @RequiresUserPermissions('KICK_MEMBERS')
-  public async run(message: Message, args: ArielCommand.Args) {
+  public async messageRun(message: Message, args: ArielCommand.Args) {
     const member = (await args.pickResult('member')).value
     const reason = (await args.restResult('string')).value
 

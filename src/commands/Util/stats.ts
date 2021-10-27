@@ -12,7 +12,7 @@ import { pkg } from '../../config'
   aliases: ['statistics']
 })
 export default class Stats extends ArielCommand {
-  public async run(message: Message) {
+  public async messageRun(message: Message) {
     const embed = new MessageEmbed()
       .setTitle(`${this.container.client.user.username} | ${pkg.version}`)
       .setThumbnail(this.container.client.user.avatarURL())

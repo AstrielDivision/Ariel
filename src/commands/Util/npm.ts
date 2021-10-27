@@ -8,7 +8,7 @@ import { Message, MessageEmbed } from 'discord.js'
   usage: '<package name>'
 })
 export default class NPM extends ArielCommand {
-  public async run(message: Message, args: ArielCommand.Args) {
+  public async messageRun(message: Message, args: ArielCommand.Args) {
     const packageName = (await args.pickResult('string')).value
 
     if (!packageName) return await message.channel.send('No package name provided')

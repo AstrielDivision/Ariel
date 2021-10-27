@@ -11,7 +11,7 @@ import { Message, MessageEmbed } from 'discord.js'
   cooldownDelay: 5000
 })
 export default class YiffFloofyDev extends ArielCommand {
-  public async run(message: Message) {
+  public async messageRun(message: Message) {
     const req: Request = await this.container.client.Yiff.floofy()
 
     const embed = new MessageEmbed().setImage(req.url).setColor('LUMINOUS_VIVID_PINK')

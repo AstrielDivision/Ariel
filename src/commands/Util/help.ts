@@ -17,7 +17,7 @@ import cfg from '../../config'
   usage: '[command]'
 })
 export default class Help extends ArielCommand {
-  public async run(message: Message, args: ArielCommand.Args) {
+  public async messageRun(message: Message, args: ArielCommand.Args) {
     const command = await args.pickResult('string')
     if (command.success) return await this.commandHelp(message, command.value, args.t)
 

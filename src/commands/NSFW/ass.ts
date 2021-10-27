@@ -11,7 +11,7 @@ import { Message, MessageEmbed } from 'discord.js'
   nsfw: true
 })
 export default class Ass extends ArielCommand {
-  public async run(message: Message) {
+  public async messageRun(message: Message) {
     const { url }: Image = await this.container.client.ksoft.images.random('ass', {
       nsfw: true
     })

@@ -8,7 +8,7 @@ import { Message, MessageEmbed, User } from 'discord.js'
   usage: '<@user / userID> [warnID]'
 })
 export default class Warns extends ArielCommand {
-  public async run(message: Message, args: ArielCommand.Args) {
+  public async messageRun(message: Message, args: ArielCommand.Args) {
     const { user } = args.finished ? message.member : await args.pick('member')
     const ID = args.finished ? null : await args.pick('nanoID')
 

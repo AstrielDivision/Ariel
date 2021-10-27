@@ -10,7 +10,7 @@ import { Message, MessageEmbed } from 'discord.js'
   cooldownDelay: 2000
 })
 export default class Neko extends ArielCommand {
-  public async run(message: Message) {
+  public async messageRun(message: Message) {
     const { url }: Image = await this.container.client.ksoft.images.random('neko', {
       nsfw: true
     })

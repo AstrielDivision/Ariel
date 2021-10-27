@@ -7,7 +7,7 @@ import type { Message } from 'discord.js'
   preconditions: ['OwnerOnly']
 })
 export default class Reboot extends ArielCommand {
-  public async run(message: Message) {
+  public async messageRun(message: Message) {
     await message.channel.send('Rebooting!')
 
     process.exit()

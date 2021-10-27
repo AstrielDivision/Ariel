@@ -14,7 +14,7 @@ import { Message, MessageEmbed } from 'discord.js'
   usage: '<tags> [--results=1 or -r=1]'
 })
 export default class E621 extends ArielCommand {
-  public async run(message: Message, args: ArielCommand.Args) {
+  public async messageRun(message: Message, args: ArielCommand.Args) {
     const Tags = (await args.restResult('string')).value
     const resOption = args.getOption('results', 'r')
     const res = parseInt(resOption)
