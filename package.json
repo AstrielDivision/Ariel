@@ -112,5 +112,6 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AstrielDivision/Ariel.git"
-  }
+  },
+  "packageManager": "yarn@3.1.0"
 }
