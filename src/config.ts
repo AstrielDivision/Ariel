@@ -63,16 +63,6 @@ export interface PackageJson {
   homepage?: string
 }
 
-const isWebhook = (v: unknown): boolean =>
-  typeof v === 'object' &&
-  Object.prototype.hasOwnProperty.call(v, 'id') &&
-  Object.prototype.hasOwnProperty.call(v, 'secret')
-
-convict.addFormat({
-  name: 'webhook',
-  validate: isWebhook
-})
-
 const config = convict<Configuration>({
   version: {
     format: v => /(\d+\.\d+\.\d+)(-[\w\d-.]*)?/.test(v),
