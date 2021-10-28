@@ -9,12 +9,12 @@ import { existsSync, readFileSync } from 'fs'
 import { join } from 'path'
 
 interface Configuration {
-  version?: string | number
   token: string
   webhook: string
   ksoft: string
   prefix: string
   owners: Snowflake | Snowflake[]
+  sentry?: string
   e621?: {
     username: string
     api_key: string
@@ -22,7 +22,6 @@ interface Configuration {
   mongo: {
     uri: string
   }
-  sentry: string
   stats?: {
     topgg?: string
     discords?: string
@@ -74,10 +73,6 @@ convict.addFormat({
 })
 
 const config = convict<Configuration>({
-  version: {
-    format: v => /(\d+\.\d+\.\d+)(-[\w\d-.]*)?/.test(v),
-    default: '0'
-  },
   token: {
     format: v => typeof v === 'string' && !!v && v.length < 30,
     arg: 'token',
