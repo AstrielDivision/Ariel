@@ -9,6 +9,7 @@ import { existsSync, readFileSync } from 'fs'
 import { join } from 'path'
 
 interface Configuration {
+  version?: string | number
   token: string
   webhook: string
   ksoft: string
@@ -73,6 +74,10 @@ convict.addFormat({
 })
 
 const config = convict<Configuration>({
+  version: {
+    format: v => /(\d+\.\d+\.\d+)(-[\w\d-.]*)?/.test(v),
+    default: '0'
+  },
   token: {
     format: v => typeof v === 'string' && !!v && v.length < 30,
     arg: 'token',
