@@ -6,7 +6,7 @@ import type { Message } from 'discord.js'
 @ApplyOptions<ArielCommandOptions>({
   description: 'Set guild language',
   preconditions: ['Manager'],
-  usage: '<en-US | de-DE>'
+  usage: '<en-US>'
 })
 export default class Language extends ArielCommand {
   public async messageRun(message: Message, args: ArielCommand.Args) {
@@ -14,6 +14,6 @@ export default class Language extends ArielCommand {
 
     await GuildSettings.findOneAndUpdate({ guild_id: message.guild.id }, { $set: { language: lang } })
 
-    return await message.channel.send(`Successfully set language to ${lang}`)
+    return await message.channel.send(args.t('commands/config:language.success.set'))
   }
 }
