@@ -4,8 +4,6 @@
 
 # Ariel
 
-[![Continuous Delivery](https://github.com/AstrielDivision/Ariel/actions/workflows/okteto-push.yml/badge.svg)](https://github.com/AstrielDivision/Ariel/actions/workflows/okteto-push.yml)
-
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/AstrielDivision/Ariel)
 [![Discord Bots](https://top.gg/api/widget/servers/609269728455688193.svg?noavatar=true)](https://top.gg/bot/609269728455688193)
 [![Discord Bots](https://top.gg/api/widget/status/609269728455688193.svg)](https://top.gg/bot/609269728455688193)
