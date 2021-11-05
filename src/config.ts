@@ -70,54 +70,63 @@ const config = convict<Configuration>({
   },
   token: {
     format: v => typeof v === 'string' && !!v && v.length < 30,
-    arg: 'token',
-    default: ''
+    default: '',
+    env: 'TOKEN'
   },
   webhook: {
     format: String,
-    default: ''
+    default: '',
+    env: 'WEBHOOK_URL'
   },
   prefix: {
     format: String,
-    arg: 'prefix',
-    default: '.'
+    default: '.',
+    env: 'PREFIX'
   },
   owners: {
     format: Array,
-    default: []
+    default: [],
+    env: 'OWNERS'
   },
   ksoft: {
     format: String,
-    default: ''
+    default: '',
+    env: 'KSOFT_TOKEN'
   },
   e621: {
     username: {
       format: String,
-      default: ''
+      default: '',
+      env: 'E621_USER'
     },
     api_key: {
       format: String,
-      default: ''
+      default: '',
+      env: 'E621_API_KEY'
     }
   },
   mongo: {
     uri: {
       format: String,
-      default: ''
+      default: '',
+      env: 'MONGO_URI'
     }
   },
   sentry: {
     format: String,
-    default: ''
+    default: '',
+    env: 'SENTRY_URI'
   },
   stats: {
     topgg: {
       format: String,
-      default: ''
+      default: '',
+      env: 'TOP_GG_TOKEN'
     },
     discords: {
       format: String,
-      default: ''
+      default: '',
+      env: 'DISCORDS_TOKEN'
     }
   }
 })
