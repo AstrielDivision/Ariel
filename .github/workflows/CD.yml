@@ -30,4 +30,4 @@ jobs:
           push: true
           context: .
           tags: |
-            astrieldivision/ariel:latest
+            ghcr.io/astrieldivision/ariel:latest
