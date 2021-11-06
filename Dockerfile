@@ -2,6 +2,8 @@ FROM node:lts-alpine
 
 WORKDIR /Ariel/opt/
 
+LABEL org.opencontainers.image.source https://github.com/AstrielDivision/Ariel
+
 RUN apk update
 
 COPY . .
