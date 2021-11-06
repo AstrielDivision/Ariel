@@ -1,9 +1,9 @@
+import { envParseString } from '#lib/env/parser'
 import GuildSettings from '#lib/Models/GuildSettings'
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
 import { ApplyOptions, RequiresUserPermissions } from '@sapphire/decorators'
 import { resolveKey } from '@sapphire/plugin-i18next'
 import { Message } from 'discord.js'
-import cfg from '../../config'
 
 @ApplyOptions<ArielCommandOptions>({
   description: 'commands/config:prefix.description',
@@ -27,7 +27,7 @@ export default class Prefix extends ArielCommand {
 
   @RequiresUserPermissions('MANAGE_GUILD')
   public async reset(message: Message) {
-    await GuildSettings.findOneAndUpdate({ guild_id: message.guild.id }, { $set: { prefix: cfg.prefix } })
+    await GuildSettings.findOneAndUpdate({ guild_id: message.guild.id }, { $set: { prefix: envParseString('PREFIX') } })
 
     return await message.channel.send(await resolveKey(message, 'commands/config:prefix.success.resetPrefix'))
   }

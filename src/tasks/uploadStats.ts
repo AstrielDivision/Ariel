@@ -1,19 +1,19 @@
 import { Timeouts } from '#lib/constants'
+import { envIsDefined, envParseString } from '#lib/env/parser'
 import { Task, TaskOptions } from '#lib/Structures/Task'
 import { ApplyOptions } from '@sapphire/decorators'
 import { fetch } from '@sapphire/fetch'
-import cfg from '../config'
 
 @ApplyOptions<TaskOptions>({
   time: Timeouts.Hour
 })
 export default class uploadStats extends Task {
   public async run(): Promise<unknown> {
-    if (cfg.stats.topgg) {
+    if (envIsDefined('TOPGG_TOKEN')) {
       await fetch<TopGGResponse>(`https://top.gg/api/bots/${this.container.client.id}/stats`, {
         method: 'POST',
         headers: {
-          Authorization: cfg.stats.topgg,
+          Authorization: envParseString('TOPGG_TOKEN'),
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
@@ -23,11 +23,11 @@ export default class uploadStats extends Task {
 
       this.container.logger.console('Posted stats to top.gg API.')
     }
-    if (cfg.stats.discords) {
+    if (envIsDefined('DISCORDS_TOKEN')) {
       await fetch<DiscordsResponse>(`https://discords.com/bots/api/bot/${this.container.client.id}`, {
         method: 'POST',
         headers: {
-          Authorization: cfg.stats.discords,
+          Authorization: envParseString('DISCORDS_TOKEN'),
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({

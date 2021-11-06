@@ -1,3 +1,4 @@
+import { envIsDefined, envParseString } from '#lib/env/parser'
 import GuildSettings from '#lib/Models/GuildSettings'
 import Yiff from '#lib/yiff.ts/index'
 import '#setup'
@@ -8,7 +9,7 @@ import StatusUpdater from '@tmware/status-rotate'
 import { ClientOptions, Message, version as djs } from 'discord.js'
 import mongoose from 'mongoose'
 import { join } from 'path'
-import cfg, { pkg } from '../../config'
+import pkg from '../../package'
 import ClientUtils from '../ClientUtils'
 import { TaskStore } from './TaskStore'
 
@@ -20,17 +21,17 @@ export default class Client extends SapphireClient {
   constructor(options: ClientOptions) {
     super(options)
 
-    this.ksoft = new KSoftClient(cfg.ksoft)
+    this.ksoft = new KSoftClient(envParseString('KSOFT_TOKEN'))
     this.util = new ClientUtils(this)
     this.Yiff = new Yiff(this)
     this.statusUpdater = new StatusUpdater(this, [
       {
         type: 'WATCHING',
-        name: `The Stars Get Dark. | ${cfg.prefix}`
+        name: `The Stars Get Dark. | ${envParseString('PREFIX')}`
       },
       {
         type: 'LISTENING',
-        name: `Music | ${cfg.prefix}`
+        name: `Music | ${envParseString('PREFIX')}`
       },
       {
         type: 'PLAYING',
@@ -48,7 +49,7 @@ export default class Client extends SapphireClient {
    * @returns {Promise<Client>}
    */
   public async start(): Promise<Client> {
-    await super.login(cfg.token)
+    await super.login()
     await this.init()
 
     return this
@@ -64,9 +65,9 @@ export default class Client extends SapphireClient {
   }
 
   private async init(): Promise<void> {
-    if (cfg.sentry) {
+    if (envIsDefined('SENTRY_URI')) {
       Sentry.init({
-        dsn: cfg.sentry,
+        dsn: envParseString('SENTRY_URI'),
         release: `Ariel@${pkg.version}`,
         tracesSampleRate: 1.0
       })
@@ -80,7 +81,7 @@ export default class Client extends SapphireClient {
     this.stores.register(new TaskStore().registerPath(join(__dirname, '..', '..', 'tasks')))
 
     await mongoose
-      .connect(cfg.mongo.uri)
+      .connect(envParseString('MONGO_URI'))
       .then(() => {
         this.logger.info('Connected to MongoDB database')
       })
@@ -100,6 +101,6 @@ export default class Client extends SapphireClient {
   public fetchPrefix = async (message: Message) => {
     const { prefix } = await GuildSettings.findOne({ guild_id: message.guild.id })
 
-    return prefix ?? cfg.prefix
+    return prefix ?? envParseString('PREFIX')
   }
 }

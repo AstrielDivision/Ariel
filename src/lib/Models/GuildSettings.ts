@@ -1,11 +1,16 @@
+import { envParseString } from '#lib/env/parser'
 import type { GuildSettings as Settings } from '#types'
+import { config } from 'dotenv-cra'
 import { model, Schema } from 'mongoose'
-import cfg from '../../config'
+
+process.env.NODE_ENV ??= 'development'
+
+config()
 
 const schema = new Schema({
   registeredAt: { type: String, required: false, default: Date.now().toString() },
   guild_id: { required: true, type: String },
-  prefix: { required: false, type: String, default: cfg.prefix },
+  prefix: { required: false, type: String, default: envParseString('PREFIX') },
   language: { required: false, type: String, default: 'en-US' },
   anti: {
     required: false,

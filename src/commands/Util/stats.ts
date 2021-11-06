@@ -6,7 +6,7 @@ import { roundNumber } from '@sapphire/utilities'
 import { Message, MessageEmbed, version as djs } from 'discord.js'
 import os from 'os'
 import { version as ts } from 'typescript'
-import { pkg } from '../../config'
+import pkg from '../../package'
 
 @ApplyOptions<ArielCommandOptions>({
   description: 'Get the discord bot statistics',

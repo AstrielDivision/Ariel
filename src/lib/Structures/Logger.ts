@@ -1,7 +1,7 @@
+import { envParseString } from '#lib/env/parser'
 import type { ILogger, LogLevel } from '@sapphire/framework'
 import { MessageAttachment, MessageEmbed, WebhookClient, WebhookMessageOptions } from 'discord.js'
 import { EOL } from 'os'
-import cfg from '../../config'
 
 export default class AstraeaLogger implements ILogger {
   private readonly loglevel: LogLevel
@@ -54,7 +54,7 @@ export default class AstraeaLogger implements ILogger {
 
     if (level === 'LOG') return
 
-    const hook = new WebhookClient({ url: cfg.webhook })
+    const hook = new WebhookClient({ url: envParseString('WEBHOOK_URL') })
 
     const embed: MessageEmbed = new MessageEmbed()
       .setTitle(`[${this.namespace} | ${level}]`)

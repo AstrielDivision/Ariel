@@ -1,4 +1,4 @@
-import { pkg } from '../../config'
+import pkg from '../../package'
 
 export default {
   url: 'https://some-random-api.ml/canvas/',

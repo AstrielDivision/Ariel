@@ -2,12 +2,12 @@
  * Original: https://github.com/gitcord-project/Gitcord/blob/main/src/commands/Info/help.ts
  * Licensed under the MIT License.
  */
+import { envParseArray, envParseString } from '#lib/env/parser'
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
 import { ApplyOptions } from '@sapphire/decorators'
 import type { Command } from '@sapphire/framework'
 import type { TFunction } from '@sapphire/plugin-i18next'
 import { Message, MessageEmbed, TextChannel } from 'discord.js'
-import cfg from '../../config'
 
 @ApplyOptions<ArielCommandOptions>({
   aliases: ['h'],
@@ -49,7 +49,10 @@ export default class Help extends ArielCommand {
     }
 
     if ((command as ArielCommand).usage.length > 0) {
-      embed.addField(t('commands/help:embed1.fields.4'), `${cfg.prefix}${(command as ArielCommand).usage}`)
+      embed.addField(
+        t('commands/help:embed1.fields.4'),
+        `${envParseString('PREFIX')}${(command as ArielCommand).usage}`
+      )
     }
 
     return await message.channel.send({
@@ -73,7 +76,7 @@ export default class Help extends ArielCommand {
       let commandsLine = ''
       this.container.stores.get('commands').forEach(cmd => {
         if ((cmd as ArielCommand).category !== category) return
-        if (!this.container.client.util.isOwner(message.author.id) && (cmd as ArielCommand).category === 'Owner') {
+        if (!envParseArray('OWNERS').includes(message.author.id) && (cmd as ArielCommand).category === 'Owner') {
           return
         }
         if (
