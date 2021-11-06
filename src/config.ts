@@ -5,8 +5,11 @@
 import appRootPath from 'app-root-path'
 import convict from 'convict'
 import type { Snowflake } from 'discord.js'
+import dotenv from 'dotenv'
 import { existsSync, readFileSync } from 'fs'
 import { join } from 'path'
+
+dotenv.config()
 
 interface Configuration {
   version?: string | number
