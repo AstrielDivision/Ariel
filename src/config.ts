@@ -5,8 +5,11 @@
 import appRootPath from 'app-root-path'
 import convict from 'convict'
 import type { Snowflake } from 'discord.js'
+import dotenv from 'dotenv'
 import { existsSync, readFileSync } from 'fs'
 import { join } from 'path'
+
+dotenv.config()
 
 interface Configuration {
   version?: string | number
@@ -15,6 +18,7 @@ interface Configuration {
   ksoft: string
   prefix: string
   owners: Snowflake | Snowflake[]
+  sentry?: string
   e621?: {
     username: string
     api_key: string
@@ -22,7 +26,6 @@ interface Configuration {
   mongo: {
     uri: string
   }
-  sentry: string
   stats?: {
     topgg?: string
     discords?: string
@@ -63,16 +66,6 @@ export interface PackageJson {
   homepage?: string
 }
 
-const isWebhook = (v: unknown): boolean =>
-  typeof v === 'object' &&
-  Object.prototype.hasOwnProperty.call(v, 'id') &&
-  Object.prototype.hasOwnProperty.call(v, 'secret')
-
-convict.addFormat({
-  name: 'webhook',
-  validate: isWebhook
-})
-
 const config = convict<Configuration>({
   version: {
     format: v => /(\d+\.\d+\.\d+)(-[\w\d-.]*)?/.test(v),
@@ -80,54 +73,63 @@ const config = convict<Configuration>({
   },
   token: {
     format: v => typeof v === 'string' && !!v && v.length < 30,
-    arg: 'token',
-    default: ''
+    default: '',
+    env: 'TOKEN'
   },
   webhook: {
     format: String,
-    default: ''
+    default: '',
+    env: 'WEBHOOK_URL'
   },
   prefix: {
     format: String,
-    arg: 'prefix',
-    default: '.'
+    default: '.',
+    env: 'PREFIX'
   },
   owners: {
     format: Array,
-    default: []
+    default: [],
+    env: 'OWNERS'
   },
   ksoft: {
     format: String,
-    default: ''
+    default: '',
+    env: 'KSOFT_TOKEN'
   },
   e621: {
     username: {
       format: String,
-      default: ''
+      default: '',
+      env: 'E621_USER'
     },
     api_key: {
       format: String,
-      default: ''
+      default: '',
+      env: 'E621_API_KEY'
     }
   },
   mongo: {
     uri: {
       format: String,
-      default: ''
+      default: '',
+      env: 'MONGO_URI'
     }
   },
   sentry: {
     format: String,
-    default: ''
+    default: '',
+    env: 'SENTRY_URI'
   },
   stats: {
     topgg: {
       format: String,
-      default: ''
+      default: '',
+      env: 'TOP_GG_TOKEN'
     },
     discords: {
       format: String,
-      default: ''
+      default: '',
+      env: 'DISCORDS_TOKEN'
     }
   }
 })

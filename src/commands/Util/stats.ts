@@ -1,6 +1,7 @@
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
 import { ApplyOptions } from '@sapphire/decorators'
 import { version } from '@sapphire/framework'
+import { DurationFormatter } from '@sapphire/time-utilities'
 import { roundNumber } from '@sapphire/utilities'
 import { Message, MessageEmbed, version as djs } from 'discord.js'
 import os from 'os'
@@ -27,14 +28,16 @@ export default class Stats extends ArielCommand {
         },
         {
           name: 'Server Stats',
-          value: `CPU Load (${os.cpus().length} Core(s)): ${os
+          value: `**CPU Load** (${os.cpus().length} Core(s)): ${os
             .cpus()
             .map(this.formatCPU.bind(null))
-            .join(' | ')}\nHeap: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB (Total: ${(
+            .join(' | ')}\n**Heap:** ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB (Total: ${(
             process.memoryUsage().heapTotal /
             1024 /
             1024
-          ).toFixed(2)} MB)`
+          ).toFixed(2)} MB)\n**Bot Uptime:** ${this.formatUptime(
+            this.container.client.uptime
+          )}\n**Host Uptime:** ${this.formatUptime(os.uptime())}`
         }
       )
       .setColor('YELLOW')
@@ -45,5 +48,11 @@ export default class Stats extends ArielCommand {
 
   private formatCPU({ times }: os.CpuInfo): string {
     return `${roundNumber(((times.user + times.nice + times.sys + times.irq) / times.idle) * 10000) / 100}%`
+  }
+
+  private formatUptime(uptime: number): string {
+    const duration = new DurationFormatter().format(uptime)
+
+    return duration
   }
 }

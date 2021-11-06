@@ -1,8 +1,8 @@
 <div align="center">
 
-# Ariel
+<img src="https://cdn.discordapp.com/avatars/609269728455688193/5c7b47cee8ebaac9304ef4d622b98e20.png?size=4096" width="15%" alt="Ariel Logo">
 
-[![Continuous Delivery](https://github.com/AstrielDivision/Ariel/actions/workflows/okteto-push.yml/badge.svg)](https://github.com/AstrielDivision/Ariel/actions/workflows/okteto-push.yml)
+# Ariel
 
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/AstrielDivision/Ariel)
 [![Discord Bots](https://top.gg/api/widget/servers/609269728455688193.svg?noavatar=true)](https://top.gg/bot/609269728455688193)
@@ -12,7 +12,18 @@
 
 </div>
 
-## Self Host
+## Requirements
+
+- [`Node.js`](https://nodejs.org): To run the bot
+- [`MongoDB`](https://mongodb.com): To store persistent data
+- [`KSoft.Si`](https://api.ksoft.si): Provides images
+
+## Optional additions
+
+- [`Sentry`](https://sentry.io): Stack tracing
+
+
+## Self Hosting
 
 - Install yarn with `npm i -g yarn` if you haven't got it already
 - Install required dependencies with `yarn`
@@ -41,6 +52,6 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
 
-## License
+
 
 **Licensed under the [Apache License, Version 2.0](https://github.com/AstraeaStudios/Ariel/blob/main/LICENSE)**

@@ -18,7 +18,7 @@ export default class UserInfo extends ArielCommand {
     message.member.roles.cache.map(r => {
       if (r.name === '@everyone') return null
 
-      return roles.push(r.toString())
+      return roles.push(r.name)
     })
 
     const embed = new MessageEmbed()

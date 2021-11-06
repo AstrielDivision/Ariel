@@ -19,38 +19,34 @@ export default class example extends ArielCommand {
     })
 
     const embed = new MessageEmbed()
-      .setTitle(`${guild.name} (${guild.id})`)
+      .setTitle(`${guild.name} [${guild.id}]`)
       .setColor('BLURPLE')
       .addFields(
-        { name: '• Owner', value: `<@!${(await guild.fetchOwner()).id}>`, inline: true },
+        { name: '• Owner', value: `<@!${(await guild.fetchOwner()).id}> (${(await guild.fetchOwner()).id})` },
         { name: '• Verification Level', value: verificationLevels[guild.verificationLevel], inline: true },
         { name: '• Created At', value: `<t:${dayjs(guild.createdTimestamp).unix()}>`, inline: true },
-        { name: '• Channels', value: guild.channels.cache.size.toString(), inline: true },
-        { name: '• Member Count', value: guild.memberCount.toString(), inline: true },
+        { name: '\u200b', value: '\u200b', inline: true },
         {
-          name: '• Human Members',
-          value: guild.members.cache.filter(member => !member.user.bot).size.toString(),
+          name: `• Channels [${guild.channels.cache.size.toString()}]`,
+          value: [
+            `• Text: ${guild.channels.cache.filter(c => c.type === 'GUILD_TEXT').size.toString()}`,
+            `• Voice: ${guild.channels.cache.filter(c => c.type === 'GUILD_VOICE').size.toString()}`
+          ].join('\n'),
           inline: true
         },
         {
-          name: `• Roles (${guild.roles.cache.size})`,
-          value: roles.length < 10 ? roles.join(', ') : roles.length > 10 ? this.trimArray(roles).join(', ') : 'None',
+          name: `• Members [${guild.memberCount}]`,
+          value: [
+            `• Humans: ${guild.members.cache.filter(member => !member.user.bot).size.toString()}`,
+            `• Bots: ${guild.members.cache.filter(member => member.user.bot).size.toString()}`
+          ].join('\n'),
           inline: true
-        }
+        },
+        { name: '\u200b', value: '\u200b', inline: true }
       )
       .setThumbnail(guild.iconURL({ dynamic: true }))
 
     return await message.channel.send({ embeds: [embed] })
-  }
-
-  private trimArray(arr: string[], max = 10): string[] {
-    if (arr.length > max) {
-      const leng = arr.length - max
-      arr = arr.slice(0, max)
-      arr.push(`${leng} more...`)
-    }
-
-    return arr
   }
 }
 

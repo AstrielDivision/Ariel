@@ -64,16 +64,18 @@ export default class Client extends SapphireClient {
   }
 
   private async init(): Promise<void> {
-    Sentry.init({
-      dsn: cfg.sentry,
-      release: `Ariel@${pkg.version}`,
-      tracesSampleRate: 1.0
-    })
-    Sentry.setTags({
-      'discord.js': djs,
-      framework: version,
-      version: pkg.version
-    })
+    if (cfg.sentry) {
+      Sentry.init({
+        dsn: cfg.sentry,
+        release: `Ariel@${pkg.version}`,
+        tracesSampleRate: 1.0
+      })
+      Sentry.setTags({
+        'discord.js': djs,
+        framework: version,
+        version: pkg.version
+      })
+    }
 
     this.stores.register(new TaskStore().registerPath(join(__dirname, '..', '..', 'tasks')))
 
