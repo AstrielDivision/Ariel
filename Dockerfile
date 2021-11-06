@@ -1,11 +1,11 @@
-FROM node:alpine
+FROM node:lts-alpine
 
 WORKDIR /Ariel/opt/
 
 RUN apk update
 
 COPY . .
-RUN yarn
+RUN yarn install --immutable
 RUN yarn build
 
 RUN rm -rf src

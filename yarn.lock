@@ -769,19 +769,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/app-root-path@npm:1.2.4":
+"@types/app-root-path@npm:^1.2.4":
   version: 1.2.4
   resolution: "@types/app-root-path@npm:1.2.4"
   checksum: 3807abaf9006bb3fb72e8feb4cca5b252de035ee5992118158a0c519f0756fd22242bd9f3d46349558ae079899746f7501f7558206ba2e90f077b4a8fa64072f
-  languageName: node
-  linkType: hard
-
-"@types/convict@npm:6.1.1":
-  version: 6.1.1
-  resolution: "@types/convict@npm:6.1.1"
-  dependencies:
-    "@types/node": "*"
-  checksum: 0150048098eec1ff0df5d04e77fd44ff0fa8e732cc5d5e43a2fe603b2d3f05c9f1e369977a109844b8b449b096818c017737b166ccb52b569161642d884e17d2
   languageName: node
   linkType: hard
 
@@ -1223,7 +1214,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"app-root-path@npm:3.0.0":
+"app-root-path@npm:^3.0.0":
   version: 3.0.0
   resolution: "app-root-path@npm:3.0.0"
   checksum: ff91a24db2b55070f6b3e22e72ce8fe8ea847e19eb8a3cbb267f9e9ac2a8372db65114dd6798a4ed7897a6f475b90a49330b3e53bf199d47e6abb5c5279aa1d7
@@ -1302,21 +1293,19 @@ __metadata:
     "@sentry/node": 6.14.1
     "@tmware/prettier-config": 1.0.3
     "@tmware/status-rotate": 1.2.9
-    "@types/app-root-path": 1.2.4
-    "@types/convict": 6.1.1
+    "@types/app-root-path": ^1.2.4
     "@types/crypto-js": 4.0.2
     "@types/node": 16.11.6
     "@types/prettier": 2.4.1
     all-contributors-cli: 6.20.0
-    app-root-path: 3.0.0
+    app-root-path: ^3.0.0
     bufferutil: 4.0.5
-    convict: 6.2.1
     crypto-js: 4.1.1
     cz-conventional-changelog: 3.3.0
     dayjs: 1.10.7
     discord-api-types: 0.24.0
     discord.js: 13.3.1
-    dotenv: 10.0.0
+    dotenv-cra: ^3.0.2
     eslint: 8.2.0
     husky: 7.0.4
     lint-staged: 11.2.6
@@ -1822,16 +1811,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"convict@npm:6.2.1":
-  version: 6.2.1
-  resolution: "convict@npm:6.2.1"
-  dependencies:
-    lodash.clonedeep: ^4.5.0
-    yargs-parser: ^20.2.7
-  checksum: b363d5844cc044041e95ac01fa245444919c8e9a3114ee6cf61e2c6c5d8318891d2b4b7ecc9d9153829ddba35f4da12274da23ae4ca72623cba741ffb7d099ac
-  languageName: node
-  linkType: hard
-
 "cookie@npm:^0.4.1":
   version: 0.4.1
   resolution: "cookie@npm:0.4.1"
@@ -2147,7 +2126,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv@npm:10.0.0":
+"dotenv-cra@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "dotenv-cra@npm:3.0.2"
+  dependencies:
+    dotenv: ^10.0.0
+    dotenv-expand: ^5.1.0
+  checksum: dc33ca4c8751a16390f646513bbdfdf64e0cc6ebf3439e1d3e9fb418005f13d53106792e545824d9c08084a9c4e1bec425d30628f9791dab1f9a97f1e3684a64
+  languageName: node
+  linkType: hard
+
+"dotenv-expand@npm:^5.1.0":
+  version: 5.1.0
+  resolution: "dotenv-expand@npm:5.1.0"
+  checksum: 8017675b7f254384915d55f9eb6388e577cf0a1231a28d54b0ca03b782be9501b0ac90ac57338636d395fa59051e6209e9b44b8ddf169ce6076dffb5dea227d3
+  languageName: node
+  linkType: hard
+
+"dotenv@npm:^10.0.0":
   version: 10.0.0
   resolution: "dotenv@npm:10.0.0"
   checksum: f412c5fe8c24fbe313d302d2500e247ba8a1946492db405a4de4d30dd0eb186a88a43f13c958c5a7de303938949c4231c56994f97d05c4bc1f22478d631b4005
@@ -3749,13 +3745,6 @@ __metadata:
   dependencies:
     p-locate: ^5.0.0
   checksum: 72eb661788a0368c099a184c59d2fee760b3831c9c1c33955e8a19ae4a21b4116e53fa736dc086cdeb9fce9f7cc508f2f92d2d3aae516f133e16a2bb59a39f5a
-  languageName: node
-  linkType: hard
-
-"lodash.clonedeep@npm:^4.5.0":
-  version: 4.5.0
-  resolution: "lodash.clonedeep@npm:4.5.0"
-  checksum: 92c46f094b064e876a23c97f57f81fbffd5d760bf2d8a1c61d85db6d1e488c66b0384c943abee4f6af7debf5ad4e4282e74ff83177c9e63d8ff081a4837c3489
   languageName: node
   linkType: hard
 
@@ -5936,7 +5925,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yargs-parser@npm:^20.2.2, yargs-parser@npm:^20.2.3, yargs-parser@npm:^20.2.7":
+"yargs-parser@npm:^20.2.2, yargs-parser@npm:^20.2.3":
   version: 20.2.9
   resolution: "yargs-parser@npm:20.2.9"
   checksum: 8bb69015f2b0ff9e17b2c8e6bfe224ab463dd00ca211eece72a4cd8a906224d2703fb8a326d36fdd0e68701e201b2a60ed7cf81ce0fd9b3799f9fe7745977ae3

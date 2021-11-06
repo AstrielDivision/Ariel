@@ -1,7 +1,7 @@
 import { fetch, FetchMethods, FetchResultTypes } from '@sapphire/fetch'
 import type { Guild, Snowflake, User } from 'discord.js'
 import type { URL } from 'url'
-import cfg, { pkg } from '../config'
+import pkg from '../package'
 import type Client from './Structures/client'
 
 const userAgent = `Ariel/v${pkg.version} (https://github.com/AstrielDivision/Ariel)`
@@ -41,10 +41,6 @@ export default class Utils {
       },
       type
     )
-  }
-
-  public isOwner(id: string | Snowflake): boolean {
-    return cfg.owners.includes(id)
   }
 
   public isAuthor(author: User, user: User): boolean {

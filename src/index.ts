@@ -1,12 +1,15 @@
+import { envParseString } from '#lib/env/parser'
 import GuildSettings from '#lib/Models/GuildSettings'
 import type { InternationalizationContext } from '@sapphire/plugin-i18next'
+import { config } from 'dotenv-cra'
 import type { FormatFunction } from 'i18next'
-import cfg from './config'
 import Client from './lib/Structures/client'
 import Logger from './lib/Structures/Logger'
 
+config()
+
 const client = new Client({
-  defaultPrefix: cfg.prefix,
+  defaultPrefix: envParseString('PREFIX'),
   regexPrefix: /^(hey +)?ariel[,! ]/i,
   caseInsensitivePrefixes: true,
   caseInsensitiveCommands: true,

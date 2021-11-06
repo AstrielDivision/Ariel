@@ -1,4 +1,4 @@
-import { pkg } from '../../config'
+import pkg from '../../package'
 
 export default {
   baseURL: 'https://disease.sh/v3/covid-19',

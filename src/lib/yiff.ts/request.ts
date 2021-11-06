@@ -1,6 +1,6 @@
+import { envIsDefined, envParseString } from '#lib/env/parser'
 import { fetch, FetchMethods, FetchResultTypes } from '@sapphire/fetch'
 import type Client from 'lib/Structures/client'
-import cfg from '../../config'
 import c from './constants'
 import type { Config } from './types'
 
@@ -15,8 +15,11 @@ export default async function request(client: Client, options: Config): Promise<
           headers: {
             'User-Agent': `${c.defaults.useragent} [ID: ${client?.id}]`,
             authorization:
-              cfg.e621?.username && cfg.e621?.api_key
-                ? `Basic ${Buffer.from(`${cfg.e621?.username}:${cfg.e621?.api_key}`, 'binary').toString('base64')}`
+              envIsDefined('E621_USER') && envIsDefined('E621_API_KEY')
+                ? `Basic ${Buffer.from(
+                  `${envParseString('E621_USER')}:${envParseString('E621_API_KEY')}`,
+                  'binary'
+                ).toString('base64')}`
                 : ''
           }
         },
