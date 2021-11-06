@@ -30,4 +30,4 @@ jobs:
           push: true
           context: .
           tags: |
-            AstrielDivision/ariel:latest
+            astrieldivision/ariel:latest
