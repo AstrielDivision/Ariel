@@ -30,7 +30,7 @@ case "$1" in
   update)
     echo "[-] Updating $2"
     docker-compose -p ariel -f ".docker/docker-compose.yml" pull $2
-    docker-compose -p ariel -f ".docker/docker-compose.yml" up --force-recreate $2
+    docker-compose -p ariel -f ".docker/docker-compose.yml" up -d --force-recreate $2
   ;;
   logs | log)
     docker-compose -p ariel -f ".docker/docker-compose.yml" logs $2
