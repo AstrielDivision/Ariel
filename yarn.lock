@@ -588,12 +588,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/time-utilities@npm:1.4.6, @sapphire/time-utilities@npm:^1.4.6":
-  version: 1.4.6
-  resolution: "@sapphire/time-utilities@npm:1.4.6"
+"@sapphire/time-utilities@npm:1.4.7":
+  version: 1.4.7
+  resolution: "@sapphire/time-utilities@npm:1.4.7"
   dependencies:
-    "@sapphire/utilities": ^3.0.6
-  checksum: f1415ed1ea0dff26fcd98414c93daf57df11d983e241b578f208801080364e9235928a51ad340f13974535943daa0310c7be7df079a420b4ac966f158556d737
+    "@sapphire/utilities": ^3.0.7
+  checksum: 9bbc39ce1a6212274f76254789a041fe437aa6e60566f002b9aece191c8d1fd98d9462dbbd8f6dbd27915a575126a07337aa62ee59a04bbc0d5c94af05f705f4
   languageName: node
   linkType: hard
 
@@ -603,6 +603,15 @@ __metadata:
   dependencies:
     "@sapphire/utilities": ^3.0.5
   checksum: 1825dbf3463c945be253bfde2fae456fa9724830d575a990026d6a8afe72e5b5643e71b647f4a0d6ccabb58fbc16204659a18901e0acf86f80a15a287633f428
+  languageName: node
+  linkType: hard
+
+"@sapphire/time-utilities@npm:^1.4.6":
+  version: 1.4.6
+  resolution: "@sapphire/time-utilities@npm:1.4.6"
+  dependencies:
+    "@sapphire/utilities": ^3.0.6
+  checksum: f1415ed1ea0dff26fcd98414c93daf57df11d983e241b578f208801080364e9235928a51ad340f13974535943daa0310c7be7df079a420b4ac966f158556d737
   languageName: node
   linkType: hard
 
@@ -617,7 +626,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/utilities@npm:3.0.7":
+"@sapphire/utilities@npm:3.0.7, @sapphire/utilities@npm:^3.0.7":
   version: 3.0.7
   resolution: "@sapphire/utilities@npm:3.0.7"
   checksum: 780a3a0e3cc39cb79d5c7dd43abb9d7f481767b60e6f1f1a69f9faf963148ef4af68fac1a6cc04686b6c4560037535ee04410c042f8f7eca0c310ef98ba28f3b
@@ -1294,7 +1303,7 @@ __metadata:
     "@sapphire/plugin-api": 3.0.2
     "@sapphire/plugin-i18next": 2.0.1
     "@sapphire/plugin-subcommands": 2.0.2
-    "@sapphire/time-utilities": 1.4.6
+    "@sapphire/time-utilities": 1.4.7
     "@sapphire/type": 2.1.2
     "@sapphire/utilities": 3.0.7
     "@sentry/node": 6.14.1
