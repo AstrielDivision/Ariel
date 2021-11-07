@@ -1,12 +1,16 @@
+import { srcDir } from '#lib/constants'
 import { envParseString } from '#lib/env/parser'
 import GuildSettings from '#lib/Models/GuildSettings'
 import type { InternationalizationContext } from '@sapphire/plugin-i18next'
 import { config } from 'dotenv-cra'
 import type { FormatFunction } from 'i18next'
+import { join } from 'path'
 import Client from './lib/Structures/client'
 import Logger from './lib/Structures/Logger'
 
-config()
+config({
+  path: join(srcDir, '.env')
+})
 
 const client = new Client({
   defaultPrefix: envParseString('PREFIX'),

@@ -32,7 +32,7 @@ function Main {
     }
     update {
       Write-Host "[-] Updating $Service"
-      docker-compose -p ariel -f "$($PSScriptRoot)/docker-compose.yml" pull $Service
+      docker-compose -p ariel -f "$($PSScriptRoot)/docker-compose.yml" pull $Service;
       docker-compose -p ariel -f "$($PSScriptRoot)t/docker-compose.yml" up -d --force-recreate $Service
     }
     logs {

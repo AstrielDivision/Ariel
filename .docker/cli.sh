@@ -7,37 +7,39 @@ if [ "$#" == "0" ]
     exit 1
 fi
 
+ROOTSCRIPTPATH="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+
 case "$1" in
   build)
   echo "[-] Building $2"
-    docker-compose -p ariel -f ".docker/docker-compose.yml" build $2
+    docker-compose -p ariel -f "$ROOTSCRIPTPATH/docker-compose.yml" build $2
   ;;
   start)
     echo "[-] Starting $2"
-    docker-compose -p ariel -f ".docker/docker-compose.yml" up -d $2
+    docker-compose -p ariel -f "$ROOTSCRIPTPATH/docker-compose.yml" up -d $2
   ;;
   stop)
     echo "[-] Stopping $2"
-    docker-compose -p ariel -f ".docker/docker-compose.yml" down $2
+    docker-compose -p ariel -f "$ROOTSCRIPTPATH/docker-compose.yml" down $2
   ;;
   restart)
     echo "[-] Restarting $2"
-    docker-compose -p ariel -f ".docker/docker-compose.yml" restart $2
+    docker-compose -p ariel -f "$ROOTSCRIPTPATH/docker-compose.yml" restart $2
   ;;
   remove)
     echo "[-] Removing $2"
-    docker-compose -p ariel -f ".docker/docker-compose.yml" rm -fv $2
+    docker-compose -p ariel -f "$ROOTSCRIPTPATH/docker-compose.yml" rm -fv $2
   ;;
   update)
     echo "[-] Updating $2"
-    docker-compose -p ariel -f ".docker/docker-compose.yml" pull $2
-    docker-compose -p ariel -f ".docker/docker-compose.yml" up -d --force-recreate $2
+    docker-compose -p ariel -f "$ROOTSCRIPTPATH/docker-compose.yml" pull $2
+    docker-compose -p ariel -f "$ROOTSCRIPTPATH/docker-compose.yml" up -d --force-recreate $2
   ;;
   logs | log)
-    docker-compose -p ariel -f ".docker/docker-compose.yml" logs $2
+    docker-compose -p ariel -f "$ROOTSCRIPTPATH/docker-compose.yml" logs $2
   ;;
   tail | follow)
-    docker-compose -p ariel -f ".docker/docker-compose.yml" logs -f $2
+    docker-compose -p ariel -f "$ROOTSCRIPTPATH/docker-compose.yml" logs -f $2
   ;;
   * | help)
    echo "List of Commands:
