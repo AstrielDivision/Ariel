@@ -24,6 +24,11 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GIT_TOKEN }}
+      - name: Login to Docker Container Registry
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USER }}
+          password: ${{ secrets.DOCKER_PASS }}
       - name: Build and push Ariel Docker image
         uses: docker/build-push-action@v2.7.0
         with:
@@ -31,3 +36,4 @@ jobs:
           context: .
           tags: |
             ghcr.io/astrieldivision/ariel:latest
+            artiefuzzz/ariel:latest
