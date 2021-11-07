@@ -18,10 +18,6 @@ case "$1" in
     echo "[-] Starting $2"
     docker-compose -p ariel -f "$ROOTSCRIPTPATH/docker-compose.yml" up -d $2
   ;;
-  stop)
-    echo "[-] Stopping $2"
-    docker-compose -p ariel -f "$ROOTSCRIPTPATH/docker-compose.yml" down $2
-  ;;
   restart)
     echo "[-] Restarting $2"
     docker-compose -p ariel -f "$ROOTSCRIPTPATH/docker-compose.yml" restart $2
