@@ -7,4 +7,4 @@ services:
     env_file:
       - .env.development
       - .env.development.local
-    image: 'ghcr.io/astrieldivision/ariel:latest'
+    image: 'artiefuzzz/ariel:latest'
