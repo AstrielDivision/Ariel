@@ -1,4 +1,5 @@
 #!/bin/bash
+clear
 
 if [ "$#" == "0" ]
   then
