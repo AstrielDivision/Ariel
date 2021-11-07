@@ -24,7 +24,7 @@ case "$1" in
   ;;
   remove)
     echo "[-] Removing $2"
-    docker-compose -p ariel -f "$ROOTSCRIPTPATH/docker-compose.yml" rm -fv $2
+    docker-compose -p ariel -f "$ROOTSCRIPTPATH/docker-compose.yml" rm -sfv $2
   ;;
   update)
     echo "[-] Updating $2"

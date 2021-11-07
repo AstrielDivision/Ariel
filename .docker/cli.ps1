@@ -18,17 +18,13 @@ function Main {
       Write-Host "[-] Starting Service $Service"
       docker-compose -p ariel -f "$($PSScriptRoot)/docker-compose.yml" up -d $Service
     }
-    stop {
-      Write-Host "[-] Stopping Service $Service"
-      docker-compose -p ariel -f "$($PSScriptRoot)/docker-compose.yml" down $Service
-    }
     restart {
       Write-Host "[-] Restarting Service $Service"
       docker-compose -p ariel -f "$($PSScriptRoot)/docker-compose.yml" restart $Service
     }
     remove {
       Write-Host "[-] Removing $Service"
-      docker-compose -p ariel -f "$($PSScriptRoot)/docker-compose.yml" rm -fv $Service
+      docker-compose -p ariel -f "$($PSScriptRoot)/docker-compose.yml" rm -sfv $Service
     }
     update {
       Write-Host "[-] Updating $Service"
