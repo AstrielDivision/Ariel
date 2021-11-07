@@ -1,11 +1,39 @@
 #!/bin/bash
 
-echo -n "What would you like todo? (type help for the list of commands)"
-echo
-read COMMAND
+if [ "$#" == "0" ]
+  then
+    echo "Pass a parameter."
+    exit 1
+fi
 
-if [$COMMAND == "help"] then
-  echo "List of Commands:
+case "$1" in
+  build)
+  echo "[-] Building $2"
+    docker-compose -p ariel -f ".docker/docker-compose.yml" build $2
+  ;;
+  start)
+    echo "[-] Starting $2"
+    docker-compose -p ariel -f ".docker/docker-compose.yml" start $2
+  ;;
+  stop)
+    echo "[-] Stopping $2"
+    docker-compose -p ariel -f ".docker/docker-compose.yml" stop $2
+  ;;
+  restart)
+    echo "[-] Restarting $2"
+    docker-compose -p ariel -f ".docker/docker-compose.yml" restart $2
+  ;;
+  remove)
+    echo "[-] Removing $2"
+    docker-compose -p ariel -f ".docker/docker-compose.yml" rm -fv $2
+  ;;
+  update)
+    echo "[-] Updating $2"
+    docker-compose -p ariel -f ".docker/docker-compose.yml" pull $2
+    docker-compose -p ariel -f ".docker/docker-compose.yml" up --force-recreate $2
+  ;;
+  * | help)
+   echo "List of Commands:
 
     build   - Builds a Docker image to be ran.
     start   - Starts a Docker Service.
@@ -13,36 +41,9 @@ if [$COMMAND == "help"] then
     restart - Restarts a Docker Service.
     remove  - Removes a Docker Service.
     update  - Updates the Image a docker service is running and re-runs it."
-fi
-
-echo -n "What service would you like to control?\n"
-echo
-read SERVICE
-
-case $COMMAND in
-
-  build)
-    docker-compose -p ariel -f "./docker/docker-compose.yml" build $SERVICE
-  ;;
-  start)
-    docker-compose -p ariel -f "./docker-compose" start $SERVICE
-  ;;
-  stop)
-    docker-compose -p ariel -f "./docker-compose" stop $SERVICE
-  ;;
-  restart)
-    docker-compose -p ariel -f "./docker-compose" restart $SERVICE
-  ;;
-  remove)
-    docker-compose -p ariel -f "./docker-compose" rm -fv $SERVICE
-  ;;
-  update)
-    docker-compose -p ariel -f "./docker-compose" pull $SERVICE
-    docker-compose -p ariel -f "./docker-compose" up --force-recreate $SERVICE
-  ;;
-  *)
-    echo -n "Unknown command..."
 
     exit 1
   ;;
 esac
+
+echo "[#] Finished."

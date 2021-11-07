@@ -2,9 +2,9 @@ version: "3.9"
 services:
   ariel:
     container_name: ariel
-    build: .
+    build: ..
     restart: always
     env_file:
-      - .env.development
-      - .env.development.local
+      - ../.env.development
+      - ../.env.development.local
     image: 'artiefuzzz/ariel:latest'
