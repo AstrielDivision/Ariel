@@ -41,15 +41,14 @@ case "$1" in
   ;;
   * | help)
    echo "List of Commands:
-
-    build        - Builds a Docker image to be ran.
-    start        - Starts a Docker Service.
-    stop         - Stops a Docker Service.
-    restart      - Restarts a Docker Service.
-    remove       - Removes a Docker Service.
-    update       - Updates the Image a docker service is running and re-runs it.
-    logs, logs   - Returns with the recent logs.
-    tail, follow - Follows log output."
+build        - Builds a Docker image to be ran.
+start        - Starts a Docker Service.
+stop         - Stops a Docker Service.
+restart      - Restarts a Docker Service.
+remove       - Removes a Docker Service.
+update       - Updates the Image a docker service is running and re-runs it.
+logs, logs   - Returns with the recent logs.
+tail, follow - Follows log output."
 
     exit 1
   ;;
