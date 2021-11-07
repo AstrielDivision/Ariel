@@ -13,11 +13,11 @@ case "$1" in
   ;;
   start)
     echo "[-] Starting $2"
-    docker-compose -p ariel -f ".docker/docker-compose.yml" start $2
+    docker-compose -p ariel -f ".docker/docker-compose.yml" up -d $2
   ;;
   stop)
     echo "[-] Stopping $2"
-    docker-compose -p ariel -f ".docker/docker-compose.yml" stop $2
+    docker-compose -p ariel -f ".docker/docker-compose.yml" down $2
   ;;
   restart)
     echo "[-] Restarting $2"
@@ -32,15 +32,23 @@ case "$1" in
     docker-compose -p ariel -f ".docker/docker-compose.yml" pull $2
     docker-compose -p ariel -f ".docker/docker-compose.yml" up --force-recreate $2
   ;;
+  logs | log)
+    docker-compose -p ariel -f ".docker/docker-compose.yml" logs $2
+  ;;
+  tail | follow)
+    docker-compose -p ariel -f ".docker/docker-compose.yml" logs -f $2
+  ;;
   * | help)
    echo "List of Commands:
 
-    build   - Builds a Docker image to be ran.
-    start   - Starts a Docker Service.
-    stop    - Stops a Docker Service.
-    restart - Restarts a Docker Service.
-    remove  - Removes a Docker Service.
-    update  - Updates the Image a docker service is running and re-runs it."
+    build        - Builds a Docker image to be ran.
+    start        - Starts a Docker Service.
+    stop         - Stops a Docker Service.
+    restart      - Restarts a Docker Service.
+    remove       - Removes a Docker Service.
+    update       - Updates the Image a docker service is running and re-runs it.
+    logs, logs   - Returns with the recent logs.
+    tail, follow - Follows log output."
 
     exit 1
   ;;
