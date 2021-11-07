@@ -570,12 +570,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/plugin-subcommands@npm:2.0.1":
-  version: 2.0.1
-  resolution: "@sapphire/plugin-subcommands@npm:2.0.1"
+"@sapphire/plugin-subcommands@npm:2.0.2":
+  version: 2.0.2
+  resolution: "@sapphire/plugin-subcommands@npm:2.0.2"
   dependencies:
     tslib: ^2.3.1
-  checksum: f437707bbcdcb25247c2e2746aa038081bea7ecd45cb308bd1cf172d1dc7c81b2ef830489f12dc0a95e88235fdaeffa8cd52cf5439aab6f68fa02323a2468d80
+  checksum: d166a619a64e83ae560817c4eef6ea0d087cdfc4480ee4f0657e90b17c05dbe37b3506d6dcdfd15120196c5f9a79f88f2ffa1d8fec92f1d054395147c35871e2
   languageName: node
   linkType: hard
 
@@ -1293,7 +1293,7 @@ __metadata:
     "@sapphire/framework": 2.1.3
     "@sapphire/plugin-api": 3.0.1
     "@sapphire/plugin-i18next": 2.0.1
-    "@sapphire/plugin-subcommands": 2.0.1
+    "@sapphire/plugin-subcommands": 2.0.2
     "@sapphire/time-utilities": 1.4.6
     "@sapphire/type": 2.1.1
     "@sapphire/utilities": 3.0.7
