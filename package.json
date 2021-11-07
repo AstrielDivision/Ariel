@@ -72,7 +72,7 @@
   "dependencies": {
     "@aero/ksoft": "4.0.0-rc1",
     "@aero/sanitizer": "1.2.0",
-    "@sapphire/decorators": "3.1.3",
+    "@sapphire/decorators": "3.1.4",
     "@sapphire/discord-utilities": "2.2.2",
     "@sapphire/discord.js-utilities": "4.1.0",
     "@sapphire/fetch": "2.0.3",
