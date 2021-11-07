@@ -1,9 +1,10 @@
 #!/bin/bash
 
-echo -n "What would you like todo? (type help for the list of commands)\n"
+echo -n "What would you like todo? (type help for the list of commands)"
+echo
 read COMMAND
 
-if $COMMAND == "help" then
+if [$COMMAND == "help"] then
   echo "List of Commands:
 
     build   - Builds a Docker image to be ran.
@@ -15,6 +16,7 @@ if $COMMAND == "help" then
 fi
 
 echo -n "What service would you like to control?\n"
+echo
 read SERVICE
 
 case $COMMAND in
