@@ -478,28 +478,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/discord-utilities@npm:^2.2.2":
-  version: 2.2.2
-  resolution: "@sapphire/discord-utilities@npm:2.2.2"
-  dependencies:
-    twemoji-parser: ^13.1.0
-  checksum: 1536da4a0d5484ef629daa2973c596ef89ffce96c6b5ddb7af7bc1c027e83f714cb67cc34c7cc4ff9a2d48f984e13a810e2a5a6239c92b2bc9d150173058d272
-  languageName: node
-  linkType: hard
-
-"@sapphire/discord.js-utilities@npm:4.1.0":
-  version: 4.1.0
-  resolution: "@sapphire/discord.js-utilities@npm:4.1.0"
-  dependencies:
-    "@sapphire/discord-utilities": ^2.2.2
-    "@sapphire/time-utilities": ^1.4.6
-    "@sapphire/utilities": ^3.0.6
-    tslib: ^2.3.1
-  checksum: a0c1e0b844157839edf27acb40239a1c173bf8368d5e58a24b86f4014cf0610ce6ef99dd60c442c6eb05ec95b70db497da51227809ba1fd209be382236f336d8
-  languageName: node
-  linkType: hard
-
-"@sapphire/discord.js-utilities@npm:^4.1.1":
+"@sapphire/discord.js-utilities@npm:4.1.1, @sapphire/discord.js-utilities@npm:^4.1.1":
   version: 4.1.1
   resolution: "@sapphire/discord.js-utilities@npm:4.1.1"
   dependencies:
@@ -597,15 +576,6 @@ __metadata:
   dependencies:
     "@sapphire/utilities": ^3.0.7
   checksum: 9bbc39ce1a6212274f76254789a041fe437aa6e60566f002b9aece191c8d1fd98d9462dbbd8f6dbd27915a575126a07337aa62ee59a04bbc0d5c94af05f705f4
-  languageName: node
-  linkType: hard
-
-"@sapphire/time-utilities@npm:^1.4.6":
-  version: 1.4.6
-  resolution: "@sapphire/time-utilities@npm:1.4.6"
-  dependencies:
-    "@sapphire/utilities": ^3.0.6
-  checksum: f1415ed1ea0dff26fcd98414c93daf57df11d983e241b578f208801080364e9235928a51ad340f13974535943daa0310c7be7df079a420b4ac966f158556d737
   languageName: node
   linkType: hard
 
@@ -1284,7 +1254,7 @@ __metadata:
     "@commitlint/config-conventional": 14.1.0
     "@sapphire/decorators": 3.1.4
     "@sapphire/discord-utilities": 2.2.3
-    "@sapphire/discord.js-utilities": 4.1.0
+    "@sapphire/discord.js-utilities": 4.1.1
     "@sapphire/fetch": 2.0.3
     "@sapphire/framework": 2.1.4
     "@sapphire/plugin-api": 3.0.2
