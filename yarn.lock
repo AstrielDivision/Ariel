@@ -606,14 +606,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/type@npm:2.1.1":
-  version: 2.1.1
-  resolution: "@sapphire/type@npm:2.1.1"
+"@sapphire/type@npm:2.1.2":
+  version: 2.1.2
+  resolution: "@sapphire/type@npm:2.1.2"
   dependencies:
     "@discordjs/node-pre-gyp": ^0.4.1
     nan: ^2.15.0
     tslib: ^2.3.1
-  checksum: bd71bbc2da75776f463505693b37f366a5dad033779b36d6182ac24124aca360cc9ea89a42ad08ff08dcb092ffc540e28e14025a58f269dc7f752fab4a94dba7
+  checksum: 27a2a2b7d3a3b0a0298e1520138b76eba105d683ce33cefe19b870e0124fcf50b9f3f57c995d6a44341169f5465ce46f0e240fe9a6e03137e817f0f93bf3b833
   languageName: node
   linkType: hard
 
@@ -1295,7 +1295,7 @@ __metadata:
     "@sapphire/plugin-i18next": 2.0.1
     "@sapphire/plugin-subcommands": 2.0.1
     "@sapphire/time-utilities": 1.4.6
-    "@sapphire/type": 2.1.1
+    "@sapphire/type": 2.1.2
     "@sapphire/utilities": 3.0.7
     "@sentry/node": 6.14.1
     "@tmware/prettier-config": 1.0.3
