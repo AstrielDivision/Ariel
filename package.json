@@ -37,7 +37,7 @@
     "@tmware/prettier-config": "1.0.3",
     "@types/app-root-path": "1.2.4",
     "@types/crypto-js": "4.0.2",
-    "@types/node": "16.11.6",
+    "@types/node": "16.11.7",
     "@types/prettier": "2.4.2",
     "all-contributors-cli": "6.20.0",
     "cz-conventional-changelog": "3.3.0",
