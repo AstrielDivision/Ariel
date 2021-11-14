@@ -35,9 +35,7 @@ export default class Stats extends ArielCommand {
             process.memoryUsage().heapTotal /
             1024 /
             1024
-          ).toFixed(2)} MB)\n**Bot Uptime:** ${this.formatUptime(
-            this.container.client.uptime
-          )}\n**Host Uptime:** ${this.formatUptime(os.uptime())}`
+          ).toFixed(2)} MB)\n**Bot Uptime:** ${this.formatUptime(this.container.client.uptime)}`
         }
       )
       .setColor('YELLOW')
