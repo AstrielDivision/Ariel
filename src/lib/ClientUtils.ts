@@ -1,4 +1,5 @@
 import { fetch, FetchMethods, FetchResultTypes } from '@sapphire/fetch'
+import { DurationFormatter } from '@sapphire/time-utilities'
 import type { Guild, Snowflake, User } from 'discord.js'
 import type { URL } from 'url'
 import pkg from '../package'
@@ -45,5 +46,11 @@ export default class Utils {
 
   public isAuthor(author: User, user: User): boolean {
     return author.id === user.id
+  }
+
+  public formatUptime(uptime: number): string {
+    const duration = new DurationFormatter().format(uptime)
+
+    return duration
   }
 }
