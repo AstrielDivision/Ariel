@@ -92,7 +92,7 @@
     "discord-api-types": "0.24.0",
     "discord.js": "13.3.1",
     "dotenv-cra": "3.0.2",
-    "mongoose": "6.0.12",
+    "mongoose": "6.0.13",
     "nanoid": "3.1.30",
     "owofire": "1.0.4",
     "utf-8-validate": "5.0.7"
