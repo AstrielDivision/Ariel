@@ -2,7 +2,7 @@ import Warnings from '#lib/Models/Warnings'
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
 import { ApplyOptions, RequiresUserPermissions } from '@sapphire/decorators'
 import { Message, MessageEmbed, User } from 'discord.js'
-import i18n, { TFunction } from 'i18next'
+import type { TFunction } from 'i18next'
 import { customAlphabet } from 'nanoid'
 
 @ApplyOptions<ArielCommandOptions>({
@@ -17,13 +17,13 @@ export default class Warn extends ArielCommand {
     const { user } = (await args.pickResult('member')).value
     const reason = (await args.pickResult('string')).value
 
-    if (!user) return await message.channel.send(i18n.t('commands/moderation:warn.errors.noUser'))
+    if (!user) return await message.channel.send(args.t('commands/moderation:warn.errors.noUser'))
 
     if (user.id === message.author.id) {
-      return await message.channel.send(i18n.t('commands/moderation:warn.errors.selfWarn'))
+      return await message.channel.send(args.t('commands/moderation:warn.errors.selfWarn'))
     }
     if (user.id === this.container.client.id) {
-      return await message.channel.send(i18n.t('commands/moderation:warn.errors.warnMe'))
+      return await message.channel.send(args.t('commands/moderation:warn.errors.warnMe'))
     }
 
     return await this.CreateWarn(user, message, args.t, reason)
@@ -84,8 +84,8 @@ export default class Warn extends ArielCommand {
 
       return await message.channel.send(
         isPardoned
-          ? i18n.t('commands/moderation:warn.unpardoned', { user: member.toString() })
-          : i18n.t('commands/moderation:warn.pardoned', { user: member.toString() })
+          ? t('commands/moderation:warn.unpardoned', { user: member.toString() })
+          : t('commands/moderation:warn.pardoned', { user: member.toString() })
       )
     }
   }
