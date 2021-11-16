@@ -1,3 +1,4 @@
+import { envIsDefined } from '#lib/env/parser'
 import type { RedditImage } from '@aero/ksoft'
 import type { PieceContext } from '@sapphire/framework'
 import { ColorResolvable, Message, MessageEmbed } from 'discord.js'
@@ -16,6 +17,7 @@ export abstract class ArielRedditCommand extends ArielCommand {
     this.subreddit = subreddit
     this.colour = colour
     this.nsfw = nsfw
+    this.enabled = envIsDefined('KSOFT_TOKEN')
   }
 
   public async messageRun(message: Message, args: ArielCommand.Args) {

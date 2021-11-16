@@ -16,12 +16,11 @@
 
 - [`Node.js`](https://nodejs.org): To run the bot
 - [`MongoDB`](https://mongodb.com): To store persistent data
-- [`KSoft.Si`](https://api.ksoft.si): Provides images
 
 ## Optional additions
 
 - [`Sentry`](https://sentry.io): Stack tracing
-
+- [`KSoft.Si`](https://api.ksoft.si): Provides images
 
 ## Self Hosting
 
