@@ -1,3 +1,4 @@
+import { envIsDefined } from '#lib/env/parser'
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
 import type { RedditImage } from '@aero/ksoft'
 import { ApplyOptions } from '@sapphire/decorators'
@@ -8,7 +9,8 @@ import { Message, MessageEmbed } from 'discord.js'
   description: 'Returns a random nsfw image or gif from various subreddits',
   cooldownLimit: 3,
   nsfw: true,
-  cooldownDelay: 2000
+  cooldownDelay: 2000,
+  enabled: envIsDefined('KSOFT_TOKEN')
 })
 export default class RandomNSFW extends ArielCommand {
   public async messageRun(message: Message) {

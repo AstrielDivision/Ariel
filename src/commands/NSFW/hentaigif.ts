@@ -1,3 +1,4 @@
+import { envIsDefined } from '#lib/env/parser'
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
 import type { Image } from '@aero/ksoft'
 import { ApplyOptions } from '@sapphire/decorators'
@@ -7,7 +8,8 @@ import { Message, MessageEmbed } from 'discord.js'
   description: 'Returns an animated image of hentai',
   cooldownLimit: 3,
   nsfw: true,
-  cooldownDelay: 2000
+  cooldownDelay: 2000,
+  enabled: envIsDefined('KSOFT_TOKEN')
 })
 export default class HentaiGif extends ArielCommand {
   public async messageRun(message: Message) {

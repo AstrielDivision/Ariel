@@ -1,3 +1,4 @@
+import { envIsDefined } from '#lib/env/parser'
 import type { ArielCommandOptions } from '#lib/Structures/Command'
 import { ArielRedditCommand } from '#lib/Structures/RedditCommand'
 import { ApplyOptions } from '@sapphire/decorators'
@@ -8,7 +9,8 @@ import type { PieceContext } from '@sapphire/framework'
   description: 'Returns a Image from r/bigtiddygothgf',
   cooldownLimit: 3,
   cooldownDelay: 2000,
-  nsfw: true
+  nsfw: true,
+  enabled: envIsDefined('KSOFT_TOKEN')
 })
 export default class Femboy extends ArielRedditCommand {
   constructor(Context: PieceContext, options: ArielCommandOptions) {

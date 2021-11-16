@@ -1,3 +1,4 @@
+import { envIsDefined } from '#lib/env/parser'
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
 import type { Image } from '@aero/ksoft'
 import { ApplyOptions } from '@sapphire/decorators'
@@ -7,7 +8,8 @@ import { Message, MessageEmbed } from 'discord.js'
   aliases: ['foxx'],
   description: 'commands/images:fox.description',
   cooldownLimit: 3,
-  cooldownDelay: 2000
+  cooldownDelay: 2000,
+  enabled: envIsDefined('KSOFT_TOKEN')
 })
 export default class Fox extends ArielCommand {
   public async messageRun(message: Message, args: ArielCommand.Args) {

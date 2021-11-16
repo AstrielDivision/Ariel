@@ -1,3 +1,4 @@
+import { envIsDefined } from '#lib/env/parser'
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
 import type { Image } from '@aero/ksoft'
 import { ApplyOptions } from '@sapphire/decorators'
@@ -8,7 +9,8 @@ import { Message, MessageEmbed } from 'discord.js'
   description: 'Returns a random Image of ASS',
   cooldownLimit: 3,
   cooldownDelay: 2000,
-  nsfw: true
+  nsfw: true,
+  enabled: envIsDefined('KSOFT_TOKEN')
 })
 export default class Ass extends ArielCommand {
   public async messageRun(message: Message) {
