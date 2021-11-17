@@ -553,7 +553,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/time-utilities@npm:1.4.8":
+"@sapphire/time-utilities@npm:1.4.8, @sapphire/time-utilities@npm:^1.4.8":
   version: 1.4.8
   resolution: "@sapphire/time-utilities@npm:1.4.8"
   dependencies:
@@ -568,15 +568,6 @@ __metadata:
   dependencies:
     "@sapphire/utilities": ^3.0.7
   checksum: 9bbc39ce1a6212274f76254789a041fe437aa6e60566f002b9aece191c8d1fd98d9462dbbd8f6dbd27915a575126a07337aa62ee59a04bbc0d5c94af05f705f4
-  languageName: node
-  linkType: hard
-
-"@sapphire/time-utilities@npm:^1.4.8":
-  version: 1.4.8
-  resolution: "@sapphire/time-utilities@npm:1.4.8"
-  dependencies:
-    "@sapphire/utilities": ^3.0.8
-  checksum: af9a14140a4590d61a95524e7d91dca1ea7caf3f9825d5897be3e64ae367dda1670c3aa55d99f5fba67b9b7bf28d65c82eb6309b71fa7b979356e633f7db6e12
   languageName: node
   linkType: hard
 
