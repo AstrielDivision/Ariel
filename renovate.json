@@ -1,17 +1,15 @@
 {
-  "extends": ["config:base"],
-  "baseBranches": ["starlight"],
-  "automerge": "true",
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base", "group:allNonMajor", "schedule:daily"],
+  "labels": ["dependencies"],
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch"],
       "matchCurrentVersion": "!/^0/",
-      "automerge": true
+      "addLabels": ["minor"]
     }
   ],
   "lockFileMaintenance": {
-    "enabled": true,
-    "automerge": true
-  },
-  "automergeStrategy": "rebase"
+    "enabled": true
+  }
 }
