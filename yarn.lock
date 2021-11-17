@@ -541,7 +541,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/time-utilities@npm:1.4.7, @sapphire/time-utilities@npm:^1.4.7":
+"@sapphire/time-utilities@npm:1.4.8":
+  version: 1.4.8
+  resolution: "@sapphire/time-utilities@npm:1.4.8"
+  dependencies:
+    "@sapphire/utilities": ^3.0.8
+  checksum: af9a14140a4590d61a95524e7d91dca1ea7caf3f9825d5897be3e64ae367dda1670c3aa55d99f5fba67b9b7bf28d65c82eb6309b71fa7b979356e633f7db6e12
+  languageName: node
+  linkType: hard
+
+"@sapphire/time-utilities@npm:^1.4.7":
   version: 1.4.7
   resolution: "@sapphire/time-utilities@npm:1.4.7"
   dependencies:
@@ -561,7 +570,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/utilities@npm:3.0.8":
+"@sapphire/utilities@npm:3.0.8, @sapphire/utilities@npm:^3.0.8":
   version: 3.0.8
   resolution: "@sapphire/utilities@npm:3.0.8"
   checksum: 44cdb0150a233f974b3c6a877f274f3bcebc3efad3cef6205cba5963ad1f60340d57eff54c8206eb638b881a3c3b33d8d593b6c71307768435da8ff05c9ac730
@@ -1245,7 +1254,7 @@ __metadata:
     "@sapphire/plugin-api": 3.0.2
     "@sapphire/plugin-i18next": 2.0.2
     "@sapphire/plugin-subcommands": 2.0.2
-    "@sapphire/time-utilities": 1.4.7
+    "@sapphire/time-utilities": 1.4.8
     "@sapphire/type": 2.1.2
     "@sapphire/utilities": 3.0.8
     "@sentry/node": 6.15.0
