@@ -561,7 +561,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/utilities@npm:3.0.7, @sapphire/utilities@npm:^3.0.6, @sapphire/utilities@npm:^3.0.7":
+"@sapphire/utilities@npm:3.0.8":
+  version: 3.0.8
+  resolution: "@sapphire/utilities@npm:3.0.8"
+  checksum: 44cdb0150a233f974b3c6a877f274f3bcebc3efad3cef6205cba5963ad1f60340d57eff54c8206eb638b881a3c3b33d8d593b6c71307768435da8ff05c9ac730
+  languageName: node
+  linkType: hard
+
+"@sapphire/utilities@npm:^3.0.6, @sapphire/utilities@npm:^3.0.7":
   version: 3.0.7
   resolution: "@sapphire/utilities@npm:3.0.7"
   checksum: 780a3a0e3cc39cb79d5c7dd43abb9d7f481767b60e6f1f1a69f9faf963148ef4af68fac1a6cc04686b6c4560037535ee04410c042f8f7eca0c310ef98ba28f3b
@@ -1240,7 +1247,7 @@ __metadata:
     "@sapphire/plugin-subcommands": 2.0.2
     "@sapphire/time-utilities": 1.4.7
     "@sapphire/type": 2.1.2
-    "@sapphire/utilities": 3.0.7
+    "@sapphire/utilities": 3.0.8
     "@sentry/node": 6.15.0
     "@tmware/prettier-config": 1.0.3
     "@tmware/status-rotate": 1.2.9

@@ -82,7 +82,7 @@
     "@sapphire/plugin-subcommands": "2.0.2",
     "@sapphire/time-utilities": "1.4.7",
     "@sapphire/type": "2.1.2",
-    "@sapphire/utilities": "3.0.7",
+    "@sapphire/utilities": "3.0.8",
     "@sentry/node": "6.15.0",
     "@tmware/status-rotate": "1.2.9",
     "app-root-path": "3.0.0",
