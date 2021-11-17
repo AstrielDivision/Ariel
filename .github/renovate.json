@@ -2,6 +2,7 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:base", "group:allNonMajor", "schedule:daily"],
   "labels": ["dependencies"],
+  "assignees": ["ArtieFuzzz"],
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch"],
