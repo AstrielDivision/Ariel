@@ -32,8 +32,8 @@
   "devDependencies": {
     "@astriel-division/eslint-config": "1.2.2",
     "@astriel-division/ts-config": "1.0.7",
-    "@commitlint/cli": "14.1.0",
-    "@commitlint/config-conventional": "14.1.0",
+    "@commitlint/cli": "15.0.0",
+    "@commitlint/config-conventional": "15.0.0",
     "@tmware/prettier-config": "1.0.3",
     "@types/app-root-path": "1.2.4",
     "@types/crypto-js": "4.0.2",
