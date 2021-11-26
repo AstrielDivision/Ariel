@@ -37,14 +37,14 @@
     "@tmware/prettier-config": "1.0.3",
     "@types/app-root-path": "1.2.4",
     "@types/crypto-js": "4.0.2",
-    "@types/node": "16.11.9",
+    "@types/node": "16.11.10",
     "@types/prettier": "2.4.2",
     "all-contributors-cli": "6.20.0",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "8.3.0",
     "husky": "7.0.4",
-    "lint-staged": "12.1.1",
-    "prettier": "2.4.1",
+    "lint-staged": "12.1.2",
+    "prettier": "2.5.0",
     "reflect-metadata": "0.1.13",
     "rimraf": "3.0.2",
     "tslib": "2.3.1",
@@ -78,7 +78,7 @@
     "@sapphire/fetch": "2.0.3",
     "@sapphire/framework": "2.2.0",
     "@sapphire/plugin-api": "3.1.0",
-    "@sapphire/plugin-i18next": "2.1.0",
+    "@sapphire/plugin-i18next": "2.1.1",
     "@sapphire/plugin-subcommands": "2.1.0",
     "@sapphire/time-utilities": "1.4.9",
     "@sapphire/type": "2.1.2",
@@ -113,5 +113,5 @@
     "type": "git",
     "url": "git+https://github.com/AstrielDivision/Ariel.git"
   },
-  "packageManager": "yarn@3.1.0"
+  "packageManager": "yarn@3.1.1"
 }

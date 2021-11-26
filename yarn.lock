@@ -555,16 +555,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/plugin-i18next@npm:2.1.0":
-  version: 2.1.0
-  resolution: "@sapphire/plugin-i18next@npm:2.1.0"
+"@sapphire/plugin-i18next@npm:2.1.1":
+  version: 2.1.1
+  resolution: "@sapphire/plugin-i18next@npm:2.1.1"
   dependencies:
     "@sapphire/utilities": ^3.1.0
     "@types/i18next-fs-backend": ^1.1.2
-    i18next: ^21.5.2
+    i18next: ^21.5.3
     i18next-fs-backend: ^1.1.4
     tslib: ^2.3.1
-  checksum: fd09b0df7e310c32fc9ef7a6dddfe8e296a1bba132526d9ae8649a502fb7fafeb60f210cf93734f394714b1ac071f37182d4e6bb84c334a4e37f44fc10c438e0
+  checksum: 9dcf907438c2d430cbd5704677422eb461ad74913c3eeca853439506ab0ae3cb21efc47e943410efa4c2f8b76cc7ef974006e8ccadbd5904fca5ab1872efde90
   languageName: node
   linkType: hard
 
@@ -805,10 +805,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:16.11.9":
+"@types/node@npm:*":
   version: 16.11.9
   resolution: "@types/node@npm:16.11.9"
   checksum: baec2e6471ee58fd1e9874e6f47ab95a918a0f46b42424392e4c13e3e07f078f8b72b6b48073b0b14f710ed66c5f1b2e497df43f28151000f11f5f299382cfe2
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:16.11.10":
+  version: 16.11.10
+  resolution: "@types/node@npm:16.11.10"
+  checksum: 9c79419c5c3d92d5825bffa30f3668533f598d8b63a73ea7fc24e47f162bdbed92b0f8e4f4261cc3314b39cee050e303366d2aa154abc95c63a572a110b8c160
   languageName: node
   linkType: hard
 
@@ -1281,7 +1288,7 @@ __metadata:
     "@sapphire/fetch": 2.0.3
     "@sapphire/framework": 2.2.0
     "@sapphire/plugin-api": 3.1.0
-    "@sapphire/plugin-i18next": 2.1.0
+    "@sapphire/plugin-i18next": 2.1.1
     "@sapphire/plugin-subcommands": 2.1.0
     "@sapphire/time-utilities": 1.4.9
     "@sapphire/type": 2.1.2
@@ -1291,7 +1298,7 @@ __metadata:
     "@tmware/status-rotate": 1.2.9
     "@types/app-root-path": 1.2.4
     "@types/crypto-js": 4.0.2
-    "@types/node": 16.11.9
+    "@types/node": 16.11.10
     "@types/prettier": 2.4.2
     all-contributors-cli: 6.20.0
     app-root-path: 3.0.0
@@ -1304,11 +1311,11 @@ __metadata:
     dotenv-cra: 3.0.2
     eslint: 8.3.0
     husky: 7.0.4
-    lint-staged: 12.1.1
+    lint-staged: 12.1.2
     mongoose: 6.0.13
     nanoid: 3.1.30
     owofire: 1.0.4
-    prettier: 2.4.1
+    prettier: 2.5.0
     reflect-metadata: 0.1.13
     rimraf: 3.0.2
     tslib: 2.3.1
@@ -3148,12 +3155,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next@npm:^21.0.1, i18next@npm:^21.5.2":
+"i18next@npm:^21.0.1":
   version: 21.5.2
   resolution: "i18next@npm:21.5.2"
   dependencies:
     "@babel/runtime": ^7.12.0
   checksum: 1968c334acee1167a7efb80304c273d425bdd6d5bb0018949e93f8f2af86d0712362f4486e825fd94ccc5a947a2839d2970ade99c56e772683708486bf1f3a07
+  languageName: node
+  linkType: hard
+
+"i18next@npm:^21.5.3":
+  version: 21.5.3
+  resolution: "i18next@npm:21.5.3"
+  dependencies:
+    "@babel/runtime": ^7.12.0
+  checksum: f08b25fd9d029da759b25c4c436ea90c0cca49784de516d699f1e6ba4a4f0fb515b0f65c57e41b0306ab200aefaca4f822d39e51938f08f13151ea6b06a24b04
   languageName: node
   linkType: hard
 
@@ -3685,9 +3701,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:12.1.1":
-  version: 12.1.1
-  resolution: "lint-staged@npm:12.1.1"
+"lint-staged@npm:12.1.2":
+  version: 12.1.2
+  resolution: "lint-staged@npm:12.1.2"
   dependencies:
     cli-truncate: ^3.1.0
     colorette: ^2.0.16
@@ -3705,7 +3721,7 @@ __metadata:
     yaml: ^1.10.2
   bin:
     lint-staged: bin/lint-staged.js
-  checksum: 1c4ec4cbccac7040b7d676f0e4f99d9e8d69360ec99d69cbfb12b6c27708ba8a076741712f1b45e67099fc640b1049a27cba8866a85a299a6048ab39d8e4faa7
+  checksum: ec84ce4f74d0d8fe314bd0b62fb5e0be64af692d1876f68c457116faef61b4b3b79d72df7819c248bfbb20c46e88fbe994128e7351e84bec7048263e00199925
   languageName: node
   linkType: hard
 
@@ -4639,12 +4655,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:2.4.1":
-  version: 2.4.1
-  resolution: "prettier@npm:2.4.1"
+"prettier@npm:2.5.0":
+  version: 2.5.0
+  resolution: "prettier@npm:2.5.0"
   bin:
     prettier: bin-prettier.js
-  checksum: cc6830588b401b0d742862fe9c46bc9118204fb307c3abe0e49e95b35ed23629573807ffdf9cdd65289c252a0bb51fc0171437f6626ee36378dea80f0ee80b91
+  checksum: aad1b35b73e7c14596d389d90977a83dad0db689ba5802a0ef319c357b7867f55b885db197972aa6a56c30f53088c9f8e0d7f7930ae074c275a4e9cbe091d21d
   languageName: node
   linkType: hard
 
@@ -5652,7 +5668,7 @@ __metadata:
 
 "typescript@patch:typescript@4.4.4#~builtin<compat/typescript>":
   version: 4.4.4
-  resolution: "typescript@patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=ddd1e8"
+  resolution: "typescript@patch:typescript@npm%3A4.4.4#~builtin<compat/typescript>::version=4.4.4&hash=493e53"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
@@ -5662,11 +5678,11 @@ __metadata:
 
 "typescript@patch:typescript@4.5.2#~builtin<compat/typescript>, typescript@patch:typescript@^4.4.3#~builtin<compat/typescript>":
   version: 4.5.2
-  resolution: "typescript@patch:typescript@npm%3A4.5.2#~builtin<compat/typescript>::version=4.5.2&hash=ddd1e8"
+  resolution: "typescript@patch:typescript@npm%3A4.5.2#~builtin<compat/typescript>::version=4.5.2&hash=493e53"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 24a439e062a05e3285a4f0e8a40644116ecdca89f3e908bed01e5a01b9aee747e3bcf0e85fe9e017e5ebf0c0863437c39479f2616f55a244c2d82d37022cdc4f
+  checksum: 53838d56aba6fcc947d63aa0771e5d966b1b648fddafed6e221d7f38c71219c4e036ece8cfe9e35ed80cf5a35ff4eb958934c993f99c3233773ec4f9ccd53f69
   languageName: node
   linkType: hard
 
