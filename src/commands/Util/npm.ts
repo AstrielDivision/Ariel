@@ -1,6 +1,6 @@
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
+import { request as fetch } from '@artiefuzzz/lynx'
 import { ApplyOptions } from '@sapphire/decorators'
-import { FetchResultTypes } from '@sapphire/fetch'
 import { Message, MessageEmbed } from 'discord.js'
 
 @ApplyOptions<ArielCommandOptions>({
@@ -13,10 +13,7 @@ export default class NPM extends ArielCommand {
 
     if (!packageName) return await message.channel.send('No package name provided')
 
-    const req = await this.container.client.util.fetch<NPMResponse>(
-      `https://registry.npmjs.org/${packageName}`,
-      FetchResultTypes.JSON
-    )
+    const { json: req } = await fetch<NPMResponse>(`https://registry.npmjs.org/${packageName}`).send()
 
     const embed = new MessageEmbed()
       .setTitle(`${req.name}@${req['dist-tags'].latest}`)

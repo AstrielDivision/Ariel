@@ -34,6 +34,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@artiefuzzz/lynx@npm:^1.2.5":
+  version: 1.2.5
+  resolution: "@artiefuzzz/lynx@npm:1.2.5"
+  checksum: eaa82e5d3e9a90a94cbe86df1f1d530883ee3c9678a0bdbd14a926632ccce14fe29ae3d5d9415501ff826374299dde84b12cdb3d30dd879d7f26cbaa125a12b3
+  languageName: node
+  linkType: hard
+
 "@astriel-division/eslint-config@npm:1.2.2":
   version: 1.2.2
   resolution: "@astriel-division/eslint-config@npm:1.2.2"
@@ -479,15 +486,6 @@ __metadata:
     "@sapphire/utilities": ^3.1.0
     tslib: ^2.3.1
   checksum: 6aeebc0a1ac5acf6bd1767a0684c095b173fbf0e7b90255e00ddd5e1597ca2a36927f33bd62de5b96b7415186485836115d0fd1cc7283697973689b99b335257
-  languageName: node
-  linkType: hard
-
-"@sapphire/fetch@npm:2.0.3":
-  version: 2.0.3
-  resolution: "@sapphire/fetch@npm:2.0.3"
-  dependencies:
-    cross-fetch: ^3.1.4
-  checksum: 7e0ddbd79c0d84f322c5ba3c50a9d353a599ff39279f698f21433cf6e3cf8eaf6e9a87d805b68b6c1c15c7106b8a47c4a049e00c0e7f715fb76d43a00cbd8595
   languageName: node
   linkType: hard
 
@@ -1263,6 +1261,7 @@ __metadata:
   dependencies:
     "@aero/ksoft": 4.0.0-rc1
     "@aero/sanitizer": 1.2.0
+    "@artiefuzzz/lynx": ^1.2.5
     "@astriel-division/eslint-config": 1.2.2
     "@astriel-division/ts-config": 1.0.7
     "@commitlint/cli": 15.0.0
@@ -1270,7 +1269,6 @@ __metadata:
     "@sapphire/decorators": 3.1.4
     "@sapphire/discord-utilities": 2.3.0
     "@sapphire/discord.js-utilities": 4.1.4
-    "@sapphire/fetch": 2.0.3
     "@sapphire/framework": 2.2.0
     "@sapphire/plugin-api": 3.1.0
     "@sapphire/plugin-i18next": 2.1.1
@@ -1840,15 +1838,6 @@ __metadata:
   version: 1.1.1
   resolution: "create-require@npm:1.1.1"
   checksum: a9a1503d4390d8b59ad86f4607de7870b39cad43d929813599a23714831e81c520bddf61bcdd1f8e30f05fd3a2b71ae8538e946eb2786dc65c2bbc520f692eff
-  languageName: node
-  linkType: hard
-
-"cross-fetch@npm:^3.1.4":
-  version: 3.1.4
-  resolution: "cross-fetch@npm:3.1.4"
-  dependencies:
-    node-fetch: 2.6.1
-  checksum: 2107e5e633aa327bdacab036b1907c7ddd28651ede0c1d4fd14db04510944d56849a8255e2f5b8f9a1da0e061b6cee943f6819fe29ed9a130195e7fadd82a4ff
   languageName: node
   linkType: hard
 
@@ -4214,13 +4203,6 @@ __metadata:
   version: 0.6.2
   resolution: "negotiator@npm:0.6.2"
   checksum: dfddaff6c06792f1c4c3809e29a427b8daef8cd437c83b08dd51d7ee11bbd1c29d9512d66b801144d6c98e910ffd8723f2432e0cbf8b18d41d2a09599c975ab3
-  languageName: node
-  linkType: hard
-
-"node-fetch@npm:2.6.1":
-  version: 2.6.1
-  resolution: "node-fetch@npm:2.6.1"
-  checksum: 91075bedd57879117e310fbcc36983ad5d699e522edb1ebcdc4ee5294c982843982652925c3532729fdc86b2d64a8a827797a745f332040d91823c8752ee4d7c
   languageName: node
   linkType: hard
 

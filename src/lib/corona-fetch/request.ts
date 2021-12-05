@@ -1,29 +1,21 @@
-import { fetch, FetchMethods, FetchResultTypes } from '@sapphire/fetch'
+import { request as fetch } from '@artiefuzzz/lynx'
 import c from './constants'
 
 export default async function request(country?: string): Promise<any> {
   if (!country) {
-    const res = await fetch(
-      c.baseURL + c.endpoint.all,
-      {
-        method: FetchMethods.Get,
-        headers: {
-          'User-Agent': c.useragent
-        }
-      },
-      FetchResultTypes.JSON
-    )
+    const { json: res } = await fetch(c.baseURL + c.endpoint.all)
+      .headers({
+        'User-Agent': c.useragent
+      })
+      .send()
+
     return res
   }
-  const res = await fetch(
-    `${c.baseURL}${c.endpoint.country}/${country}`,
-    {
-      method: FetchMethods.Get,
-      headers: {
-        'User-Agent': c.useragent
-      }
-    },
-    FetchResultTypes.JSON
-  )
+  const { json: res } = await fetch(`${c.baseURL}${c.endpoint.country}/${country}`)
+    .headers({
+      'User-Agent': c.useragent
+    })
+    .send()
+
   return res
 }

@@ -1,6 +1,6 @@
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
+import { request as fetch } from '@artiefuzzz/lynx'
 import { ApplyOptions } from '@sapphire/decorators'
-import { FetchResultTypes } from '@sapphire/fetch'
 import { ColorResolvable, Message, MessageEmbed } from 'discord.js'
 
 @ApplyOptions<ArielCommandOptions>({
@@ -13,12 +13,9 @@ export default class MDN extends ArielCommand {
 
     if (!query) return await message.channel.send('I cannot search for nothing in the MDN Docs!')
 
-    const embed = new MessageEmbed(
-      await this.container.client.util.fetch<MDNResponse>(
-        `https://mdn.gideonbot.com/embed?q=${query}`,
-        FetchResultTypes.JSON
-      )
-    )
+    const { json: data } = await fetch<MDNResponse>(`https://mdn.gideonbot.com/embed?q=${query}`).send()
+
+    const embed = new MessageEmbed(data)
 
     return await message.channel.send({ embeds: [embed] })
   }

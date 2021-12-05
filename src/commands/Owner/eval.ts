@@ -1,6 +1,6 @@
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
+import { Methods, request as fetch, SendAs } from '@artiefuzzz/lynx'
 import { ApplyOptions } from '@sapphire/decorators'
-import { fetch, FetchMethods, FetchResultTypes } from '@sapphire/fetch'
 import { Type } from '@sapphire/type'
 import { codeBlock, isThenable } from '@sapphire/utilities'
 import type { Message } from 'discord.js'
@@ -33,20 +33,18 @@ export default class extends ArielCommand {
     const typeFooter = `**Type**: ${codeBlock('typescript', type)}`
 
     if (output.length > 2000) {
-      const { payload } = await fetch<SpaceBinResponse>(
-        'https://spaceb.in/api/v1/documents',
-        {
-          method: FetchMethods.Post,
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
+      const {
+        json: { payload }
+      } = await fetch<SpaceBinResponse>('https://spaceb.in/api/v1/documents', Methods.Post)
+        .body(
+          {
             content: result,
             extension: 'js'
-          })
-        },
-        FetchResultTypes.JSON
-      )
+          },
+          SendAs.JSON
+        )
+        .send()
+
       return await message.channel.send(`The output was too long! https://spaceb.in/${payload.id}`)
     }
 

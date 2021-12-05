@@ -1,6 +1,6 @@
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
+import { request } from '@artiefuzzz/lynx'
 import { ApplyOptions } from '@sapphire/decorators'
-import { FetchResultTypes } from '@sapphire/fetch'
 import { Message, MessageEmbed } from 'discord.js'
 
 @ApplyOptions<ArielCommandOptions>({
@@ -10,10 +10,7 @@ import { Message, MessageEmbed } from 'discord.js'
 })
 export default class AnimeBondage extends ArielCommand {
   public async messageRun(message: Message) {
-    const res = await this.container.client.util.fetch<{ url: string }>(
-      'https://shiro.gg/api/images/nsfw/bondage',
-      FetchResultTypes.JSON
-    )
+    const { json: res } = await request<{ url: string }>('https://shiro.gg/api/images/nsfw/bondage').send()
 
     const embed = new MessageEmbed().setImage(res.url).setURL(res.url)
 
