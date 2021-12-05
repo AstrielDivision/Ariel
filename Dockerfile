@@ -7,7 +7,7 @@ LABEL org.opencontainers.image.source https://github.com/AstrielDivision/Ariel
 RUN apk update
 
 COPY . .
-RUN yarn install
+RUN yarn install --immutable
 RUN yarn build
 
 RUN rm -rf src

@@ -1,5 +1,5 @@
 {
-  "extends": "@astriel-division/ts-config/src/tsconfig.json",
+  "extends": "@astriel-division/ts-config",
   "compilerOptions": {
     "outDir": "../build",
     "rootDir": ".",
