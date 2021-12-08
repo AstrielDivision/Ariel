@@ -5,6 +5,5 @@ services:
     build: ..
     restart: always
     env_file:
-      - ../src/.env.development
-      - ../src/.env.development.local
+      - "../.env"
     image: 'artiefuzzz/ariel:latest'

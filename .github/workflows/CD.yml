@@ -1,13 +1,13 @@
-name: 'CD'
+name: "CD"
 
 on:
   push:
     branches: [main]
     paths:
-      - 'src/**'
-      - 'Dockerfile'
-      - '.github/workflows/CD.yml'
-      - 'package.json'
+      - "src/**"
+      - "Dockerfile"
+      - ".github/workflows/CD.yml"
+      - "package.json"
 
 jobs:
   PushImage_Ariel:
@@ -37,3 +37,4 @@ jobs:
           tags: |
             ghcr.io/astrieldivision/ariel:latest
             artiefuzzz/ariel:latest
+            artiefuzzz/ariel:${{ github.sha }}
