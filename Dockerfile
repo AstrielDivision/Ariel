@@ -13,4 +13,4 @@ RUN yarn build
 RUN rm -rf src
 RUN yarn cache clean
 
-ENTRYPOINT ["node", "."]
+CMD ["yarn", "start"]
