@@ -33,9 +33,7 @@ export default class extends ArielCommand {
     const typeFooter = `**Type**: ${codeBlock('typescript', type)}`
 
     if (output.length > 2000) {
-      const {
-        json: { payload }
-      } = await fetch<SpaceBinResponse>('https://spaceb.in/api/v1/documents', Methods.Post)
+      const res = await fetch<SpaceBinResponse>('https://spaceb.in/api/v1/documents', Methods.Post)
         .body(
           {
             content: result,
@@ -45,7 +43,7 @@ export default class extends ArielCommand {
         )
         .send()
 
-      return await message.channel.send(`The output was too long! https://spaceb.in/${payload.id}`)
+      return await message.channel.send(`The output was too long! https://spaceb.in/${res.json.payload.id}`)
     }
 
     return await message.channel.send(`${output}\n${typeFooter}`)

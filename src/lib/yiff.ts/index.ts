@@ -7,20 +7,20 @@ export default class {
     this.client = client
   }
 
-  public async e621(tags: string, limit?: number): Promise<any> {
+  public async e621(tags: string, limit?: number) {
     const res = await request(this.client, {
       site: 'e621',
-      limit: limit ?? 1,
+      limit: limit || 1,
       tags: tags
-    }).catch((err: Error) => console.error(err))
+    })
 
     return res
   }
 
-  public async floofy(): Promise<any> {
+  public async floofy() {
     const res = await request(this.client, {
       site: 'floofy'
-    }).catch((err: Error) => console.error(err))
+    })
 
     return res
   }

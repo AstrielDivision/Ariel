@@ -1,4 +1,5 @@
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
+import type { Post } from '#lib/yiff.ts/types'
 import { ApplyOptions } from '@sapphire/decorators'
 import { Message, MessageEmbed } from 'discord.js'
 
@@ -23,21 +24,21 @@ export default class E621 extends ArielCommand {
       return await message.channel.send('The amount of results is currently limited to 10')
     }
 
-    const req: YiffStruct[] = await this.container.client.Yiff.e621(Tags, res)
+    const { posts }: { posts: Post[] } = await this.container.client.Yiff.e621(Tags, res)
 
-    for await (let re of req) {
+    for await (let post of posts) {
       const embed = new MessageEmbed()
         .setTitle('Source')
-        .setURL(`https://e621.net/posts/${re.id}`)
-        .setImage(re.file.url)
+        .setURL(`https://e621.net/posts/${post.id}`)
+        .setImage(post.sample.url)
         .setFooter(
-          `Artist(s): ${re.tags.artist.join(', ')} | Ups: ${re.score.up} | Downs ${re.score.down} | Total Score: ${
-            re.score.total
-          }`
+          `Artist(s): ${post.tags.artist.join(', ')} | Ups: ${post.score.up} | Downs ${
+            post.score.down
+          } | Total Score: ${post.score.total}`
         )
         .setColor('RANDOM')
       // if (re.tags.lore.length > 0) embed.setDescription(`Lore: ${re.tags.lore[0]}`)
-      if (re.description) embed.setDescription(this.trimDescription(re.description))
+      if (post.description) embed.setDescription(this.trimDescription(post.description))
 
       await message.channel.send({
         embeds: [embed]
@@ -52,33 +53,4 @@ export default class E621 extends ArielCommand {
 
     return description.slice(0, max)
   }
-}
-
-interface YiffFile {
-  width: number
-  height: number
-  url: string
-}
-interface YiffScore {
-  up: number
-  down: number
-  total: number
-}
-interface YiffTags {
-  general: string[]
-  species: string[]
-  character: string[]
-  copyright: string[]
-  artist: string[]
-  invalid: string[]
-  lore?: string[]
-}
-interface YiffStruct {
-  id: number
-  file: YiffFile
-  score: YiffScore
-  tags: YiffTags
-  rating: string
-  sources: string[]
-  description: string
 }
