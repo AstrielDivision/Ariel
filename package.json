@@ -3,6 +3,7 @@
   "version": "2.6.2",
   "main": "build/index",
   "author": "AstrielDivision",
+  "packageManager": "yarn@3.1.1",
   "contributors": [
     {
       "name": "TMUniversal",
@@ -10,12 +11,15 @@
       "url": "https://tmuniversal.eu/"
     }
   ],
+  "engines": {
+    "node": "^16",
+    "npm": "^8.0.0"
+  },
   "license": "Apache-2.0",
   "private": true,
   "description": "Discord bot using @sapphire/framework",
   "scripts": {
     "start": "NODE_ENV=\"production\" && node .",
-    "start:dev": "node .",
     "lint": "eslint --cache --report-unused-disable-directives --ignore-path .gitignore --ext .ts src/",
     "lint:fix": "eslint --cache --report-unused-disable-directives --ext .ts src/ --fix",
     "build": "yarn clean && yarn build:ts",
@@ -28,46 +32,6 @@
     "contrib:gen": "all-contributors generate",
     "contrib:check": "all-contributors check",
     "prettiest": "prettier --write src && yarn lint:fix"
-  },
-  "devDependencies": {
-    "@astriel-division/eslint-config": "1.2.2",
-    "@astriel-division/ts-config": "1.0.7",
-    "@commitlint/cli": "15.0.0",
-    "@commitlint/config-conventional": "15.0.0",
-    "@tmware/prettier-config": "1.0.3",
-    "@types/app-root-path": "1.2.4",
-    "@types/crypto-js": "4.0.2",
-    "@types/node": "16.11.11",
-    "@types/prettier": "2.4.2",
-    "all-contributors-cli": "6.20.0",
-    "cz-conventional-changelog": "3.3.0",
-    "eslint": "8.4.0",
-    "husky": "7.0.4",
-    "lint-staged": "12.1.2",
-    "prettier": "2.5.1",
-    "reflect-metadata": "0.1.13",
-    "rimraf": "3.0.2",
-    "tslib": "2.3.1",
-    "typescript": "4.5.2"
-  },
-  "engines": {
-    "node": "^16",
-    "npm": "^8.0.0"
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
   },
   "dependencies": {
     "@aero/ksoft": "4.0.0-rc1",
@@ -97,6 +61,27 @@
     "owofire": "1.0.4",
     "utf-8-validate": "5.0.7"
   },
+  "devDependencies": {
+    "@astriel-division/eslint-config": "1.2.2",
+    "@astriel-division/ts-config": "1.0.7",
+    "@commitlint/cli": "15.0.0",
+    "@commitlint/config-conventional": "15.0.0",
+    "@tmware/prettier-config": "1.0.3",
+    "@types/app-root-path": "1.2.4",
+    "@types/crypto-js": "4.0.2",
+    "@types/node": "16.11.11",
+    "@types/prettier": "2.4.2",
+    "all-contributors-cli": "6.20.0",
+    "cz-conventional-changelog": "3.3.0",
+    "eslint": "8.4.0",
+    "husky": "7.0.4",
+    "lint-staged": "12.1.2",
+    "prettier": "2.5.1",
+    "reflect-metadata": "0.1.13",
+    "rimraf": "3.0.2",
+    "tslib": "2.3.1",
+    "typescript": "4.5.2"
+  },
   "imports": {
     "#lib/Structures/Command": "./build/lib/Structures/Command.js",
     "#lib/Structures/commands/CanvasCommand": "./build/lib/Structures/commands/CanvasCommand.js",
@@ -106,12 +91,26 @@
     "#setup": "./build/lib/setup.js",
     "#languages": "./build/lib/i18n/LanguageKeys/index.js"
   },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
   "lint-staged": {
     "./src/**/*.ts": "yarn prettiest"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AstrielDivision/Ariel.git"
-  },
-  "packageManager": "yarn@3.1.1"
+  }
 }
