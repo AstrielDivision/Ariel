@@ -12,7 +12,7 @@ import { Message, MessageEmbed } from 'discord.js'
   nsfw: true,
   cooldownDelay: 5000,
   options: ['results', 'r'],
-  usage: '<tags> [--results=1 or -r=1]'
+  usage: '<tags> [--results=1 or -r=2]'
 })
 export default class E621 extends ArielCommand {
   public async messageRun(message: Message, args: ArielCommand.Args) {
