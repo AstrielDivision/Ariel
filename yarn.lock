@@ -34,7 +34,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@artiefuzzz/lynx@npm:^1.2.7":
+"@artiefuzzz/lynx@npm:1.2.7":
   version: 1.2.7
   resolution: "@artiefuzzz/lynx@npm:1.2.7"
   checksum: a5fdb4bc538fc2ec612c62d70e4fa3a579659451aad329da9f27640ccb1f7792d530c37027a97cc66eaccb75bebef4ae60f32851c3d949656e33e9653ce95cee
@@ -1261,7 +1261,7 @@ __metadata:
   dependencies:
     "@aero/ksoft": 4.0.0-rc1
     "@aero/sanitizer": 1.2.0
-    "@artiefuzzz/lynx": ^1.2.7
+    "@artiefuzzz/lynx": 1.2.7
     "@astriel-division/eslint-config": 1.2.2
     "@astriel-division/ts-config": 1.0.7
     "@commitlint/cli": 15.0.0
@@ -1291,7 +1291,7 @@ __metadata:
     dayjs: 1.10.7
     discord-api-types: 0.25.2
     discord.js: 13.3.1
-    dotenv-cra: ^3.0.2
+    dotenv-cra: 3.0.2
     eslint: 8.4.0
     husky: 7.0.4
     lint-staged: 12.1.2
@@ -2120,7 +2120,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv-cra@npm:^3.0.2":
+"dotenv-cra@npm:3.0.2":
   version: 3.0.2
   resolution: "dotenv-cra@npm:3.0.2"
   dependencies:
