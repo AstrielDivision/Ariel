@@ -13,4 +13,6 @@ RUN yarn build
 RUN rm -rf src
 RUN yarn cache clean
 
+EXPOSE 4000
+
 CMD ["yarn", "start"]
