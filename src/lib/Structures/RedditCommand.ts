@@ -9,7 +9,7 @@ export abstract class ArielRedditCommand extends ArielCommand {
   colour: ColorResolvable
   nsfw: boolean
   constructor(
-    { subreddit, nsfw, colour }: { subreddit: string; nsfw: boolean; colour: ColorResolvable },
+    { subreddit, nsfw, colour }: { subreddit: string, nsfw: boolean, colour: ColorResolvable },
     Context: PieceContext,
     options: ArielCommandOptions
   ) {

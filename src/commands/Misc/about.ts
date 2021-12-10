@@ -17,7 +17,7 @@ export default class About extends ArielCommand {
       description:
         `Hello! I'm ${this.container.client.user.username}.` +
         '\nI am a Image discord bot with some other tools too.' +
-        "\n Need images? I'm the bot you need",
+        '\n Need images? I\'m the bot you need',
       fields: [
         {
           name: 'Developed by',
