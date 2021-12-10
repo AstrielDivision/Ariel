@@ -34,10 +34,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@artiefuzzz/lynx@npm:1.2.7":
-  version: 1.2.7
-  resolution: "@artiefuzzz/lynx@npm:1.2.7"
-  checksum: a5fdb4bc538fc2ec612c62d70e4fa3a579659451aad329da9f27640ccb1f7792d530c37027a97cc66eaccb75bebef4ae60f32851c3d949656e33e9653ce95cee
+"@artiefuzzz/lynx@npm:2.0.2":
+  version: 2.0.2
+  resolution: "@artiefuzzz/lynx@npm:2.0.2"
+  dependencies:
+    "@artiefuzzz/utils": ^1.0.3
+    undici: ^4.11.3
+  checksum: ef49fa8c7a50d66fe867e6e7e70ee7c702de933bd24848ec8137d6e7e8626e0c12836e2971b78f2a734500ae0798042f0c2a8482299b7af090e3db9890d0bb73
+  languageName: node
+  linkType: hard
+
+"@artiefuzzz/utils@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "@artiefuzzz/utils@npm:1.0.3"
+  checksum: c87f1e82c36bab2cbe69663c4ecebedb655efbba5d5d0a803305bd124ade05d5c20b111d2b5fef8b7e286e39d16d58175d68a61001f5e0e2098866d8daee4dbb
   languageName: node
   linkType: hard
 
@@ -1200,7 +1210,7 @@ __metadata:
   dependencies:
     "@aero/ksoft": 4.0.0-rc1
     "@aero/sanitizer": 1.2.0
-    "@artiefuzzz/lynx": 1.2.7
+    "@artiefuzzz/lynx": 2.0.2
     "@astriel-division/eslint-config": 1.2.2
     "@astriel-division/ts-config": 1.0.7
     "@commitlint/cli": 15.0.0
@@ -5525,6 +5535,13 @@ __metadata:
     has-symbols: ^1.0.2
     which-boxed-primitive: ^1.0.2
   checksum: 89d950e18fb45672bc6b3c961f1e72c07beb9640c7ceed847b571ba6f7d2af570ae1a2584cfee268b9d9ea1e3293f7e33e0bc29eaeb9f8e8a0bab057ff9e6bba
+  languageName: node
+  linkType: hard
+
+"undici@npm:^4.11.3":
+  version: 4.11.3
+  resolution: "undici@npm:4.11.3"
+  checksum: 1e783f2d2b54813a9a1b0edbc8ddcc0790c29451be2dae25940b57d882e5303b4ba822479c9e12d405b67fafc4b23988676616765aafdc362c97f3a82488f614
   languageName: node
   linkType: hard
 
