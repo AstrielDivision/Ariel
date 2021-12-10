@@ -16,9 +16,9 @@ export default async function request(client: Client, options: Config): Promise<
           authorization:
             envIsDefined('E621_USER') && envIsDefined('E621_API_KEY')
               ? `Basic ${Buffer.from(
-                `${envParseString('E621_USER')}:${envParseString('E621_API_KEY')}`,
-                'binary'
-              ).toString('base64')}`
+                  `${envParseString('E621_USER')}:${envParseString('E621_API_KEY')}`,
+                  'binary'
+                ).toString('base64')}`
               : ''
         })
         .send()

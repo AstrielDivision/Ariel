@@ -5,7 +5,7 @@ import { Message, MessageEmbed } from 'discord.js'
 
 @ApplyOptions<ArielCommandOptions>({
   aliases: ['si'],
-  description: 'Fetch the current guild\'s info'
+  description: "Fetch the current guild's info"
 })
 export default class example extends ArielCommand {
   public async messageRun(message: Message) {

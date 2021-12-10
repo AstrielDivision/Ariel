@@ -1,7 +1,7 @@
 import { Timeouts } from '#lib/constants'
 import { envIsDefined, envParseString } from '#lib/env/parser'
 import { Task, TaskOptions } from '#lib/Structures/Task'
-import { Methods, request as fetch, SendAs } from '@artiefuzzz/lynx'
+import { request as fetch, SendAs } from '@artiefuzzz/lynx'
 import { ApplyOptions } from '@sapphire/decorators'
 
 @ApplyOptions<TaskOptions>({
@@ -10,7 +10,7 @@ import { ApplyOptions } from '@sapphire/decorators'
 export default class uploadStats extends Task {
   public async run(): Promise<unknown> {
     if (envIsDefined('TOPGG_TOKEN')) {
-      await fetch<TopGGResponse>(`https://top.gg/api/bots/${this.container.client.id}/stats`, Methods.Post)
+      await fetch<TopGGResponse>(`https://top.gg/api/bots/${this.container.client.id}/stats`, 'POST')
         .headers({
           Authorization: envParseString('TOPGG_TOKEN'),
           'Content-Type': 'application/json'
@@ -27,7 +27,7 @@ export default class uploadStats extends Task {
       this.container.logger.console('Posted stats to top.gg API.')
     }
     if (envIsDefined('DISCORDS_TOKEN')) {
-      await fetch<DiscordsResponse>(`https://discords.com/bots/api/bot/${this.container.client.id}`, Methods.Post)
+      await fetch<DiscordsResponse>(`https://discords.com/bots/api/bot/${this.container.client.id}`, 'POST')
         .headers({
           Authorization: envParseString('DISCORDS_TOKEN'),
           'Content-Type': 'application/json'

@@ -11,7 +11,7 @@ export default class Password extends ArielCommand {
   public async messageRun(message: Message, args: ArielCommand.Args) {
     const length = args.finished ? 12 : await args.pick('number')
 
-    if (length > 512) return await message.channel.send('You don\'t need a password that long!')
+    if (length > 512) return await message.channel.send("You don't need a password that long!")
 
     const pwd = randomBytes(length).toString('base64')
 

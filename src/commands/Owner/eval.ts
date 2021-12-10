@@ -1,5 +1,5 @@
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
-import { Methods, request as fetch, SendAs } from '@artiefuzzz/lynx'
+import { request as fetch, SendAs } from '@artiefuzzz/lynx'
 import { ApplyOptions } from '@sapphire/decorators'
 import { Type } from '@sapphire/type'
 import { codeBlock, isThenable } from '@sapphire/utilities'
@@ -33,7 +33,7 @@ export default class extends ArielCommand {
     const typeFooter = `**Type**: ${codeBlock('typescript', type)}`
 
     if (output.length > 2000) {
-      const res = await fetch<SpaceBinResponse>('https://spaceb.in/api/v1/documents', Methods.Post)
+      const res = await fetch<SpaceBinResponse>('https://spaceb.in/api/v1/documents', 'POST')
         .body(
           {
             content: result,

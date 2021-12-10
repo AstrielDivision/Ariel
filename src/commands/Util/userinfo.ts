@@ -5,7 +5,7 @@ import { Message, MessageEmbed } from 'discord.js'
 
 @ApplyOptions<ArielCommandOptions>({
   aliases: ['ui'],
-  description: 'Fetch a discord user\'s info.',
+  description: "Fetch a discord user's info.",
   usage: '[userID | @user]'
 })
 export default class UserInfo extends ArielCommand {
