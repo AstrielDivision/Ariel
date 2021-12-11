@@ -34,13 +34,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@artiefuzzz/lynx@npm:2.1.1":
-  version: 2.1.1
-  resolution: "@artiefuzzz/lynx@npm:2.1.1"
+"@artiefuzzz/lynx@npm:2.1.5":
+  version: 2.1.5
+  resolution: "@artiefuzzz/lynx@npm:2.1.5"
   dependencies:
     "@artiefuzzz/utils": ^1.0.3
     undici: ^4.11.3
-  checksum: 11b80adcb000c402c584309f12e8769648b5c4f9503e66202bd4fed1253bdb23db08b8023fab069e238c125227421fbc1726a406e981c21561bb9a2b2d214445
+  checksum: 1ae23a91516a5024be39c38e075b527d41ed3d033d61ecb1c6f43b5174a589da20607d1ffb6724995430f782e3f5f96ce2f7ac5a85c21b9d8938f23229d0a23f
   languageName: node
   linkType: hard
 
@@ -1210,7 +1210,7 @@ __metadata:
   dependencies:
     "@aero/ksoft": 4.0.0-rc1
     "@aero/sanitizer": 1.2.0
-    "@artiefuzzz/lynx": 2.1.1
+    "@artiefuzzz/lynx": 2.1.5
     "@astriel-division/eslint-config": 1.2.2
     "@astriel-division/ts-config": 1.0.7
     "@commitlint/cli": 15.0.0
