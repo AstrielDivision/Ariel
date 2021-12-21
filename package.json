@@ -36,7 +36,7 @@
   "dependencies": {
     "@aero/ksoft": "4.0.0-rc1",
     "@aero/sanitizer": "1.2.0",
-    "@artiefuzzz/lynx": "2.1.5",
+    "@artiefuzzz/lynx": "2.2.5",
     "@sapphire/decorators": "3.1.4",
     "@sapphire/discord-utilities": "2.4.0",
     "@sapphire/discord.js-utilities": "4.1.5",
@@ -56,7 +56,7 @@
     "discord-api-types": "0.25.2",
     "discord.js": "13.3.1",
     "dotenv-cra": "3.0.2",
-    "mongoose": "6.1.1",
+    "mongoose": "6.1.2",
     "nanoid": "3.1.30",
     "owofire": "1.0.4",
     "utf-8-validate": "5.0.7"
@@ -69,18 +69,18 @@
     "@tmware/prettier-config": "1.0.3",
     "@types/app-root-path": "1.2.4",
     "@types/crypto-js": "4.0.2",
-    "@types/node": "16.11.12",
+    "@types/node": "16.11.14",
     "@types/prettier": "2.4.2",
     "all-contributors-cli": "6.20.0",
     "cz-conventional-changelog": "3.3.0",
-    "eslint": "8.4.1",
+    "eslint": "8.5.0",
     "husky": "7.0.4",
     "lint-staged": "12.1.2",
     "prettier": "2.5.1",
     "reflect-metadata": "0.1.13",
     "rimraf": "3.0.2",
     "tslib": "2.3.1",
-    "typescript": "4.5.3"
+    "typescript": "4.5.4"
   },
   "imports": {
     "#lib/Structures/Command": "./build/lib/Structures/Command.js",
