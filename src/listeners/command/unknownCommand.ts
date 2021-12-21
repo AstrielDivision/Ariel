@@ -1,7 +1,7 @@
-import TagCommand from '#lib/Models/TagCommand'
+import Tag from '#lib/Models/Tags'
 import { ApplyOptions } from '@sapphire/decorators'
 import { Events, Listener, ListenerOptions, UnknownCommandPayload } from '@sapphire/framework'
-import type { Message, Snowflake } from 'discord.js'
+import { Message, MessageEmbed, Snowflake } from 'discord.js'
 
 @ApplyOptions<ListenerOptions>({
   event: Events.UnknownCommand
@@ -10,7 +10,7 @@ export default class unknownCommand extends Listener {
   public async run({ message, commandName }: UnknownCommandPayload): Promise<unknown> {
     if (!message.guild) return null
 
-    const tags = await TagCommand.find({ guild: message.guild.id })
+    const tags = await Tag.find({ guild: message.guild.id })
 
     if (tags.length === 0) return null
 
@@ -22,14 +22,22 @@ export default class unknownCommand extends Listener {
   }
 
   private async runCommand(message: Message, name: string) {
-    const tag = await TagCommand.findOne({ guild_id: message.guild.id, name })
+    const { name: tagName, data, embed: isEmbed } = await Tag.findOne({ guild_id: message.guild.id, name })
 
-    if (tag.name !== name) return null
+    if (tagName !== name) return null
 
-    return await message.channel.send(tag.data)
+    if (isEmbed) {
+      const embed = new MessageEmbed({
+        description: data,
+        color: 'RANDOM'
+      })
+      return await message.channel.send({ embeds: [embed] })
+    } else {
+      return await message.channel.send(data)
+    }
   }
 
   private async tagExists(guild_id: Snowflake, name: string) {
-    return await TagCommand.exists({ guild_id, name })
+    return await Tag.exists({ guild_id, name })
   }
 }

@@ -46,7 +46,7 @@ export default class Warns extends ArielCommand {
       args.t('commands/moderation:warns.embed2.fields.name'),
       warnings.length
         ? warnings
-          .map(w => `\`${w.id as string}\``)
+          .map(w => `\`${w.id}\``)
           .join(', ')
           .toString()
         : args.t('commands/moderation:warns.embed2.fields.noWarns'),

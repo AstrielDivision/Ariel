@@ -1,6 +1,5 @@
 import type { Snowflake } from 'discord.js'
 import type { Document } from 'mongoose'
-import { DataLike } from './index'
 
 export interface GuildSettings extends Document {
   guild_id?: Snowflake
@@ -23,9 +22,10 @@ export interface Warnings extends Document {
   id: string
 }
 
-export interface TagCommand extends Document {
+export interface Tag extends Document {
   registeredAt: Date
   guild_id: Snowflake
+  embed: boolean
   name: string
-  data: DataLike
+  data: string
 }
