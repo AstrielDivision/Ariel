@@ -1,4 +1,4 @@
-import type { Snowflake } from 'discord.js'
+import type { ColorResolvable, Snowflake } from 'discord.js'
 import type { Document } from 'mongoose'
 
 export interface GuildSettings extends Document {
@@ -25,6 +25,7 @@ export interface Warnings extends Document {
 export interface Tag extends Document {
   registeredAt: Date
   guild_id: Snowflake
+  color: ColorResolvable
   embed: boolean
   name: string
   data: string

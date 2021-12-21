@@ -22,14 +22,14 @@ export default class unknownCommand extends Listener {
   }
 
   private async runCommand(message: Message, name: string) {
-    const { name: tagName, data, embed: isEmbed } = await Tag.findOne({ guild_id: message.guild.id, name })
+    const { name: tagName, data, embed: isEmbed, color } = await Tag.findOne({ guild_id: message.guild.id, name })
 
     if (tagName !== name) return null
 
     if (isEmbed) {
       const embed = new MessageEmbed({
         description: data,
-        color: 'RANDOM'
+        color
       })
       return await message.channel.send({ embeds: [embed] })
     } else {

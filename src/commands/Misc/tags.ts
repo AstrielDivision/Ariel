@@ -65,7 +65,7 @@ export default class Tags extends ArielCommand {
     const name = (await args.pickResult('string')).value
     const data = (await args.restResult('string')).value
     const embed = args.getFlags('embed')
-    const color = args.getOption('color')
+    const color = args.getOption('color') ?? 'RANDOM'
 
     if (!name) return await message.channel.send('You must provide a name of a tag')
     if (!data) return await message.channel.send('You must provide data to replace the old data')
