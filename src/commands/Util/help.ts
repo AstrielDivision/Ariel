@@ -76,7 +76,7 @@ export default class Help extends ArielCommand {
       let commandsLine = ''
       this.container.stores.get('commands').forEach(cmd => {
         if ((cmd as ArielCommand).category !== category) return
-        if (envParseString('OWNER') === message.author.id && (cmd as ArielCommand).category === 'Owner') {
+        if (!(envParseString('OWNER') === message.author.id) && (cmd as ArielCommand).category === 'Owner') {
           return
         }
         if (
