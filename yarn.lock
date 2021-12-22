@@ -504,39 +504,39 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/plugin-api@npm:3.1.1":
-  version: 3.1.1
-  resolution: "@sapphire/plugin-api@npm:3.1.1"
+"@sapphire/plugin-api@npm:3.1.2":
+  version: 3.1.2
+  resolution: "@sapphire/plugin-api@npm:3.1.2"
   dependencies:
     "@types/node-fetch": 2.5.12
     "@types/psl": ^1.1.0
-    "@types/ws": ^8.2.1
+    "@types/ws": ^8.2.2
     node-fetch: 2.6.6
     psl: ^1.8.0
     tslib: ^2.3.1
-  checksum: 0d2f1a0f23c5486f4a5c9df2921f3ea7d02b53545989d9b84aa190bce035823bc8ca9574875e9c3fb6ecd7e5507ec412774cf4d63a0e86c9c156b8c368815963
+  checksum: a53636948a3d05d277a15a927c89d41c4c7d35efe0d018b0eb7fc037aa996ee3ac324910956ca9b21ca050469dfad18204732d98bf73d536b977f15107e51213
   languageName: node
   linkType: hard
 
-"@sapphire/plugin-i18next@npm:2.1.2":
-  version: 2.1.2
-  resolution: "@sapphire/plugin-i18next@npm:2.1.2"
+"@sapphire/plugin-i18next@npm:2.1.3":
+  version: 2.1.3
+  resolution: "@sapphire/plugin-i18next@npm:2.1.3"
   dependencies:
     "@sapphire/utilities": ^3.1.0
     "@types/i18next-fs-backend": ^1.1.2
-    i18next: ^21.5.4
+    i18next: ^21.6.3
     i18next-fs-backend: ^1.1.4
     tslib: ^2.3.1
-  checksum: 75ddf8ad5d0d75448720cfd992f8ca992d9d9f1b04fd5506e10bf64e88b27eccccced3afc271adda4f716cc5a0d48c5530d3745ae6eb108a59ad245b5dc14ade
+  checksum: ad60fa1d1c26c574290ccd829475a75f289e49ef299196cca68292cf4ae4d63c162585f61e6bc17ba877141b10c9c9187c3cd4c43b4553170e9b8b947c3e4103
   languageName: node
   linkType: hard
 
-"@sapphire/plugin-subcommands@npm:2.1.2":
-  version: 2.1.2
-  resolution: "@sapphire/plugin-subcommands@npm:2.1.2"
+"@sapphire/plugin-subcommands@npm:2.1.3":
+  version: 2.1.3
+  resolution: "@sapphire/plugin-subcommands@npm:2.1.3"
   dependencies:
     tslib: ^2.3.1
-  checksum: 344ba2d7171b6c274e07382445450affeb3140749caf33fccf477fb273b253bce4af4d20e1cdabae3213a1703b7944cbdae16727ba5d048f5de0f2a95027850f
+  checksum: b5743e8cdb296f80c824ddbcc01c5467f7a06854f61b3105bfe62fd82cc58004b4fca59d2b89da88873b17918a964f7cbcd6ec352c5c3c4d22dcc73c5a713720
   languageName: node
   linkType: hard
 
@@ -775,10 +775,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:16.11.14":
-  version: 16.11.14
-  resolution: "@types/node@npm:16.11.14"
-  checksum: 0bd4333fb4e56532db7f5174732268b18089913ddbb0e97957228e64f9fe3babf9923c77ce6f07d3d354445cfbb8d31b95c1f8be3c0f7426308bd8b93d3aaa02
+"@types/node@npm:16.11.15":
+  version: 16.11.15
+  resolution: "@types/node@npm:16.11.15"
+  checksum: 30969f1c43d85ee645f1ff28640d25b8b7748bbd3cb31aeebc2799fa9f7aa580782430309496c82983a92009afe52e46b50b9b996cea697f62e93f27eb8f5eb5
   languageName: node
   linkType: hard
 
@@ -827,7 +827,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/ws@npm:^8.2.0, @types/ws@npm:^8.2.1":
+"@types/ws@npm:^8.2.0, @types/ws@npm:^8.2.2":
   version: 8.2.2
   resolution: "@types/ws@npm:8.2.2"
   dependencies:
@@ -1226,9 +1226,9 @@ __metadata:
     "@sapphire/discord-utilities": 2.4.0
     "@sapphire/discord.js-utilities": 4.1.5
     "@sapphire/framework": 2.2.1
-    "@sapphire/plugin-api": 3.1.1
-    "@sapphire/plugin-i18next": 2.1.2
-    "@sapphire/plugin-subcommands": 2.1.2
+    "@sapphire/plugin-api": 3.1.2
+    "@sapphire/plugin-i18next": 2.1.3
+    "@sapphire/plugin-subcommands": 2.1.3
     "@sapphire/time-utilities": 1.5.0
     "@sapphire/type": 2.1.2
     "@sapphire/utilities": 3.1.0
@@ -1237,7 +1237,7 @@ __metadata:
     "@tmware/status-rotate": 1.2.9
     "@types/app-root-path": 1.2.4
     "@types/crypto-js": 4.0.2
-    "@types/node": 16.11.14
+    "@types/node": 16.11.15
     "@types/prettier": 2.4.2
     all-contributors-cli: 6.20.0
     app-root-path: 3.0.0
@@ -1250,8 +1250,8 @@ __metadata:
     dotenv-cra: 3.0.2
     eslint: 8.5.0
     husky: 7.0.4
-    lint-staged: 12.1.2
-    mongoose: 6.1.2
+    lint-staged: 12.1.3
+    mongoose: 6.1.3
     nanoid: 3.1.30
     owofire: 1.0.4
     prettier: 2.5.1
@@ -1844,7 +1844,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"debug@npm:4, debug@npm:4.x, debug@npm:^4.1.0, debug@npm:^4.1.1, debug@npm:^4.3.1, debug@npm:^4.3.2":
+"debug@npm:4, debug@npm:4.x, debug@npm:^4.1.0, debug@npm:^4.1.1, debug@npm:^4.3.1, debug@npm:^4.3.2, debug@npm:^4.3.3":
   version: 4.3.3
   resolution: "debug@npm:4.3.3"
   dependencies:
@@ -2102,7 +2102,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"enquirer@npm:^2.3.5, enquirer@npm:^2.3.6":
+"enquirer@npm:^2.3.5":
   version: 2.3.6
   resolution: "enquirer@npm:2.3.6"
   dependencies:
@@ -3072,12 +3072,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"i18next@npm:^21.0.1, i18next@npm:^21.5.4":
+"i18next@npm:^21.0.1":
   version: 21.6.0
   resolution: "i18next@npm:21.6.0"
   dependencies:
     "@babel/runtime": ^7.12.0
   checksum: 55e9f5e8a4bbf008c5e820015c972926451d08e0f9b1a843f4ad462dcf96b8699fb915f857cb07877fa539d83afbd53977b856cda1af85f2166093dd7ad0a5c9
+  languageName: node
+  linkType: hard
+
+"i18next@npm:^21.6.3":
+  version: 21.6.3
+  resolution: "i18next@npm:21.6.3"
+  dependencies:
+    "@babel/runtime": ^7.12.0
+  checksum: c3de927a3aa64b9c17a5b348b7a9f30fd9c88074a0c92b1eef2a879a71398e32c9cdbf660a689fc6d04ea9d6126cb8efe1f13317172625608b0d09b53b3b35c4
   languageName: node
   linkType: hard
 
@@ -3593,31 +3602,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:12.1.2":
-  version: 12.1.2
-  resolution: "lint-staged@npm:12.1.2"
+"lint-staged@npm:12.1.3":
+  version: 12.1.3
+  resolution: "lint-staged@npm:12.1.3"
   dependencies:
     cli-truncate: ^3.1.0
     colorette: ^2.0.16
     commander: ^8.3.0
-    debug: ^4.3.2
-    enquirer: ^2.3.6
+    debug: ^4.3.3
     execa: ^5.1.1
     lilconfig: 2.0.4
-    listr2: ^3.13.3
+    listr2: ^3.13.5
     micromatch: ^4.0.4
     normalize-path: ^3.0.0
-    object-inspect: ^1.11.0
+    object-inspect: ^1.11.1
     string-argv: ^0.3.1
-    supports-color: ^9.0.2
+    supports-color: ^9.2.1
     yaml: ^1.10.2
   bin:
     lint-staged: bin/lint-staged.js
-  checksum: ec84ce4f74d0d8fe314bd0b62fb5e0be64af692d1876f68c457116faef61b4b3b79d72df7819c248bfbb20c46e88fbe994128e7351e84bec7048263e00199925
+  checksum: f42fea248f690478ddd3d15ed9dd2302c0744da6af3032d1afe6e9f3c5ff99a7f4af85bf73425d027ff3c53b8c2a4a8f2227ab3e2e1367af786d301debea4bce
   languageName: node
   linkType: hard
 
-"listr2@npm:^3.13.3":
+"listr2@npm:^3.13.5":
   version: 3.13.5
   resolution: "listr2@npm:3.13.5"
   dependencies:
@@ -4015,9 +4023,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mongoose@npm:6.1.2":
-  version: 6.1.2
-  resolution: "mongoose@npm:6.1.2"
+"mongoose@npm:6.1.3":
+  version: 6.1.3
+  resolution: "mongoose@npm:6.1.3"
   dependencies:
     bson: ^4.2.2
     kareem: 2.3.2
@@ -4028,7 +4036,7 @@ __metadata:
     regexp-clone: 1.0.0
     sift: 13.5.2
     sliced: 1.0.1
-  checksum: 27f285b3814f1fc00c5328970cfdd4df187fea802e9e15b8818b555df708672c15f3dbdbbbfdb2e6d17ec79bbb4777d471a7f4bfb2b2b77b129a0d3cb2772da7
+  checksum: 9683d1c801aa9a95c3c476c29c1dffd925ba4c368413de529412113ecfd7186b673ea93e9fd383de0bafb4c97f97f91fd5f4fefd8149c61954764769b6eba1bc
   languageName: node
   linkType: hard
 
@@ -4243,6 +4251,13 @@ __metadata:
   version: 1.11.1
   resolution: "object-inspect@npm:1.11.1"
   checksum: 98bc8e1e108b193cfb5d9bfb71b79f0e19d187aca4f9a3f28ea0e946c0011a74f9fc2ada83ecf2216b3e69fe6bf697fda8230ed84a6ca5680887e7bb73cf34ad
+  languageName: node
+  linkType: hard
+
+"object-inspect@npm:^1.11.1":
+  version: 1.12.0
+  resolution: "object-inspect@npm:1.12.0"
+  checksum: 2b36d4001a9c921c6b342e2965734519c9c58c355822243c3207fbf0aac271f8d44d30d2d570d450b2cc6f0f00b72bcdba515c37827d2560e5f22b1899a31cf4
   languageName: node
   linkType: hard
 
@@ -5251,7 +5266,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"supports-color@npm:^9.0.2":
+"supports-color@npm:^9.2.1":
   version: 9.2.1
   resolution: "supports-color@npm:9.2.1"
   checksum: 8a2bfeb64c1512d21a1a998c1f64acdaa85cf1f6a101627286548f19785524b329d7b28d567a28fc2d708fc7aba32f4c82a9b224f76b30a337a39d3e53418ff7
