@@ -22,10 +22,9 @@ export default class Corona extends ArielCommand {
       embed.addFields([
         { name: 'Active Cases', value: `${res.active}`, inline: true },
         { name: 'Today Cases', value: `${res.todayCases}`, inline: true },
-        { name: 'Deaths', value: `${res.deaths}` },
+        { name: 'Deaths', value: `${res.deaths}`, inline: true },
         { name: 'Today Deaths', value: `${res.todayDeaths}`, inline: true },
-        { name: 'Critical Cases', value: `${res.critical}`, inline: true },
-        { name: 'Total Tests', value: `${res.tests}`, inline: true }
+        { name: 'Critical Cases', value: `${res.critical}`, inline: true }
       ])
       embed.setThumbnail(res.countryInfo.flag)
 
