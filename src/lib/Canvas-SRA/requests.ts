@@ -8,9 +8,7 @@ export default async function request(endpoint: Endpoints, avatarURL: string): P
   if (!avatarURL) throw Error('No avatar provided')
 
   const { buffer } = await fetch(`${c.url}${endpoint}?avatar=${encodeURIComponent(avatarURL)}`)
-    .headers({
-      'User-Agent': c.useragent
-    })
+    .agent(c.useragent)
     .send()
 
   return buffer
