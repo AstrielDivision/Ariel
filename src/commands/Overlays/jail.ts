@@ -10,6 +10,6 @@ import type { PieceContext } from '@sapphire/framework'
 })
 export default class Jail extends ArielOverlayCommand {
   constructor(Context: PieceContext, options: ArielCommandOptions) {
-    super({ overlay: 'glass' }, Context, options)
+    super({ overlay: 'jail' }, Context, options)
   }
 }
