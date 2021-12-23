@@ -1,18 +1,21 @@
 import { envIsDefined, envParseString } from '#lib/env/parser'
 import { request as fetch } from '@artiefuzzz/lynx'
-import type Client from 'lib/Structures/client'
 import c from './constants'
 import type { Config, FloofyResponse, Post } from './types'
 
-export default async function request(client: Client, options: Config): Promise<any> {
+export default async function request(options: Config): Promise<any> {
   switch (options.site) {
     case 'e621': {
       if (!options.tags) throw Error('No tags provided')
       const req = await fetch<{ posts: Post[] }>(
         `https://e621.net/posts.json?tags=limit:${options.limit} order:random -young ${options.tags}`
       )
+        .agent(
+          envIsDefined('E621_USER')
+            ? `${c.defaults.useragent} User: ${envParseString('E621_USER')}`
+            : `${c.defaults.useragent}`
+        )
         .headers({
-          'User-Agent': `${c.defaults.useragent} [ID: ${client?.id}]`,
           authorization:
             envIsDefined('E621_USER') && envIsDefined('E621_API_KEY')
               ? `Basic ${Buffer.from(

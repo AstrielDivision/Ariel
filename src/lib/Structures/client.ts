@@ -23,7 +23,7 @@ export default class Client extends SapphireClient {
 
     this.ksoft = new KSoftClient(envParseString('KSOFT_TOKEN'))
     this.util = new ClientUtils(this)
-    this.Yiff = new Yiff(this)
+    this.Yiff = new Yiff()
     this.statusUpdater = new StatusUpdater(this, [
       {
         type: 'WATCHING',
