@@ -9,9 +9,9 @@ import StatusUpdater from '@tmware/status-rotate'
 import { ClientOptions, Message, version as djs } from 'discord.js'
 import mongoose from 'mongoose'
 import { join } from 'path'
-import pkg from '../../package'
-import ClientUtils from '../ClientUtils'
-import { TaskStore } from './TaskStore'
+import pkg from '../package'
+import ClientUtils from './ClientUtils'
+import { TaskStore } from './Structures/TaskStore'
 
 export default class Client extends SapphireClient {
   ksoft: KSoftClient
@@ -78,7 +78,7 @@ export default class Client extends SapphireClient {
       })
     }
 
-    this.stores.register(new TaskStore().registerPath(join(__dirname, '..', '..', 'tasks')))
+    this.stores.register(new TaskStore().registerPath(join(__dirname, '..', 'tasks')))
 
     await mongoose
       .connect(envParseString('MONGO_URI'))

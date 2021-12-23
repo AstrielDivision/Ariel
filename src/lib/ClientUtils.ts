@@ -1,6 +1,6 @@
 import { DurationFormatter } from '@sapphire/time-utilities'
 import type { Guild, Snowflake, User } from 'discord.js'
-import type Client from './Structures/client'
+import type Client from './Ariel'
 
 export default class Utils {
   client!: Client

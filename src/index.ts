@@ -5,7 +5,7 @@ import type { InternationalizationContext } from '@sapphire/plugin-i18next'
 import { config } from 'dotenv-cra'
 import type { FormatFunction } from 'i18next'
 import { join } from 'path'
-import Client from './lib/Structures/client'
+import Client from './lib/Ariel'
 import Logger from './lib/Structures/Logger'
 
 config({
