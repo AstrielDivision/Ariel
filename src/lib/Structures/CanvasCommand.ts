@@ -17,11 +17,12 @@ export abstract class ArielOverlayCommand extends ArielCommand {
   public async messageRun(message: Message, args: ArielCommand.Args) {
     let buffer: Buffer
     const mention = (await args.pickResult('user')).value
+    const attachment = message?.attachments?.first().url
 
     const wait = await message.channel.send('Please wait...')
 
     if (mention) {
-      buffer = await canvas(this.overlay, mention.avatarURL({ format: 'png', size: 256 }))
+      buffer = await canvas(this.overlay, attachment ?? mention.avatarURL({ format: 'png', size: 256 }))
 
       const image = new MessageAttachment(buffer, 'img.png')
 
@@ -29,7 +30,10 @@ export abstract class ArielOverlayCommand extends ArielCommand {
       return await wait.delete()
     }
 
-    buffer = await canvas(this.overlay, message.member?.user.displayAvatarURL({ format: 'png', size: 256 }))
+    buffer = await canvas(
+      this.overlay,
+      attachment ?? message.member?.user.displayAvatarURL({ format: 'png', size: 256 })
+    )
 
     const image = new MessageAttachment(buffer, 'img.png')
 
