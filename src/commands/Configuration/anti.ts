@@ -93,7 +93,7 @@ export default class Settings extends ArielCommand {
       .setTitle(`${t('commands/config:anti.title')} | ${message.guild.name}`)
       .setDescription(
         `${t('commands/config:anti.unmentionable', { yesNo: anti.unmentionable ? 'Yes' : 'No' })}\n` +
-          `${t('commands/config:anti.:filtering', { name: 'invites', yesNo: anti.invites ? 'Yes' : 'No' })}\n` +
+          `${t('commands/config:anti.filtering', { name: 'invites', yesNo: anti.invites ? 'Yes' : 'No' })}\n` +
           `${t('commands/config:anti.filtering', { name: 'gifts', yesNo: anti.gifts ? 'Yes' : 'No' })}`
       )
       .setFooter(t('commands/config:anti.disableFooter', { prefix }))
