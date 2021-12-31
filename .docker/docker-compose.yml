@@ -1,6 +1,7 @@
 version: "3.9"
 services:
   ariel:
+    tty: true
     container_name: ariel
     build: ..
     restart: always
@@ -8,3 +9,20 @@ services:
       - "../src/.env.development"
       - "../src/.env.development.local"
     image: 'artiefuzzz/ariel:latest'
+    networks:
+      - ariel
+    depends_on:
+      - redis
+  redis:
+    command: 'redis-server --port 8287 --requirepass redis'
+    container_name: redis
+    image: 'redis:alpine'
+    ports:
+      - 8287:8287
+    networks:
+      - ariel
+    volumes:
+      - ./redis_data:/data
+
+networks:
+  ariel:

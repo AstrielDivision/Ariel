@@ -2,6 +2,7 @@ import { srcDir } from '#lib/constants'
 import { envParseString } from '#lib/env/parser'
 import GuildSettings from '#lib/Models/GuildSettings'
 import type { InternationalizationContext } from '@sapphire/plugin-i18next'
+import { ScheduledTaskRedisStrategy } from '@sapphire/plugin-scheduled-tasks/register-redis'
 import { config } from 'dotenv-cra'
 import type { FormatFunction } from 'i18next'
 import { join } from 'path'
@@ -53,6 +54,18 @@ const client = new Client({
       port: 4000
     },
     prefix: '/v1/'
+  },
+  tasks: {
+    strategy: new ScheduledTaskRedisStrategy({
+      bull: {
+        redis: {
+          host: 'redis',
+          password: 'redis',
+          port: 8287,
+          db: 1
+        }
+      }
+    })
   }
 })
 

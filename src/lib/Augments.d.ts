@@ -38,6 +38,10 @@ declare module '@sapphire/framework' {
   interface Args {
     t: TFunction
   }
+
+  interface ScheduledTasks {
+    manual: never
+  }
 }
 declare module 'discord.js' {
   interface Client {

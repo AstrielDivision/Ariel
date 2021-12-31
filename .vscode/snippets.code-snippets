@@ -27,7 +27,7 @@
       "  usage: '[optional] <required>'",
       "})",
       "export default class example extends ArielCommand {",
-      "  public async run (message: Message, args: ArielCommand.Args) {",
+      "  public async messageRun (message: Message, args: ArielCommand.Args) {",
       "  }",
       "}",
       ""

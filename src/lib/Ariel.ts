@@ -49,8 +49,8 @@ export default class Client extends SapphireClient {
    * @returns {Promise<Client>}
    */
   public async start(): Promise<Client> {
-    await super.login()
     await this.init()
+    await super.login()
 
     return this
   }
