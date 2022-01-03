@@ -67,7 +67,7 @@ export default class Tags extends ArielCommand {
     const embed = args.getFlags('embed')
     const color = args.getOption('color') ?? 'RANDOM'
 
-    if (!name) return await message.channel.send('You must provide a name of a tag')
+    if (!name) return await message.channel.send('You must provide the name of a tag')
     if (!data) return await message.channel.send('You must provide data to replace the old data')
 
     await Tag.findOneAndUpdate({ guild_id: message.guild.id, name }, { data, embed, color })
