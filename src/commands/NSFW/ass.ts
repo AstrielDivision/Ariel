@@ -19,7 +19,7 @@ export default class Ass extends ArielCommand {
     })
     const embed = new MessageEmbed()
       .setTitle('Thicc?')
-      .setFooter('Powered by api.ksoft.si')
+      .setFooter({ text: 'Powered by api.ksoft.si' })
       .setURL(url)
       .setTimestamp()
       .setImage(url)

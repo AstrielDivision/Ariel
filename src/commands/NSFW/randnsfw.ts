@@ -17,7 +17,9 @@ export default class RandomNSFW extends ArielCommand {
     const { url, post }: RedditImage = await this.container.client.ksoft.images.nsfw(true)
     const embed = new MessageEmbed()
       .setTitle(post.title)
-      .setFooter(`Powered by api.ksoft.si ${post.author} | Upvotes: ${post.upvotes} | Downvotes ${post.downvotes}`)
+      .setFooter({
+        text: `Powered by api.ksoft.si ${post.author} | Upvotes: ${post.upvotes} | Downvotes ${post.downvotes}`
+      })
       .setURL(post.link)
       .setColor('WHITE')
       .setTimestamp()
