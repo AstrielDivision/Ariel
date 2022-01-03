@@ -21,7 +21,7 @@ export default class Prefix extends ArielCommand {
 
     await GuildSettings.findOneAndUpdate({ guild_id: message.guild.id }, { $set: { prefix: prefix } })
 
-    return await message.channel.send(await args.t('commands/config:prefix.setPrefix', { prefix }))
+    return await message.channel.send(await args.t('commands/config:prefix.success.setPrefix', { prefix }))
   }
 
   @RequiresUserPermissions('MANAGE_GUILD')
