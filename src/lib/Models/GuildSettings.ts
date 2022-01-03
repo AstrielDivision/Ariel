@@ -15,6 +15,14 @@ const schema = new Schema({
       gifts: false,
       hoisting: false
     }
+  },
+  logs: {
+    required: false,
+    type: Object,
+    default: {
+      moderation: null,
+      members: null
+    }
   }
 })
 

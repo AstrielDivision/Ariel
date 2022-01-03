@@ -1,6 +1,6 @@
 {
   "name": "ariel",
-  "version": "2.8.1",
+  "version": "2.9.0",
   "main": "build/index",
   "author": "AstrielDivision",
   "packageManager": "yarn@3.1.1",
@@ -92,7 +92,8 @@
     "#types": "/build/lib/Models/types.js",
     "#lib/*": "./build/lib/*.js",
     "#setup": "./build/lib/setup.js",
-    "#languages": "./build/lib/i18n/LanguageKeys/index.js"
+    "#languages": "./build/lib/i18n/LanguageKeys/index.js",
+    "#util": "./build/lib/util/index.js"
   },
   "commitlint": {
     "extends": [

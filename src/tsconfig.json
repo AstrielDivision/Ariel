@@ -11,7 +11,8 @@
       "#types": ["lib/Types"],
       "#lib/*": ["lib/*"],
       "#setup": ["lib/setup.ts"],
-      "#languages": ["lib/i18n/LanguageKeys/index"]
+      "#languages": ["lib/i18n/LanguageKeys/index"],
+      "#util": ["lib/Util/index"]
     },
     "strictNullChecks": false,
     "resolveJsonModule": true

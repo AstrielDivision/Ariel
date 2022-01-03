@@ -11,6 +11,16 @@ export interface GuildSettings extends Document {
     gifts?: boolean
     hoisting?: boolean
   }
+  logs?: {
+    moderation?: {
+      channel?: Snowflake
+      hook?: string
+    }
+    members?: {
+      channel?: Snowflake
+      hook?: string
+    }
+  }
 }
 
 export interface Warnings extends Document {
