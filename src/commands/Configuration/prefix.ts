@@ -14,9 +14,9 @@ export default class Prefix extends ArielCommand {
   public async set(message: Message, args: ArielCommand.Args) {
     const prefix = (await args.pickResult('string')).value
 
-    if (!prefix) return await message.channel.send(await args.t('commands/config:prefix.noPrefix'))
+    if (!prefix) return await message.channel.send(await args.t('commands/config:prefix.error.noPrefix'))
     if (prefix.length > 3) {
-      return await message.channel.send(await args.t('commands/config:prefix.prefixToLong'))
+      return await message.channel.send(await args.t('commands/config:prefix.error.prefixToLong'))
     }
 
     await GuildSettings.findOneAndUpdate({ guild_id: message.guild.id }, { $set: { prefix: prefix } })
