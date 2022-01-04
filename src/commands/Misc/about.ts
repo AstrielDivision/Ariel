@@ -14,6 +14,7 @@ export default class About extends ArielCommand {
   public async messageRun(message: Message) {
     const embed = new MessageEmbed({
       title: `${this.container.client.user.username} - About`,
+      color: 'AQUA',
       description:
         `Hello! I'm ${this.container.client.user.username}.` +
         '\nI am a Image discord bot with some other tools too.' +
