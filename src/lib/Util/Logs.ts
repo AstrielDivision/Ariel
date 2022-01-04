@@ -1,9 +1,9 @@
 import dayjs from 'dayjs'
 import { Guild, MessageEmbed, TextChannel } from 'discord.js'
 import GuildSettings from '../Models/GuildSettings'
-import type { logEmbedData } from '../Types/Logs'
+import type { LogData } from '../Types/Logs'
 
-export function logEmbed(type: 'members' | 'moderation', data: logEmbedData) {
+function createLogEmbed(type: 'members' | 'moderation', data: LogData) {
   return type === 'moderation'
     ? data.action === 'ban'
       ? new MessageEmbed({
@@ -47,7 +47,7 @@ export function logEmbed(type: 'members' | 'moderation', data: logEmbedData) {
       })
 }
 
-export async function sendToLogs(guild: Guild, type: 'moderation' | 'members', embed: MessageEmbed) {
+async function sendToLogs(guild: Guild, type: 'moderation' | 'members', embed: MessageEmbed) {
   const { logs } = await GuildSettings.findOne({ guild_id: guild.id })
 
   if (!logs) return false
@@ -61,4 +61,8 @@ export async function sendToLogs(guild: Guild, type: 'moderation' | 'members', e
   }
 
   return true
+}
+
+export function logAction(type: 'moderation' | 'members', data: LogData, guild: Guild): boolean {
+  return void sendToLogs(guild, type, createLogEmbed(type, data))
 }

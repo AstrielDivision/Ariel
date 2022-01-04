@@ -1,5 +1,5 @@
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
-import { logEmbed, sendToLogs } from '#util'
+import { logAction } from '#util'
 import { ApplyOptions, RequiresUserPermissions } from '@sapphire/decorators'
 import type { GuildMember, Message } from 'discord.js'
 
@@ -21,18 +21,20 @@ export default class Kick extends ArielCommand {
 
     await member.kick(reason)
 
-    await this.log(message, member, reason)
+    this.log(message, member, reason)
     return await message.channel.send(args.t('commands/moderation:kick.success.kick', { member: member.user.tag }))
   }
 
   private log(message: Message, member: GuildMember, reason: string): boolean {
-    const embed = logEmbed('moderation', {
-      action: 'kick',
-      member,
-      issuer: message.member,
-      reason
-    })
-
-    return void sendToLogs(message.guild, 'moderation', embed)
+    return logAction(
+      'moderation',
+      {
+        action: 'kick',
+        member,
+        issuer: message.member,
+        reason
+      },
+      message.guild
+    )
   }
 }

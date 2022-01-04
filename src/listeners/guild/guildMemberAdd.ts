@@ -1,5 +1,5 @@
 import GuildSettings from '#lib/Models/GuildSettings'
-import { logEmbed, sendToLogs } from '#util'
+import { logAction } from '#util'
 // @ts-ignore
 import clean from '@aero/sanitizer'
 import { ApplyOptions } from '@sapphire/decorators'
@@ -15,19 +15,17 @@ export default class guildMemberAdd extends Listener {
 
     if (anti.unmentionable) await this.cleanName(member)
     if (logs.members) {
-      this.log(member)
+      logAction(
+        'members',
+        {
+          action: 'join',
+          member
+        },
+        member.guild
+      )
     }
 
     return member
-  }
-
-  private log(member: GuildMember): boolean {
-    const embed = logEmbed('members', {
-      action: 'join',
-      member
-    })
-
-    return void sendToLogs(member.guild, 'members', embed)
   }
 
   private async cleanName(member: GuildMember) {

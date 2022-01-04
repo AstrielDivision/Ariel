@@ -1,6 +1,6 @@
 import type { GuildMember } from 'discord.js'
 
-export interface logEmbedData {
+export interface LogData {
   action?: 'ban' | 'kick' | 'join' | 'leave'
   member: GuildMember
   issuer?: GuildMember

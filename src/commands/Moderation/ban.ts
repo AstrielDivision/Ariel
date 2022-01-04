@@ -1,5 +1,5 @@
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
-import { logEmbed, sendToLogs } from '#util'
+import { logAction } from '#util'
 import { ApplyOptions, RequiresUserPermissions } from '@sapphire/decorators'
 import type { GuildMember, Message } from 'discord.js'
 
@@ -34,15 +34,17 @@ export default class Ban extends ArielCommand {
     return await message.channel.send(args.t('commands/moderation:ban.success.ban', { member: member.user.tag }))
   }
 
-  private log(message: Message, member: GuildMember, reason: string, softban: boolean): boolean {
-    const embed = logEmbed('moderation', {
-      action: 'ban',
-      member,
-      issuer: message.member,
-      softban,
-      reason
-    })
-
-    return void sendToLogs(message.guild, 'moderation', embed)
+  private log(message: Message, member: GuildMember, reason: string, softban: boolean) {
+    return logAction(
+      'moderation',
+      {
+        action: 'ban',
+        member,
+        issuer: message.member,
+        softban,
+        reason
+      },
+      message.guild
+    )
   }
 }

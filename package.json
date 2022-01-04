@@ -1,6 +1,6 @@
 {
   "name": "ariel",
-  "version": "2.9.3",
+  "version": "2.9.4",
   "main": "build/index",
   "author": "AstrielDivision",
   "packageManager": "yarn@3.1.1",
