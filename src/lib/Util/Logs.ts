@@ -10,10 +10,10 @@ function createLogEmbed(type: 'members' | 'moderation', data: LogData) {
         title: 'Member Banned',
         color: 'RED',
         description:
-            `┏ **Banned User:** ${data.member.user.tag} (${data.member.id})\n` +
-            `┣ **Banned User ID:** ${data.member.id}\n` +
-            `┣ **Issued By:** ${data.issuer.toString()}\n` +
-            `┗ **Reason:** ${data.reason}`,
+            `┏ **Banned User:** ${data.member.user.tag ?? data.user.tag}\n` +
+            `┣ **Banned User ID:** ${data.member.id ?? data.user.id}\n` +
+            `┣ **Issued By:** ${data.issuer ?? 'Unknown'}\n` +
+            `┗ **Reason:** ${data.reason ?? 'Not Specified'}`,
         timestamp: new Date()
       })
       : new MessageEmbed({
@@ -22,8 +22,8 @@ function createLogEmbed(type: 'members' | 'moderation', data: LogData) {
         description:
             `┏ **Kicked User:** ${data.member.user.tag}\n` +
             `┣  **Kicked User ID: :** ${data.member.id}\n` +
-            `┣  **Issued By:** ${data.issuer.toString()}\n` +
-            `┗  **Reason:** ${data.reason}`
+            `┣  **Issued By:** ${data.issuer ?? 'Unknown'}\n` +
+            `┗  **Reason:** ${data.reason ?? 'Not Specified'}`
       })
     : data.action === 'join'
       ? new MessageEmbed({

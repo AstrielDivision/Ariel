@@ -1,7 +1,6 @@
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
-import { logAction } from '#util'
 import { ApplyOptions, RequiresUserPermissions } from '@sapphire/decorators'
-import type { GuildMember, Message } from 'discord.js'
+import type { Message } from 'discord.js'
 
 @ApplyOptions<ArielCommandOptions>({
   description: 'commands/moderation:ban.description',
@@ -26,25 +25,8 @@ export default class Ban extends ArielCommand {
 
     if (softBan) {
       await member.guild.members.unban(member.id)
-      this.log(message, member, reason, softBan)
       return await message.channel.send(args.t('commands/moderation:ban.success.softBan', { member: member.user.tag }))
     }
-
-    this.log(message, member, reason, softBan)
     return await message.channel.send(args.t('commands/moderation:ban.success.ban', { member: member.user.tag }))
-  }
-
-  private log(message: Message, member: GuildMember, reason: string, softban: boolean) {
-    return logAction(
-      'moderation',
-      {
-        action: 'ban',
-        member,
-        issuer: message.member,
-        softban,
-        reason
-      },
-      message.guild
-    )
   }
 }
