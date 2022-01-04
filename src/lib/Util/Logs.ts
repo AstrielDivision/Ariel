@@ -4,8 +4,8 @@ import GuildSettings from '../Models/GuildSettings'
 import type { LogData } from '../Types/Logs'
 
 function createLogEmbed(type: 'members' | 'moderation', data: LogData) {
-  return type === 'moderation'
-    ? data.action === 'ban'
+  if (type === 'moderation') {
+    return data.action === 'ban'
       ? new MessageEmbed({
         title: 'Member Banned',
         color: 'RED',
@@ -25,26 +25,31 @@ function createLogEmbed(type: 'members' | 'moderation', data: LogData) {
             `┣  **Issued By:** ${data.issuer ?? 'Unknown'}\n` +
             `┗  **Reason:** ${data.reason ?? 'Not Specified'}`
       })
-    : data.action === 'join'
+  }
+  if (type === 'members') {
+    return data.action === 'join'
       ? new MessageEmbed({
         title: 'Member Joined',
         color: 'BLURPLE',
         description:
-          `┏ **User:** ${data.member.user.tag}\n` +
-          `┣ **ID:** ${data.member.id}\n` +
-          `┗ **Account Created At:** <t:${dayjs(data.member.user.createdTimestamp).unix()}:D>`,
+            `┏ **User:** ${data.member.user.tag}\n` +
+            `┣ **ID:** ${data.member.id}\n` +
+            `┗ **Account Created At:** <t:${dayjs(data.member.user.createdTimestamp).unix()}:D>`,
         timestamp: new Date()
       })
       : new MessageEmbed({
         title: 'Member Left',
         color: 'BLURPLE',
         description:
-          `┏ **User:** ${data.member.user.tag}\n` +
-          `┣ **ID:** ${data.member.id}\n` +
-          `┣ **Join Date:** <t:${dayjs(data.member.joinedTimestamp).unix()}:D> \n` +
-          `┗ **Account Created At:** <t:${dayjs(data.member.user.createdTimestamp).unix()}:D>`,
+            `┏ **User:** ${data.member.user.tag}\n` +
+            `┣ **ID:** ${data.member.id}\n` +
+            `┣ **Join Date:** <t:${dayjs(data.member.joinedTimestamp).unix()}:D> \n` +
+            `┗ **Account Created At:** <t:${dayjs(data.member.user.createdTimestamp).unix()}:D>`,
         timestamp: new Date()
       })
+  }
+
+  throw Error('There are 2 types available: moderation and members. Please choose one')
 }
 
 async function sendToLogs(guild: Guild, type: 'moderation' | 'members', embed: MessageEmbed) {
