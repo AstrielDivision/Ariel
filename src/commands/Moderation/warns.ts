@@ -29,7 +29,7 @@ export default class Warns extends ArielCommand {
 
       embed.addField(args.t('commands/moderation:warns.embed.fields.mod'), moderator.username, true)
       embed.addField(args.t('commands/moderation:warns.embed.fields.reason'), warn.reason, true)
-      embed.setFooter(args.t('commands/moderation:warns.embed.footer', { ID: warn.id }))
+      embed.setFooter({ text: args.t('commands/moderation:warns.embed.footer', { ID: warn.id }) })
 
       return await message.channel.send({ embeds: [embed] })
     }

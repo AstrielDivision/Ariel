@@ -31,11 +31,11 @@ export default class E621 extends ArielCommand {
         .setTitle('Source')
         .setURL(`https://e621.net/posts/${post.id}`)
         .setImage(post.sample.url)
-        .setFooter(
-          `Artist(s): ${post.tags.artist.join(', ')} | Ups: ${post.score.up} | Downs ${
+        .setFooter({
+          text: `Artist(s): ${post.tags.artist.join(', ')} | Ups: ${post.score.up} | Downs ${
             post.score.down
           } | Total Score: ${post.score.total}`
-        )
+        })
         .setColor('RANDOM')
       // if (re.tags.lore.length > 0) embed.setDescription(`Lore: ${re.tags.lore[0]}`)
       if (post.description) embed.setDescription(this.trimDescription(post.description))

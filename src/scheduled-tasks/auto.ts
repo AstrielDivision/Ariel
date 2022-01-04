@@ -13,7 +13,9 @@ export class Auto extends ScheduledTask {
 
       const embed = new MessageEmbed()
         .setTitle(post.title)
-        .setFooter(`Powered by api.ksoft.si ${post.author} | Upvotes: ${post.upvotes} | Downvotes ${post.downvotes}`)
+        .setFooter({
+          text: `Powered by api.ksoft.si ${post.author} | Upvotes: ${post.upvotes} | Downvotes ${post.downvotes}`
+        })
         .setURL(post.link)
         .setColor('RANDOM')
         .setTimestamp()
@@ -26,7 +28,9 @@ export class Auto extends ScheduledTask {
 
       const embed = new MessageEmbed()
         .setTitle(post.title)
-        .setFooter(`Powered by api.ksoft.si ${post.author} | Upvotes: ${post.upvotes} | Downvotes ${post.downvotes}`)
+        .setFooter({
+          text: `Powered by api.ksoft.si ${post.author} | Upvotes: ${post.upvotes} | Downvotes ${post.downvotes}`
+        })
         .setURL(post.link)
         .setColor('RANDOM')
         .setTimestamp()

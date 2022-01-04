@@ -17,7 +17,7 @@ export default class HentaiGif extends ArielCommand {
       nsfw: true
     })
     const embed = new MessageEmbed()
-      .setFooter('Powered by api.ksoft.si')
+      .setFooter({ text: 'Powered by api.ksoft.si' })
       .setURL(url)
       .setColor('DARK_VIVID_PINK')
       .setTimestamp()

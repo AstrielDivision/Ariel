@@ -95,7 +95,10 @@ export default class Help extends ArielCommand {
 
       embed.addField(category, commandsLine)
       embed.setTimestamp()
-      embed.setFooter(` - ${this.container.client.user.tag}`, this.container.client.user.avatarURL({ dynamic: true }))
+      embed.setFooter({
+        text: ` - ${this.container.client.user.tag}`,
+        iconURL: this.container.client.user.avatarURL({ dynamic: true })
+      })
     })
     return await message.channel.send({
       embeds: [embed]

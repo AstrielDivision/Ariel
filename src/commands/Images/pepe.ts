@@ -18,7 +18,7 @@ export default class Fox extends ArielCommand {
     })
     const embed = new MessageEmbed()
       .setTitle(args.t('commands/images:pepe.embed.title'))
-      .setFooter(args.t('attributions:poweredByKSoft'))
+      .setFooter({ text: args.t('attributions:poweredByKSoft') })
       .setURL(url)
       .setColor('DARK_GREEN')
       .setTimestamp()

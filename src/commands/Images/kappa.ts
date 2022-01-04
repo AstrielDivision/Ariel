@@ -17,7 +17,7 @@ export default class Fox extends ArielCommand {
     })
     const embed = new MessageEmbed()
       .setTitle(args.t('commands/images:kappa.embed.title'))
-      .setFooter(args.t('attributions:poweredByKSoft'))
+      .setFooter({ text: args.t('attributions:poweredByKSoft') })
       .setURL(url)
       .setColor('NOT_QUITE_BLACK')
       .setTimestamp()
