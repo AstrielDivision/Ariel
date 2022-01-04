@@ -13,7 +13,7 @@ export default class CoreCommandError extends Listener {
     if (error instanceof UserError) {
       // `context: { silent: true }` should make UserError silent:
       // Use cases for this are for example permissions error when running the `eval` command.
-      if (Reflect.get(Object(error.context), 'silent')) return
+      if (Reflect.get(Object(error.context), 'silent')) return null
 
       const identifier = translate(error.identifier)
       return await message.channel.send(args.t(identifier))

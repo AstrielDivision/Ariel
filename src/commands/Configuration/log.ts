@@ -1,12 +1,12 @@
 import GuildSettings from '#lib/Models/GuildSettings'
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
 import { ApplyOptions } from '@sapphire/decorators'
-import type { Message, TextChannel } from 'discord.js'
+import { Message, MessageEmbed, TextChannel } from 'discord.js'
 
 @ApplyOptions<ArielCommandOptions>({
-  description: 'Set log channel for types: Moderation and Members',
+  description: 'Set log channel for Moderation actions and Members joining and leaving',
   requiredUserPermissions: ['MANAGE_GUILD'],
-  requiredClientPermissions: ['MANAGE_CHANNELS'],
+  requiredClientPermissions: ['MANAGE_CHANNELS', 'MANAGE_WEBHOOKS'],
   flags: ['d', 'disable'],
   usage: '<moderation | members> <#channel>'
 })
@@ -16,9 +16,7 @@ export default class Log extends ArielCommand {
     const disableFlag = args.getFlags('d', 'disable')
     const channel = (await args.pickResult('guildTextChannel')).value
 
-    if (!log) return await message.channel.send('Please include a type you want to log. (Moderation or Members)')
-
-    switch (log.toLowerCase()) {
+    switch (log ? log.toLowerCase() : '') {
       case 'moderation': {
         if (disableFlag) {
           return await this.deleteWebhook(message, 'moderation')
@@ -34,7 +32,7 @@ export default class Log extends ArielCommand {
 
           return await message.channel.send(
             // eslint-disable-next-line @typescript-eslint/no-base-to-string
-            `I have successfully set the channel to log Moderation events to ${channel.toString()}`
+            `Logging Moderation Actions to ${channel.toString()}`
           )
         }
       }
@@ -54,13 +52,45 @@ export default class Log extends ArielCommand {
 
           return await message.channel.send(
             // eslint-disable-next-line @typescript-eslint/no-base-to-string
-            `I have successfully set the channel to log Member events to ${channel.toString()}`
+            `Logging Members Join and Leave to ${channel.toString()}`
           )
         }
       }
 
       default: {
-        return await message.channel.send('Unknown log type! Current log types: Moderation and Members')
+        const { logs } = await GuildSettings.findOne({ guild_id: message.guild.id })
+        let moderationLogs
+        let membersLogs
+
+        if (message.guild.channels.cache.has(logs.moderation?.channel)) {
+          moderationLogs = message.guild.channels.cache.get(logs.moderation.channel)
+        }
+        if (message.guild.channels.cache.has(logs.members?.channel)) {
+          membersLogs = message.guild.channels.cache.get(logs.moderation.channel)
+        }
+
+        /* eslint-disable @typescript-eslint/no-base-to-string */
+        const embed = new MessageEmbed({
+          color: 'YELLOW',
+          description:
+            `${
+              membersLogs
+                ? `Logging **members** Join and Leave in ${membersLogs.toString()}`
+                : 'Not currently logging **members** Join and Leave.'
+            }\n` +
+            `${
+              moderationLogs
+                ? `Logging **moderation** actions in ${moderationLogs.toString()}`
+                : 'Not currently logging **moderation** actions.'
+            }`,
+          timestamp: new Date(),
+          author: {
+            name: `Logs | ${message.guild.name}`,
+            icon_url: message.guild.iconURL({ dynamic: true, format: 'png' })
+          }
+        })
+
+        return await message.channel.send({ embeds: [embed] })
       }
     }
   }
