@@ -93,7 +93,7 @@
     "#lib/*": "./build/lib/*.js",
     "#setup": "./build/lib/setup.js",
     "#languages": "./build/lib/i18n/LanguageKeys/index.js",
-    "#util": "./build/lib/util/index.js"
+    "#util": "./build/lib/Util/index.js"
   },
   "commitlint": {
     "extends": [
