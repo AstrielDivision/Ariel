@@ -16,6 +16,10 @@ Data stored in our database:
 - Guild IDs. (Guild Settings and Warnings)
 - User IDs. (Warnings)
 
+## Logs
+
+- We do not store any log data in our database.
+
 ## Data Removal
 
 - If you would like the Webhook data to be removed please don't hesitate to DM me. (Please include the Guild Name and ID)
