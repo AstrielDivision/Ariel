@@ -58,7 +58,7 @@
     "discord-api-types": "0.26.1",
     "discord.js": "13.5.0",
     "dotenv-cra": "3.0.2",
-    "mongoose": "6.1.4",
+    "mongoose": "6.1.5",
     "nanoid": "3.1.30",
     "owofire": "1.0.4",
     "utf-8-validate": "5.0.8"
@@ -72,7 +72,7 @@
     "@types/app-root-path": "1.2.4",
     "@types/bull": "3.15.7",
     "@types/crypto-js": "4.1.0",
-    "@types/node": "16.11.18",
+    "@types/node": "16.11.19",
     "@types/prettier": "2.4.2",
     "all-contributors-cli": "6.20.0",
     "cz-conventional-changelog": "3.3.0",

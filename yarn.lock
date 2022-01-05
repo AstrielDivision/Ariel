@@ -843,10 +843,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:16.11.18":
-  version: 16.11.18
-  resolution: "@types/node@npm:16.11.18"
-  checksum: f2e615c5f1320552e240170991bc4f6317bb83e7b413ee95ecd44ac42f774eb6cfbbfd5a366f4d6e472c79396afbdc22699c65f1e959426c63c5e72fedd6139f
+"@types/node@npm:16.11.19":
+  version: 16.11.19
+  resolution: "@types/node@npm:16.11.19"
+  checksum: a9ba0cd1e61c8ad50f3fc9c2b37b795bf0286dacb39dcc985da90328abf0c5151dffe9932d20bc9a6a52c3ce7bfc1e5a7c2dc1416480fb84f1c2d70e25caeba0
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:< 17.0.6":
+  version: 17.0.5
+  resolution: "@types/node@npm:17.0.5"
+  checksum: 105535e78722515c26cfdc1b0cbf1b19f55fe53b814e2e90d8b1e653bc63136d4760c7efc102eca111c6d124a291e37d60d761d569a3f4afb3fba05bad5d9ade
   languageName: node
   linkType: hard
 
@@ -1323,7 +1330,7 @@ __metadata:
     "@types/app-root-path": 1.2.4
     "@types/bull": 3.15.7
     "@types/crypto-js": 4.1.0
-    "@types/node": 16.11.18
+    "@types/node": 16.11.19
     "@types/prettier": 2.4.2
     all-contributors-cli: 6.20.0
     app-root-path: 3.0.0
@@ -1338,7 +1345,7 @@ __metadata:
     eslint: 8.6.0
     husky: 7.0.4
     lint-staged: 12.1.5
-    mongoose: 6.1.4
+    mongoose: 6.1.5
     nanoid: 3.1.30
     owofire: 1.0.4
     prettier: 2.5.1
@@ -4208,10 +4215,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mongoose@npm:6.1.4":
-  version: 6.1.4
-  resolution: "mongoose@npm:6.1.4"
+"mongoose@npm:6.1.5":
+  version: 6.1.5
+  resolution: "mongoose@npm:6.1.5"
   dependencies:
+    "@types/node": < 17.0.6
     bson: ^4.2.2
     kareem: 2.3.3
     mongodb: 4.2.2
@@ -4221,7 +4229,7 @@ __metadata:
     regexp-clone: 1.0.0
     sift: 13.5.2
     sliced: 1.0.1
-  checksum: 9878de980e81f4961294b30be1259ce5445812f48fa892520f213a002d0a7148250a9d7be16fdf08a90b0ea4ad98f0c332ad593a47d0db9315e19051051e184f
+  checksum: a67801fe126fdf168343cd0bb0af29041569c11585f350aa3946387c565b16e050ddba5e519a654bf9fb4b6148f4692392c34a6e4ccceded43aa458433debedd
   languageName: node
   linkType: hard
 
