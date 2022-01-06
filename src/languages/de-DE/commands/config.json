@@ -1,6 +1,6 @@
 {
   "anti": {
-    "description": "Enable or Disable anti listeners (Per-server only)",
+    "description": "Enables or Disables Anti features",
     "permissionErr": "I don't have the `{{perm}}` permission!",
     "enabled": "Now filtering **{{enabled}}**",
     "disabled": "No longer filtering **{{disabled}}**",
@@ -10,7 +10,7 @@
     "title": "Guild Settings"
   },
   "prefix": {
-    "description": "Set the discord bot prefix (Current Guild only)",
+    "description": "Set the discord bot prefix",
     "error": {
       "noPrefix": "No new prefix provided",
       "prefixTooLong": "The prefix cannot contain more than 3 characters"
@@ -19,7 +19,7 @@
       "setPrefix": "Successfully set the prefix to {{prefix}}",
       "resetPrefix": "Successfully reset the prefix"
     },
-    "showPrefix": "The current prefix for this Guild is: **{{prefix}}**"
+    "showPrefix": "Current guild prefix: **{{prefix}}**"
   },
   "language": {
     "success": {
