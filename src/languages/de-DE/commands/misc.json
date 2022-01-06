@@ -5,7 +5,7 @@
     "description": "Returns bot ping"
   },
   "owoify": {
-    "description": "owoifies your text",
+    "description": "OwOifies your text",
     "noText": "No text provided!"
   },
   "about": {
