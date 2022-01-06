@@ -4,22 +4,18 @@ import { ApplyOptions } from '@sapphire/decorators'
 import type { Message, TextChannel } from 'discord.js'
 
 @ApplyOptions<ArielCommandOptions>({
-  usage: '<aww | meme | reddit> [@channel | channel ID] [subreddit]',
-  enabled: false
+  usage: '<enable | disable> <aww | meme | reddit> [@channel | channel ID] [subreddit]',
+  subCommands: ['disable', { default: true, input: 'enable' }]
 })
 export default class Auto extends ArielCommand {
-  public async messageRun(message: Message, args: ArielCommand.Args) {
+  public async enable(message: Message, args: ArielCommand.Args) {
     const type = await args.pick('string')
     const channel = (await args.pick('guildTextChannel')) ?? message.channel
     const subreddit = args.finished ? null : args.pick('string')
 
-    if (!channel.isText()) {
-      return await message.channel.send('The channel must be a text channel! (Cannot be a announcement channel, etc)')
-    }
-
     this.container.tasks.create(
       'auto',
-      { type, channel, subreddit },
+      { type, channel: channel.id, subreddit },
       { type: 'repeated', interval: Timeouts.Minute * 5 }
     )
 

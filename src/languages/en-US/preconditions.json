@@ -2,7 +2,7 @@
   "nsfw": "This command cannot be ran outside NSFW channels.",
   "ownerOnly": "Only the bot owner can run this command.",
   "admin": "You must be an Administrator to execute {{command.name}}",
-  "mod": "You need moderator permissions to execute {{command.name}}",
+  "mod": "You need Moderator permissions to execute {{command.name}}",
   "manager": "You must have the `MANAGE_GUILD` permission to execute {{command.name}} ",
   "clientPermissions": "I don't have the sufficient permissions: {{missing, permissions}}",
   "userPermissions": "You don't have the sufficient permissions: {{missing, permissions}}"

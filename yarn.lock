@@ -542,13 +542,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/plugin-scheduled-tasks@npm:1.1.1":
-  version: 1.1.1
-  resolution: "@sapphire/plugin-scheduled-tasks@npm:1.1.1"
+"@sapphire/plugin-scheduled-tasks@npm:next":
+  version: 1.2.0-next.13c767b.0
+  resolution: "@sapphire/plugin-scheduled-tasks@npm:1.2.0-next.13c767b.0"
   dependencies:
     "@sapphire/time-utilities": ^1.5.0
     tslib: ^2.3.1
-  checksum: 1d0f7428757c7fc830810c99867461c1014a977e63f6751a0acd94ef1d704021649a10df6ffc16981124ce3b00b5da2c50f8b276cdaea9efa663f67f9d527418
+  checksum: 761d012c9ed57eaf9a9571e4dead24b9f74df51cf60fc3035db60bb81ee7b4a27a1867d9de8b0d6f2dab2b016c215093dd77a3854266a1c8189889fb0806b117
   languageName: node
   linkType: hard
 
@@ -1312,7 +1312,7 @@ __metadata:
     "@sapphire/framework": 2.2.2
     "@sapphire/plugin-api": 3.1.2
     "@sapphire/plugin-i18next": 2.1.5
-    "@sapphire/plugin-scheduled-tasks": 1.1.1
+    "@sapphire/plugin-scheduled-tasks": next
     "@sapphire/plugin-subcommands": 2.1.3
     "@sapphire/time-utilities": 1.5.0
     "@sapphire/type": 2.1.2
