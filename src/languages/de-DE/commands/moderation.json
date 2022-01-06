@@ -1,7 +1,7 @@
 {
   "ban": {
     "description": "Bans a user",
-    "detailedDescription": "Using the flags -s or --soft will ban then unban the user",
+    "detailedDescription": "Using the flags -s or --soft will \"softban\" the banned user (It unbans them afterwards)",
     "errors": {
       "noMention": "You didn't mention a user to ban!",
       "cannotBan": "You're not allowed to ban this user"
@@ -9,7 +9,7 @@
     "noReason": "Not Specified",
     "success": {
       "ban": "**Successfully banned** `{{member}}`",
-      "softBan": "**Successfully soft banned** `{{member}}`"
+      "softBan": "**Successfully soft-banned** `{{member}}`"
     }
   },
   "kick": {
@@ -24,7 +24,7 @@
     }
   },
   "purge": {
-    "description": "Purges X amount of messages",
+    "description": "Purges mass amounts of messages",
     "errors": {
       "noAmount": "You didn't specify an amount",
       "over": "I can only purge 100 messages!",
