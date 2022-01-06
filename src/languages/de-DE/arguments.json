@@ -1,5 +1,5 @@
 {
   "language": "Could not resolve parameter to a language.",
-  "nanoID": "That is not a valid ID.",
+  "nanoID": "Invalid ID given.",
   "piece": "Could not resolve name to a Piece."
 }
