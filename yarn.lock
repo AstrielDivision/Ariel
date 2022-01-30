@@ -529,12 +529,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/decorators@npm:3.1.6":
-  version: 3.1.6
-  resolution: "@sapphire/decorators@npm:3.1.6"
+"@sapphire/decorators@npm:4.1.0":
+  version: 4.1.0
+  resolution: "@sapphire/decorators@npm:4.1.0"
   dependencies:
     tslib: ^2.3.1
-  checksum: 6e314717e3b9ac4cfdff40b74f73ce2a7ec06d37ee866ebee7c4954a1207875b13896985dd27c56f428973a1240016e674cf3339ff4e6dae257ece511aa69fa8
+  checksum: 749d4dd8a1be5611a97d0851b6d483078620f25f70117b5593801d3ef2ac1cc40dd816109ee7be7f238e69d5b8e80ddd670f0191b5b07b7a9787780ddf8fc9a3
   languageName: node
   linkType: hard
 
@@ -1391,7 +1391,7 @@ __metadata:
     "@commitlint/cli": 16.1.0
     "@commitlint/config-conventional": 16.0.0
     "@prisma/client": ^3.8.1
-    "@sapphire/decorators": 3.1.6
+    "@sapphire/decorators": 4.1.0
     "@sapphire/discord-utilities": 2.7.0
     "@sapphire/discord.js-utilities": 4.5.0
     "@sapphire/framework": 2.3.0
