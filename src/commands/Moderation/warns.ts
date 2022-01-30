@@ -1,4 +1,3 @@
-import Warnings from '#lib/Models/Warnings'
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
 import { ApplyOptions } from '@sapphire/decorators'
 import { Message, MessageEmbed, User } from 'discord.js'
@@ -56,14 +55,25 @@ export default class Warns extends ArielCommand {
     return await message.channel.send({ embeds: [embed] })
   }
 
-  private async FetchWarn(user: User, guild: string, id: string) {
-    const warn = await Warnings.findOne({ user: user.id, guild, id })
+  private async FetchWarn({ id: user }: User, guildId: string, id: string) {
+    const warn = await this.container.prisma.warning.findFirst({
+      where: {
+        id,
+        guildId,
+        user
+      }
+    })
 
     return warn
   }
 
-  private async FetchWarnings(user: User, guild: string) {
-    const warns = await Warnings.find({ user: user.id, guild })
+  private async FetchWarnings(user: User, guildId: string) {
+    const warns = await this.container.prisma.warning.findMany({
+      where: {
+        guildId,
+        user: user.id
+      }
+    })
 
     return {
       warnings: warns,

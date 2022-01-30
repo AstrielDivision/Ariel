@@ -1,4 +1,3 @@
-import Warnings from '#lib/Models/Warnings'
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
 import { ApplyOptions, RequiresUserPermissions } from '@sapphire/decorators'
 import type { Message } from 'discord.js'
@@ -16,7 +15,12 @@ export default class Reason extends ArielCommand {
     if (!warnID) return await message.channel.send(args.t('commands/moderation:reason.errors.noID'))
     if (!newVal) return await message.channel.send(args.t('commands/moderation:reason.errors.nowNewVal'))
 
-    const warning = await Warnings.findOne({ id: warnID, guild: message.guild.id })
+    const warning = await this.container.prisma.warning.findFirst({
+      where: {
+        guildId: message.guild.id,
+        id: warnID
+      }
+    })
 
     if (!warning) return await message.channel.send(args.t('commands/moderation:reason.errors.404'))
 
@@ -24,7 +28,15 @@ export default class Reason extends ArielCommand {
       return await message.channel.send(args.t('commands/moderation:reason.errors.403'))
     }
 
-    await warning.updateOne({ $set: { reason: newVal } })
+    await this.container.prisma.warning.updateMany({
+      where: {
+        id: warning.id,
+        guildId: warning.guildId
+      },
+      data: {
+        reason: newVal
+      }
+    })
 
     return await message.channel.send(args.t('commands/moderation:reason.200', { newVal }))
   }

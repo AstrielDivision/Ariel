@@ -1,4 +1,3 @@
-import GuildSettings from '#lib/Models/GuildSettings'
 import { ApplyOptions } from '@sapphire/decorators'
 import { Events, Listener, ListenerOptions } from '@sapphire/framework'
 import type { Message } from 'discord.js'
@@ -12,7 +11,14 @@ export default class AntiInvites extends Listener {
   public async run(message: Message) {
     if (!this.regex.test(message.content)) return null
 
-    const { anti } = await GuildSettings.findOne({ guild_id: message.guild.id })
+    const { anti } = await this.container.prisma.guildSettings.findUnique({
+      where: {
+        guildId: message.guild.id
+      },
+      select: {
+        anti: true
+      }
+    })
 
     if (!anti.gifts) return null
 

@@ -1,13 +1,12 @@
 import { envIsDefined, envParseString } from '#lib/env/parser'
-import GuildSettings from '#lib/Models/GuildSettings'
 import Yiff from '#lib/yiff.ts/index'
 import '#setup'
 import { KSoftClient } from '@aero/ksoft'
-import { SapphireClient, version } from '@sapphire/framework'
+import { PrismaClient } from '@prisma/client'
+import { container, SapphireClient, version } from '@sapphire/framework'
 import * as Sentry from '@sentry/node'
 import StatusUpdater from '@tmware/status-rotate'
 import { ClientOptions, Message, version as djs } from 'discord.js'
-import mongoose from 'mongoose'
 import { join } from 'path'
 import pkg from '../package'
 import ClientUtils from './ClientUtils'
@@ -17,7 +16,8 @@ export default class Client extends SapphireClient {
   ksoft: KSoftClient
   statusUpdater: StatusUpdater
   util: ClientUtils
-  Yiff: Yiff
+  Yiff!: Yiff
+  prisma!: PrismaClient
   constructor(options: ClientOptions) {
     super(options)
 
@@ -65,6 +65,14 @@ export default class Client extends SapphireClient {
   }
 
   private async init(): Promise<void> {
+    const prisma = new PrismaClient({
+      errorFormat: 'pretty'
+    })
+
+    this.prisma = prisma
+
+    container.prisma = prisma
+
     if (envIsDefined('SENTRY_URI')) {
       Sentry.init({
         dsn: envParseString('SENTRY_URI'),
@@ -78,16 +86,9 @@ export default class Client extends SapphireClient {
       })
     }
 
-    this.stores.register(new TaskStore().registerPath(join(__dirname, '..', 'tasks')))
+    await this.prisma.$connect()
 
-    await mongoose
-      .connect(envParseString('MONGO_URI'))
-      .then(() => {
-        this.logger.info('Connected to MongoDB database')
-      })
-      .catch((err: Error) => {
-        this.logger.fatal('Error while connecting to MongoDB database', err)
-      })
+    this.stores.register(new TaskStore().registerPath(join(__dirname, '..', 'tasks')))
 
     // Automate status change
     setInterval(() => {
@@ -99,7 +100,7 @@ export default class Client extends SapphireClient {
   }
 
   public fetchPrefix = async (message: Message) => {
-    const { prefix } = await GuildSettings.findOne({ guild_id: message.guild.id })
+    const { prefix } = await this.prisma.guildSettings.findUnique({ where: { guildId: message.guild.id } })
 
     return prefix ?? envParseString('PREFIX')
   }

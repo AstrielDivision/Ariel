@@ -1,3 +1,10 @@
+/**
+ * @license Apache License, Version 2.0
+ * @copyright Skyra Project
+ *
+ * Changes made: Renamed types
+ */
+
 export type BooleanString = 'true' | 'false'
 export type IntegerString = `${bigint}`
 

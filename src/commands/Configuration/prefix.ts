@@ -1,5 +1,3 @@
-import { envParseString } from '#lib/env/parser'
-import GuildSettings from '#lib/Models/GuildSettings'
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
 import { ApplyOptions, RequiresUserPermissions } from '@sapphire/decorators'
 import { Message } from 'discord.js'
@@ -19,20 +17,38 @@ export default class Prefix extends ArielCommand {
       return await message.channel.send(await args.t('commands/config:prefix.error.prefixToLong'))
     }
 
-    await GuildSettings.findOneAndUpdate({ guild_id: message.guild.id }, { $set: { prefix: prefix } })
+    await this.container.prisma.guildSettings.update({
+      where: {
+        guildId: message.guild.id
+      },
+      data: {
+        prefix
+      }
+    })
 
     return await message.channel.send(await args.t('commands/config:prefix.success.setPrefix', { prefix }))
   }
 
   @RequiresUserPermissions('MANAGE_GUILD')
   public async reset(message: Message, args: ArielCommand.Args) {
-    await GuildSettings.findOneAndUpdate({ guild_id: message.guild.id }, { $set: { prefix: envParseString('PREFIX') } })
+    await this.container.prisma.guildSettings.update({
+      where: {
+        guildId: message.guild.id
+      },
+      data: {
+        prefix: process.env.PREFIX
+      }
+    })
 
     return await message.channel.send(await args.t('commands/config:prefix.success.resetPrefix'))
   }
 
   public async show(message: Message, args: ArielCommand.Args) {
-    const { prefix } = await GuildSettings.findOneAndUpdate({ guild_id: message.guild.id })
+    const { prefix } = await this.container.prisma.guildSettings.findUnique({
+      where: {
+        guildId: message.guild.id
+      }
+    })
 
     return await message.channel.send(await args.t('commands/config:prefix.showPrefix', { prefix }))
   }

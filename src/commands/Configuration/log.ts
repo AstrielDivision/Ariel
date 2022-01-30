@@ -1,4 +1,3 @@
-import GuildSettings from '#lib/Models/GuildSettings'
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
 import { ApplyOptions } from '@sapphire/decorators'
 import { Message, MessageEmbed, TextChannel } from 'discord.js'
@@ -25,10 +24,20 @@ export default class Log extends ArielCommand {
           const webhook = await channel.createWebhook('Moderation Logs', {
             avatar: this.container.client.user.avatarURL({ dynamic: true })
           })
-          await GuildSettings.findOneAndUpdate(
-            { guild_id: message.guild.id },
-            { $set: { 'logs.moderation': { hook: webhook.id, channel: channel.id } } }
-          )
+
+          await this.container.prisma.guildSettings.update({
+            where: {
+              guildId: message.guild.id
+            },
+            data: {
+              modLog: {
+                update: {
+                  hook: webhook.id,
+                  channel: channel.id
+                }
+              }
+            }
+          })
 
           return await message.channel.send(
             // eslint-disable-next-line @typescript-eslint/no-base-to-string
@@ -45,10 +54,20 @@ export default class Log extends ArielCommand {
           const webhook = await channel.createWebhook('Member Logs', {
             avatar: this.container.client.user.avatarURL({ dynamic: true })
           })
-          await GuildSettings.findOneAndUpdate(
-            { guild_id: message.guild.id },
-            { $set: { 'logs.members': { hook: webhook.id, channel: channel.id } } }
-          )
+
+          await this.container.prisma.guildSettings.update({
+            where: {
+              guildId: message.guild.id
+            },
+            data: {
+              memberLog: {
+                update: {
+                  hook: webhook.id,
+                  channel: channel.id
+                }
+              }
+            }
+          })
 
           return await message.channel.send(
             // eslint-disable-next-line @typescript-eslint/no-base-to-string
@@ -58,15 +77,32 @@ export default class Log extends ArielCommand {
       }
 
       default: {
-        const { logs } = await GuildSettings.findOne({ guild_id: message.guild.id })
+        const { modLog: mod } = await this.container.prisma.guildSettings.findUnique({
+          where: {
+            guildId: message.guild.id
+          },
+          select: {
+            modLog: true
+          }
+        })
+
+        const { memberLog: mem } = await this.container.prisma.guildSettings.findUnique({
+          where: {
+            guildId: message.guild.id
+          },
+          select: {
+            memberLog: true
+          }
+        })
+
         let moderationLogs
         let membersLogs
 
-        if (message.guild.channels.cache.has(logs.moderation?.channel)) {
-          moderationLogs = message.guild.channels.cache.get(logs.moderation.channel)
+        if (message.guild.channels.cache.has(mod?.channel)) {
+          moderationLogs = message.guild.channels.cache.get(mod.channel)
         }
-        if (message.guild.channels.cache.has(logs.members?.channel)) {
-          membersLogs = message.guild.channels.cache.get(logs.moderation.channel)
+        if (message.guild.channels.cache.has(mem?.channel)) {
+          membersLogs = message.guild.channels.cache.get(mem.channel)
         }
 
         /* eslint-disable @typescript-eslint/no-base-to-string */
@@ -96,16 +132,59 @@ export default class Log extends ArielCommand {
   }
 
   private async deleteWebhook(message: Message, type: 'moderation' | 'members') {
-    const guild = await GuildSettings.findOneAndUpdate({ guild_id: message.guild.id })
-    const webhookID = guild.logs[type].hook
-    const channel = guild.logs[type].channel
+    let webhookID: string
+    let channel: string
+
+    if (type === 'moderation') {
+      const { modLog: data } = await this.container.prisma.guildSettings.findUnique({
+        where: {
+          guildId: message.guild.id
+        },
+        select: {
+          modLog: true
+        }
+      })
+
+      webhookID = data.hook
+      channel = data.channel
+    } else {
+      const { memberLog: data } = await this.container.prisma.guildSettings.findUnique({
+        where: {
+          guildId: message.guild.id
+        },
+        select: {
+          memberLog: true
+        }
+      })
+
+      webhookID = data.hook
+      channel = data.channel
+    }
 
     if (message.guild.channels.cache.has(channel)) {
       const hooks = await (message.guild.channels.cache.get(channel) as TextChannel).fetchWebhooks()
       if (hooks.has(webhookID)) hooks.delete(webhookID)
     }
 
-    await GuildSettings.findOneAndUpdate({ guild_id: message.guild.id }, { $set: { [`logs.${type}`]: null } })
+    if (type === 'moderation') {
+      await this.container.prisma.guildSettings.update({
+        where: {
+          guildId: message.guild.id
+        },
+        data: {
+          modLog: null
+        }
+      })
+    } else {
+      await this.container.prisma.guildSettings.update({
+        where: {
+          guildId: message.guild.id
+        },
+        data: {
+          memberLog: null
+        }
+      })
+    }
 
     return await message.channel.send(`Disabled \`${type}\` logs`)
   }

@@ -1,8 +1,7 @@
 import { srcDir } from '#lib/constants'
 import { envParseString } from '#lib/env/parser'
-import GuildSettings from '#lib/Models/GuildSettings'
+import { container } from '@sapphire/framework'
 import type { InternationalizationContext } from '@sapphire/plugin-i18next'
-import { ScheduledTaskRedisStrategy } from '@sapphire/plugin-scheduled-tasks/register-redis'
 import { config } from 'dotenv-cra'
 import type { FormatFunction } from 'i18next'
 import { join } from 'path'
@@ -22,7 +21,11 @@ const client = new Client({
   intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_BANS', 'GUILD_WEBHOOKS', 'GUILD_MEMBERS', 'GUILD_MESSAGE_REACTIONS'],
   i18n: {
     fetchLanguage: async (message: InternationalizationContext) => {
-      const { language } = await GuildSettings.findOne({ guild_id: message.guild.id })
+      const { language } = await container.prisma.guildSettings.findUnique({
+        where: {
+          guildId: message.guild.id
+        }
+      })
 
       return language
     },
@@ -54,18 +57,6 @@ const client = new Client({
       port: 4000
     },
     prefix: '/v1/'
-  },
-  tasks: {
-    strategy: new ScheduledTaskRedisStrategy({
-      bull: {
-        redis: {
-          host: 'redis',
-          password: 'redis',
-          port: 8287,
-          db: 1
-        }
-      }
-    })
   }
 })
 

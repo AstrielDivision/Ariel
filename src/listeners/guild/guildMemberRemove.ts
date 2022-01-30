@@ -1,4 +1,3 @@
-import GuildSettings from '#lib/Models/GuildSettings'
 import { logAction } from '#util'
 import { ApplyOptions } from '@sapphire/decorators'
 import { Events, Listener, ListenerOptions } from '@sapphire/framework'
@@ -9,9 +8,16 @@ import type { GuildMember } from 'discord.js'
 })
 export default class guildMemberRemove extends Listener {
   public async run(member: GuildMember) {
-    const { logs } = await GuildSettings.findOne({ guild_id: member.guild.id })
+    const { memberLog: members } = await this.container.prisma.guildSettings.findUnique({
+      where: {
+        guildId: member.guild.id
+      },
+      select: {
+        memberLog: true
+      }
+    })
 
-    if (logs.members) {
+    if (members) {
       const kickAudit = await member.guild.fetchAuditLogs({
         limit: 1,
         type: 'MEMBER_KICK'

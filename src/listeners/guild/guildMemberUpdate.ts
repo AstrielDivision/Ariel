@@ -1,4 +1,3 @@
-import GuildSettings from '#lib/Models/GuildSettings'
 // @ts-ignore
 import clean from '@aero/sanitizer'
 import { ApplyOptions } from '@sapphire/decorators'
@@ -13,7 +12,14 @@ export default class guildMemberUpdate extends Listener {
     if (oldMember.displayName === newMember.displayName) return undefined
     if (!newMember.manageable) return undefined
 
-    const { anti } = await GuildSettings.findOne({ guild_id: newMember.guild.id })
+    const { anti } = await this.container.prisma.guildSettings.findUnique({
+      where: {
+        guildId: newMember.guild.id
+      },
+      select: {
+        anti: true
+      }
+    })
 
     if (anti.unmentionable) await this.cleanName(newMember)
 

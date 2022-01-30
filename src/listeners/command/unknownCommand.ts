@@ -1,4 +1,3 @@
-import Tag from '#lib/Models/Tags'
 import { ApplyOptions } from '@sapphire/decorators'
 import { Events, Listener, ListenerOptions, UnknownCommandPayload } from '@sapphire/framework'
 import { Message, MessageEmbed, Snowflake } from 'discord.js'
@@ -10,7 +9,15 @@ export default class unknownCommand extends Listener {
   public async run({ message, commandName }: UnknownCommandPayload): Promise<unknown> {
     if (!message.guild) return null
 
-    const tags = await Tag.find({ guild: message.guild.id })
+    console.log(commandName)
+
+    const tags = await this.container.prisma.tag.findMany({
+      where: {
+        guildId: message.guild.id
+      }
+    })
+
+    console.log(tags)
 
     if (tags.length === 0) return null
 
@@ -18,18 +25,29 @@ export default class unknownCommand extends Listener {
 
     if (!(await this.tagExists(message.guild.id, name))) return null
 
+    console.log('Tag exists')
+
     return await this.runCommand(message, name)
   }
 
   private async runCommand(message: Message, name: string) {
-    const { name: tagName, data, embed: isEmbed, color } = await Tag.findOne({ guild_id: message.guild.id, name })
+    const {
+      name: tagName,
+      data,
+      embed: isEmbed
+    } = await this.container.prisma.tag.findFirst({
+      where: {
+        guildId: message.guild.id,
+        name
+      }
+    })
 
     if (tagName !== name) return null
 
     if (isEmbed) {
       const embed = new MessageEmbed({
         description: data,
-        color
+        color: 'RANDOM'
       })
       return await message.channel.send({ embeds: [embed] })
     } else {
@@ -37,7 +55,14 @@ export default class unknownCommand extends Listener {
     }
   }
 
-  private async tagExists(guild_id: Snowflake, name: string) {
-    return await Tag.exists({ guild_id, name })
+  private async tagExists(guildId: Snowflake, name: string) {
+    return (await this.container.prisma.tag.count({
+      where: {
+        guildId,
+        name
+      }
+    })) === 0
+      ? false
+      : true
   }
 }

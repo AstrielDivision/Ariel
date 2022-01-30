@@ -1,8 +1,7 @@
-import GuildSettings from '#lib/Models/GuildSettings'
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
 import { ApplyOptions, RequiresUserPermissions } from '@sapphire/decorators'
 import type { TFunction } from '@sapphire/plugin-i18next'
-import { Message, MessageEmbed } from 'discord.js'
+import { Guild, Message, MessageEmbed } from 'discord.js'
 
 @ApplyOptions<ArielCommandOptions>({
   description: 'commands/config:anti.description',
@@ -26,7 +25,18 @@ export default class Settings extends ArielCommand {
           return await message.channel.send(args.t('commands/config:anti.permissionErr', { perm: 'MANGE_NICKNAMES' }))
         }
 
-        await GuildSettings.findOneAndUpdate({ guild_id: message.guild.id }, { $set: { 'anti.unmentionable': true } })
+        await this.container.prisma.guildSettings.update({
+          where: {
+            guildId: message.guild.id
+          },
+          data: {
+            anti: {
+              update: {
+                unmentionable: true
+              }
+            }
+          }
+        })
 
         return await message.channel.send(args.t('commands/config:anti.enabled', { enabled: 'unmentionable names' }))
       }
@@ -36,7 +46,18 @@ export default class Settings extends ArielCommand {
           return await message.channel.send(args.t('commands/config:anti.permissionErr', { perm: 'MANGE_MESSAGES' }))
         }
 
-        await GuildSettings.findOneAndUpdate({ guild_id: message.guild.id }, { $set: { 'anti.invites': true } })
+        await this.container.prisma.guildSettings.update({
+          where: {
+            guildId: message.guild.id
+          },
+          data: {
+            anti: {
+              update: {
+                invites: true
+              }
+            }
+          }
+        })
 
         return await message.channel.send(args.t('commands/config:anti.enabled', { enabled: 'discord invites' }))
       }
@@ -46,7 +67,18 @@ export default class Settings extends ArielCommand {
           return await message.channel.send(args.t('commands/config:anti.permissionErr', { perm: 'MANGE_MESSAGES' }))
         }
 
-        await GuildSettings.findOneAndUpdate({ guild_id: message.guild.id }, { $set: { 'anti.gifts': true } })
+        await this.container.prisma.guildSettings.update({
+          where: {
+            guildId: message.guild.id
+          },
+          data: {
+            anti: {
+              update: {
+                unmentionable: true
+              }
+            }
+          }
+        })
 
         return await message.channel.send(args.t('commands/config:anti.enabled', { enabled: 'discord gifts' }))
       }
@@ -64,19 +96,52 @@ export default class Settings extends ArielCommand {
 
     switch (setting.toLowerCase()) {
       case 'unmentionable': {
-        await GuildSettings.findOneAndUpdate({ guild_id: message.guild.id }, { $set: { 'anti.unmentionable': false } })
+        await this.container.prisma.guildSettings.update({
+          where: {
+            guildId: message.guild.id
+          },
+          data: {
+            anti: {
+              update: {
+                unmentionable: false
+              }
+            }
+          }
+        })
 
         return await message.channel.send(args.t('commands/config:anti.disabled', { disabled: 'unmentionable names' }))
       }
       case 'invite':
       case 'invites': {
-        await GuildSettings.findOneAndUpdate({ guild_id: message.guild.id }, { $set: { 'anti.invites': false } })
+        await this.container.prisma.guildSettings.update({
+          where: {
+            guildId: message.guild.id
+          },
+          data: {
+            anti: {
+              update: {
+                unmentionable: false
+              }
+            }
+          }
+        })
 
         return await message.channel.send(args.t('commands/config:anti.disabled', { disabled: 'discord invites' }))
       }
       case 'gift':
       case 'gifts': {
-        await GuildSettings.findOneAndUpdate({ guild_id: message.guild.id }, { $set: { 'anti.gifts': true } })
+        await this.container.prisma.guildSettings.update({
+          where: {
+            guildId: message.guild.id
+          },
+          data: {
+            anti: {
+              update: {
+                unmentionable: false
+              }
+            }
+          }
+        })
 
         return await message.channel.send(args.t('commands/config:anti.disabled', { disabled: 'discord gifts' }))
       }
@@ -86,8 +151,26 @@ export default class Settings extends ArielCommand {
     }
   }
 
+  private async getPrefix(guild: Guild) {
+    const { prefix } = await this.container.prisma.guildSettings.findUnique({
+      where: {
+        guildId: guild.id
+      }
+    })
+
+    return prefix
+  }
+
   private async defaultEmbed(message: Message, t: TFunction) {
-    const { anti, prefix } = await GuildSettings.findOne({ guild_id: message.guild.id })
+    const prefix = await this.getPrefix(message.guild)
+    const { anti } = await this.container.prisma.guildSettings.findUnique({
+      where: {
+        guildId: message.guild.id
+      },
+      select: {
+        anti: true
+      }
+    })
 
     const embed = new MessageEmbed()
       .setTitle(`${t('commands/config:anti.title')} | ${message.guild.name}`)

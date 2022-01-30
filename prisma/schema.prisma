@@ -1,0 +1,79 @@
+datasource db {
+  url      = env("DATABASE_URL")
+  provider = "postgresql"
+}
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["debian-openssl-1.1.x", "windows"]
+}
+
+model GuildSettings {
+  guildId  String  @id @unique @map("guild_id")
+  prefix   String  @db.Text
+  language String? @db.Text
+
+
+  guildAntiSettingsId   Int?
+  guildModerationLogsId Int?
+  guildMemberLogsId     Int?
+
+
+  anti      GuildAntiSettings?   @relation(fields: [guildAntiSettingsId], references: [id])
+  modLog    GuildModerationLogs? @relation(fields: [guildModerationLogsId], references: [id])
+  memberLog GuildMemberLogs?     @relation(fields: [guildMemberLogsId], references: [id])
+  tags      Tag[]
+
+  @@index([guildAntiSettingsId])
+  @@index([guildModerationLogsId])
+  @@index([guildMemberLogsId])
+  @@map("guild_settings")
+}
+
+model Warning {
+  guildId  String  @id @unique @map("guild_id")
+  user     String  @db.Text
+  reason   String  @db.Text
+  mod      String  @db.Text
+  pardoned Boolean @default(false) @db.Boolean
+  id       String  @db.Text
+
+  @@map("warnings")
+}
+
+model Tag {
+  name          String         @id @unique @db.Text
+  color         String         @default("RANDOM") @db.Text
+  embed         Boolean        @default(false) @db.Boolean
+  data          String         @db.Text
+  guildId       String         @db.Text
+  GuildSettings GuildSettings? @relation(fields: [guildId], references: [guildId])
+
+  @@index([guildId])
+}
+
+model GuildAntiSettings {
+  id                   Int             @id @default(autoincrement())
+  unmentionable        Boolean         @default(false) @db.Boolean
+  invites              Boolean         @default(false) @db.Boolean
+  gifts                Boolean         @default(false) @db.Boolean
+  hoisting             Boolean         @default(false) @db.Boolean
+  guildSettingsGuildId String?         @db.Text
+  GuildSettings        GuildSettings[]
+}
+
+model GuildModerationLogs {
+  id                   Int             @id @default(autoincrement())
+  channel              String?         @db.Text
+  hook                 String?         @db.Text
+  guildSettingsGuildId String?         @db.Text
+  GuildSettings        GuildSettings[]
+}
+
+model GuildMemberLogs {
+  id                   Int             @id @default(autoincrement())
+  channel              String?         @db.Text
+  hook                 String?         @db.Text
+  guildSettingsGuildId String?         @db.Text
+  GuildSettings        GuildSettings[]
+}

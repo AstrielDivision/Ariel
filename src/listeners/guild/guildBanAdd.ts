@@ -8,6 +8,8 @@ import type { GuildBan } from 'discord.js'
 })
 export default class guildBanAdd extends Listener {
   public async run(ban: GuildBan) {
+    if (!ban.guild.me.permissions.has('VIEW_AUDIT_LOG')) return false
+
     const audit = await ban.guild.fetchAuditLogs({
       limit: 1,
       type: 'MEMBER_BAN_ADD'

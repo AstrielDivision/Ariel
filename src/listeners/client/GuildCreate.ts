@@ -1,4 +1,3 @@
-import GuildModel from '#lib/Models/GuildSettings'
 import { ApplyOptions } from '@sapphire/decorators'
 import { Events, Listener, ListenerOptions } from '@sapphire/framework'
 import type { Guild } from 'discord.js'
@@ -8,7 +7,12 @@ import type { Guild } from 'discord.js'
 })
 export default class GuildCreate extends Listener {
   public async run(guild: Guild): Promise<void> {
-    await new GuildModel({ guild_id: guild.id }).save()
+    await this.container.prisma.guildSettings.create({
+      data: {
+        guildId: guild.id,
+        prefix: process.env.PREFIX
+      }
+    })
     await guild.members.fetch()
     return this.container.logger.info(`Joined ${guild.name} (${guild.id})`)
   }

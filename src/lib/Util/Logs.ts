@@ -1,6 +1,6 @@
+import { container } from '@sapphire/framework'
 import dayjs from 'dayjs'
 import { Guild, MessageEmbed, TextChannel } from 'discord.js'
-import GuildSettings from '../Models/GuildSettings'
 import type { LogData } from '../Types/Logs'
 
 function createLogEmbed(type: 'members' | 'moderation', data: LogData) {
@@ -53,12 +53,45 @@ function createLogEmbed(type: 'members' | 'moderation', data: LogData) {
 }
 
 async function sendToLogs(guild: Guild, type: 'moderation' | 'members', embed: MessageEmbed) {
-  const { logs } = await GuildSettings.findOne({ guild_id: guild.id })
+  /* const { logs } = await GuildSettings.findOne({ guild_id: guild.id })
 
   if (!logs) return false
 
   const webhookId = logs[type].hook
-  const channelId = logs[type].channel
+  const channelId = logs[type].channel */
+
+  let webhookId
+  let channelId
+
+  if (type === 'moderation') {
+    const { modLog: logs } = await container.prisma.guildSettings.findUnique({
+      where: {
+        guildId: guild.id
+      },
+      select: {
+        modLog: true
+      }
+    })
+
+    if (!logs) return false
+
+    webhookId = logs.hook
+    channelId = logs.channel
+  } else {
+    const { memberLog: logs } = await container.prisma.guildSettings.findUnique({
+      where: {
+        guildId: guild.id
+      },
+      select: {
+        memberLog: true
+      }
+    })
+
+    if (!logs) return false
+
+    webhookId = logs.hook
+    channelId = logs.channel
+  }
 
   if (guild.channels.cache.has(channelId)) {
     const hooks = await (guild.channels.cache.get(channelId) as TextChannel).fetchWebhooks()

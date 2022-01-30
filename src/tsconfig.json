@@ -4,6 +4,8 @@
     "outDir": "../build",
     "rootDir": ".",
     "baseUrl": ".",
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
     "paths": {
       "#lib/Structures/Command": ["lib/Structures/Command.ts"],
       "#lib/Structures/commands/CanvasCommand": ["lib/Structures/commands/CanvasCommand.ts"],

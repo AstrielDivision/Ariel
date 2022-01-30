@@ -1,4 +1,3 @@
-import Warnings from '#lib/Models/Warnings'
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
 import { ApplyOptions, RequiresUserPermissions } from '@sapphire/decorators'
 import { Message, MessageEmbed, User } from 'discord.js'
@@ -60,12 +59,15 @@ export default class Warn extends ArielCommand {
     let isPardoned: boolean
 
     if (user) {
-      isPardoned = (await Warnings.findOne({ user: user.id, id: ID, guild: message.guild.id })).pardoned
+      isPardoned = (await this.container.prisma.warning.findFirst({ where: { id: ID, guildId: message.guild.id } }))
+        .pardoned
 
-      await Warnings.findOneAndUpdate(
-        { user: user.id, id: ID, guild: message.guild.id },
-        { $set: { pardoned: !isPardoned } }
-      )
+      await this.container.prisma.warning.updateMany({
+        where: { user: user.id, id: ID, guildId: message.guild.id },
+        data: {
+          pardoned: !isPardoned
+        }
+      })
 
       return await message.channel.send(
         isPardoned
@@ -73,14 +75,17 @@ export default class Warn extends ArielCommand {
           : t('commands/moderation:warn.pardoned', { user: user.toString() })
       )
     } else {
-      isPardoned = (await Warnings.findOne({ id: ID, guild: message.guild.id })).pardoned
+      isPardoned = (await this.container.prisma.warning.findFirst({ where: { id: ID, guildId: message.guild.id } }))
+        .pardoned
 
-      const warning = await Warnings.findOneAndUpdate(
-        { id: ID, guild: message.guild.id },
-        { $set: { pardoned: !isPardoned } }
-      )
+      await this.container.prisma.warning.updateMany({
+        where: { id: ID, guildId: message.guild.id },
+        data: {
+          pardoned: !isPardoned
+        }
+      })
 
-      const member = await this.container.client.util.findUser(warning.user)
+      const member = await this.container.client.util.findUser(user.toString())
 
       return await message.channel.send(
         isPardoned
@@ -90,39 +95,47 @@ export default class Warn extends ArielCommand {
     }
   }
 
-  private async RemoveWarn(message: Message, ID: string, t: TFunction, user?: User) {
+  private async RemoveWarn(message: Message, id: string, t: TFunction, user?: User) {
     if (user) {
-      const warning = await Warnings.findOneAndRemove({ user: user.id, id: ID, guild: message.guild.id })
+      const warning = await this.container.prisma.warning.deleteMany({
+        where: {
+          guildId: message.guild.id,
+          id
+        }
+      })
 
       if (!warning) return await message.channel.send(t('commands/moderation:warn.errors.404'))
 
-      const member = await this.container.client.util.findUser(warning.user)
-
-      return await message.channel.send(t('commands/moderation:warn.removed', { user: member.toString() }))
+      return await message.channel.send(t('commands/moderation:warn.removed', { user: user.toString() }))
     } else {
-      const warning = await Warnings.findOneAndRemove({ id: ID, guild: message.guild.id })
+      const warning = await this.container.prisma.warning.deleteMany({
+        where: {
+          guildId: message.guild.id,
+          id
+        }
+      })
 
       if (!warning) return await message.channel.send(t('commands/moderation:warn.errors.404'))
 
-      const member = await this.container.client.util.findUser(warning.user)
-
-      return await message.channel.send(t('commands/moderation:warn.removed', { user: member.toString() }))
+      return await message.channel.send(t('commands/moderation:warn.removed', { user: user.toString() }))
     }
   }
 
   private async CreateWarn(user: User, message: Message, t: TFunction, reason?: string) {
-    const warning = await new Warnings({
-      id: this.generateID(),
-      user: user.id,
-      mod: message.author.id,
-      reason: reason,
-      guild: message.guild.id
-    }).save()
+    const warning = await this.container.prisma.warning.create({
+      data: {
+        guildId: message.guild.id,
+        id: this.generateID(),
+        user: user.id,
+        mod: message.author.id,
+        reason: reason
+      }
+    })
 
     const embed = new MessageEmbed()
       .setTitle(t('commands/moderation:warn.embed.title', { user: user.username, ID: warning.id }))
       .addField(t('commands/moderation:warn.embed.fieldNames.1'), message.author.username, true)
-      .addField(t('commands/moderation:warn.embed.fieldNames.2'), warning.reason, true)
+      .addField(t('commands/moderation:warn.embed.fieldNames.2'), reason, true)
 
     return await message.channel.send({ embeds: [embed] })
   }

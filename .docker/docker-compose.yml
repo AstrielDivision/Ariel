@@ -8,21 +8,24 @@ services:
     env_file:
       - "../src/.env.development"
       - "../src/.env.development.local"
+      - "../prisma/.env.production.local"
     image: 'artiefuzzz/ariel:latest'
     networks:
       - ariel
     depends_on:
-      - redis
-  redis:
-    command: 'redis-server --port 8287 --requirepass redis'
-    container_name: redis
-    image: 'redis:alpine'
+      - postgres
+  postgres:
+    image: postgres:alpine
+    restart: always
+    container_name: postgres
+    environment:
+      POSTGRES_PASSWORD: postgres
     ports:
-      - 8287:8287
+      - 5432:5432
     networks:
       - ariel
     volumes:
-      - ./redis_data:/data
+      - './postgres:/var/lib/postgresql/data'
 
 networks:
   ariel:

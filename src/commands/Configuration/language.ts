@@ -1,4 +1,3 @@
-import GuildSettings from '#lib/Models/GuildSettings'
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
 import { ApplyOptions } from '@sapphire/decorators'
 import type { Message } from 'discord.js'
@@ -10,9 +9,16 @@ import type { Message } from 'discord.js'
 })
 export default class Language extends ArielCommand {
   public async messageRun(message: Message, args: ArielCommand.Args) {
-    const lang = await args.pick('language')
+    const language = await args.pick('language')
 
-    await GuildSettings.findOneAndUpdate({ guild_id: message.guild.id }, { $set: { language: lang } })
+    await this.container.prisma.guildSettings.update({
+      where: {
+        guildId: message.guild.id
+      },
+      data: {
+        language
+      }
+    })
 
     return await message.channel.send(args.t('commands/config:language.success.set'))
   }
