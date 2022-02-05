@@ -606,20 +606,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sapphire/plugin-api@npm:3.1.4":
-  version: 3.1.4
-  resolution: "@sapphire/plugin-api@npm:3.1.4"
-  dependencies:
-    "@types/node-fetch": 2.5.12
-    "@types/psl": ^1.1.0
-    "@types/ws": ^8.2.2
-    node-fetch: 2.6.7
-    psl: ^1.8.0
-    tslib: ^2.3.1
-  checksum: f7880db4f2833c3140a3ffb3de4f7f37ecd01e0c749cabc60c1750488ceb1395e703da1be22f22931b0f0667c08812778a8eceb49704d7e7f57e0b84df2f30dd
-  languageName: node
-  linkType: hard
-
 "@sapphire/plugin-i18next@npm:2.2.3":
   version: 2.2.3
   resolution: "@sapphire/plugin-i18next@npm:2.2.3"
@@ -924,7 +910,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node-fetch@npm:2.5.12, @types/node-fetch@npm:^2.5.12":
+"@types/node-fetch@npm:^2.5.12":
   version: 2.5.12
   resolution: "@types/node-fetch@npm:2.5.12"
   dependencies:
@@ -966,13 +952,6 @@ __metadata:
   version: 2.4.3
   resolution: "@types/prettier@npm:2.4.3"
   checksum: b240434daabac54700c862b0bb52a83fec396e0e9c847447119ba41fd8404d79aadfa174e6306fb094b29efadac586344b7606c3a71c286b71755ab2579d54df
-  languageName: node
-  linkType: hard
-
-"@types/psl@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "@types/psl@npm:1.1.0"
-  checksum: 648a4a40827fb101a05616b9c448b04d40c467db9f09e08099274759fd5e032e7d276013296679765c7d7359f43f0479094c1d8b6a56a8f9445b84b5a9af1263
   languageName: node
   linkType: hard
 
@@ -1395,7 +1374,6 @@ __metadata:
     "@sapphire/discord-utilities": 2.7.0
     "@sapphire/discord.js-utilities": 4.5.0
     "@sapphire/framework": 2.3.0
-    "@sapphire/plugin-api": 3.1.4
     "@sapphire/plugin-i18next": 2.2.3
     "@sapphire/plugin-subcommands": 2.1.3
     "@sapphire/time-utilities": 1.6.0
@@ -1416,7 +1394,6 @@ __metadata:
     crypto-js: 4.1.1
     cz-conventional-changelog: 3.3.0
     dayjs: 1.10.7
-    discord-api-types: 0.26.1
     discord.js: 13.6.0
     dotenv-cra: 3.0.2
     eslint: 8.8.0
@@ -2206,7 +2183,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"discord-api-types@npm:0.26.1, discord-api-types@npm:^0.26.0":
+"discord-api-types@npm:^0.26.0":
   version: 0.26.1
   resolution: "discord-api-types@npm:0.26.1"
   checksum: e53bfa7589b24108e6b403dbe213da34c4592f72e2b8fde6800dcb6c703065887ecbd644e1cdf694e4c7796954bc51462ced868f26ec45dc1e0dc4fa8d3c723c
@@ -4342,20 +4319,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-fetch@npm:2.6.7":
-  version: 2.6.7
-  resolution: "node-fetch@npm:2.6.7"
-  dependencies:
-    whatwg-url: ^5.0.0
-  peerDependencies:
-    encoding: ^0.1.0
-  peerDependenciesMeta:
-    encoding:
-      optional: true
-  checksum: 8d816ffd1ee22cab8301c7756ef04f3437f18dace86a1dae22cf81db8ef29c0bf6655f3215cb0cdb22b420b6fe141e64b26905e7f33f9377a7fa59135ea3e10b
-  languageName: node
-  linkType: hard
-
 "node-fetch@npm:^2.6.0, node-fetch@npm:^2.6.1, node-fetch@npm:^2.6.5":
   version: 2.6.6
   resolution: "node-fetch@npm:2.6.6"
@@ -4807,13 +4770,6 @@ __metadata:
     err-code: ^2.0.2
     retry: ^0.12.0
   checksum: f96a3f6d90b92b568a26f71e966cbbc0f63ab85ea6ff6c81284dc869b41510e6cdef99b6b65f9030f0db422bf7c96652a3fff9f2e8fb4a0f069d8f4430359429
-  languageName: node
-  linkType: hard
-
-"psl@npm:^1.8.0":
-  version: 1.8.0
-  resolution: "psl@npm:1.8.0"
-  checksum: 6150048ed2da3f919478bee8a82f3828303bc0fc730fb015a48f83c9977682c7b28c60ab01425a72d82a2891a1681627aa530a991d50c086b48a3be27744bde7
   languageName: node
   linkType: hard
 
