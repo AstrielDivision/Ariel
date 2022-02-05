@@ -2,7 +2,7 @@
 import type { KSoftClient } from '@aero/ksoft'
 import type { PrismaClient } from '@prisma/client'
 import type { Piece, SapphireClientOptions, Store } from '@sapphire/framework'
-import type { Server, ServerOptions } from '@sapphire/plugin-api'
+import type { Server } from '@sapphire/plugin-api'
 import type { InternationalizationClientOptions } from '@sapphire/plugin-i18next'
 import type StatusUpdater from '@tmware/status-rotate'
 import type ClientUtils from './ClientUtils'
@@ -33,7 +33,6 @@ declare module '@sapphire/framework' {
   interface ArgType {
     piece: Piece
     language: string
-    nanoID: string
   }
 
   interface Args {
@@ -53,9 +52,7 @@ declare module 'discord.js' {
     Yiff: Yiff
   }
 
-  interface ClientOptions extends SapphireClientOptions, InternationalizationClientOptions {
-    api: ServerOptions
-  }
+  interface ClientOptions extends SapphireClientOptions, InternationalizationClientOptions {}
 }
 
 declare global {

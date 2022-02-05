@@ -51,12 +51,6 @@ const client = new Client({
         }
       }
     })
-  },
-  api: {
-    listenOptions: {
-      port: 4000
-    },
-    prefix: '/v1/'
   }
 })
 
