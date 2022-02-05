@@ -12,29 +12,14 @@
 
 </div>
 
-## Requirements
-
-- [`Node.js`](https://nodejs.org): To run the bot
-- [`MongoDB`](https://mongodb.com): To store persistent data
-
-## Optional additions
-
-- [`Sentry`](https://sentry.io): Stack tracing
-- [`KSoft.Si`](https://api.ksoft.si): Provides images
-
 ## Self Hosting
 
-- Install yarn with `npm i -g yarn` if you haven't got it already
-- Install required dependencies with `yarn`
-- Build with `yarn build`
-- Configure the bot by coping or by renaming main.example.json in the config folder to main.json and fill out all the blanks
-- You're now finished! Run the bot with `node .`
-
-Problems with self hosting join the support server [here](https://discord.gg/sb9sF2kFg8)
+Please refer to the [`HOSTING.md`](https://github.com/AstrielDivision/Ariel/blob/main/.github/HOSTING.md) file in the .github directory
 
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
@@ -50,7 +35,5 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
-
-
 
 **Licensed under the [Apache License, Version 2.0](https://github.com/AstraeaStudios/Ariel/blob/main/LICENSE)**

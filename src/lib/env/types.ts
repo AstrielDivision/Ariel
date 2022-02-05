@@ -22,7 +22,6 @@ export interface Env {
   E621_USER: string
   E621_API_KEY: string
   SENTRY_URI: string
-  MONGO_URI: string
   DISCORDS_TOKEN: string
   TOPGG_TOKEN: string
 }

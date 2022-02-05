@@ -5,6 +5,8 @@
   },
   "rules": {
     "default-case": "off",
-    "no-unused-vars": "off"
+    "no-unused-vars": "off",
+    "no-invalid-this": "off",
+    "@typescript-eslint/no-invalid-this": "off"
   }
 }

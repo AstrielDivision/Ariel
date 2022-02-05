@@ -31,7 +31,7 @@ export default class Log extends ArielCommand {
             },
             data: {
               modLog: {
-                update: {
+                create: {
                   hook: webhook.id,
                   channel: channel.id
                 }
@@ -61,7 +61,7 @@ export default class Log extends ArielCommand {
             },
             data: {
               memberLog: {
-                update: {
+                create: {
                   hook: webhook.id,
                   channel: channel.id
                 }
