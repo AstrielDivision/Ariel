@@ -1,5 +1,5 @@
 import { request as fetch } from '@artiefuzzz/lynx'
-import c from './corona-fetch/constants'
+import { userAgent } from './constants'
 
 export default async function Define(search: string): Promise<List> {
   if (!search) throw Error('A search is required')
@@ -8,7 +8,7 @@ export default async function Define(search: string): Promise<List> {
     json: { list }
   } = await fetch<{ list: List[] }>(`https://api.urbandictionary.com/v0/define?term=${search}`)
     .headers({
-      'User-Agent': c.useragent
+      'User-Agent': userAgent
     })
     .send()
 

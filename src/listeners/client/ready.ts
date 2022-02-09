@@ -1,3 +1,5 @@
+import { envParseBoolean } from '#lib/env/parser'
+import { ArielEvents } from '#types'
 import { ApplyOptions } from '@sapphire/decorators'
 import { Events, Listener, ListenerOptions, Store } from '@sapphire/framework'
 
@@ -11,23 +13,27 @@ export default class Ready extends Listener<typeof Events.ClientReady> {
     const last = stores.pop()!
 
     for (const store of stores) {
-      this.container.logger.console(this.styleStore(store, false))
+      this.container.logger.info(this.styleStore(store, false))
     }
-    this.container.logger.console(this.styleStore(last, true))
+    this.container.logger.info(this.styleStore(last, true))
   }
 
   private styleStore(store: Store<any>, last: boolean): void {
-    return this.container.logger.console(`${last ? '└─' : '├─'} Loaded ${store.size} ${store.name}.`)
+    return this.container.logger.info(`${last ? '└─' : '├─'} Loaded ${store.size} ${store.name}.`)
   }
 
-  private async init(): Promise<void> {
-    await this.container.stores.get('tasks').loadAll()
+  private init(): Promise<void> {
+    this.container.tasks.create('fetchGuildMembers', {})
+
+    if (envParseBoolean('INFLUX_ENABLED')) {
+      this.container.client.emit(ArielEvents.AnalyticSync)
+    }
 
     return null
   }
 
   public async run() {
-    await this.init()
+    void this.init()
 
     this.printStoreDebugInformation()
     await this.container.client.statusUpdater.updateStatus()

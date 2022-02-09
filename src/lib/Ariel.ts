@@ -1,4 +1,4 @@
-import { envIsDefined, envParseString } from '#lib/env/parser'
+import { envIsDefined, envParseBoolean, envParseString } from '#lib/env/parser'
 import Yiff from '#lib/yiff.ts/index'
 import '#setup'
 import { KSoftClient } from '@aero/ksoft'
@@ -7,10 +7,9 @@ import { container, SapphireClient, version } from '@sapphire/framework'
 import * as Sentry from '@sentry/node'
 import StatusUpdater from '@tmware/status-rotate'
 import { ClientOptions, Message, version as djs } from 'discord.js'
-import { join } from 'path'
 import pkg from '../package'
 import ClientUtils from './ClientUtils'
-import { TaskStore } from './Structures/TaskStore'
+import AnalyticData from './Structures/AnalyticData'
 
 export default class Client extends SapphireClient {
   ksoft: KSoftClient
@@ -24,6 +23,7 @@ export default class Client extends SapphireClient {
     this.ksoft = new KSoftClient(envParseString('KSOFT_TOKEN'))
     this.util = new ClientUtils(this)
     this.Yiff = new Yiff()
+    this.analytics = envParseBoolean('INFLUX_ENABLED') ? new AnalyticData() : null
     this.statusUpdater = new StatusUpdater(this, [
       {
         type: 'WATCHING',
@@ -42,6 +42,8 @@ export default class Client extends SapphireClient {
         name: 'The dark skies of the earth.'
       }
     ])
+
+    container.analytics = this.analytics
   }
 
   /**
@@ -87,8 +89,6 @@ export default class Client extends SapphireClient {
     }
 
     await this.prisma.$connect()
-
-    this.stores.register(new TaskStore().registerPath(join(__dirname, '..', 'tasks')))
 
     // Automate status change
     setInterval(() => {

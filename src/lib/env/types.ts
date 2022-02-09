@@ -24,4 +24,9 @@ export interface Env {
   SENTRY_URI: string
   DISCORDS_TOKEN: string
   TOPGG_TOKEN: string
+  INFLUX_TOKEN: string
+  INFLUX_ORG: string
+  INFLUX_BUCKET: string
+  INFLUX_ENABLED: BooleanString
+  INFLUX_URL: string
 }
