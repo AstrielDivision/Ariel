@@ -53,41 +53,39 @@
     ],
     "description": "Listener"
   },
-  "RedditCommand": {
-    "prefix": "ArielRedditCommand",
+  "KSoft Command Template": {
+    "prefix": "KSoftCommand",
     "body": [
-      "import { ApplyOptions } from '@sapphire/decorators'",
+      "import KSoftCommand from '#lib/Structures/KSoftCommand'",
       "import type { PieceContext } from '@sapphire/framework'",
-      "import type { ArielCommandOptions } from '#lib/Structures/Command'",
-      "import { ArielRedditCommand } from '#lib/Structures/commands/RedditCommand'",
       "",
-      "@ApplyOptions<ArielCommandOptions>({",
-      "	name: 'solve',",
-      "	aliases: ['other'],",
-      "	description: 'Returns a Image from r/random',",
-      "	nsfw: false",
-      "})",
-      "export default class Example extends ArielRedditCommand {",
-      "	constructor (Context: PieceContext, options: ArielCommandOptions) {",
-      "		super({ subreddit: 'reddit', nsfw: false, colour: 'RANDOM' }, Context, options)",
-      "	}",
-      "}",
-      ""
-    ],
-    "description": "RedditCommand"
-  },
-  "Task": {
-    "prefix": "ArielTask",
-    "body": [
-      "import { Task } from '#lib/Structures/Task'",
-      "",
-      "export default class testTask extends Task {",
-      "  public run() {",
-      "    return 200",
+      "export default class KSoftCommand extends KSoftCommand {",
+      "  constructor(Context: PieceContext) {",
+      "    super({ type: '' }, Context)",
       "  }",
       "}",
       ""
     ],
-    "description": "Task"
+    "description": "KSoft Command Template"
+  },
+  "Scheduled Task Template": {
+    "prefix": "ScheduledTask",
+    "body": [
+      "import { ApplyOptions } from '@sapphire/decorators'",
+      "import { ScheduledTask } from '@sapphire/plugin-scheduled-tasks'",
+      "",
+      "@ApplyOptions<ScheduledTask.Options>({",
+      "  bullJobOptions: {",
+      "    removeOnComplete: true",
+      "  }",
+      "})",
+      "export default class Task extends ScheduledTask {",
+      "  public run() {",
+      "    this.container.logger.debug('Task rank')",
+      "  }",
+      "}",
+      ""
+    ],
+    "description": "Scheduled Task Template"
   }
 }
