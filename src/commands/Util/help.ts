@@ -5,7 +5,7 @@
 import { envParseString } from '#lib/env/parser'
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
 import { ApplyOptions } from '@sapphire/decorators'
-import type { Command } from '@sapphire/framework'
+import type { Args, Command } from '@sapphire/framework'
 import type { TFunction } from '@sapphire/plugin-i18next'
 import { Message, MessageEmbed, TextChannel } from 'discord.js'
 
@@ -17,7 +17,7 @@ import { Message, MessageEmbed, TextChannel } from 'discord.js'
   usage: '[command]'
 })
 export default class Help extends ArielCommand {
-  public async messageRun(message: Message, args: ArielCommand.Args) {
+  public async messageRun(message: Message, args: Args) {
     const command = await args.pickResult('string')
     if (command.success) return await this.commandHelp(message, command.value, args.t)
 

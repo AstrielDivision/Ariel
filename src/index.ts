@@ -1,12 +1,13 @@
 import { srcDir } from '#lib/constants'
+import { getSettings } from '#lib/database/functions'
 import { envParseString } from '#lib/env/parser'
-import { container } from '@sapphire/framework'
+import { LogLevel } from '@sapphire/framework'
 import type { InternationalizationContext } from '@sapphire/plugin-i18next'
+import { ScheduledTaskRedisStrategy } from '@sapphire/plugin-scheduled-tasks/register-redis'
 import { config } from 'dotenv-cra'
 import type { FormatFunction } from 'i18next'
 import { join } from 'path'
 import Client from './lib/Ariel'
-import Logger from './lib/Structures/Logger'
 
 config({
   path: join(srcDir, '.env')
@@ -17,15 +18,23 @@ const client = new Client({
   regexPrefix: /^(hey +)?ariel[,! ]/i,
   caseInsensitivePrefixes: true,
   caseInsensitiveCommands: true,
-  logger: { instance: new Logger('Ariel') },
+  logger: { level: process.env.NODE_ENV === 'production' ? LogLevel.Info : LogLevel.Debug },
   intents: ['GUILDS', 'GUILD_MESSAGES', 'GUILD_BANS', 'GUILD_WEBHOOKS', 'GUILD_MEMBERS', 'GUILD_MESSAGE_REACTIONS'],
+  tasks: {
+    strategy: new ScheduledTaskRedisStrategy({
+      bull: {
+        redis: {
+          port: 6379,
+          host: 'redis',
+          password: 'redis',
+          db: 1
+        }
+      }
+    })
+  },
   i18n: {
     fetchLanguage: async (message: InternationalizationContext) => {
-      const { language } = await container.prisma.guildSettings.findUnique({
-        where: {
-          guildId: message.guild.id
-        }
-      })
+      const { language } = await getSettings(message.guild.id)
 
       return language
     },
@@ -51,12 +60,6 @@ const client = new Client({
         }
       }
     })
-  },
-  api: {
-    listenOptions: {
-      port: 4000
-    },
-    prefix: '/v1/'
   }
 })
 

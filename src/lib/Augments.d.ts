@@ -1,24 +1,21 @@
-/* eslint-disable @typescript-eslint/method-signature-style */
 import type { KSoftClient } from '@aero/ksoft'
 import type { PrismaClient } from '@prisma/client'
-import type { Piece, SapphireClientOptions, Store } from '@sapphire/framework'
-import type { Server, ServerOptions } from '@sapphire/plugin-api'
+import type { Piece, SapphireClientOptions } from '@sapphire/framework'
 import type { InternationalizationClientOptions } from '@sapphire/plugin-i18next'
+import type { Nullish } from '@sapphire/utilities'
 import type StatusUpdater from '@tmware/status-rotate'
 import type ClientUtils from './ClientUtils'
 import type { Env } from './env/types'
-import type { Task } from './Structures/Task'
+import type AnalyiticData from './Structures/AnalyticData'
 import type Yiff from './yiff.ts/index'
 
 declare module '@sapphire/pieces' {
   interface Container {
     prisma: PrismaClient
+    analytics?: AnalyiticData | Nullish
   }
 }
 declare module '@sapphire/framework' {
-  interface ILogger {
-    console(...message: unknown[]): void
-  }
   interface Preconditions {
     OwnerOnly: never
     Mod: never
@@ -26,14 +23,9 @@ declare module '@sapphire/framework' {
     Manager: never
   }
 
-  interface StoreRegistryEntries {
-    tasks: Store<Task>
-  }
-
   interface ArgType {
     piece: Piece
     language: string
-    nanoID: string
   }
 
   interface Args {
@@ -46,16 +38,13 @@ declare module '@sapphire/framework' {
 }
 declare module 'discord.js' {
   interface Client {
-    server: Server
     ksoft: KSoftClient
     statusUpdater: StatusUpdater
     util: ClientUtils
     Yiff: Yiff
   }
 
-  interface ClientOptions extends SapphireClientOptions, InternationalizationClientOptions {
-    api: ServerOptions
-  }
+  interface ClientOptions extends SapphireClientOptions, InternationalizationClientOptions {}
 }
 
 declare global {

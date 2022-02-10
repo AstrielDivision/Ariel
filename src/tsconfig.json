@@ -10,7 +10,7 @@
       "#lib/Structures/Command": ["lib/Structures/Command.ts"],
       "#lib/Structures/commands/CanvasCommand": ["lib/Structures/commands/CanvasCommand.ts"],
       "#lib/Structures/commands/RedditCommand": ["lib/Structures/RedditCommand.ts"],
-      "#types": ["lib/Types"],
+      "#types": ["lib/Types/index.ts"],
       "#lib/*": ["lib/*"],
       "#setup": ["lib/setup.ts"],
       "#languages": ["lib/i18n/LanguageKeys/index"],

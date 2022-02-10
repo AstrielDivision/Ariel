@@ -1,6 +1,6 @@
 {
   "description": "Gives you a list of commands.",
-  "detailedDescription": "You may also provide a command name, which will return info about that command.",
+  "detailedDescription": "You may also provide a command name, which will return info for that command.",
   "errors": {
     "404": "Couldn't find that command."
   },

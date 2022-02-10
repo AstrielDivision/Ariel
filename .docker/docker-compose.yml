@@ -14,6 +14,19 @@ services:
       - ariel
     depends_on:
       - postgres
+      - influx
+      - redis
+    logging:
+      options:
+        max-size: 1g
+        max-file: '3'
+  redis:
+    image: redis:alpine
+    command: redis-server --requirepass redis
+    restart: always
+    container_name: redis
+    ports:
+      - 6379:6379
   postgres:
     image: postgres:alpine
     restart: always
@@ -26,6 +39,23 @@ services:
       - ariel
     volumes:
       - './postgres:/var/lib/postgresql/data'
+  influx:
+    image: influxdb:2.1-alpine
+    command: 'influxd run --bolt-path /var/lib/influxdb2/influxd.bolt --engine-path /var/lib/influxdb2/engine --store bolt'
+    container_name: influx
+    restart: always
+    ports:
+      - 8285:8086
+    networks:
+      - ariel
+    volumes:
+      - './influx-data:/var/lib/influxdb2'
+
+volumes:
+  postgres:
+    external: true
+  influx-data:
+    external: true
 
 networks:
   ariel:

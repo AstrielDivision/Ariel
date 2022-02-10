@@ -12,10 +12,6 @@
 
 </div>
 
-## Self Hosting
-
-Please refer to the [`HOSTING.md`](https://github.com/AstrielDivision/Ariel/blob/main/.github/HOSTING.md) file in the .github directory
-
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
