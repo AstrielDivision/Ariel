@@ -28,6 +28,15 @@ export async function updateSettings(guildId: Snowflake, data: Prisma.GuildSetti
   })
 }
 
+export async function getTag(guildId: Snowflake, name: string) {
+  return await container.prisma.tag.findFirst({
+    where: {
+      guildId: guildId,
+      name
+    }
+  })
+}
+
 export async function createTag(guildId: Snowflake, name: string, data: string, embed: boolean) {
   return await container.prisma.tag.create({
     data: {
@@ -59,4 +68,15 @@ export async function removeTag(guildId: Snowflake, name: string) {
       name
     }
   })
+}
+
+export async function tagSource(guildId: Snowflake, name: string) {
+  const { data } = await container.prisma.tag.findFirst({
+    where: {
+      guildId,
+      name
+    }
+  })
+
+  return data
 }

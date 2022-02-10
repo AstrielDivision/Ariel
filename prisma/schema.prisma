@@ -30,17 +30,6 @@ model GuildSettings {
   @@map("guild_settings")
 }
 
-model Warning {
-  guildId  String  @id @unique @map("guild_id")
-  user     String  @db.Text
-  reason   String  @db.Text
-  mod      String  @db.Text
-  pardoned Boolean @default(false) @db.Boolean
-  id       String  @db.Text
-
-  @@map("warnings")
-}
-
 model Tag {
   name          String         @id @unique @db.Text
   color         String         @default("RANDOM") @db.Text
