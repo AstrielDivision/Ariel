@@ -13,7 +13,7 @@ export default class Sync extends AnalyticsListener {
 
     this.writePoints([this.syncGuilds(guilds), this.syncUsers(users)])
 
-    return this.container.client.analytics.writeApi.flush()
+    return this.container.analytics.writeApi.flush()
   }
 
   private syncUsers(users: number) {

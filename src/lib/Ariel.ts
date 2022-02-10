@@ -23,7 +23,6 @@ export default class Client extends SapphireClient {
     this.ksoft = new KSoftClient(envParseString('KSOFT_TOKEN'))
     this.util = new ClientUtils(this)
     this.Yiff = new Yiff()
-    this.analytics = envParseBoolean('INFLUX_ENABLED') ? new AnalyticData() : null
     this.statusUpdater = new StatusUpdater(this, [
       {
         type: 'WATCHING',
@@ -43,7 +42,7 @@ export default class Client extends SapphireClient {
       }
     ])
 
-    container.analytics = this.analytics
+    container.analytics = envParseBoolean('INFLUX_ENABLED') ? new AnalyticData() : null
   }
 
   /**
