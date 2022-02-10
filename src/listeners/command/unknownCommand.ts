@@ -1,7 +1,7 @@
-import { getTag } from '#lib/database/functions'
+import { getTag, tagExists } from '#lib/database/functions'
 import { ApplyOptions } from '@sapphire/decorators'
 import { Events, Listener, ListenerOptions, UnknownCommandPayload } from '@sapphire/framework'
-import { Message, MessageEmbed, Snowflake } from 'discord.js'
+import { Message, MessageEmbed } from 'discord.js'
 
 @ApplyOptions<ListenerOptions>({
   event: Events.UnknownCommand
@@ -22,7 +22,7 @@ export default class unknownCommand extends Listener {
 
     const name = commandName.toLowerCase()
 
-    if (!(await this.tagExists(message.guild.id, name))) return null
+    if (!(await tagExists(message.guild.id, name))) return null
 
     return await this.runCommand(message, name)
   }
@@ -42,16 +42,5 @@ export default class unknownCommand extends Listener {
     } else {
       return await message.channel.send(data)
     }
-  }
-
-  private async tagExists(guildId: Snowflake, name: string) {
-    return (await this.container.prisma.tag.count({
-      where: {
-        guildId,
-        name
-      }
-    })) === 0
-      ? false
-      : true
   }
 }
