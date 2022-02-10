@@ -15,7 +15,6 @@ export default class Stats extends ArielCommand {
   public async messageRun(message: Message) {
     const {
       user,
-      users,
       guilds,
       util: { formatUptime }
     } = this.container.client
