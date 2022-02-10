@@ -8,6 +8,7 @@ import { ScheduledTask } from '@sapphire/plugin-scheduled-tasks'
 })
 export default class fetchGuildMembers extends ScheduledTask {
   public run() {
+    // Fetch members
     this.container.client.guilds.cache.map(async guild => {
       if (guild.available) return await guild.members.fetch()
       return null

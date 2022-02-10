@@ -23,6 +23,7 @@ interface TopGGResponse {
 })
 export default class uploadStats extends ScheduledTask {
   public async run() {
+    // Upload stats to InfluxDB
     this.syncAnalytics()
 
     if (envIsDefined('TOPGG_TOKEN')) {

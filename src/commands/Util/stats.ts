@@ -20,6 +20,9 @@ export default class Stats extends ArielCommand {
       util: { formatUptime }
     } = this.container.client
 
+    const rawGuildCount = guilds.cache.size
+    const rawUserCount = guilds.cache.reduce((acc, guild) => acc + (guild.memberCount ?? 0), 0)
+
     const embed = new MessageEmbed()
       .setTitle(`${user.username} | ${pkg.version}`)
       .setThumbnail(user.avatarURL())
@@ -30,7 +33,7 @@ export default class Stats extends ArielCommand {
         },
         {
           name: 'Discord Stats',
-          value: `User Count: ${users.cache.size}\nGuild Count: ${guilds.cache.size}`
+          value: `User Count: ${rawUserCount}\nGuild Count: ${rawGuildCount}`
         },
         {
           name: 'Server Stats',
