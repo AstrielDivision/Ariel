@@ -81,7 +81,7 @@
       "})",
       "export default class Task extends ScheduledTask {",
       "  public run() {",
-      "    this.container.logger.debug('Task rank')",
+      "    this.container.logger.debug('Task ran')",
       "  }",
       "}",
       ""
