@@ -4,7 +4,7 @@ import { UserError } from '@sapphire/framework'
 import { container } from '@sapphire/pieces'
 import type { Snowflake } from 'discord-api-types'
 
-export async function getSettings(guildId: Snowflake) {
+export async function readSettings(guildId: Snowflake) {
   return await container.prisma.guildSettings.findUnique({
     where: {
       guildId
@@ -21,7 +21,7 @@ export async function createSettings(guildId: Snowflake) {
   })
 }
 
-export async function updateSettings(guildId: Snowflake, data: Prisma.GuildSettingsUpdateInput) {
+export async function writeSettings(guildId: Snowflake, data: Prisma.GuildSettingsUpdateInput) {
   return await container.prisma.guildSettings.update({
     where: {
       guildId
