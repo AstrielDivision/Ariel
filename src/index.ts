@@ -1,6 +1,6 @@
-import { srcDir } from '#lib/constants'
-import { getSettings } from '#lib/database/functions'
+import { readSettings } from '#lib/database/functions'
 import { envParseString } from '#lib/env/parser'
+import { Constants } from '#util'
 import { LogLevel } from '@sapphire/framework'
 import type { InternationalizationContext } from '@sapphire/plugin-i18next'
 import { ScheduledTaskRedisStrategy } from '@sapphire/plugin-scheduled-tasks/register-redis'
@@ -10,7 +10,7 @@ import { join } from 'path'
 import Client from './lib/Ariel'
 
 config({
-  path: join(srcDir, '.env')
+  path: join(Constants.srcDir, '.env')
 })
 
 const client = new Client({
@@ -34,7 +34,7 @@ const client = new Client({
   },
   i18n: {
     fetchLanguage: async (message: InternationalizationContext) => {
-      const { language } = await getSettings(message.guild.id)
+      const { language } = await readSettings(message.guild.id)
 
       return language
     },

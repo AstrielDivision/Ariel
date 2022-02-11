@@ -5,7 +5,7 @@ import type { Message } from 'discord.js'
 
 export default class OwnerOnly extends Precondition {
   public run(message: Message): PreconditionResult {
-    return envParseString('OWNER') === message.author.id
+    return envParseString('OWNERS') === message.author.id
       ? this.ok()
       : this.error({ identifier: LanguageKeys.Preconditions.OwnerOnly })
   }

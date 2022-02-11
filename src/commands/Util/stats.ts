@@ -1,11 +1,11 @@
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
+import { formatDuration, pkg } from '#util'
 import { ApplyOptions } from '@sapphire/decorators'
-import { version as frameworkVersion } from '@sapphire/framework'
+import { version as framework } from '@sapphire/framework'
 import { roundNumber } from '@sapphire/utilities'
 import { Message, MessageEmbed, version as djsVersion } from 'discord.js'
 import os from 'os'
-import { version as tsVersion } from 'typescript'
-import pkg from '../../package'
+import { version as ts } from 'typescript'
 
 @ApplyOptions<ArielCommandOptions>({
   description: 'Get the discord bot statistics',
@@ -13,11 +13,7 @@ import pkg from '../../package'
 })
 export default class Stats extends ArielCommand {
   public async messageRun(message: Message) {
-    const {
-      user,
-      guilds,
-      util: { formatUptime }
-    } = this.container.client
+    const { user, guilds } = this.container.client
 
     const rawGuildCount = guilds.cache.size
     const rawUserCount = guilds.cache.reduce((acc, guild) => acc + (guild.memberCount ?? 0), 0)
@@ -28,7 +24,7 @@ export default class Stats extends ArielCommand {
       .addFields(
         {
           name: 'Versions',
-          value: `Node.js: ${process.version}\nTypeScript: ${tsVersion}\nDiscord.js: ${djsVersion}\nFramework: ${frameworkVersion}`
+          value: `Node.js: ${process.version}\nTypeScript: ${ts}\nDiscord.js: ${djsVersion}\nFramework: ${framework}`
         },
         {
           name: 'Discord Stats',
@@ -43,7 +39,7 @@ export default class Stats extends ArielCommand {
             process.memoryUsage().heapTotal /
             1024 /
             1024
-          ).toFixed(2)} MB)\nBot Uptime: ${formatUptime(this.container.client.uptime)}`
+          ).toFixed(2)} MB)\nBot Uptime: ${formatDuration(this.container.client.uptime)}`
         }
       )
       .setColor('YELLOW')

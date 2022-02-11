@@ -17,7 +17,7 @@ export interface Env {
   DISCORD_TOKEN: string
   WEBHOOK_URL: string
   PREFIX: string
-  OWNER: string
+  OWNERS: string
   KSOFT_TOKEN: string
   E621_USER: string
   E621_API_KEY: string

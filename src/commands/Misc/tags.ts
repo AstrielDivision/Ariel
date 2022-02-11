@@ -1,4 +1,4 @@
-import { createTag, removeTag, tagSource, updateTag } from '#lib/database/functions'
+import { createTag, getTags, removeTag, tagSource, updateTag } from '#lib/database/functions'
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
 import { ApplyOptions, RequiresUserPermissions } from '@sapphire/decorators'
 import { codeBlock } from '@sapphire/utilities'
@@ -15,11 +15,7 @@ import { Message, MessageEmbed } from 'discord.js'
 })
 export default class Tags extends ArielCommand {
   public async show(message: Message) {
-    const tags = await this.container.prisma.tag.findMany({
-      where: {
-        guildId: message.guild.id
-      }
-    })
+    const tags = await getTags(message.guild.id)
 
     const parsed = tags.map(t => t.name).join('\n')
 

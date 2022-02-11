@@ -1,5 +1,5 @@
 import { join } from 'path'
-import pkg from '../package'
+import { pkg } from './Package'
 
 export const userAgent = `Ariel/${pkg.version} (https://github.com/AstrielDivision/Ariel)`
 
