@@ -1,13 +1,13 @@
 import { envIsDefined, envParseBoolean, envParseString } from '#lib/env/parser'
 import Yiff from '#lib/yiff.ts/index'
 import '#setup'
+import { pkg } from '#util'
 import { KSoftClient } from '@aero/ksoft'
 import { PrismaClient } from '@prisma/client'
 import { container, SapphireClient, version } from '@sapphire/framework'
 import * as Sentry from '@sentry/node'
 import StatusUpdater from '@tmware/status-rotate'
 import { ClientOptions, Message, version as djs } from 'discord.js'
-import pkg from '../package'
 import AnalyticData from './Structures/AnalyticData'
 
 export default class Client extends SapphireClient {

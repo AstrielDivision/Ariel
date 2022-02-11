@@ -1,4 +1,4 @@
-import pkg from '../../package'
+import { pkg } from '#util'
 
 export default {
   killswitch: {

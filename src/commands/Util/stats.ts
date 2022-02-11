@@ -1,12 +1,11 @@
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
-import { formatDuration } from '#util'
+import { formatDuration, pkg } from '#util'
 import { ApplyOptions } from '@sapphire/decorators'
-import { version as frameworkVersion } from '@sapphire/framework'
+import { version as framework } from '@sapphire/framework'
 import { roundNumber } from '@sapphire/utilities'
 import { Message, MessageEmbed, version as djsVersion } from 'discord.js'
 import os from 'os'
-import { version as tsVersion } from 'typescript'
-import pkg from '../../package'
+import { version as ts } from 'typescript'
 
 @ApplyOptions<ArielCommandOptions>({
   description: 'Get the discord bot statistics',
@@ -25,7 +24,7 @@ export default class Stats extends ArielCommand {
       .addFields(
         {
           name: 'Versions',
-          value: `Node.js: ${process.version}\nTypeScript: ${tsVersion}\nDiscord.js: ${djsVersion}\nFramework: ${frameworkVersion}`
+          value: `Node.js: ${process.version}\nTypeScript: ${ts}\nDiscord.js: ${djsVersion}\nFramework: ${framework}`
         },
         {
           name: 'Discord Stats',

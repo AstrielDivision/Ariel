@@ -40,6 +40,4 @@ export interface PackageJson {
   homepage?: string
 }
 
-const pkg: PackageJson = JSON.parse(readFileSync(join(appRootPath.path, 'package.json'), { encoding: 'utf-8' }))
-
-export default pkg
+export const pkg: PackageJson = JSON.parse(readFileSync(join(appRootPath.path, 'package.json'), { encoding: 'utf-8' }))

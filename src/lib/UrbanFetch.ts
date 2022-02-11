@@ -1,5 +1,5 @@
 import { request as fetch } from '@artiefuzzz/lynx'
-import { userAgent } from './constants'
+import { userAgent } from './util/Constants'
 
 export default async function Define(search: string): Promise<List> {
   if (!search) throw Error('A search is required')
