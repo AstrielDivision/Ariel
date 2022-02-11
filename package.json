@@ -41,7 +41,7 @@
     "@aero/sanitizer": "1.2.0",
     "@artiefuzzz/lynx": "2.2.5",
     "@influxdata/influxdb-client": "^1.22.0",
-    "@prisma/client": "3.9.1",
+    "@prisma/client": "3.9.2",
     "@sapphire/decorators": "4.2.2",
     "@sapphire/discord-utilities": "2.7.0",
     "@sapphire/discord.js-utilities": "4.6.2",
@@ -65,7 +65,7 @@
     "dotenv-cra": "3.0.2",
     "nanoid": "3.2.0",
     "owofire": "1.0.4",
-    "prisma": "3.9.1",
+    "prisma": "3.9.2",
     "utf-8-validate": "5.0.8"
   },
   "devDependencies": {
