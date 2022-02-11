@@ -4,6 +4,7 @@
  */
 import { envParseString } from '#lib/env/parser'
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
+import { isOwner } from '#lib/util'
 import { ApplyOptions } from '@sapphire/decorators'
 import type { Args, Command } from '@sapphire/framework'
 import type { TFunction } from '@sapphire/plugin-i18next'
@@ -76,7 +77,7 @@ export default class Help extends ArielCommand {
       let commandsLine = ''
       this.container.stores.get('commands').forEach(cmd => {
         if ((cmd as ArielCommand).category !== category) return
-        if (!(envParseString('OWNER') === message.author.id) && (cmd as ArielCommand).category === 'Owner') {
+        if (!isOwner(message.author.id) && (cmd as ArielCommand).category === 'Owner') {
           return
         }
         if (

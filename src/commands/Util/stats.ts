@@ -1,4 +1,5 @@
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
+import { formatDuration } from '#util'
 import { ApplyOptions } from '@sapphire/decorators'
 import { version as frameworkVersion } from '@sapphire/framework'
 import { roundNumber } from '@sapphire/utilities'
@@ -13,11 +14,7 @@ import pkg from '../../package'
 })
 export default class Stats extends ArielCommand {
   public async messageRun(message: Message) {
-    const {
-      user,
-      guilds,
-      util: { formatUptime }
-    } = this.container.client
+    const { user, guilds } = this.container.client
 
     const rawGuildCount = guilds.cache.size
     const rawUserCount = guilds.cache.reduce((acc, guild) => acc + (guild.memberCount ?? 0), 0)
@@ -43,7 +40,7 @@ export default class Stats extends ArielCommand {
             process.memoryUsage().heapTotal /
             1024 /
             1024
-          ).toFixed(2)} MB)\nBot Uptime: ${formatUptime(this.container.client.uptime)}`
+          ).toFixed(2)} MB)\nBot Uptime: ${formatDuration(this.container.client.uptime)}`
         }
       )
       .setColor('YELLOW')

@@ -8,20 +8,17 @@ import * as Sentry from '@sentry/node'
 import StatusUpdater from '@tmware/status-rotate'
 import { ClientOptions, Message, version as djs } from 'discord.js'
 import pkg from '../package'
-import ClientUtils from './ClientUtils'
 import AnalyticData from './Structures/AnalyticData'
 
 export default class Client extends SapphireClient {
   ksoft: KSoftClient
   statusUpdater: StatusUpdater
-  util: ClientUtils
   Yiff!: Yiff
   prisma!: PrismaClient
   constructor(options: ClientOptions) {
     super(options)
 
     this.ksoft = new KSoftClient(envParseString('KSOFT_TOKEN'))
-    this.util = new ClientUtils(this)
     this.Yiff = new Yiff()
     this.statusUpdater = new StatusUpdater(this, [
       {

@@ -4,7 +4,6 @@ import type { Piece, SapphireClientOptions } from '@sapphire/framework'
 import type { InternationalizationClientOptions } from '@sapphire/plugin-i18next'
 import type { Nullish } from '@sapphire/utilities'
 import type StatusUpdater from '@tmware/status-rotate'
-import type ClientUtils from './ClientUtils'
 import type { Env } from './env/types'
 import type AnalyiticData from './Structures/AnalyticData'
 import type Yiff from './yiff.ts/index'
@@ -40,7 +39,6 @@ declare module 'discord.js' {
   interface Client {
     ksoft: KSoftClient
     statusUpdater: StatusUpdater
-    util: ClientUtils
     Yiff: Yiff
   }
 
