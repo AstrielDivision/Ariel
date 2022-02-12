@@ -1,5 +1,10 @@
 {
   "about": {
     "description": "Read some information about this bot"
+  },
+  "ping": {
+    "pong": "Pong!",
+    "success": "Ping: {{ws}}ms\nHeartbeat: {{heartbeat}}ms",
+    "description": "Returns bot ping"
   }
 }
