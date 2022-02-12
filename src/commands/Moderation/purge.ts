@@ -5,7 +5,9 @@ import type { Message, TextChannel } from 'discord.js'
 @ApplyOptions<ArielCommandOptions>({
   description: 'Delete multiple messages at once',
   usage: '[number of messages]',
-  preconditions: ['GuildTextOnly']
+  preconditions: ['GuildTextOnly'],
+  requiredClientPermissions: ['MANAGE_MESSAGES'],
+  requiredUserPermissions: ['MANAGE_MESSAGES']
 })
 export default class Purge extends ArielCommand {
   public async messageRun(message: Message, args: ArielCommand.Args) {
