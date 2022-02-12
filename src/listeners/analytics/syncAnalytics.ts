@@ -8,7 +8,7 @@ import { ApplyOptions } from '@sapphire/decorators'
 })
 export default class Sync extends AnalyticsListener {
   public run() {
-    const rawGuildCount = this.container.client.users.cache.size
+    const rawGuildCount = this.container.client.guilds.cache.size
     const rawUserCount = this.container.client.guilds.cache.reduce((acc, guild) => acc + (guild.memberCount ?? 0), 0)
 
     this.writePoints([this.syncGuilds(rawGuildCount), this.syncUsers(rawUserCount)])
