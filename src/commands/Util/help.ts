@@ -46,7 +46,7 @@ export default class Help extends ArielCommand {
     }
 
     if (command.detailedDescription) {
-      embed.addField(t('commands/help:embed1.fields.3'), command.detailedDescription)
+      embed.addField(t('commands/help:embed1.fields.3'), command.detailedDescription as string)
     }
 
     if ((command as ArielCommand).usage.length > 0) {
