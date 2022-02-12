@@ -7,8 +7,7 @@ import type { GuildMember, Message } from 'discord.js'
   aliases: ['k', 'boot'],
   usage: '<user(s)> [reason]',
   requiredUserPermissions: ['BAN_MEMBERS'],
-  preconditions: ['GuildTextOnly'],
-  enabled: false
+  preconditions: ['GuildTextOnly']
 })
 export default class Kick extends ArielCommand {
   public async messageRun(message: Message, args: ArielCommand.Args) {
