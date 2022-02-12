@@ -25,14 +25,12 @@ declare module '@sapphire/framework' {
   interface ArgType {
     piece: Piece
     language: string
+    duration: Date
+    time: number
   }
 
   interface Args {
     t: TFunction
-  }
-
-  interface ScheduledTasks {
-    manual: never
   }
 }
 declare module 'discord.js' {

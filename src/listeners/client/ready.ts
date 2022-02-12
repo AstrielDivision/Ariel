@@ -23,8 +23,6 @@ export default class Ready extends Listener<typeof Events.ClientReady> {
   }
 
   private init(): Promise<void> {
-    this.container.tasks.create('fetchGuildMembers', {})
-
     if (envParseBoolean('INFLUX_ENABLED')) {
       this.container.client.emit(ArielEvents.AnalyticSync)
     }
