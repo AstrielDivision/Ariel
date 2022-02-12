@@ -13,9 +13,13 @@ export default class AnalyiticData {
   public writeApi!: WriteApi
   public queryApi!: QueryApi
 
+  public messages: number
+
   constructor() {
     this.queryApi = this.influx.getQueryApi(envParseString('INFLUX_ORG'))
     this.writeApi = this.influx.getWriteApi(envParseString('INFLUX_ORG'), envParseString('INFLUX_BUCKET'), 's')
+
+    this.messages = 0
   }
 }
 

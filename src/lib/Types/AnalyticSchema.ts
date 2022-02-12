@@ -6,11 +6,11 @@
 
 export const enum Points {
   Guilds = 'guilds',
-  Users = 'users'
+  Users = 'users',
+  Messages = 'messages'
 }
 
 export const enum Tags {
-  Shard = 'shard',
   Guild = 'guild_id',
   User = 'user_id',
   Client = 'client_id',
