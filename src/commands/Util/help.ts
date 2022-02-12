@@ -4,7 +4,7 @@
  */
 import { envParseString } from '#lib/env/parser'
 import { ArielCommand, ArielCommandOptions } from '#lib/Structures/Command'
-import { isOwner } from '#lib/util'
+import { isOwner } from '#util'
 import { ApplyOptions } from '@sapphire/decorators'
 import type { Args, Command } from '@sapphire/framework'
 import type { TFunction } from '@sapphire/plugin-i18next'
