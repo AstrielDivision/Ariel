@@ -16,7 +16,7 @@ interface TopGGResponse {
 }
 
 @ApplyOptions<ScheduledTask.Options>({
-  cron: '0 */1 * * *',
+  cron: '0 * * * *',
   bullJobOptions: {
     removeOnComplete: true
   }
