@@ -1,7 +1,8 @@
 import { envParseArray } from '#lib/env/parser'
+import { sleep } from '@artiefuzzz/utils'
 import { container } from '@sapphire/framework'
 import { DurationFormatter, Time } from '@sapphire/time-utilities'
-import type { GuildResolvable, Snowflake, UserResolvable } from 'discord.js'
+import type { GuildResolvable, Message, MessageOptions, Snowflake, UserResolvable } from 'discord.js'
 
 const OWNERS = envParseArray('OWNERS')
 
@@ -37,4 +38,24 @@ export function hours(number: number) {
 
 export function years(number: number) {
   return number * Time.Year
+}
+
+export async function sendTemporaryMessage(
+  message: Message,
+  options: string | MessageOptions,
+  time = 0
+): Promise<Message | boolean> {
+  if (typeof options === 'string') options = { content: options }
+
+  const _message = await message.channel.send(options)
+
+  if (time === 0) void _message.delete()
+
+  await sleep(time)
+
+  try {
+    return void _message.delete()
+  } catch {
+    return false
+  }
 }
