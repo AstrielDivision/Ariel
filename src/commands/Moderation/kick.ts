@@ -15,12 +15,20 @@ export default class Kick extends ModerationCommand {
     const reason = await args.pick('string').catch(() => 'No reason provided')
     const silent = args.getFlags('silent')
 
-    if (users.length === 1) users = [users[0]]
+    if (users.length < 2) users = [users[0]]
 
-    await this.execute(users, message.author.tag, reason, silent)
+    const manageable = this.getModeratable(users)
+
+    if (!manageable.length) {
+      return await message.channel.send(
+        users.length === 1 ? 'You cannot kick the specified user' : 'You cannot kick any of the specified users'
+      )
+    }
+
+    await this.execute(manageable, message.author.tag, reason, silent)
 
     return await message.channel.send(
-      `Successfully kicked ${users.length > 1 ? `${users.length} Users.` : users[0].toString()}`
+      `Successfully kicked ${users.length > 1 ? `${manageable.length} Users.` : users[0].toString()}`
     )
   }
 

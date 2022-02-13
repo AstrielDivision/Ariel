@@ -19,10 +19,18 @@ export default class Ban extends ModerationCommand {
 
     if (users.length < 2) users = [users[0]]
 
-    await this.execute(users, message.author.tag, reason, soft, silent)
+    const manageable = this.getModeratable(users)
+
+    if (!manageable.length) {
+      return await message.channel.send(
+        users.length === 1 ? 'You cannot ban the specified user' : 'You cannot ban any of the specified users'
+      )
+    }
+
+    await this.execute(manageable, message.author.tag, reason, soft, silent)
 
     return await message.channel.send(
-      `Successfully banned ${users.length > 1 ? `${users.length} Users.` : users[0].toString()}`
+      `Successfully banned ${users.length > 1 ? `${manageable.length} Users.` : users[0].toString()}`
     )
   }
 

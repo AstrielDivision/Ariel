@@ -5,11 +5,14 @@ import { ArielCommand, ArielCommandOptions } from './Command'
 import type ArielArgs from './parsers/ArielArgs'
 
 export abstract class ModerationCommand extends ArielCommand {
-  // @ts-ignore
   protected async sendDM(target: GuildMember, content: string) {
     const dm = await target.createDM()
 
     return await dm.send(content)
+  }
+
+  protected getModeratable(targets: GuildMember[]) {
+    return targets.filter(user => user.manageable)
   }
 }
 
