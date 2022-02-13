@@ -28,4 +28,5 @@ export interface ArielCommandOptions extends SubCommandPluginCommand.Options {
 
 export namespace ArielCommand {
   export type Args = ArielArgs
+  export interface Options extends ArielCommandOptions {}
 }
