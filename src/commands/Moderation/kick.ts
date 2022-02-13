@@ -5,8 +5,9 @@ import type { GuildMember, Message } from 'discord.js'
 @ApplyOptions<ModerationCommand.Options>({
   description: 'Kicks discord members',
   aliases: ['k', 'boot'],
-  usage: '<user(s)> [reason]',
-  requiredUserPermissions: ['BAN_MEMBERS'],
+  usage: '<user(s)> [reason] [--silent]',
+  requiredUserPermissions: ['KICK_MEMBERS'],
+  requiredClientPermissions: ['KICK_MEMBERS'],
   preconditions: ['GuildTextOnly']
 })
 export default class Kick extends ModerationCommand {

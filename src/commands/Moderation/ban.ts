@@ -8,6 +8,7 @@ import type { GuildMember, Message } from 'discord.js'
   flags: ['soft', 'silent'],
   usage: '<user(s)> [reason] [--silent / --soft]',
   requiredUserPermissions: ['BAN_MEMBERS'],
+  requiredClientPermissions: ['BAN_MEMBERS'],
   preconditions: ['GuildTextOnly']
 })
 export default class Ban extends ModerationCommand {
