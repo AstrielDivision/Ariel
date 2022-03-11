@@ -1,6 +1,9 @@
 <div align="center">
 
 <img src="https://cdn.discordapp.com/avatars/609269728455688193/5c7b47cee8ebaac9304ef4d622b98e20.png?size=4096" width="15%" alt="Ariel Logo">
+  
+# Archived.
+I will be discontinuing Ariel as KSoft.Si seems to be discontinued, I no longer want to keep working on this bot as KSoft.Si is a major part of the bot, I also do not have any more interest in continuing this bot anymore. Sorry.
 
 # Ariel
 
